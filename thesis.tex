@@ -77,11 +77,20 @@
 
 % Uncomment to change page style
 %\pagestyle{PageStyleII}
-
+\usepackage{setspace} \doublespacing
 % ********************************** Preamble **********************************
 % Preamble: Contains packages and user-defined commands and settings
 \input{Preamble/preamble}
-
+\usepackage[version=4]{mhchem}
+\usepackage{array}
+\usepackage{float}
+\usepackage{booktabs}% http://ctan.org/pkg/booktabs
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+\usepackage{longtable}
+\usepackage{caption}
+\usepackage{arydshln}
+\usepackage{nameref}
+\usepackage{makecell}
 % ************************ Thesis Information & Meta-data **********************
 % Thesis title and author information, refernce file for biblatex
 \input{thesis-info}
