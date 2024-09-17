@@ -1,7 +1,7 @@
-% ******************************* PhD Thesis Template **************************
+  % ******************************* PhD Thesis Template **************************
 % Please have a look at the README.md file for info on how to use the template
 
-\documentclass[a4paper,12pt,times,numbered,print,index]{PhDThesisPSnPDF}
+\documentclass[a4paper,12pt,times,authoryear,print,index]{PhDThesisPSnPDF}
 
 % ******************************************************************************
 % ******************************* Class Options ********************************
@@ -91,6 +91,7 @@
 \usepackage{arydshln}
 \usepackage{nameref}
 \usepackage{makecell}
+\usepackage{siunitx} % format scientific notation 
 % ************************ Thesis Information & Meta-data **********************
 % Thesis title and author information, refernce file for biblatex
 \input{thesis-info}
@@ -146,9 +147,9 @@
 \include{Chapter1/chapter1}
 \include{Chapter2/chapter2}
 \include{Chapter3/chapter3}
-%\include{Chapter4/chapter4}
-%\include{Chapter5/chapter5}
-%\include{Chapter6/chapter6}
+\include{Chapter4/chapter4}
+\include{Chapter5/chapter5}
+\include{Chapter6/chapter6}
 %\include{Chapter7/chapter7}
 
 
@@ -166,7 +167,7 @@
 
 \bibliographystyle{apalike}
 %\bibliographystyle{unsrt} % Use for unsorted references  
-%\bibliographystyle{plainnat} % use this to have URLs listed in References
+% \bibliographystyle{plainnat} % use this to have URLs listed in References
 \cleardoublepage
 \bibliography{References/references} % Path to your References.bib file
 
@@ -185,8 +186,8 @@
 
 \begin{appendices} % Using appendices environment for more functunality
 
-\include{Appendix1/appendix1}
-\include{Appendix2/appendix2}
+% \include{Appendix1/appendix1}
+% \include{Appendix2/appendix2}
 
 \end{appendices}
 

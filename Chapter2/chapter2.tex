@@ -3,13 +3,73 @@
 %****************************** Second Chapter *********************************
 %*******************************************************************************
 
-\chapter{Data and Methods}
+\chapter{Methods, simulations and data}
+\label{ch2:title}
 
 \ifpdf
     \graphicspath{{Chapter2/Figs/Raster/}{Chapter2/Figs/PDF/}{Chapter2/Figs/}}
 \else
     \graphicspath{{Chapter2/Figs/Vector/}{Chapter2/Figs/}}
 \fi
+
+
+\section{UKESM1 model}  
+\label{sec:1.ukesm1}
+UKESM1 is a coupled atmosphere-ocean climate model, based on the Global Coupled model version 3.1 \citep[HadGEM3-GC3.1;][]{kuhlbrodtLowResolutionVersionHadGEM32018, brownUnifiedModelingPrediction2012}, Nucleus for European Modelling of the Ocean (NEMO) model \citep{storkeyUKGlobalOcean2018}, the Los Alamos Sea Ice (CICE) model \citep{ridleySeaIceModel2018} and utilising separate the Join UK Land Environment Simulator (JULES) model for the land surface \citep{bestJointUKLand2011} and the Model of Ecosystem Dynamics, nutrient Utilisation, Sequestration and Acidification (MEDUSA) model to simulate ocean biogeochemistry \citep{yoolMEDUSA2IntermediateComplexity2013}. UKESM1 also features the stratospheric-tropospheric atmospheric chemistry scheme (StratTrop) implemented as part of the United Kingdom Chemistry and Aerosol (UKCA) model \citep{archibaldDescriptionEvaluationUKCA2020}, which is coupled with the aerosol scheme GLOMAP-mode \citep{mulcahyDescriptionEvaluationAerosol2020}. 
+
+
+%The atmospheric chemistry, aerosol and cloud schemes modelled by the UKCA model that is relevant to the sulfur cycle are briefly described here. 
+The emission of DMS from natural sources is taken from the MEDUSA component which calculates the emission using the emission scheme from \citet{lissAirSeaGasExchange1986}. Anthropogenic \ce{SO2} emissions follow \citet{hoeslyHistorical175020142018}, and tropospheric volcanic emissions from continuously degassing volcanoes are prescribed over the historical period \citep{andresTimeaveragedInventorySubaerial1998, dentenerEmissionsPrimaryAerosol2006}.  Note that all anthropogenic \ce{SO2} is emitted at the lowest layer of the model. Oxidation of \ce{SO2} and DMS is treated online via the UKCA module, which includes photolysis, dry and wet deposition and in-cloud chemistry \citep{mulcahyDescriptionEvaluationAerosol2020}. Wet deposition is parameterised using \citet{giannakopoulosValidationIntercomparisonWet1999} scheme, and the dry deposition scheme takes into account the land surface types from the JULES model using a resistance type model from \citet{weselyParameterizationSurfaceResistances1989}. In the UKCA StratTrop, DMS is not deposited at all, while \ce{SO2} and \ce{SO4} are both wet and dry deposited \citep{archibaldDescriptionEvaluationUKCA2020}. Aerosol is treated with a two-moment modal global aerosol microphysics scheme \citep[GLOMAP-mode;][]{mannDescriptionEvaluationGLOMAPmode2010}. 
+
+GLOMAP-mode, which is a two-moment aerosol scheme, simulates aerosol mass and size independently \citep{mannDescriptionEvaluationGLOMAPmode2010}. This is in contrast to a one-moment scheme which assume linear relationship between aerosol mass and size and only aerosol mass is predicted. The aerosol–cloud interactions are particularly sensitive to the treatment of precipitation \citep{gettelmanAdvancedTwoMomentBulk2015}. Compared to single-moment cloud microphysics schemes, double-moment schemes have been shown to reduce a range of biases in high-resolution climate models \citep{seikiImprovementGlobalCloudSystemResolving2015}. 
+
+\begin{table}
+   \caption[Standard configuration for aerosol in GLOMAP-mode]{A summary of standard configuration for aerosol in GLOMAP-mode \citep{mannDescriptionEvaluationGLOMAPmode2010}}
+   \label{tab:glomap}
+   \centering
+   \begin{tabular}{l l}
+    \toprule
+     Aerosol mode & Size range  \\
+    \midrule
+     Nucleation mode & $\overline{D} < 10$ nm \\ 
+     Aitken mode & $10 < \overline{D} < 100$ nm \\
+     Accumulation mode & $100 < \overline{D} < 1000$ nm\\
+     Coarse mode & $ \overline{D} > 1000$ nm\\
+     \bottomrule
+   \end{tabular}
+\end{table}
+
+
+
+\section{CMIP6 experiment design and data archive}
+\label{sec:2.CMIP6}
+
+CMIP, an initiative to compare global climate models, has evolved into a significant international multi-model research activity that has shaped climate science research over the last 20 years \citep{eyringOverviewCoupledModel2016}. The goal of CMIP is to better understand past, present, and future climate change using climate models. An important part of CMIP is the involvement of the research community to design standardized simulations and output formats that facilitate multi-model analysis. 
+
+As such, models developed worldwide routinely participate in this exercise. According to the CMIP organization literature, public availability of standardized model output is an important part of CMIP such that the wider climate community and users could utilise the data \citep{eyringOverviewCoupledModel2016}. How this project benefits from CMIP is discussed at the end of this section.
+
+\subsection{The DECK experiments}
+
+Since its inception, CMIP has been increasing in complexity and includes more models which feature diverse complexities and processes \citep{eyringOverviewCoupledModel2016}. Coordination of the project has become more complex, requiring more structure moving forward. To tackle this challenge, CMIP6 proposed a common set of simulations which are intended for all models to provide, known as the Diagnostic, Evaluation and Characterization of Klima (DECK). 
+
+According to the CMIP6 overview paper \citep{eyringOverviewCoupledModel2016}, the DECK experiments are designed to provide continuity across past and future phases of CMIP, to be well-established and incorporate simulations that modelling centres perform as part of their own development cycle, and to be relatively independent of the forcings and scientific objectives of a specific phase of CMIP. 
+
+The DECK includes four baseline experiments: a pre-industrial control simulation (\textit{piControl} or \textit{esm-piControl}); a recent historical atmosphere-only Atmospheric Model Intercomparison Project (\textit{amip}); a simulation forced by an abrupt quadrupling of \ce{CO2} (\textit{abrupt-4$\times$CO2}), and finally a simulation forced by a 1\% yr$^{-1}$ \ce{CO2} increase (\textit{1pctCO2}). CMIP6 also suggests a historical transient coupled simulation from 1850 to the present.  The \textit{piControl} experiment serves as the control simulation for the AerChemMIP attribution experiment (see next section), and the historical simulation is used in the same way to provide sea-surface temperatures for \textit{amip}-style attribution experiments in AerChemMIP.
+
+\subsection{The AerChemMIP experiments}
+
+The CMIP6 endorses other projects to evaluate models in specific criteria and goals such as the Aerosol Chemistry Model Intercomparison Project or AerChemMIP \citep{collinsAerChemMIPQuantifyingEffects2017}. The experimental design of AerChemMIP aims to quantify the climate and air quality effects of atmospheric composition change of near-term climate forcings (NTCFs: methane, tropospheric ozone and aerosols, and their precursors). NTCFs especially aerosols were identified in the IPCC AR6 as the main source of uncertainty in the total anthropogenic ERF from 1750 to 2019 \citep[see figure \ref{fig:1.ERF} and][]{forsterEarthEnergyBudget2021}.
+
+The list of AerChemMIP experiments is rather large, being divided into various tiers using different experimental protocols. The experiments from the AerChemMIP that are useful for this research are detailed here. The AerChemMIP proposed historical coupled-ocean experiments which cover the period 1850 to 2014 to attribute aerosols and ozone to climate change over the historical period, i.e. \textit{hist-piNTCF} (aerosol precursors and \ce{O3} precursor emission kept at 1850 level) and \textit{hist-piAer} (aerosol precursor emission kept at 1850 level). 
+
+AerChemMIP also proposes transient historical prescribed SST simulations which use atmosphere-only configurations with prescribed sea surface temperature (SSTs) and sea ice. The use of historical SSTs rather than pre-industrial SSTs eliminate the effects of inconsistent background climate state such as different cloud cover and natural emissions that could affect aerosol and relative species concentrations. This set of historical prescribed SST experiments features more types of chemical species than the historical coupled-ocean experiments mentioned above, making them useful for investigating the effects of oxidant changes on oxidation branching ratio. Experiments that are relevant to \ce{SO2} oxidation include \textit{histSST}, \textit{histSST-piNTCF}, \textit{histSST-piAer}, \textit{histSST-piO3} and \textit{histSST-piCH4}. The suffix -piX denotes that the emission of X species is fixed at the 1850 level.
+
+
+\subsection{Use cases of CMIP6 and its endorsed MIPs data for this research}
+
+This research, which focuses on \ce{SO2} oxidation, benefits from the existing CMIP and AerChemMIP datasets in the following ways. CMIP \textit{historical} and AerChemMIP historical coupled-ocean experiments could be used to investigate the evolution of \ce{SO2} emission, budget, oxidation branching ratio and their effects on the climate in the historical period. The transient historical prescribed SST simulations are useful for investigating the effects of oxidant changes on sulfate aerosol size distribution and cloud properties.  For the purpose of this work which investigates the atmospheric composition of the atmosphere, the prescribed SST simulations which have a wider range of experiments are more versatile and were employed.
+
+
 
 \section{CMIP6 and AerChemMIP experiment design}
 
@@ -40,6 +100,33 @@ Table \ref{tab:2.exps} shows the simulation configurations with all historical t
 
 The CMIP6 requires that participating models archives a standardized set of variables that are processed in  specific ways. For example, the AerChemMIP archives sulfate aerosol formation tendency in two variables: \texttt{cheaqpso4} and \texttt{chegpso4}. These are the aqueous- and gas-phase production rate of \ce{SO4}, respectively. While this is useful for model intercomparison studies, \ce{O3} and \ce{H2O2} oxidation are added up to \texttt{cheaqpso4}, making it impossible to perform analysis based on individual channels. As such, the native model data is more useful for in-depth analysis specific to a model. This project uses both the processed AerChemMIP archive and UKESM1 native data.
 
+
+\section{Aerosol effective radiative forcing calculation}
+\label{sec:erf}
+
+Aerosol affects the climate directly via scattering and indirectly by altering the thermal structure of the atmosphere and hence cloud thermodynamics (aerosol direct effect or aerosol-radiation interaction), and via microphysical effects such as increasing the number of condensation nuclei and and decreasing the effective radii of cloud droplets, referred to as the aerosol cloud albedo effect and the cloud lifetime effect \citep{twomeyInfluencePollutionShortwave1977}.
+%(Twomey, 1974; Albrecht, 1989; Pincus and Baker, 1994). 
+
+The ERF is calculated from the difference in the net top-of-atmosphere radiative flux ($\Delta F$) between the perturbed simulation (e.g. \textit{piAer}) and \textit{histSST} simulation as  $\text{ERF} = \Delta F$
+
+To understand the contributions of various processes to the overall effective radiative forcing (ERF) we can separate the ERF that is due to direct radiative forcing from that due to the effects of clouds and aerosol instantaneous radiative effects. Following the method of \citet{ghanTechnicalNoteEstimating2013}, the contribution of the aerosol-radiation interactions to the ERF can be distinguished from that of the aerosol–cloud interactions by using a "double-call" method.
+
+% describe double call method
+In the "double-call" method, radiative flux diagnostics are calculated first for all-sky and then again ignoring the scattering and absorption of solar radiation by the aerosol. For each call, the model calculates the shortwave radiative flux at the top of the atmosphere (TOA) and a diagnostic TOA flux with with cloud neglected. The first call yields all-sky TOA shortwave flux, $F$, and clear sky, i.e. "cs", flux, $F_{\text{cs}}$. The second call, the aerosol-free or clean-sky, yields clean sky TOA shortwave flux, $F_{\text{clean}}$, and clean-and-clear TOA shortwave flux, $F_{\text{cs,clean}}$.
+
+This way, direct radiative forcing from aerosol could be calculated by subtracting clean sky flux from all-sky flux, $\Delta (F - F_{\text{clean}})$. Cloud radiative forcing is then calculated from the cloudy part of the sky by subtracting clean and clear sky flux with clean sky flux, $\Delta (F_{\text{clean}} - F_{\text{cs,clean}})$. Finally, the surface albedo and greenhouse gas effects are calculated from the clean and clear sky flux, $\Delta F_{\text{cs,clean}}$. This could be summarised as follows.
+\begin{equation} \label{eq:erf}
+\begin{split}
+\text{ERF} &=  \Delta(F-F_{\text{clean}}) + \Delta F_{\text{cs,clean}} + \Delta ({F_{\text{clean}}-F_{\text{cs,clean}}}) \\
+ & = \text{AerosolIRF} + \text{ERF}_{\text{cs,clean}}+\Delta \text{CRE}'
+\end{split}
+\end{equation}
+
+We also note that the definition of transient ERF used here differs from the usual definition of effective radiative forcing (ERF) where the SSTs are specified to be fixed repeating climatology \citep{eyringOverviewCoupledModel2016}. In contrast, The SSTs in the experiments used are from prescribed historical SSTs with all emissions set as historical. In this work, transient ERF is defined as a global average of the difference in the top-of-atmosphere radiative flux. The average is calculated as a moving decadal mean.   
+
+
+\section{Aerosol size distribution from log-normal distribution}
+% Describe calculation of aerosol size distrbution
 
 \section{Definitions of terms and methods}
 \label{sec:2.terms}
