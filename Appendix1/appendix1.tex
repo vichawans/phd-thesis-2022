@@ -1,132 +1,64 @@
 %!TEX root = ../thesis.tex
 % ******************************* Thesis Appendix A ****************************
-\chapter{How to install \LaTeX} 
+\chapter{Supplementary information for Chapter \ref{ch4:title}} 
 
-\section*{Windows OS}
+\section{ESMs included in the analysis of pothole cooling anomaly by \citet{zhangRoleAnthropogenicAerosols2021}}
 
-\subsection*{TeXLive package - full version}
-\begin{enumerate}
-\item	Download the TeXLive ISO (2.2GB) from\\
-\href{https://www.tug.org/texlive/}{https://www.tug.org/texlive/}
-\item	Download WinCDEmu (if you don't have a virtual drive) from \\
-\href{http://wincdemu.sysprogs.org/download/}
-{http://wincdemu.sysprogs.org/download/}
-\item	To install Windows CD Emulator follow the instructions at\\
-\href{http://wincdemu.sysprogs.org/tutorials/install/}
-{http://wincdemu.sysprogs.org/tutorials/install/}
-\item	Right click the iso and mount it using the WinCDEmu as shown in \\
-\href{http://wincdemu.sysprogs.org/tutorials/mount/}{
-http://wincdemu.sysprogs.org/tutorials/mount/}
-\item	Open your virtual drive and run setup.pl
-\end{enumerate}
+\begin{small}
+\begin{longtable}{>{\raggedright}p{3.25cm} >{\raggedright}p{3.25cm} >{\raggedright}p{3.5cm} >{\raggedright\arraybackslash}p{3.5cm}}
+    \caption[Information of models included in the study by \citet{zhangRoleAnthropogenicAerosols2021}]{Information of models included in the study by \citet{zhangRoleAnthropogenicAerosols2021}}
+    \label{tab:zhang-model}
+    \\
+    \toprule
+     Model developer (Model) & Tropospheric chemistry model & Sulfur chemistry scheme & Aerosol scheme \\
+     \midrule
+     \endfirsthead
 
-or
+    \toprule
+     Model developer (Model) & Tropospheric chemistry model & Sulfur chemistry scheme & Aerosol scheme \\
+     \midrule
+     \endhead
+     
+     \bottomrule
+     \endlastfoot
 
-\subsection*{Basic MikTeX - \TeX~ distribution}
-\begin{enumerate}
-\item	Download Basic-MiK\TeX (32bit or 64bit) from\\
-\href{http://miktex.org/download}{http://miktex.org/download}
-\item	Run the installer 
-\item	To add a new package go to Start >> All Programs >> MikTex >> Maintenance (Admin) and choose Package Manager
-\item	Select or search for packages to install
-\end{enumerate}
-
-\subsection*{TexStudio - \TeX~ editor}
-\begin{enumerate}
-\item	Download TexStudio from\\
-\href{http://texstudio.sourceforge.net/\#downloads}
-{http://texstudio.sourceforge.net/\#downloads} 
-\item	Run the installer
-\end{enumerate}
-
-\section*{Mac OS X}
-\subsection*{MacTeX - \TeX~ distribution}
-\begin{enumerate}
-\item	Download the file from\\
-\href{https://www.tug.org/mactex/}{https://www.tug.org/mactex/}
-\item	Extract and double click to run the installer. It does the entire configuration, sit back and relax.
-\end{enumerate}
-
-\subsection*{TexStudio - \TeX~ editor}
-\begin{enumerate}
-\item	Download TexStudio from\\
-\href{http://texstudio.sourceforge.net/\#downloads}
-{http://texstudio.sourceforge.net/\#downloads} 
-\item	Extract and Start
-\end{enumerate}
+     
+     Met Office’s Hadley Centre for Climate Prediction and Research; MOHC (UKESM1-0-LL) Ref. \citet{sellarUKESM1DescriptionEvaluation2019,archibaldDescriptionEvaluationUKCA2020,mulcahyDescriptionEvaluationAerosol2020}  & UKCA (United Kingdom Chemistry and Aerosol) model with unified stratospheric-tropospheric chemistry (StratTrop) & Prognostic oxidant fields. Prognostic sulfur chemistry. & Aerosol scheme GLOMAP-mode. Two-moment, five size modes. 4 species: sulfate (\ce{SO4}), black carbon (BC), organic matter (OM) and sea salt. \\
+     \midrule
+     Norwegian Climate Center; NCC (NorESM2-LM). Ref. \citet{kirkevagProductiontaggedAerosolModule2018, selandOverviewNorwegianEarth2020} & Atmosphere model component CAM6-Nor built improvements on the CAM6 version from CESM2.1 & Diagnostic tropospheric oxidant fields: OH, \ce{O3}, \ce{H2O2}.  Prognostic  sulfur chemistry & 4 aerosol modes. 6 species: SOA, BC, \ce{SO4}, OM, Seasalt, and dust.  \\ 
+     \midrule
+     Max Planck Institute for Meteorology; MPI (MPI-ESM-1-2-HAM) Ref. \citet{neubauerGlobalAerosolClimate2019,neubauerHAMMOZConsortiumMPIESM12HAM2019,tegenGlobalAerosolClimate2019} & Atmospheric Model Component ECHAM6.3. &  Diagnostic oxidant fields: OH, \ce{H2O2}, \ce{NO2}, \ce{O3}, and \ce{NO3}. Prognostic sulfur chemistry. & Aerosol scheme HAM2.3. Two-moment. 7 modes: 4 soluble and 3 insoluble \\
+     \midrule
+     US Department of Commerce/ NOAA/Geophysical Fluid Dynamics Laboratory; GFDL (GFDL-ESM4) Ref. \citet{zhaoGFDLGlobalAtmosphere2018, heldStructurePerformanceGFDL2019, dunneGFDLEarthSystem2020} & Atmospheric component AM4.1 & Prognostic oxidant fields: OH, \ce{O3}, \ce{H2O2}, \ce{NO3}. Prognostic sulfur chemistry. & 5 aerosol types: sulfate, dust, black carbon, organic carbon, and sea salt.  \\
+     \midrule
+     European consortium of meteorological services, research institutes, and high-performance computing centers (EC-Earth-AerChem) Ref. \citet{vannoijeECEarth3AerChemGlobalClimate2021} & Aerosols and atmospheric chemistry are simulated with the Tracer Model version 5 (TM5), specifically release 3.0 of the massively parallel version of TM5 (TM5-mp 3.0). & The model includes aqueous-phase reactions for the oxidation of total dissolved sulfur dioxide & Modal aerosol microphysical scheme M7. 5 aerosol types: \ce{SO4}, BC, OA, sea salt, and mineral dust. 7 modes: 4 water-soluble and 3 insoluble modes  \\
+     \midrule
+     Beijing Climate Center; BCC (BCC-ESM1) Ref. \citet{zhangBCCESM1ModelDatasets2021} &  Atmospheric component is BCCAGCM3-Chem based on MOZART2 & Prognostic oxidant fields. Prognostic sulfur chemistry. & 5 aerosol species: \ce{SO4}, OC, BC, soil dust, and sea salt \\
 
 
-\section*{Unix/Linux}
-\subsection*{TeXLive - \TeX~ distribution}
-\subsubsection*{Getting the distribution:}
-\begin{enumerate}
-\item	TexLive can be downloaded from\\
-\href{http://www.tug.org/texlive/acquire-netinstall.html}
-{http://www.tug.org/texlive/acquire-netinstall.html}.
-\item	TexLive is provided by most operating system you can use (rpm,apt-get or yum) to get TexLive distributions
-\end{enumerate}
-
-\subsubsection*{Installation}
-\begin{enumerate}
-\item	Mount the ISO file in the mnt directory
-\begin{verbatim}
-mount -t iso9660 -o ro,loop,noauto /your/texlive####.iso /mnt
-\end{verbatim}
-
-\item	Install wget on your OS (use rpm, apt-get or yum install)
-\item	Run the installer script install-tl.
-\begin{verbatim}
-	cd /your/download/directory
-	./install-tl
-\end{verbatim}
-\item	Enter command `i' for installation
-
-\item	Post-Installation configuration:\\
-\href{http://www.tug.org/texlive/doc/texlive-en/texlive-en.html\#x1-320003.4.1}
-{http://www.tug.org/texlive/doc/texlive-en/texlive-en.html\#x1-320003.4.1} 
-\item	Set the path for the directory of TexLive binaries in your .bashrc file
-\end{enumerate}
-
-\subsubsection*{For 32bit OS}
-For Bourne-compatible shells such as bash, and using Intel x86 GNU/Linux and a default directory setup as an example, the file to edit might be \begin{verbatim}
-edit $~/.bashrc file and add following lines
-PATH=/usr/local/texlive/2011/bin/i386-linux:$PATH; 
-export PATH 
-MANPATH=/usr/local/texlive/2011/texmf/doc/man:$MANPATH;
-export MANPATH 
-INFOPATH=/usr/local/texlive/2011/texmf/doc/info:$INFOPATH;
-export INFOPATH
-\end{verbatim}
-\subsubsection*{For 64bit OS}
-\begin{verbatim}
-edit $~/.bashrc file and add following lines
-PATH=/usr/local/texlive/2011/bin/x86_64-linux:$PATH;
-export PATH 
-MANPATH=/usr/local/texlive/2011/texmf/doc/man:$MANPATH;
-export MANPATH 
-INFOPATH=/usr/local/texlive/2011/texmf/doc/info:$INFOPATH;
-export INFOPATH
-
-\end{verbatim}
+\end{longtable}
+\end{small}
 
 
+\section{Supplementary figures}
+\begin{figure}
+    \centering
+    \includegraphics{Appendix1/figs/seasonal_oxidant_1980_lat30-60.png}
+    \caption{Mean oxidant concentration between 1980 and 1989 from the surface up to 5 km and latitude 30 to 60\textdegree N }
+    \label{fig:app1:seasonal-oxidant-30-60}
+\end{figure}
 
-%\subsection{Installing directly using Linux packages} 
-\subsubsection*{Fedora/RedHat/CentOS:}
-\begin{verbatim} 
-sudo yum install texlive 
-sudo yum install psutils 
-\end{verbatim}
+\begin{figure}
+    \centering
+    \includegraphics{Appendix1/figs/emiso2_monthly_1850.png}
+    \caption{\ce{SO2} emissions at 1850, pre-industrial as used in \piaer{} simulation.}
+    \label{fig:app1:seasonal-emiso2-1850}
+\end{figure}
 
+\begin{figure}
+    \centering
+    \includegraphics{Appendix1/figs/TAS_anomaly_all.png}
+    \caption{Annual mean surface air temperature anomaly between 1850 and 2015 with respect to 1850 and 1900. This plot shows}
+    \label{fig:app1:seasonal-emiso2-1850}
+\end{figure}
 
-\subsubsection*{SUSE:}
-\begin{verbatim}
-sudo zypper install texlive
-\end{verbatim}
-
-
-\subsubsection*{Debian/Ubuntu:}
-\begin{verbatim} 
-sudo apt-get install texlive texlive-latex-extra 
-sudo apt-get install psutils
-\end{verbatim}
