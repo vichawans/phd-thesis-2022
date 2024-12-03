@@ -99,15 +99,15 @@
 % user-defined commands
 \newcommand{\histsst}{\textit{histSST}}
 \newcommand{\sstpiaer}{\textit{piAer}}
-\newcommand{\sstpiooo}{\textit{piO3}}
-\newcommand{\sstpichhhh}{\textit{piCH4}}
+\newcommand{\sstpio}{\textit{piO3}}
+\newcommand{\sstpich}{\textit{piCH4}}
 \newcommand{\sstpintcf}{\textit{piNTCF}}
 \newcommand{\hist}{\textit{historical}}
 \newcommand{\histpiaer}{\textit{hist-piAer}}
 \newcommand{\Reff}{R\textsubscript{eff}}
 
 \newcommand{\tabitem}{~~\llap{\textbullet}~~}
-
+\newcommand{\textsoo}{\texorpdfstring{\ce{SO2}}{SO2}}
 
 % Todonotes customisation
 \usepackage{xargs} % Use more than one optional parameter in a new commands
@@ -117,19 +117,18 @@
 % for notes not to be visible, change 
 % \usepackage{todonotes} -> \usepackage[disable]{todonotes}
 
-\usepackage[colorinlistoftodos,prependcaption]{todonotes}
+\usepackage[colorinlistoftodos,prependcaption,disable]{todonotes}
 \newcommandx{\unsure}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
 \newcommandx{\change}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
 \newcommandx{\info}[2][1=]{\todo[linecolor=OliveGreen,backgroundcolor=OliveGreen!25,bordercolor=OliveGreen,#1]{#2}}
 \newcommandx{\improvement}[2][1=]{\todo[linecolor=Plum,backgroundcolor=Plum!25,bordercolor=Plum,#1]{#2}}
-\newcommandx{\thiswillnotshow}[2][1=]{\todo[disable,#1]{#2}}
+\newcommandx{\thiswillnotshow}[2][1=]{\todo[#1]{#2}}
 
-
-\paperwidth=\dimexpr \paperwidth + 6cm\relax % For some reasons it has to be > 2* \evensidemargin
-\oddsidemargin=\dimexpr \oddsidemargin + 3cm\relax % For some reasons this works instead of 2cm
-\evensidemargin=\dimexpr \evensidemargin + 2cm\relax
-\marginparwidth=\dimexpr \marginparwidth + 2cm\relax
 \reversemarginpar
+% \paperwidth=\dimexpr \paperwidth + 6cm\relax % For some reasons it has to be > 2* \evensidemargin
+% \oddsidemargin=\dimexpr \oddsidemargin + 3cm\relax % For some reasons this works instead of 2cm
+% \evensidemargin=\dimexpr \evensidemargin + 2cm\relax
+% \marginparwidth=\dimexpr \marginparwidth + 2cm\relax
 
 % Declare special characters
 \DeclareUnicodeCharacter{2212}{-}
@@ -165,9 +164,9 @@
 
 \maketitle
 
-\include{Dedication/dedication}
-\include{Declaration/declaration}
-\include{Acknowledgement/acknowledgement}
+% \include{Dedication/dedication}
+% \include{Declaration/declaration}
+% \include{Acknowledgement/acknowledgement}
 \include{Abstract/abstract}
 
 % *********************** Adding TOC and List of Figures ***********************
@@ -189,12 +188,12 @@
 % ******************************** Main Matter *********************************
 \mainmatter
 
-%\include{Chapter1/chapter1}
-%\include{Chapter2/chapter2}
-\include{Chapter3/chapter3}
-\include{Chapter4/chapter4}
-\include{Chapter5/chapter5}
-\include{Chapter6/chapter6}
+% \include{Chapter1/chapter1}
+% \include{Chapter2/chapter2}
+\include{Chapter3/chapter3} % SLCF+aerosol formation
+% \include{Chapter4/chapter4} % Seasonal changes + pothole cooling
+% \include{Chapter5/chapter5} % Regional aerosol formation efficiency
+% \include{Chapter6/chapter6} % Conclusion and future work
 %\include{Chapter7/chapter7}
 
 
@@ -231,7 +230,7 @@
 
 \begin{appendices} % Using appendices environment for more functunality
 
-\include{Appendix1/appendix1}
+% \include{Appendix1/appendix1}
 % \include{Appendix2/appendix2}
 
 \end{appendices}

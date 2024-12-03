@@ -2,7 +2,7 @@
 % ******************************* Thesis Appendix A ****************************
 \chapter{Supplementary information for Chapter \ref{ch4:title}} 
 
-\section{ESMs included in the analysis of pothole cooling anomaly by \citet{zhangRoleAnthropogenicAerosols2021}}
+\section{ESMs included in the analysis of pothole cooling}
 
 \begin{small}
 \begin{longtable}{>{\raggedright}p{3.25cm} >{\raggedright}p{3.25cm} >{\raggedright}p{3.5cm} >{\raggedright\arraybackslash}p{3.5cm}}
@@ -31,7 +31,7 @@
      \midrule
      US Department of Commerce/ NOAA/Geophysical Fluid Dynamics Laboratory; GFDL (GFDL-ESM4) Ref. \citet{zhaoGFDLGlobalAtmosphere2018, heldStructurePerformanceGFDL2019, dunneGFDLEarthSystem2020} & Atmospheric component AM4.1 & Prognostic oxidant fields: OH, \ce{O3}, \ce{H2O2}, \ce{NO3}. Prognostic sulfur chemistry. & 5 aerosol types: sulfate, dust, black carbon, organic carbon, and sea salt.  \\
      \midrule
-     European consortium of meteorological services, research institutes, and high-performance computing centers (EC-Earth-AerChem) Ref. \citet{vannoijeECEarth3AerChemGlobalClimate2021} & Aerosols and atmospheric chemistry are simulated with the Tracer Model version 5 (TM5), specifically release 3.0 of the massively parallel version of TM5 (TM5-mp 3.0). & The model includes aqueous-phase reactions for the oxidation of total dissolved sulfur dioxide & Modal aerosol microphysical scheme M7. 5 aerosol types: \ce{SO4}, BC, OA, sea salt, and mineral dust. 7 modes: 4 water-soluble and 3 insoluble modes  \\
+     European consortium of meteorological services, research institutes, and high-performance computing centres (EC-Earth-AerChem) Ref. \citet{vannoijeECEarth3AerChemGlobalClimate2021} & Aerosols and atmospheric chemistry are simulated with the Tracer Model version 5 (TM5), specifically release 3.0 of the massively parallel version of TM5 (TM5-mp 3.0). & The model includes aqueous-phase reactions for total dissolved sulfur dioxide oxidation & Modal aerosol microphysical scheme M7. 5 aerosol types: \ce{SO4}, BC, OA, sea salt, and mineral dust. 7 modes: 4 water-soluble and 3 insoluble modes  \\
      \midrule
      Beijing Climate Center; BCC (BCC-ESM1) Ref. \citet{zhangBCCESM1ModelDatasets2021} &  Atmospheric component is BCCAGCM3-Chem based on MOZART2 & Prognostic oxidant fields. Prognostic sulfur chemistry. & 5 aerosol species: \ce{SO4}, OC, BC, soil dust, and sea salt \\
 
@@ -51,14 +51,35 @@
 \begin{figure}
     \centering
     \includegraphics{Appendix1/figs/emiso2_monthly_1850.png}
-    \caption{\ce{SO2} emissions at 1850, pre-industrial as used in \piaer{} simulation.}
+    \caption[\ce{SO2} emissions between 1850--1860]{\ce{SO2} emissions between 1850--1860}
     \label{fig:app1:seasonal-emiso2-1850}
 \end{figure}
 
 \begin{figure}
     \centering
+    \includegraphics{Appendix1/figs/emioa_monthly_pothole.png}
+    \caption[Organic aerosol emissions between 1960--1989]{Organic aerosol emissions between 1960--1989. This is the total emission of primary organic aerosol (POA) and total production of secondary organic aerosol (SOA).}
+    \label{fig:app1:seasonal-emioa-pothole}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics{Appendix1/figs/emibvoc_monthly_pothole.png}
+    \caption[Biogenic volatile organic compound emissions between 1960--1989]{Biogenic volatile organic compound emissions between 1960--1989. Isoprene and Monoterpene only. Acetone and Methanol, although produced by JULES, are not used by UKCA, which reads from ancillary.}
+    \label{fig:app1:seasonal-emibvoc-pothole}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics{Appendix1/figs/emibc_monthly_pothole.png}
+    \caption{Black carbon (BC) emissions at 1850 between 1960--1989.}
+    \label{fig:app1:seasonal-emibc-pothole}
+\end{figure}
+
+\begin{figure}
+    \centering
     \includegraphics{Appendix1/figs/TAS_anomaly_all.png}
-    \caption{Annual mean surface air temperature anomaly between 1850 and 2015 with respect to 1850 and 1900. This plot shows}
-    \label{fig:app1:seasonal-emiso2-1850}
+    \caption{Annual mean surface air temperature anomaly between 1850 and 2015 with respect to 1850 and 1900.}
+    \label{fig:app1:tas-anomaly-global}
 \end{figure}
 

@@ -4,39 +4,60 @@
 %*******************************************************************************
 
 \chapter{Introduction and motivation}  %Title of the First Chapter
-\label{ch1}
-
-\ifpdf
-    \graphicspath{{Chapter1/Figs/Raster/}{Chapter1/Figs/PDF/}{Chapter1/Figs/}}
-\else
-    \graphicspath{{Chapter1/Figs/Vector/}{Chapter1/Figs/}}
-\fi
+\label{ch1:title}
 
 
 %********************************** %First Section  **************************************
 
 
-\section{Background and context}
+\section{Research motivation}
+
+Aerosols refer to micrometre-scale particles suspended in the air, including dust, pollutants, and natural substances such as sea salt and pollen. They are an essential group of climate forcing agents \citep{forsterEarthEnergyBudget2021}. Aerosols can act to cool the climate via direct and indirect effects \citep{angstromAtmosphericTransmissionSun1929, twomeyInfluencePollutionShortwave1977, albrechtAerosolsCloudMicrophysics1989,szopaShortlivedClimateForcers2021}. However, the processes that control these climatic effects are complex and represent our most significant sources of uncertainty in modelling historic climate change \citep{ghanChallengesConstrainingAnthropogenic2016, forsterEarthEnergyBudget2021}.
+
+% Aerosol formation in the atmosphere 
+Aerosol size ranges from a few nanometres to tens of microns, with a lifetime of minutes to weeks, sufficient for long-range transport across the globe \citep{liScatteringAbsorbingAerosols2022}.  Tropospheric aerosol by mass is dominated by sea salt and mineral dust aerosol \citep{szopaShortlivedClimateForcers2021}.  Other important classes are secondary aerosols such as sulfate, nitrate and biogenic aerosol formed in the atmosphere via gas-particle conversion \citep{liScatteringAbsorbingAerosols2022}.  Soot forms the remaining broad class.  Mixtures of these compounds are commonly found throughout the atmosphere \citep[e.g.][]{jimenezEvolutionOrganicAerosols2009, bauerTurningPointAerosol2022}. 
+
+% Sulfate aerosols
+Sulfate aerosols are formed in the atmosphere from the reaction of sulfur dioxide (\ce{SO2}) with other chemical species such as hydroxyl radicals (OH), ozone \ce{O3}, hydrogen peroxide (\ce{H2O2}), .... \ce{SO2} 
+
+% Aerosol radiation interaction
 
 
-Aerosols refer to tiny particles suspended in the air, including dust, pollutants, and natural substances such as sea salt and pollen. They are an important group of climate forcing agents \citep{forsterEarthEnergyBudget2021}. Some aerosols can act to cool the climate via direct and indirect effects \citep{angstromAtmosphericTransmissionSun1929, twomeyInfluencePollutionShortwave1977, charlsonPerturbationNorthernHemisphere1991,szopaShortlivedClimateForcers2021}.  Aerosols also provide a medium for chemical reactions, enabling important heterogeneous chemical pathways \citep{seinfeldAtmosphericChemistryPhysics2016}. However, the processes that control these climatic effects are complex and represent our largest sources of uncertainty in modelling historic climate change \citep{ghanChallengesConstrainingAnthropogenic2016, forsterEarthEnergyBudget2021}.
 
-Aerosols have a wide range of compositions and span a range from a few nanometres to tens of microns.  Their atmospheric lifetime ranges from minutes to weeks, sufficient for long-range transport across the globe \citep{liScatteringAbsorbingAerosols2022}.  
+% Climate change 
+Earth’s climate has changed noticeably over the last century, impacting ecosystems and societies worldwide. Global average la
 
-Tropospheric aerosol is dominated, by mass, by sea salt and mineral dust aerosol \citep{szopaShortlivedClimateForcers2021}.  In terms of radiation and particle number, other important classes are secondary aerosols such as sulfate, nitrate and biogenic aerosol \citep{liScatteringAbsorbingAerosols2022}. These are formed in the atmosphere via gas-particle conversion.  Soot forms the remaining broad class.  Mixtures of these compounds are commonly found throughout the atmosphere \citep[e.g.][]{jimenezEvolutionOrganicAerosols2009, bauerTurningPointAerosol2022}.
-
-The atmospheric aerosol can be divided into broad classes according to size: the nucleation mode, around 10 nm, and Aitken mode particles, having radii less than 100 nm, are formed in the early stages of gas-particle transfer, and have a short lifetime controlled by loss via diffusion to existing particle surfaces; accumulation mode particles, 100 nm in size and larger, are formed by coalescence of smaller particles and condensational growth, diffuse more slowly and have a longer lifetime; finally, coarse-mode particles, which are usually formed through mechanical processes such as wave-breaking or re-suspension of solid particles such as sand or soil, have a short lifetime due to gravitational settling \citep{seinfeldAtmosphericChemistryPhysics2016}.
-
-This thesis focuses on sulfate aerosol, which is formed from the oxidation of sulfur dioxide (\ce{SO2}), and which is a major source of cloud condensation nuclei \citep{boucherCloudsAerosols2014}. To assess the effects of sulfate aerosol effects on climate, global climate model development has been one of the central methods. The results from the first sulfur aerosol global circulation model to consider a full annual cycle of sulfur were published in 1991 and effort in this field has continued ever since, with most modern global climate models considering the sulfur cycle at some level of detail \citep{langnerGlobalThreedimensionalModel1991, liAssessmentCoupledModel2021}. As the number and complexity of climate models have grown, there have been attempts to inter-compare these models, such as AeroCom. The most recent intercomparison are RFMIP, PDRMIP and AerChemMIP, which formed part of the sixth phase of the Coupled Model Intercomparison Project (CMIP6) and features state-of-the-science models \citep[e.g.][]{eyringOverviewCoupledModel2016, collinsAerChemMIPQuantifyingEffects2017, gillettDetectionAttributionModel2016}. 
-
-Early CMIP6 results indicated that, despite participating models' increasing sophistication, they did not all perform well in predicting surface temperature, with the period between 1950--1990 showing low bias with respect to observations, i.e. the models consistently underpredict surface temperature \citep{flynnClimateSensitivityHistorical2020, zhangRoleAnthropogenicAerosols2021}. This anomalous cooling was shown to be related to the aerosol amount in the atmosphere \citep{zhangRoleAnthropogenicAerosols2021}. Attributing the causes of this bias was made more complicated by the fact that \ce{SO2} emission varies over the historical period, affecting both local aerosol loading, i.e. direct scattering, and aerosol effects on the atmosphere, e.g. cloud albedo.
-
-This dissertation aims to further investigate the sulfur budget in a CMIP6 model, the UKESM1, and attributes aerosol budget changes to different oxidants with a view to understanding quantitatively the drivers of sulfate loading as a preliminary step to understanding the causes of the low bias of CMIP6 models at a time when sulfur emissions were increasing rapidly. 
+% Study of radiative impacts of aerosol using ESMs, and uncertainty in modelling
+To assess aerosol effects on climate, global climate model development has been one of the central methods.  This thesis focuses on sulfate aerosol, which is formed from the oxidation of sulfur dioxide (\ce{SO2}) and which is a significant source of cloud condensation nuclei \citep{boucherCloudsAerosols2014}. 
 
 
-\subsection{Aerosol and Climate} %Section - 1.1 
 
-Aerosols affect the Earth’s energy budget in a variety of ways, both directly via scattering or absorption, and indirectly via their effect on important terms in the energy budget, such as latent heat release or evapotranspiration and enhancing cloud formation and by modulating the cloud properties \citep{readGlobalEnergyBudgets2016}.  Other aerosol processes and properties are important: aerosols can absorb radiation, increasing the strength of the greenhouse effect; hygroscopicity governs cloud formation, and hence indirect effects and latent heat release. Figure \ref{fig:trenberth} shows the Earth's energy balance with the incoming solar radiation in blue arrows and outgoing Earth radiation in red \citep{kiehlEarthAnnualGlobal1997}.  It can be seen that many of these processes can be modified by changes to aerosol loading or their properties. 
+% Aim
+This thesis investigates the sulfur budget in the UK Earths System Model version 1 (UKESM1) and attributes aerosol budget changes to different oxidants. It aims to quantify the interactions between sulfate aerosol formation and chemistry using analysis of chemical reaction tendencies. Cloud properties and radiative impacts are analysed relative to aerosol formation in the model to connect the processes. Recent advances in the capabilities of aerosol-climate models to interactively simulate \ce{SO2} emissions and aerosol microphysics, and the inclusion of these modules in Earth system models, allow us to effectively explore the interactions of aerosol formation, climate, and chemistry in this thesis.
+
+
+
+
+
+% The results from the first sulfur aerosol global circulation model to consider a complete annual cycle of sulfur were published in 1991, and effort in this field has continued ever since, with most modern global climate models considering the sulfur cycle at some level of detail \citep{langnerGlobalThreedimensionalModel1991, liAssessmentCoupledModel2021}. As the number and complexity of climate models have grown, there have been attempts to inter-compare these models, such as AeroCom. The most recent intercomparison are RFMIP, PDRMIP and AerChemMIP, which formed part of the sixth phase of the Coupled Model Intercomparison Project (CMIP6) and features state-of-the-science models \citep[e.g.][]{eyringOverviewCoupledModel2016, collinsAerChemMIPQuantifyingEffects2017, gillettDetectionAttributionModel2016}. 
+
+% Early CMIP6 results indicated that, despite participating models' increasing sophistication, they did not all perform well in predicting surface temperature, with the period between 1950 and 1990 showing low bias to observations, i.e. the models consistently underpredict surface temperature \citep{flynnClimateSensitivityHistorical2020, zhangRoleAnthropogenicAerosols2021}. This anomalous cooling was shown to be related to the aerosol amount in the atmosphere \citep{zhangRoleAnthropogenicAerosols2021}. Attributing the causes of this bias was made more complicated by the fact that \ce{SO2} emission varies over the historical period, affecting both local aerosol loading, i.e. direct scattering, and aerosol effects on the atmosphere, e.g. cloud albedo.
+
+
+
+\section{Aerosol and climate} %Section - 1.1 
+
+
+The atmospheric aerosol can be divided into broad classes according to size: the nucleation mode, around 10 nm, and Aitken mode particles, having radii less than 100 nm, are formed in the early stages of gas-particle transfer and have a short lifetime controlled by loss via diffusion to existing particle surfaces; accumulation mode particles, 100 nm in size and greater, are formed by coalescence of smaller particles and condensational growth, diffuse more slowly and have a longer lifetime; finally, coarse-mode particles, which are usually formed through mechanical processes such as wave-breaking or re-suspension of solid particles such as sand or soil, have a short lifetime due to gravitational settling \citep{seinfeldAtmosphericChemistryPhysics2016}.
+
+
+
+
+
+\subsection{Aerosol direct and indirect effects}
+
+
+Aerosols affect the Earth’s energy budget in a variety of ways, both directly via scattering or absorption and indirectly via their effect on the energy budget, such as latent heat release or evapotranspiration and enhancing cloud formation and by modulating the cloud properties \citep{angstromAtmosphericTransmissionSun1929, readGlobalEnergyBudgets2016}.  Other aerosol processes and properties are important: aerosols can absorb radiation, increasing the strength of the greenhouse effect; hygroscopicity governs cloud formation, and hence indirect effects and latent heat release. Figure \ref{fig:trenberth} shows the Earth's energy balance with the incoming solar radiation in blue arrows and outgoing Earth radiation in red \citep{kiehlEarthAnnualGlobal1997}.  It can be seen that many of these processes can be modified by changes to aerosol loading or their properties. 
 
 \begin{figure}
     \centering
@@ -46,16 +67,17 @@ Aerosols affect the Earth’s energy budget in a variety of ways, both directly 
 \end{figure}
 
 
-There are many physical processes that affect the Earth's energy budget, with impacts at different times and spatial scales, such as increased carbon dioxide concentration and surface albedo change \citep{forsterEarthEnergyBudget2021}. A consistent way to characterize the behaviour of the climate system is therefore needed, ideally by using global-scale metrics on a common scale. One such metric is radiative forcing.
+
 
 \subsection{Concept of radiative forcing}
+Many physical processes affect the Earth's energy budget, with impacts at different times and spatial scales, such as increased carbon dioxide concentration and surface albedo change \citep{forsterEarthEnergyBudget2021}. Therefore, a consistent way to characterize the climate system's behaviour is needed, ideally by using global-scale metrics on a standard scale. One such metric is radiative forcing.
 
-Radiative forcing is a concept for quantifying the effects of physical processes that perturb the Earth's energy budget, connecting the effect of each individual perturbation to radiation changes and hence to global surface temperature response \citep{thornhillEffectiveRadiativeForcing2021}. The most recent IPCC report employs the definition of Effective Radiative Forcing (ERF) as the principal metric for quantifying such physical perturbations \citep{forsterEarthEnergyBudget2021}. 
+Radiative forcing is a concept for quantifying the effects of physical processes that perturb the Earth's energy budget, connecting the impact of each perturbation to radiation changes and hence to global surface temperature response \citep{thornhillEffectiveRadiativeForcing2021}. The most recent IPCC report employs the definition of Effective Radiative Forcing (ERF) as the principal metric for quantifying such physical perturbations \citep{forsterEarthEnergyBudget2021}. 
 
-In short, the global surface air temperature (GSAT) responds to a perturbation from a certain radiative forcing that gives rise to an energy imbalance at the top of atmosphere (TOA). This could be written as the linear energy budget equation.
+In short, the global surface air temperature (GSAT) responds to a perturbation from a certain radiative forcing that gives rise to an energy imbalance at the top of the atmosphere (TOA). This could be written as the linear energy budget equation.
 
 \begin{equation}
-\label{eq:erf}
+\label{eq:erf-short}
     \Delta N = \Delta F - \alpha \Delta T
 \end{equation}
 
@@ -70,37 +92,20 @@ Figure \ref{fig:1.ERF} shows the pre-industrial to present-day effective radiati
     \label{fig:1.ERF}
 \end{figure}
 
-There are two approaches to evaluating ERF using climate simulations \citep[e.g.][]{gregoryNewMethodDiagnosing2004, oconnorAssessmentPreindustrialPresentday2021}.  The first method is to apply a step change to the forcing. This will immediately cause energy imbalance which will decrease as the system readjust itself back to the equilibrium ($\Delta N=0$). Equation \ref{eq:erf} gives the linear relationship between the annual global average temperature change to the annual energy imbalance. The linear relationship is assumed and the y-intercept is the value of ERF. This is usually referred to as the Gregory or the regression-based method \citep{gregoryNewMethodDiagnosing2004}. Another method is to set the $\Delta T$ term to zero. However, it is difficult to do so, so most studies prescribe sea surface temperature (SST) and sea ice concentration. A pair of simulations with and without the change in forcing is then performed for the fixed SST (fSST) simulations to estimate ERF as the difference in TOA radiative flux \citep{myhreNewEstimatesRadiative1998}. 
+There are two approaches to evaluating ERF using climate simulations \citep[e.g.][]{gregoryNewMethodDiagnosing2004, oconnorAssessmentPreindustrialPresentday2021}.  The first method is to apply a step change to the forcing. This will immediately cause energy imbalance, decreasing as the system returns to equilibrium ($\Delta N=0$). Equation \ref{eq:erf-short} gives the linear relationship between the annual global average temperature change and the annual energy imbalance. The linear relationship is assumed, and the y-intercept is the value of ERF. This is usually called the Gregory or the regression-based method \citep{gregoryNewMethodDiagnosing2004}. Another method is to set the $\Delta T$ term to zero. However, it is difficult to do so, so most studies prescribe sea surface temperature (SST) and sea ice concentration. A pair of simulations with and without the change in forcing is then performed for the fixed SST (fSST) simulations to estimate ERF as the difference in TOA radiative flux \citep{myhreNewEstimatesRadiative1998}. 
 
 
-Effective radiative forcing is a good predictor of climate because the ratios of surface temperature change to forcing resulting from perturbations of different forcings are comparable \citep{myhreAnthropogenicNaturalRadiative2013, boucherCloudsAerosols2014}. One of the collaborative efforts to estimate effective radiative forcing from models is the CMIP which is detailed in section \ref{sec:1.CMIP6}
+Effective radiative forcing is a good predictor of climate because the ratios of surface temperature change to forcing resulting from perturbations of different forcings are comparable \citep{myhreAnthropogenicNaturalRadiative2013, boucherCloudsAerosols2014}. One of the collaborative efforts to estimate effective radiative forcing from models is the CMIP, detailed in section \ref{ch1:sec:current-modelling-cmip6}.
 
+The effective radiative forcing due to aerosols can be divided into aerosol-radiation interaction (ERFari) and aerosol-cloud interaction \citep[ERFaci;][]{ghanTechnicalNoteEstimating2013}. The aerosol direct effect, also referred to as aerosol-radiation interaction, can be observed locally, e.g. from above the aerosol layer, such as from an aeroplane or a mountaintop, as the layer scatters light, causing the appearance of a white or light-coloured hazy layer \citep{twomeyInfluencePollutionShortwave1977}. Such processes reduce solar radiation that reaches the Earth’s surface, with the optical depth depending on the total column aerosol mass burden, the particle's size distribution and optical properties. Not all types of aerosols scatter radiation with the same efficiency, and some aerosols, such as soot, can also absorb solar radiation, as manifested in their naturally darker colour. 
 
-\subsection{Quantifying role of aerosol on climate}
-
-The effective radiative forcing due to aerosols can be divided into aerosol-radiation interaction (ERFari) and aerosol-cloud interaction \citep[ERFaci;][]{ghanTechnicalNoteEstimating2013}. The aerosol direct effect, also referred to as aerosol-radiation interaction, can be observed locally e.g. from above the aerosol layer, such as from an aeroplane or from a mountaintop, as the layer scatters light, causing the appearance of a white or light-coloured hazy layer \citep{twomeyInfluencePollutionShortwave1977}. Such processes reduce solar radiation that reaches the Earth’s surface, with the optical depth depending on the total column mass burden of aerosol particles, but also on the size distribution and the particles’ optical properties. Not all types of aerosols scatter radiation with the same efficiency and some aerosols, such as soot, can also absorb solar radiation, as manifested in their naturally darker colour. 
-
-The aerosol indirect effect, or aerosol-cloud interaction, encompasses the effects of aerosols on clouds and can be further divided into the effects of aerosol on cloud amount, cloud lifetime and cloud albedo.  Aerosols serve as cloud condensation nuclei and promote cloud formation \citep{albrechtAerosolsCloudMicrophysics1989}.  Changes in aerosol concentration are connected to variations in the cloud droplet size and number distribution. When there are more aerosols, cloud droplets are smaller. These clouds have less water content and appear brighter white, and, as a consequence, reflect more sunlight back to space, increasing planetary albedo. Examples of observed aerosol effects on the Earth’s atmosphere include volcanic aerosols \citep[e.g.][]{malavelleStrongConstraintsAerosol2017}, such as the 1991 eruption of Mount Pinatubo \citep{hansenPotentialClimateImpact1992}, and aerosols from ship tracks \citep{twohyEvaluationAerosolIndirect2005}. 
+The aerosol indirect effect, or aerosol-cloud interaction, encompasses the impact of aerosols on clouds and can be further divided into the effects of aerosol on cloud amount, cloud lifetime and cloud albedo.  Aerosols serve as cloud condensation nuclei and promote cloud formation \citep{albrechtAerosolsCloudMicrophysics1989}.  Changes in aerosol concentration are connected to variations in the cloud droplet size and number distribution. When there are more aerosols, cloud droplets are smaller. These clouds have less water content and appear brighter white, and, as a consequence, reflect more sunlight back to space, increasing planetary albedo. Examples of observed aerosol effects on the Earth’s atmosphere include volcanic aerosols \citep[e.g.][]{malavelleStrongConstraintsAerosol2017}, such as the 1991 eruption of Mount Pinatubo \citep{hansenPotentialClimateImpact1992}, and aerosols from ship tracks \citep{twohyEvaluationAerosolIndirect2005}. 
 
 
 
-\subsection{Climate change and trends in short-lived climate forcers emissions and concentration}
+\section{Global tropospheric sulfur and sulfate aerosol budget}
 
-% General idea of gases and pollutants that increase since PI
-Anthropogenic emissions have generally increased since 1850 due to the accelerated industrialisation of the economy. This has led to an x-fold increase in methane emissions, an x-fold increase in CO2 both of which are greenhouse gases. 
-
-% Specific increases of CH4 
-Specific increases of CH4 
-
-% idea of atmospheric oxidative power
-idea of atmospheric oxidative power
-
-% Changes to oxidants such as O3 and OH
-Changes to oxidants such as O3 and OH
-
-\subsection{Global tropospheric sulfur and sulfate aerosol budget}
-
-Sulfate aerosol is emitted from both anthropogenic and natural sources, and is also produced from chemical production in the atmosphere by gas or aqueous phase reactions of sulfur dioxide (\ce{SO2}), dimethyl sulfide (DMS) and carbonyl sulfide \citep[OCS;][]{belvisoAssessmentMarineBiota2000}. After \ce{SO2} is released into the troposphere, it oxidises and forms sulfate aerosol.  The tropospheric sulfur cycle is closed by wet and dry deposition.
+Sulfate aerosol is emitted from both anthropogenic and natural sources. It is also produced from chemical production in the atmosphere by gas or aqueous phase reactions of sulfur dioxide (\ce{SO2}), dimethyl sulfide (DMS) and carbonyl sulfide \citep[OCS;][]{belvisoAssessmentMarineBiota2000}. After \ce{SO2} is released into the troposphere, it oxidises and forms sulfate aerosol.  The tropospheric sulfur cycle is closed by wet and dry deposition.
 
 \begin{figure}
     \centering
@@ -109,22 +114,20 @@ Sulfate aerosol is emitted from both anthropogenic and natural sources, and is a
     \label{fig:sulfur-budget}
 \end{figure}
 
-\subsubsection{\ce{SO2} primary emission}
+\subsection{\textsoo{} primary emission}
 
-Primary emission of \ce{SO2} from natural sources comes from volcanic activities. Both continuously degassing volcanoes and sporadic eruptive volcanoes contribute to the Earth's tropospheric \ce{SO2} amount. Together, volcanic sources account for 2.251  Tg (S) yr$^{-1}$ between 1978--2014 \citep{carnMultidecadalSatelliteMeasurements2016}. Anthropogenic activities contribute to global sulfur emission mainly from industries and fossil fuel consumption for energy with the global emission of 50--70 Tg (S) yr$^{-1}$ \citep{forsterEarthEnergyBudget2021}. Secondary emission sources of \ce{SO2}  such as dimethyl sulfide (DMS) are discussed in section \ref{ch1:other-so2}.
+Primary emission of \ce{SO2} from natural sources comes from volcanic activities. Continuously degassing and sporadic eruptive volcanoes contribute to the Earth's tropospheric \ce{SO2} amount. Together, volcanic sources account for 2.251  Tg (S) yr$^{-1}$ between 1978 and 2014 \citep{carnMultidecadalSatelliteMeasurements2016}. Anthropogenic activities contribute to global sulfur emission mainly from industries and fossil fuel consumption for energy with the global emission of 50--70 Tg (S) yr$^{-1}$ \citep{forsterEarthEnergyBudget2021}. Secondary emission sources of \ce{SO2}  such as dimethyl sulfide (DMS) are discussed in section \ref{ch1:other-so2}.
 
-Anthropogenic \ce{SO2} emissions are necessarily heterogeneous and localised \citep{manktelowRegionalGlobalTrends2007}. After large historical emissions centred in the US and Europe, decreasing trends were observed from North America and Europe, countered by increasing emissions from Eastern and Southern Asia, between 1980 and 2015 \citep{szopaShortlivedClimateForcers2021, aasGlobalRegionalTrends2019}. 
-
-
+Anthropogenic \ce{SO2} emissions are necessarily heterogeneous and localised \citep{manktelowRegionalGlobalTrends2007}. After significant historical emissions centred in the US and Europe, decreasing trends were observed from North America and Europe, countered by increasing emissions from Eastern and Southern Asia, between 1980 and 2015 \citep{szopaShortlivedClimateForcers2021, aasGlobalRegionalTrends2019}. 
 
 
-\subsubsection{\ce{SO2} oxidation}
+\subsection{\textsoo{} oxidation}
 \label{ch1:so2-oxidation}
 
-In the atmosphere, \ce{SO2} can react with other gases, dissolve in a liquid droplet to undergo an aqueous reaction, or directly react with aerosol surfaces. In this section, we examine the formation routes of sulfate aerosol that are relevant to this study. 
+In the atmosphere, \ce{SO2} can react with other gases, dissolve in a liquid droplet to undergo an aqueous reaction, or directly react with aerosol surfaces. This section examines the formation routes of sulfate aerosol relevant to this study. 
 
 
-The hydroxyl radical (OH) is one of the most widespread and reactive radicals in the atmosphere. In unpolluted air, OH is produced by the photolysis of ozone (\ce{O3}) and the subsequent reaction of oxygen atoms with water vapour \citep{wayneChemistryAtmospheresIntroduction2006}. In polluted air, the photolysis of nitrous acid (HONO) and hydrogen peroxide (\ce{H2O2}) yields OH directly. 
+The hydroxyl radical (OH) is one of the atmosphere's most widespread and reactive radicals. In unpolluted air, OH is produced by the photolysis of ozone (\ce{O3}) and the subsequent reaction of oxygen atoms with water vapour \citep{wayneChemistryAtmospheresIntroduction2006}. In polluted air, the photolysis of nitrous acid (HONO) and hydrogen peroxide (\ce{H2O2}) yields OH directly. 
 
 OH radical reacts rapidly with \ce{SO2} in the atmosphere through the reaction
 \begin{align}
@@ -132,7 +135,7 @@ OH radical reacts rapidly with \ce{SO2} in the atmosphere through the reaction
 \label{ch1:eq:so2-oh}
 \end{align}
 
-Where M represents a molecule (usually \ce{N2}) that absorbs excess kinetic energy from the reactants. The free radical \ce{HOSO2} reacts in a chain of reactions with \ce{O2} and \ce{H2O} to form sulfuric acid, \ce{H2SO4}.
+M represents a molecule (usually \ce{N2}) that absorbs excess kinetic energy from the reactants. The free radical \ce{HOSO2} reacts in a chain of reactions with \ce{O2} and \ce{H2O} to form sulfuric acid, \ce{H2SO4}.
 \begin{align}
 \ce{HOSO2 + O2 &-> HO2 + SO3}\\
 \ce{SO3 + H2O &-> H2SO4}
@@ -194,90 +197,132 @@ $k_3 = 2.4 \times 10^4 \mathrm{M}^{-1}s^{-1}$,
 $k_4 = 3.7 \times 10^5 \mathrm{M}^{-1}s^{-1}$, and
 $k_5 = 1.5 \times 10^9 \mathrm{M}^{-1}s^{-1}$. 
 
-It has been observed that \ce{O3} reaction with sulfur-containing compounds is less effective when the aerosol pH is less than 4, while sulfur oxidation by hydrogen peroxide, which requires a proton (\ce{H+}) to form sulfate ions \citep{seinfeldAtmosphericChemistryPhysics2016}, is more efficient at lower pH. Thus the relative rate of these two reactions is regulated by the droplet pH. 
+It has been observed that \ce{O3} reaction with sulfur-containing compounds is less effective when the aerosol pH is less than 4. In contrast, sulfur oxidation by hydrogen peroxide, which requires a proton (\ce{H+}) to form sulfate ions \citep{seinfeldAtmosphericChemistryPhysics2016}, is more efficient at lower pH. Thus, the droplet pH regulates the relative rate of these two reactions. 
 
 Aqueous phase reaction increases aerosol mass concentration via condensation onto existing aerosol particles, resulting in increased mass concentration but constant number concentration \citep{seinfeldAtmosphericChemistryPhysics2016}.
 
 
-\subsubsection{\ce{SO2} deposition}
+\subsection{\textsoo{} deposition}
 
-Removal of atmospheric trace gases can be described into two broad categories depending on the involvement of precipitation. Dry deposition refers to the process that removes gas or aerosol from the atmosphere onto the surfaces of the Earth, including oceans \citep{dewysAssessmentFateSulfur1978}.  Wet deposition describes the removal of gases and particles by incorporation into precipitation \citep{wayneChemistryAtmospheresIntroduction2006}. 
+The removal of atmospheric trace gases can be divided into two broad categories depending on the involvement of precipitation. Dry deposition refers to the process that removes gas or aerosol from the atmosphere onto the surfaces of the Earth, including oceans \citep{dewysAssessmentFateSulfur1978}.  Wet deposition describes the removal of gases and particles by incorporation into precipitation \citep{wayneChemistryAtmospheresIntroduction2006}. 
 
-To undergo dry deposition, the trace gas must come into contact with the Earth's surface, such as tree foliage or the ground, via e.g. turbulent mixing, and be removed by some specific chemical or biological interaction.  Deposition velocities range from a few millimetres per second to a few centimetres \citep[e.g.][]{smithAirborneTransportSulphur1975, hardacreEvaluationSO2SO422021, mulcahyUKESM1DevelopmentEvaluation2022}.
+To undergo dry deposition, the trace gas must come into contact with the Earth's surface, such as tree foliage or the ground, via, e.g. turbulent mixing, and be removed by some specific chemical or biological interaction.  Deposition velocities range from a few millimetres per second to a few centimetres \citep[e.g.][]{smithAirborneTransportSulphur1975, hardacreEvaluationSO2SO422021, mulcahyUKESM11DevelopmentEvaluation2023}.
 
-Wet deposition is significant for gaseous compounds that are water-soluble. Less soluble compounds may react and form a more soluble compound before being wet-scavenged \citep{wayneChemistryAtmospheresIntroduction2006}. For example, \ce{SO2} gets oxidised, forming \ce{H2SO4}, before wet scavenging removes it from the atmosphere \citep{seinfeldAtmosphericChemistryPhysics2016}.
+Wet deposition is significant for gaseous compounds that are water-soluble. Less soluble compounds may react and form a more soluble compound before wet-scavenging \citep{wayneChemistryAtmospheresIntroduction2006}. For example, \ce{SO2} gets oxidised, forming \ce{H2SO4}, before wet scavenging removes it from the atmosphere \citep{seinfeldAtmosphericChemistryPhysics2016}.
 
 
-\subsubsection{Other sources of sulfur and secondary emission of \ce{SO2}}
+\subsection{Other sources of sulfur and secondary emission of \ce{SO2}}
 \label{ch1:other-so2}
 
-Biogenic processes emit sulfur in the reduced forms of \ce{H2S}, \ce{(CH3)2S} (dimethyl sulfide; DMS), and \ce{(CH3)2S2} (dimethyl disulfide). DMS is an important sulfur-bearing gas that is produced by algae in the oceans and is believed to be the source background of \ce{SO2} in the atmosphere. Sulfur-containing gases are oxidized into \ce{SO2} and are considered the secondary emission sources for \ce{SO2}, contributing 15--35 Tg(S) yr$^{-1}$ of \ce{SO2} globally \citep{lanaUpdatedClimatologySurface2011}.
+Biogenic processes emit sulfur in the reduced forms of \ce{H2S}, \ce{(CH3)2S} (dimethyl sulfide; DMS), and \ce{(CH3)2S2} (dimethyl disulfide). DMS is an important sulfur-bearing gas produced by algae in the oceans and is believed to be the source background of \ce{SO2} in the atmosphere. Sulfur-containing gases are oxidized into \ce{SO2} and are considered the secondary emission sources for \ce{SO2}, contributing 15--35 Tg(S) yr$^{-1}$ of \ce{SO2} globally \citep{lanaUpdatedClimatologySurface2011}.
 
 
-\subsection{Global tropospheric sulfate aerosol chemical modelling} %Section - 1.2
+
+\section{Global tropospheric sulfate aerosol chemical modelling} %Section - 1.2
 \label{section1.2}
 
-\subsubsection{First generation of global sulfur modelling}
+\subsection{First generation of global sulfur modelling}
 
-The first sulfur aerosol global circulation model to consider a full annual cycle of sulfur was developed by \citet{langnerGlobalThreedimensionalModel1991}, representing three-dimensional atmospheric transport together with a sulfur cycle to study the global distribution of sulfur compounds. Preceding works were either two-dimensional model (latitude-height) models \citep{rodheGlobalDistributionSulfur1980} or only emphasised the aerosol formation aspect and oversimplified the sulfur reaction pathways \citep{ericksoniiiGlobalOceantoatmosphereDimethyl1990}. The work of \citet{langnerGlobalThreedimensionalModel1991} included three sulfur species: DMS emitted from natural sources as gases, \ce{SO2} as gases from both natural and anthropogenic sources, and \ce{SO4^2-} as aerosols where most of the emission occurs as DMS or \ce{SO2}. In the model, these species react via gas- and aqueous-phase reactions with prescribed reaction rates that are either constant across the globe or are zonally averaged, with \ce{SO4} as the end product of the oxidation process. For the aqueous-phase reactions which require the presence of clouds, prescribed climatological cloud cover was used. Removal processes were implemented for both wet and dry deposition using parameterized rates that depended on all spatial and temporal dimensions. The three sulfate species are transported within the model with resolution of $10^\circ$ latitude by $10^\circ$ longitude and 10 vertical layers. These were integrated with a one-hour timestep with 5 months spin-up and 12 months of model output for analysis. Despite the many limitations, \citet{langnerGlobalThreedimensionalModel1991} achieved a broad consistency with available observed concentrations, especially in polluted regions such as Northern America and Europe.
+The first sulfur aerosol global circulation model to consider a complete annual cycle of sulfur was developed by \citet{langnerGlobalThreedimensionalModel1991}, representing three-dimensional atmospheric transport together with a sulfur cycle to study the global distribution of sulfur compounds. Preceding works were either two-dimensional model (latitude-height) models \citep{rodheGlobalDistributionSulfur1980} or only emphasised the aerosol formation aspect and oversimplified the sulfur reaction pathways \citep{ericksoniiiGlobalOceantoatmosphereDimethyl1990}. The work of \citet{langnerGlobalThreedimensionalModel1991} included three sulfur species: DMS emitted from natural sources as gases, \ce{SO2} as gases from both natural and anthropogenic sources, and \ce{SO4^2-} as aerosols where most of the emission occurs as DMS or \ce{SO2}. In the model, these species react via gas- and aqueous-phase reactions with prescribed reaction rates that are either constant across the globe or are zonally averaged, with \ce{SO4} as the end product of the oxidation process. For the aqueous-phase reactions, which require the presence of clouds, prescribed climatological cloud cover was used. Removal processes were implemented for wet and dry deposition using parameterized rates that depended on all spatial and temporal dimensions. The three sulfate species are transported within the model with a resolution of 10\textdegree latitude by 10\textdegree longitude and 10 vertical layers. These were integrated with a one-hour timestep with 5 months of spin-up and 12 months of model output for analysis. Despite the many limitations, \citet{langnerGlobalThreedimensionalModel1991} achieved a broad consistency with available observed concentrations, especially in polluted regions such as Northern America and Europe.
 
-In the following decade, the complexity of atmospheric sulfur modelling increased, and sulfate species reactions were embedded into general circulation models and into other chemical transport models \citep[e.g.][]{kochTroposphericSulfurSimulation1999}.  In 2001, the first aerosol model intercomparison, the COmparison of large-scale atmospheric Sulfate Aerosol Model or COSAM, was performed  \citep{barrieComparisonLargescaleAtmospheric2001, lohmannVerticalDistributionsSulfur2001, roelofsAnalysisRegionalBudgets2001}. This comparison project’s main goal was to “compare the ability of the current model to simulate spatial/temporal distribution of aerosol” \citep{barrieComparisonLargescaleAtmospheric2001}. Hence, the aerosol effects on the Earth’s climate were not their main focus.  Out of 11 models that participated in COSAM, 3 of which were general circulation models (GCMs) which solved their own meteorological fields such as wind and cloud. COSAM found that models predicted surface level seasonal mean mixing ratio of \ce{SO4} better than \ce{SO2} which suggested that vertical mixing in emission source regions was a major reason for prediction uncertainty \citep{lohmannVerticalDistributionsSulfur2001}. 
+In the following decade, the complexity of atmospheric sulfur modelling increased, and sulfate species reactions were embedded into general circulation models and other chemical transport models \citep[e.g.][]{kochTroposphericSulfurSimulation1999}.  In 2001, the first aerosol model intercomparison, the COmparison of large-scale atmospheric Sulfate Aerosol Model or COSAM, was performed  \citep{barrieComparisonLargescaleAtmospheric2001, lohmannVerticalDistributionsSulfur2001, roelofsAnalysisRegionalBudgets2001}. This comparison project’s main goal was to “compare the ability of the current model to simulate spatial/temporal distribution of aerosol” \citep{barrieComparisonLargescaleAtmospheric2001}. Hence, the aerosol effects on the Earth’s climate were not their main focus.  Out of 11 models that participated in COSAM, 3 were general circulation models (GCMs) that solved their own meteorological fields, such as wind and cloud. COSAM found that models predicted surface level seasonal mean mixing ratio of \ce{SO4} better than \ce{SO2}, which suggested that vertical mixing in emission source regions was a significant reason for prediction uncertainty \citep{lohmannVerticalDistributionsSulfur2001}. 
 
-One of these three GCMs was the Goddard Institute for Space Studies general circulation model (GISS GCM) which included the following prognostic species: \ce{SO2}, sulfate, hydrogen peroxide (\ce{H2O2}), DMS and methanesulfonic (MSA), and was capable of estimating sulfate aerosol direct effect on the Earth’s radiative budget \citep{kochTroposphericSulfurSimulation1999}. A study using this model highlighted a relatively minor role for online chemistry in estimating radiative forcing: running the model using climatological sea surface temperatures and comparing two experiments, one with online chemistry and one with offline chemistry, showed little difference between offline and online models in the global average but did show that as great as 10\% differences in polluted regions resulted in the offline and online chemistry experiments.
+One of these three GCMs was the Goddard Institute for Space Studies general circulation model (GISS GCM), which included the following prognostic species: \ce{SO2}, sulfate, hydrogen peroxide (\ce{H2O2}), DMS and methanesulfonic (MSA), and was capable of estimating sulfate aerosol direct effect on the Earth’s radiative budget \citep{kochTroposphericSulfurSimulation1999}. A study using this model highlighted a relatively minor role for online chemistry in estimating radiative forcing: running the model using climatological sea surface temperatures and comparing two experiments, one with online chemistry and one with offline chemistry, showed little difference between offline and online models in the global average but did show that as great as 10\% differences in polluted regions resulted in the offline and online chemistry experiments.
 
-By 2005, most models used one of two approaches to simulate the sulfur cycle: using offline meteorology and online chemistry inside a chemical transport model (CTM), or using prescribed aerosol for calculating radiative forcing in a GCM.  In their 2005 review, \citet{lohmannGlobalIndirectAerosol2005} stated that global model estimates of aerosol direct and indirect effects were highly uncertain. 
+By 2005, most models used one of two approaches to simulate the sulfur cycle: offline meteorology and online chemistry inside a chemical transport model (CTM) or prescribed aerosol for calculating radiative forcing in a GCM.  In their 2005 review, \citet{lohmannGlobalIndirectAerosol2005} stated that global model estimates of aerosol direct and indirect effects were highly uncertain. 
 
 By 2010, \citet{tsaiSulfurCycleSulfate2010} had incorporated tropospheric sulfur chemistry into a global climate model, aiming to estimate the radiative forcing of direct and indirect aerosol effects. The result is interactive tropospheric sulfur chemistry within a global climate model. Other research centres followed this development.
 
-\subsubsection{State of the science in sulfur modelling}
 
-Earth system models have become more complex and include more components since the first global transport-chemistry model developed by \citet{langnerGlobalThreedimensionalModel1991}. Climate models now routinely feature online, that is prognosed, aerosol formation processes and modelling capability has increased steadily in complexity to the current state of the art in the 6th Phase of the Coupled Model Intercomparison Project \citep[CMIP6, details in next section;][]{eyringOverviewCoupledModel2016}. 
-
-Many of the CMIP6 models feature coupled atmosphere-ocean free-running climate models which feature online chemistry and sulfate aerosol, albeit with varying levels of sophistication in the treatment of aerosol-cloud-radiation interactions \citep[e.g.][]{zhangBCCESM1ModelDatasets2021, vannoijeECEarth3AerChemGlobalClimate2021, mulcahyDescriptionEvaluationAerosol2020}.  Aerosol microphysics is typically treated using single-moment schemes, in which a single tendency of mass or aerosol number alone is calculated, or two-moment schemes, in which both the mass and the total number concentration of aerosols are predicted.  Accurate treatment of short time- or spatial-scale aerosol-cloud interactions, such as freezing, coagulation and coalescence are usually parameterised. Cloud formation and latent heat release affect atmospheric circulation.  Aerosols also connect to hydrology via their effect on precipitation \citep{allenInterhemisphericAerosolRadiative2015}. In essence, aerosols couple into atmospheric circulation through their effect on surface radiation, modifying sea-surface temperatures (and hence evaporation \citep{boothAerosolsImplicatedPrime2012}) and potentially ocean circulation \citep{cowanResponseLargescaleOcean2013}. These strong effects, together with the uncertainty in their various responses, lead to varying levels of confidence in our ability to understand how aerosol radiative forcing has changed and will evolve in the future.
+\subsection{State of the science in sulfur modelling}
+\label{ch1:sec:current-modelling-cmip6}
 
 
-With respect to aerosol processes, there have been some improvements to sulfate aerosol modelling in IPCC AR6 since the previous assessment \citep{forsterEarthEnergyBudget2021}. Some models include pH dependency of \ce{SO2} oxidation \citep[such as the NorESM1;][]{kirkevagProductiontaggedAerosolModule2018} and explicit descriptions of ammonium and nitrate aerosol components as studied by the Aerosol Comparisons between Observations and Models (AeroCom) phase III \citep{bianInvestigationGlobalParticulate2017}.
+Earth system models have grown more complex since the first global transport-chemistry model developed by \citet{langnerGlobalThreedimensionalModel1991}, increasing interactions and coupling over time to represent the Earth as accurately as possible. The increased model complexity has broadened the scope of questions to which ESMs can be applied \citep{flatoEarthSystemModels2011}. With more processes and interactions between systems, the models are expected to be able to simulate the Earth system more accurately. 
+
+For example, climate models now routinely feature online -- that is prognosed -- aerosol formation processes and modelling capability has increased steadily in complexity to the current state of the art in the 6th Phase of the Coupled Model Intercomparison Project \citep[CMIP6, details in next section;][]{eyringOverviewCoupledModel2016}. 
 
 
-Despite the known effect of aerosol on atmospheric chemistry \citep[e.g.][]{oconnorApportionmentPreIndustrial2022}, sulfate aerosol modelling is still an active area of study with many open questions. For example, as the large number of chemical species slows down the progress of the study due to computational resource limits, there remain gaps in treatment of aerosol composition (e.g. nitrate, secondary organic aerosols) in many regions \citep[e.g.][]{mulcahyDescriptionEvaluationAerosol2020}, and parameterizations of sub-grid processes add to the uncertainty of model prediction so that much of the feedback between aerosol and other components of the Earth system is not yet fully explored \citep{seikiImprovementGlobalCloudSystemResolving2015}. This project aims to address some of these questions such as the effects of atmospheric composition and oxidant changes on aerosol radiative forcing.
+Many of the CMIP6 models feature coupled atmosphere-ocean free-running climate models which feature online chemistry and sulfate aerosol, albeit with varying levels of sophistication in the treatment of aerosol-cloud-radiation interactions \citep[e.g.][]{zhangBCCESM1ModelDatasets2021, vannoijeECEarth3AerChemGlobalClimate2021, mulcahyDescriptionEvaluationAerosol2020}.  Aerosol microphysics is typically treated using single-moment schemes, in which a single tendency of mass or aerosol number alone is calculated, or two-moment schemes, in which both the mass and the total number concentration of aerosols are predicted.  Accurate treatment of short-time- or spatial-scale aerosol-cloud interactions, such as freezing, coagulation and coalescence, are usually parameterised. Cloud formation and latent heat release affect atmospheric circulation.  Aerosols also connect to hydrology via their effect on precipitation \citep{allenInterhemisphericAerosolRadiative2015}. In essence, aerosols couple into atmospheric circulation through their impact on surface radiation, modifying sea-surface temperatures (and hence evaporation \citep{boothAerosolsImplicatedPrime2012}) and potentially ocean circulation \citep{cowanResponseLargescaleOcean2013}. These strong effects, together with the uncertainty in their various responses, lead to varying confidence levels in our ability to understand how aerosol radiative forcing has changed and will evolve.
 
-\section{Research Problem}
+
+For aerosol processes, there have been some improvements to sulfate aerosol modelling in IPCC AR6 since the previous assessment \citep{forsterEarthEnergyBudget2021}. Some models include pH dependency of \ce{SO2} oxidation \citep[such as the NorESM1;][]{kirkevagProductiontaggedAerosolModule2018} and explicit descriptions of ammonium and nitrate aerosol components as studied by the Aerosol Comparisons between Observations and Models (AeroCom) phase III \citep{bianInvestigationGlobalParticulate2017}.
+
+
+Despite the known effect of aerosol on atmospheric chemistry \citep[e.g.][]{oconnorApportionmentPreIndustrial2022}, sulfate aerosol modelling is still an active area of study with many open questions. For example, as a large number of chemical species slows down the progress of the study due to computational resource limits, there remain gaps in treatment of aerosol composition (e.g. nitrate, secondary organic aerosols) in many regions \citep[e.g.][]{mulcahyDescriptionEvaluationAerosol2020}, and parameterizations of sub-grid processes add to the uncertainty of model prediction so that much of the feedback between aerosol and other components of the Earth system is not yet fully explored \citep{seikiImprovementGlobalCloudSystemResolving2015}. This project aims to address some of these questions, such as the effects of atmospheric composition and oxidant changes on aerosol radiative forcing.
+
+
+
+\section{Research Problems}
+
+\subsection{Interplay between short-lived climate forcers and aerosol formation}
+\change[inline]{Write about SLCF emissions and changes to OH, O3 and H2O2}
+
+Climate change and trends in short-lived climate forcer emissions and concentration
+
+% Specific increases of CH4 
+Specific increases of CH4 
+
+% idea of atmospheric oxidative power
+idea of atmospheric oxidative power
+
+% Changes to oxidants such as O3 and OH
+Changes to oxidants such as O3 and OH
+
+
+\subsection{Importance of oxidant levels on ERF}
+% Discuss Karset
+Discuss Karset
+
+
+% Discuss O'connor paper on methane effects on CRE
+Discuss O'connor paper on methane effects on CRE
+
 
 \subsection{Surface temperature anomalous cooling in UKESM1 CMIP6 experiments}
 
-
-In CMIP5, two separate configurations of the Met Office Unified Model were used. HadGEM3, being a coupled model with simplified, offline chemistry, participated in the historical simulations for CMIP5 climate projections,  while the UKCA chemistry-climate model, run in atmosphere-only mode but with online chemistry, took part in the Atmospheric Chemistry and Climate Model Intercomparison Project (ACCMIP) focusing on chemistry-climate interactions. The UKESM1 developed for CMIP6, brought online chemistry into a coupled atmosphere-ocean model, having been developed from the Met Office Unified Model and UKCA with the addition of Earth system modules.
+In CMIP5, two separate Met Office Unified Model configurations were used. HadGEM3, being a coupled model with simplified, offline chemistry, participated in the historical simulations for CMIP5 climate projections. In contrast, the UKCA chemistry-climate model, run in atmosphere-only mode but with online chemistry, took part in the Atmospheric Chemistry and Climate Model Intercomparison Project (ACCMIP), focusing on chemistry-climate interactions. UKESM1 developed for CMIP6 brought online chemistry into a coupled atmosphere-ocean model, designed from the Met Office Unified Model and UKCA by adding Earth system modules.
 
 \begin{figure}
     \centering
     \includegraphics[width=6in]{Chapter1/figs/pothole_figure_Zhang2021.png}
-    \caption[Anomalous cooling in the Earth system models participating in CMIP6]{(a) Historical near-global mean (60$^\circ$ S to 60$^\circ$ N) surface air temperature anomalies relative to 1850--1900 surface air temperature (TAS) from HadCRUT5 (thick black line), the ensemble mean for each ESM (solid colour lines), and multi-model mean (MMM, dashed black line). Panel (b) is the same as panel (a) but for the lower-complexity models. Units: $^\circ$C. Value in bracket is the number of available members for each model. \citep{zhangRoleAnthropogenicAerosols2021}.}
+    \caption[Anomalous cooling in the Earth system models participating in CMIP6]{(a) Historical near-global mean (60$^\circ$ S to 60$^\circ$ N) surface air temperature anomalies relative to 1850--1900 surface air temperature (TAS) from HadCRUT5 (thick black line), the ensemble mean for each ESM (solid colour lines), and multi-model mean (MMM, dashed black line). Panel (b) is the same as panel (a) but for the lower-complexity models. Units: \textdegree C. Value in bracket is the number of available members for each model. \citep{zhangRoleAnthropogenicAerosols2021}.}
     \label{fig:zhang-pothole}
 \end{figure}
 
-The study by \citet{zhangRoleAnthropogenicAerosols2021} indicated that 6 models, table \ref{tab:zhang-model}, that participated in the CMIP6 tended to underestimate surface air temperature (TAS) during the period 1960--1990, known as the “pothole” period. This period coincided with elevated industrial activities over the Northern Hemisphere, especially in the Western European region. \ce{SO2} emitted by these industrial activities was one of the precursors of atmospheric sulfate aerosols which cooled down the atmosphere via aerosol direct and indirect effects. By comparing historical simulations with and without anthropogenic aerosol precursor emission, the study showed that anthropogenic emission led to more aerosol generation, with aerosol-cloud interaction accounting for up to 87\% of the aerosol forcing sensitivity. In addition, the study also indicated that the UKESM1 has the largest aerosol forcing sensitivity. 
+The study by \citet{zhangRoleAnthropogenicAerosols2021} indicated that six models, table \ref{tab:zhang-model}, that participated in the CMIP6 tended to underestimate surface air temperature (TAS) during the period 1960--1990, known as the “pothole” period. This period coincided with elevated industrial activities over the Northern Hemisphere, especially in the Western European region. \ce{SO2} emitted by these industrial activities was one of the precursors of atmospheric sulfate aerosols, which cooled down the atmosphere via aerosol direct and indirect effects. By comparing historical simulations with and without anthropogenic aerosol precursor emission, the study showed that anthropogenic emission led to more aerosol generation, with aerosol-cloud interaction accounting for up to 87\% of the aerosol forcing sensitivity. In addition, the study also indicated that UKESM1 has the largest aerosol forcing sensitivity. 
 
-One aspect of the historical experiment that remains of interest is the impact of emission migration equatorward and eastward in the last century and its implication and current state of understanding. Industrialization has led to rapid increases in greenhouse gas emissions along with aerosol precursors in many locations. The Industrial Revolution started in the Western European region with anthropogenic emissions peaking in 1980 followed by other regions such as the Indian subcontinent and Eastern Asia. It could be said that anthropogenic emissions have shifted eastwards and equatorward in the last 50 years.  \citet{zhangTroposphericOzoneChange2016} studied the effect of ozone precursor emission redistribution over the period 1980 to 2010 using climate models. The study separated the change in the magnitude of ozone precursor emission from the shift in emission location and concluded that the global tropospheric ozone change in this period is mainly due to the shift in the emission region rather than the magnitude of emission. Hence, the atmosphere is sensitive to emission location. Whether aerosol precursor emission migration which concurred with ozone precursor migration would lead to the same effect as ozone is not yet determined, and will be the focus of my work in the next six months.
+
+\subsection{Lack of understanding of seasonal aerosol dynamics}
+\change[inline]{Below is copied from Chapter 4. Rewrite.}
+Research on \ce{SO2} primarily focused on its health impacts either as \ce{SO2} gas or contribution to particulate matter \citep[e.g. ][]{meagherSeasonalVariationAtmospheric1983,eatoughConversionSO2Sulfate1994, feichterSimulationTroposphericSulfur1996} \change{ Add this reference \href{https://www.sciencedirect.com/science/article/pii/0004698181902596}{Link}}. As such, earlier work on \ce{SO2} oxidation has not made the connection between \ce{SO2} oxidation, cloud, and climate until after the work of \citet{twomeyInfluencePollutionShortwave1977} and \citet{albrechtAerosolsCloudMicrophysics1989} on aerosol-cloud feedback has gained traction \change{ add ref on charlson 1991, 1992: \href{https://www.tandfonline.com/doi/abs/10.3402/tellusa.v43i4.11944}{Link 1991 on global mean ARI} \href{https://www.science.org/doi/abs/10.1126/science.255.5043.423}{Link 1992 on global mean ACI}}.  
+
+One aspect of \ce{SO2} oxidation that has been observed but not well-studied is the seasonal cycle of the oxidation. Earlier research shows that \ce{SO2} conversion rate to sulfate by \ce{SO2 + OH} increases by a factor of 1 between summer and winter \citet{meagherSeasonalVariationAtmospheric1983}. A model study also indicates that the oxidant levels and respective oxidation exhibit a seasonal cycle \citet{feichterSimulationTroposphericSulfur1996}. 
+
+
+\subsection{Impact of emission migration in shaping \textsoo{} oxidation}
+
+One aspect of the historical experiment that remains of interest is the impact of emission migration equatorward and eastward in the last century and its implication and current understanding. Industrialization has rapidly increased greenhouse gas emissions and aerosol precursors in many locations. The Industrial Revolution started in Europe, with anthropogenic emissions peaking in 1980, followed by other regions such as the Indian subcontinent and Eastern Asia. It could be said that anthropogenic emissions have shifted eastwards and equatorward in the last 50 years. \citet{zhangTroposphericOzoneChange2016} studied the effect of ozone precursor emission redistribution over the period 1980 to 2010 using climate models. The study separated the change in the magnitude of ozone precursor emission from the shift in emission location. It concluded that the global tropospheric ozone change in this period is mainly due to the shift in the emission region rather than the magnitude of emission. Hence, the atmosphere is sensitive to emission location. Whether aerosol precursor emission migration concurred with ozone precursor migration would lead to the same effect as ozone has not yet been determined.
 
 
 
 \section{Aims and research questions}
 
-Along with investigating the role of atmospheric chemistry in climate models, the overarching question of this work is to investigate the anomalous cooling period in the ESM by investigation of the \ce{SO2} oxidation pathways. Although \citet{zhangRoleAnthropogenicAerosols2021} identified the positive correlation between anomalous cooling and sulfate loading, the chemical and physical processes that lead to the overestimation of aerosol loading during the cooling period have not been identified. Identifying the processes and/or interactions within the climate model will improve future prediction capacity and reduce the uncertainty in aerosol forcing calculation. In addition, this project seeks to understand the effects of cloud droplets' pH on aerosol formation and radiative forcing and how pH affects model performance. 
+Along with investigating the role of atmospheric chemistry in climate models, the overarching question of this work is to investigate the anomalous cooling period in the ESM by investigating the \ce{SO2} oxidation pathways. Although \citet{zhangRoleAnthropogenicAerosols2021} identified the positive correlation between anomalous cooling and sulfate loading, the chemical and physical processes that lead to the overestimation of aerosol loading during the cooling period have not been identified. Identifying the processes and interactions within the climate model will improve future prediction capacity and reduce the uncertainty in aerosol forcing calculation. In addition, this project seeks to understand the effects of cloud droplets' pH on aerosol formation and radiative forcing and how pH affects model performance. 
 
-In detail, this research aims to answer the following questions with respective aims and objectives.
+This research aims to answer the following questions in detail, with respective aims and objectives.
 
 \begin{enumerate}
     \item  How do \ce{SO2} budget and oxidation tendencies respond to changes in oxidant levels over the historical period?
     \begin{itemize}
-        \item To understand the sulfate formation processes, the first part of this project focuses on sulfate chemistry in UKESM1 over the historical period. This work aims to utilise the data available from the CMIP6 and its endorsed project such as the AerChemMIP to study sulfate aerosols formation.  
+        \item To understand the sulfate formation processes, the first part of this project focuses on sulfate chemistry in UKESM1 over the historical period. This work aims to utilise the data from the CMIP6 and its endorsed project, such as the AerChemMIP, to study sulfate aerosol formation.  
         \item Sulfate production involves \ce{SO2} reaction with other precursors such as \ce{O3}, OH, and \ce{H2O2}. This part explores the global trends of sulfur budget and oxidation tendencies. It takes AerChemMIP transient experiments that perturb the oxidant levels such as \textit{histSST}, \textit{histSST-piO3}, etc., and investigates model sensitivity to oxidant changes. 
     \end{itemize}
 
     \item How does sulfate aerosol size distribution respond to oxidant perturbation?
 
     \begin{itemize}
-        \item Oxidant level changes will have a knock-on effect on aerosol formation since \ce{SO2} oxidation forms aerosol and this process depends on the oxidant availability. The transient historical prescribed SST simulations from the AerChemMIP are useful for studying the attribution of climatic changes to precursor emissions. This section aims to quantify aerosol size distribution changes caused by oxidant level changes by comparing transient historical prescribed SST simulations experiments with the controlled \textit{histSST} experiment. 
+        \item Oxidant level changes will have a knock-on effect on aerosol formation since \ce{SO2} oxidation forms aerosol, and this process depends on the oxidant availability. The transient historical prescribed SST simulations from the AerChemMIP are useful for studying the attribution of climatic changes to precursor emissions. This section aims to quantify aerosol size distribution changes caused by oxidant level changes by comparing transient historical prescribed SST simulations experiments with the controlled \textit{histSST} experiment. 
     \end{itemize}
 
     \item At the process level, how do oxidant changes affect aerosol radiative forcing due to changes in oxidants?
@@ -289,24 +334,26 @@ In detail, this research aims to answer the following questions with respective 
     \item How do changes in seasonal levels of oxidants affect aerosol formation and subsequent radiative effects?
 
     \begin{itemize}
-        \item There are observed seasonal trends in oxidants from measurement and modelling studies.
-        \item The UKESM1 can simulate both aerosol mass and number independently, making it one of the most robust climate models regarding aerosol simulation. GLOMAP-mode which is the aerosol module used in UKESM1 simulates both soluble and insoluble aerosols in four modes: nucleation, Aitken, accumulation and coarse and different aerosol types: sulfate, sea salt, organic, dust and black carbon. It also simulates interaction between modes such as coagulation and condensation as well as wet and dry deposition. This makes the UKESM1 a useful tool for studying the aerosol properties in different seasons.
+        \item There are observed seasonal oxidant trends from measurement and modelling studies.
+        \item UKESM1 can simulate both aerosol mass and number independently, making it one of the most robust climate models regarding aerosol simulation. GLOMAP-mode, which is the aerosol module used in UKESM1, simulates both soluble and insoluble aerosols in four modes: nucleation, Aitken, accumulation and coarse and different aerosol types: sulfate, sea salt, organic, dust and black carbon. It also simulates interaction between modes such as coagulation and condensation and wet and dry deposition. This makes UKESM1 a useful tool for studying the aerosol properties in different seasons.
     \end{itemize}
 
     \item The emission of aerosol precursors shifted eastwards and equatorward away from the European region since 1980. What is the effect of emission location change on oxidation tendencies?
 
     \begin{itemize}
-        \item This part of the project explores regional sulfate formation and regional differences due to chemical background. In the historical period, anthropogenic emissions, including \ce{SO2}, increased with industrial activities in the European region and peaked in 1980 before decreasing. Then, emissions increased in Eastern Asia and reached their peak in the 200s. Since \ce{SO2} emission location dictates the background of available precursors and the atmospheric chemistry condition near the equator differs from that of the extratropical region, it is possible that different regions have different baseline oxidation tendencies and also behave differently to oxidant level changes. This section further inspects the details in regions, aiming to find out the characteristics of oxidation in different time periods and regions.  
+        \item This part of the project explores regional sulfate formation and regional differences due to chemical background. In the historical period, anthropogenic emissions, including \ce{SO2}, increased with industrial activities in the European region and peaked in 1980 before decreasing. Then, emissions increased in Eastern Asia and peaked in the 200s. Since \ce{SO2} emission location dictates the background of available precursors and the atmospheric chemistry condition near the equator differs from that of the extratropical region, it is possible that different regions have different baseline oxidation tendencies and also behave differently to oxidant level changes. This section further inspects the details in regions, aiming to discover oxidation characteristics in different time periods and regions.  
     \end{itemize}
     
 \end{enumerate}
 
 \section{Significance and contributions}
 
-\subsection{Contribution to aerosol-climate modelling}
+Contribution to aerosol-climate modelling
+\change[inline]{Add Contribution to aerosol-climate modelling}
 
 \section{Thesis structure}
 
 % Outline of chapters and their objectives
 
-Firstly, this thesis describes the work in preparation for publication which quantifies the role of SLCFs including methane and ozone precursors in modifying radiative balance through changes in aerosol formation (Chapter \ref{ch3:title}). Secondly, I describe how the seasonal cycle modifies \ce{SO2} oxidation and changes the radiative effects. Finally, oxidation is explored in the view of regional changes and its contribution to regional cooling. 
+Firstly, this thesis describes the work in preparation for publication, which quantifies the role of SLCFs, including methane and ozone precursors, in modifying radiative balance through changes in aerosol formation (Chapter \ref{ch3:title}). Secondly, I describe how the seasonal cycle modifies \ce{SO2} oxidation and changes the radiative effects. Finally, oxidation is explored in the view of regional changes and its contribution to regional cooling. 
+
