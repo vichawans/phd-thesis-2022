@@ -95,6 +95,9 @@
 \usepackage[T1]{fontenc}
 \usepackage{newunicodechar}
 
+% Setup for units
+\sisetup{uncertainty-mode = separate}
+\sisetup{separate-uncertainty-units = single} % This is mathematically incorrect, but I think this reads fine. See documentation for more settings https://texdoc.org/serve/siunitx/
 
 % user-defined commands
 \newcommand{\histsst}{\textit{histSST}}
@@ -105,9 +108,11 @@
 \newcommand{\hist}{\textit{historical}}
 \newcommand{\histpiaer}{\textit{hist-piAer}}
 \newcommand{\Reff}{R\textsubscript{eff}}
+\newcommand{\ERFcsclean}{ERF\textsubscript{cs,clean}}
 
 \newcommand{\tabitem}{~~\llap{\textbullet}~~}
 \newcommand{\textsoo}{\texorpdfstring{\ce{SO2}}{SO2}}
+\newcommand{\textsoooo}{\texorpdfstring{\ce{SO4}}{SO4}}
 
 % Todonotes customisation
 \usepackage{xargs} % Use more than one optional parameter in a new commands
@@ -117,18 +122,18 @@
 % for notes not to be visible, change 
 % \usepackage{todonotes} -> \usepackage[disable]{todonotes}
 
-\usepackage[colorinlistoftodos,prependcaption,disable]{todonotes}
+\usepackage[colorinlistoftodos,prependcaption]{todonotes}
 \newcommandx{\unsure}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
 \newcommandx{\change}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
-\newcommandx{\info}[2][1=]{\todo[linecolor=OliveGreen,backgroundcolor=OliveGreen!25,bordercolor=OliveGreen,#1]{#2}}
+\newcommandx{\info}[2][1=]{\todo[disable, linecolor=OliveGreen,backgroundcolor=OliveGreen!25,bordercolor=OliveGreen,#1]{#2}}
 \newcommandx{\improvement}[2][1=]{\todo[linecolor=Plum,backgroundcolor=Plum!25,bordercolor=Plum,#1]{#2}}
-\newcommandx{\thiswillnotshow}[2][1=]{\todo[#1]{#2}}
+\newcommandx{\thiswillnotshow}[2][1=]{\todo[disable,#1]{#2}}
 
 \reversemarginpar
-% \paperwidth=\dimexpr \paperwidth + 6cm\relax % For some reasons it has to be > 2* \evensidemargin
-% \oddsidemargin=\dimexpr \oddsidemargin + 3cm\relax % For some reasons this works instead of 2cm
-% \evensidemargin=\dimexpr \evensidemargin + 2cm\relax
-% \marginparwidth=\dimexpr \marginparwidth + 2cm\relax
+\paperwidth=\dimexpr \paperwidth + 6cm\relax % For some reasons it has to be > 2* \evensidemargin
+\oddsidemargin=\dimexpr \oddsidemargin + 3cm\relax % For some reasons this works instead of 2cm
+\evensidemargin=\dimexpr \evensidemargin + 2cm\relax
+\marginparwidth=\dimexpr \marginparwidth + 2cm\relax
 
 % Declare special characters
 \DeclareUnicodeCharacter{2212}{-}
@@ -188,10 +193,11 @@
 % ******************************** Main Matter *********************************
 \mainmatter
 
+
 % \include{Chapter1/chapter1}
 % \include{Chapter2/chapter2}
-\include{Chapter3/chapter3} % SLCF+aerosol formation
-% \include{Chapter4/chapter4} % Seasonal changes + pothole cooling
+% \include{Chapter3/chapter3} % SLCF+aerosol formation
+\include{Chapter4/chapter4} % Seasonal changes + pothole cooling
 % \include{Chapter5/chapter5} % Regional aerosol formation efficiency
 % \include{Chapter6/chapter6} % Conclusion and future work
 %\include{Chapter7/chapter7}
@@ -221,7 +227,7 @@
 % specified in the preamble.tex file in the custombib section.
 % Comment out the lines related to natbib above and uncomment the following line.
 
-%\printbibliography[heading=bibintoc, title={References}]
+\printbibliography[heading=bibintoc, title={References}]
 
 
 \end{spacing}

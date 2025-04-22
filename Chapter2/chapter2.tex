@@ -71,31 +71,6 @@ Table \ref{tab:2.exps} shows the simulation configurations with all historical t
 
 
 
-\section{Aerosol effective radiative forcing calculation}
-\label{sec:ch2:erf}
-
-Aerosol affects the climate directly via scattering and indirectly by altering the thermal structure of the atmosphere and hence cloud thermodynamics (aerosol direct effect or aerosol-radiation interaction), and via microphysical effects such as increasing the number of condensation nuclei and and decreasing the effective radii of cloud droplets, referred to as the aerosol cloud albedo effect and the cloud lifetime effect \citep{twomeyInfluencePollutionShortwave1977}.
-%(Twomey, 1974; Albrecht, 1989; Pincus and Baker, 1994). 
-
-The ERF is calculated from the difference in the net top-of-atmosphere radiative flux ($\Delta F$) between the perturbed simulation (e.g. \textit{piAer}) and \textit{histSST} simulation as  $\text{ERF} = \Delta F$
-
-To understand the contributions of various processes to the overall effective radiative forcing (ERF) we can separate the ERF that is due to direct radiative forcing from that due to the effects of clouds and aerosol instantaneous radiative effects. Following the method of \citet{ghanTechnicalNoteEstimating2013}, the contribution of the aerosol-radiation interactions to the ERF can be distinguished from that of the aerosol–cloud interactions by using a "double-call" method.
-
-% describe double call method
-In the "double-call" method, radiative flux diagnostics are calculated first for all-sky and then again ignoring the scattering and absorption of solar radiation by the aerosol. For each call, the model calculates the shortwave radiative flux at the top of the atmosphere (TOA) and a diagnostic TOA flux with with cloud neglected. The first call yields all-sky TOA shortwave flux, $F$, and clear sky, i.e. "cs", flux, $F_{\text{cs}}$. The second call, the aerosol-free or clean-sky, yields clean sky TOA shortwave flux, $F_{\text{clean}}$, and clean-and-clear TOA shortwave flux, $F_{\text{cs,clean}}$.
-
-This way, direct radiative forcing from aerosol could be calculated by subtracting clean sky flux from all-sky flux, $\Delta (F - F_{\text{clean}})$. Cloud radiative forcing is then calculated from the cloudy part of the sky by subtracting clean and clear sky flux with clean sky flux, $\Delta (F_{\text{clean}} - F_{\text{cs,clean}})$. Finally, the surface albedo and greenhouse gas effects are calculated from the clean and clear sky flux, $\Delta F_{\text{cs,clean}}$. This could be summarised as follows.
-\begin{equation}[] 
-\label{eq:erf}
-\begin{split}
-\text{ERF} &=  \Delta(F-F_{\text{clean}}) + \Delta F_{\text{cs,clean}} + \Delta ({F_{\text{clean}}-F_{\text{cs,clean}}}) \\
- & = \text{AerosolIRF} + \text{ERF}_{\text{cs,clean}}+\Delta \text{CRE}'
-\end{split}
-\end{equation}
-
-We also note that the definition of transient ERF used here differs from the usual definition of effective radiative forcing (ERF) where the SSTs are specified to be fixed repeating climatology \citep{eyringOverviewCoupledModel2016}. In contrast, The SSTs in the experiments are from prescribed historical SSTs, with all emissions set as historical. This work defines transient ERF as a global average of the difference in the top-of-atmosphere radiative flux. The average is calculated as a moving decadal mean.   
-
-
 
 
 \section{UKESM1 model}  
@@ -107,6 +82,21 @@ UKESM1 is a coupled atmosphere-ocean climate model, based on the Global Coupled 
 
 %The atmospheric chemistry, aerosol and cloud schemes modelled by the UKCA model that is relevant to the sulfur cycle are briefly described here. 
 The emission of DMS from natural sources is taken from the MEDUSA component which calculates the emission using the emission scheme from \citet{lissAirSeaGasExchange1986}. Anthropogenic \ce{SO2} emissions follow \citet{hoeslyHistorical175020142018}, and tropospheric volcanic emissions from continuously degassing volcanoes are prescribed over the historical period \citep{andresTimeaveragedInventorySubaerial1998, dentenerEmissionsPrimaryAerosol2006}.  Note that all anthropogenic \ce{SO2} is emitted at the lowest layer of the model. Oxidation of \ce{SO2} and DMS is treated online via the UKCA module, which includes photolysis, dry and wet deposition and in-cloud chemistry \citep{mulcahyDescriptionEvaluationAerosol2020}. Wet deposition is parameterised using \citet{giannakopoulosValidationIntercomparisonWet1999} scheme, and the dry deposition scheme takes into account the land surface types from the JULES model using a resistance type model from \citet{weselyParameterizationSurfaceResistances1989}. In the UKCA StratTrop, DMS is not deposited at all, while \ce{SO2} and \ce{SO4} are both wet and dry deposited \citep{archibaldDescriptionEvaluationUKCA2020}. Aerosol is treated with a two-moment modal global aerosol microphysics scheme \citep[GLOMAP-mode;][]{mannDescriptionEvaluationGLOMAPmode2010}. 
+
+% begin exerp from UKCA website https://www.ukca.ac.uk/wiki/index.php/GLOMAP-mode
+
+% The UKCA aerosol scheme is a simplified version of the GLobal Model of Aerosol Processes (GLOMAP) (e.g. Spracklen et al., 2005). GLOMAP is designed to simulate the aerosol particle size distribution and represents the key microphysical processes (nucleation, coagulation, condensation and cloud processing) which control it.
+
+% The simpler GLOMAP version used in UKCA, called GLOMAP-mode, simulates these processes within a two-moment modal aerosol dynamics approach (number and mass in each mode), which requires much fewer transported tracers (typically 15 to 30) than the original bin-resolved GLOMAP scheme which requires 100-200 transported tracers for a multi-component simulation (e.g. Spracklen et al, 2008).
+
+% The dynamically evolving particle size distribution in UKCA leads to improved simulation of the number concentration of the sub-set of particles that interact with the clouds (cloud condensation nuclei, or CCN).
+
+% The incorporation of the UKCA aerosol in HadGEM3 will represent a step-change in the capability of the UK climate model to simulated aerosol indirect effects on climate.
+
+% A recent publication in Geoscientific Model Development (Mann et al, 2010) describes GLOMAP-mode in detail and presents evaluation of the simulated aerosol properties against a wide range of observations. 
+
+% end
+
 
 GLOMAP-mode, a two-moment aerosol scheme, simulates aerosol mass and size independently \citep{mannDescriptionEvaluationGLOMAPmode2010}. This is in contrast to a one-moment scheme, which assumes a linear relationship between aerosol mass and size, and only aerosol mass is predicted. The aerosol-cloud interactions are susceptible to the treatment of precipitation \citep{gettelmanAdvancedTwoMomentBulk2015}. Compared to single-moment cloud microphysics schemes, double-moment schemes have reduced a range of biases in high-resolution climate models \citep{seikiImprovementGlobalCloudSystemResolving2015}. 
 
@@ -125,6 +115,9 @@ GLOMAP-mode, a two-moment aerosol scheme, simulates aerosol mass and size indepe
      \bottomrule
    \end{tabular}
 \end{table}
+
+The HadGEM radiation scheme accounts for aerosol direct and semi-direct effects by computing aerosol optical properties averaged across 6 shortwave and 9 longwave bands \citep{bellouinImpactModalAerosol2013}.
+
 
 
 \subsection{Sulfate production rates in UKESM1}
@@ -237,6 +230,20 @@ In contrast, aqueous-phase production by \ce{O3} and \ce{H2O2} increases by two 
 \subsection{Model validation}
 \change[inline]{Add model validation}
 
+The sulfur budget has been reported by the UKESM1 evaluation using AMIP simulation covering 1981--1998 \citep{mulcahyDescriptionEvaluationAerosol2020}. The AMIP \ce{SO2} and \ce{SO4} were 0.53 and \qty{0.67}{Tg(S)}, respectively, the same as our values. For dry deposition, the AMIP values for \ce{SO2} and \ce{SO4} are 28.98 and 7.10 Tg(S) yr$^{-1}$, comparable to that of ours of 28.90 and 7.13 Tg(S) yr$^{-1}$. As for the wet deposition, the AMIP reported 13.38 and 36.0 Tg(S) yr$^{-1}$ for \ce{SO2} and \ce{SO4}, while our results are 13.47 and 36.40 Tg(S) yr$^{-1}$. Finally, the AMIP lifetime of \ce{SO2} and \ce{SO4} are 2.08 and 5.56 days, respectively, which are comparable to our work (2.23 and 5.56 days).  
+
+
+The SLCFs simulated by UKESM1 have been evaluated against both ground-based measurements and field campaigns \citep[e.g.][]{griffithsTroposphericOzoneCMIP62021, russoSeasonalInterannualDecadal2023}. The UKESM1 CMIP6 simulations captured the \ce{SO4} trends compared to ground-based measurements \citep{mulcahyDescriptionEvaluationAerosol2020}. The model reproduces the observed decreasing trend in \ce{SO4} concentration across Europe. Although there is a consistent underprediction of the absolute values for all years, the model prediction sits within the observed variability. The UKESM1 overestimated \ce{SO2} concentration compared to the Atmospheric Tomography (ATom) field campaign which measures atmospheric constituents and chemical processes in marine remote areas across both hemispheres \citep{ranjithkumarConstraintsGlobalAerosol2021}. The UKESM1 model overestimated \ce{SO2} concentration by approximately a factor 2–6 in the boundary layer regions of the tropics and mid-latitudes and the tropical upper troposphere. The biases in the upper-tropospheric mid and high latitudes are negligible. This may imply that the \ce{SO2} removal process is underestimated or that the natural secondary emissions from DMS are overestimated.  
+
+
+An in-depth evaluation has shown that the UKESM1 underestimated the dry deposition process, and there has been an update released for the model to amend for this error \citep{hardacreEvaluationSO2SO422021}. Model evaluation against ground-based measurements shows that while the UKESM1 captures historical trends for decreasing the concentration of \ce{SO2} and \ce{SO4}, it overpredicts \ce{SO2} by a factor of 3 and underpredicted surface \ce{SO4} by 25-35\% \citep{hardacreEvaluationSO2SO422021}. This has led to an update to the UKESM1 configuration called the UKESM1.1 \citep{mulcahyUKESM11DevelopmentEvaluation2023}. When a more realistic dry deposition scheme is implemented, it reduces the model’s overprediction of surface \ce{SO2} concentrations and total column \ce{SO2} but also decreases the overall \ce{SO4} loading, exacerbating the low bias.  Our study used the original UKESM1; thus, the overestimation of \ce{SO2} is expected.
+
+% Compare the AOD evaluation in Mulcahy and also discuss the updated AOD from Hardarcre and UKESM1.1
+AOD simulated by the UKESM1 against both ground-based measurements and satellite retrievals and found good agreement in trends but underestimated the absolute values \citep{mulcahyDescriptionEvaluationAerosol2020}. The global annual mean AOD trends from AMIP simulation between 1980-2015 show an overall increase in AOD which is consistent with the Collection 6 MODIS merged dataset (MODIS C6) satellite retrieval. The absolute AOD is underestimated by 0.03 but is still within the lower end of the range of the satellite AOD. The spatial distribution shows that the UIKESM1 has higher AOD in the winter seasons of each hemisphere. This is due to the high sea-salt emission which peaks in the winter months. The high bias in sea-salt AOD does not affect our analysis which subtracts AOD from \sstpiaer{}, \sstpio{} and \sstpich{} with \histsst{}.
+
+% discuss the updated effect of dry deposition from UKESM1 with UKESM1.1
+The UKESM1 was updated with a new dry deposition scheme and a revised dust tuning which affects the predicted aerosol AOD \citep{mulcahyUKESM11DevelopmentEvaluation2023}. The new version of UKESM1, the UKESM1.1, predicted a lower aerosol AOD, with a difference of at least 0.02 starting from 1980 due to a higher \ce{SO2} dry deposition which removes \ce{SO2} from the atmosphere, leaving less to oxidise to form \ce{SO4}. This new dry deposition scheme further increases the low bias in \ce{SO4} concentration compared to measurements. The annual mean AOD from UKESM1 and UKESM1.1 over 2003-2014 shows that the global mean AOD predicted by the models are 0.137 and 0.146, respectively, which are lower than most satellite measurements from MODIS (0.162), ORAC (0.170) and Swansea (0.135). These products, their uncertainties and details of the evaluation procedure are described in detail in \citet{mulcahyDescriptionEvaluationAerosol2020}. The spatial increase in the AOD in UKESM1.1 stems from the revised dust tuning which increases the dust AOD over and downwind of major dust source regions. This update is not relevant to \ce{SO2} oxidation. However, there is a decrease in AOD in UKESM1.1 over China due to an increase in \ce{SO2} dry deposition. Our work used output from the original UKESM1 thus the AOD will have a less low bias in absolute AOD and higher overall \ce{SO4} loading.
+
 
 
 \section{Aerosol size distribution from log-normal distribution}
@@ -269,6 +276,37 @@ If the reservoir is the whole atmosphere and is in a steady state, that is, the 
 \label{eq:lifetime}
  \text{Lifetime} = \frac{\text{Burden}}{\text{Loss}}    
 \end{equation}
+
+
+\section{Aerosol effective radiative forcing calculation}
+\label{sec:ch2:erf}
+
+
+Aerosol affects the climate directly via scattering and indirectly by altering the thermal structure of the atmosphere and hence cloud thermodynamics (aerosol direct effect or aerosol-radiation interaction) and via microphysical effects such as increasing the number of condensation nuclei and decreasing the effective radii of cloud droplets, referred to as the aerosol cloud albedo effect and the cloud lifetime effect \citep{twomeyInfluencePollutionShortwave1977, albrechtAerosolsCloudMicrophysics1989,pincusEffectPrecipitationAlbedo1994}.
+
+Greenhouse gases, aerosols, and clouds could perturb the Earth's radiative balance. One way to quantify the effect of each forcings is through the decomposition of effective radiative forcing (ERF) as described in Section \ref{sec:ch2:erf}. The ERF is decomposed into the clear and clean sky part or $ERF_{cs,clean}$, the instantaneous radiative forcing of the aerosol (ie, scattering and absorption) or aerosol IRF, and the cloud radiative effect or $\Delta$CRE'. Here we show that \ce{O3} precursors affect aerosol IRF and that \ce{CH4} affects the cloud radiative effect.
+
+
+
+The ERF is calculated from the difference in the net top-of-atmosphere radiative flux ($\Delta F$) between the perturbed simulation (e.g. \textit{piAer}) and \textit{histSST} simulation as  $\text{ERF} = \Delta F$
+
+To understand the contributions of various processes to the overall effective radiative forcing (ERF) we can separate the ERF that is due to direct radiative forcing from that due to the effects of clouds and aerosol instantaneous radiative effects. Following the method of \citet{ghanTechnicalNoteEstimating2013}, the contribution of the aerosol-radiation interactions to the ERF can be distinguished from that of the aerosol–cloud interactions by using a "double-call" method.
+
+% describe double call method
+In the "double-call" method, radiative flux diagnostics are calculated first for all-sky and then again ignoring the scattering and absorption of solar radiation by the aerosol. For each call, the model calculates the shortwave radiative flux at the top of the atmosphere (TOA) and a diagnostic TOA flux with with cloud neglected. The first call yields all-sky TOA shortwave flux, $F$, and clear sky, i.e. "cs", flux, $F_{\text{cs}}$. The second call, the aerosol-free or clean-sky, yields clean sky TOA shortwave flux, $F_{\text{clean}}$, and clean-and-clear TOA shortwave flux, $F_{\text{cs,clean}}$.
+
+This way, direct radiative forcing from aerosol could be calculated by subtracting clean sky flux from all-sky flux, $\Delta (F - F_{\text{clean}})$. Cloud radiative forcing is then calculated from the cloudy part of the sky by subtracting clean and clear sky flux with clean sky flux, $\Delta (F_{\text{clean}} - F_{\text{cs,clean}})$. Finally, the surface albedo and greenhouse gas effects are calculated from the clean and clear sky flux, $\Delta F_{\text{cs,clean}}$. This could be summarised as follows.
+\begin{equation}[] 
+\label{eq:erf}
+\begin{split}
+\text{ERF} &=  \Delta(F-F_{\text{clean}}) + \Delta F_{\text{cs,clean}} + \Delta ({F_{\text{clean}}-F_{\text{cs,clean}}}) \\
+ & = \text{AerosolIRF} + \text{ERF}_{\text{cs,clean}}+\Delta \text{CRE}'
+\end{split}
+\end{equation}
+
+We also note that the definition of transient ERF used here differs from the usual definition of effective radiative forcing (ERF) where the SSTs are specified to be fixed repeating climatology \citep{eyringOverviewCoupledModel2016}. In contrast, The SSTs in the experiments are from prescribed historical SSTs, with all emissions set as historical. This work defines transient ERF as a global average of the difference in the top-of-atmosphere radiative flux. The average is calculated as a moving decadal mean.   
+
+
 
 \section{Statistical methods}
 \change[inline]{Add Student T-test - AND MAYBE LOOK FOR REPLACING WITH Mann-Whitney U test, same as in Johnny's thesis?}

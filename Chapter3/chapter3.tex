@@ -13,75 +13,174 @@
 
 \section*{Abstract}
 
-The sulfate aerosol formation simulation was developed in the 1970s as a one-dimensional model. As the atmosphere model became more sophisticated and coupled with other Earth system components, questions on the interaction of aerosol with other components have arisen.
+\change[inline]{The gist of the abstract is... \newline
+
+This chapter analyses the secondary impact of SLCFs, including \ce{O3} precursors and \ce{CH4}, on aerosol-radiation and aerosol-cloud interaction. \newline
+
+This chapter looks at the impact of both \ce{O3} precursors and \ce{CH4} in how they modify the oxidants relevant to sulfate formation in UKESM1. \newline
+
+The reasons are that there is evidence of oxidants affecting radiative effects by modifying aerosol formation in another ESM. \newline
+
+This chapter aims to identify oxidants' impact on radiative effects and the process by which oxidants contribute to changes in radiative effects.
+}
+
+\change[inline]{Change 'we' to this chapter or omit the subject of the sentence}
+
+
+The sulfate aerosol formation simulation was developed in the 1970s as a one-dimensional model. As the atmosphere model became more sophisticated and coupled with other Earth system components, questions on aerosol interaction with other components have arisen.
 
 Aerosol-cloud interactions are a source of uncertainty in climate predictions. Earth systems models (ESM) increasingly feature online, i.e. fully-coupled, treatments of the interactions between chemistry, aerosols, and clouds.  
 
-Here, we present an analysis of experiments performed with an ESM featuring a detailed two-moment, modal aerosol scheme and detailed atmospheric chemistry scheme, which aim to quantify the role of emissions changes and atmospheric oxidation on radiative forcing.
+Here, we present an analysis of experiments performed with an ESM featuring a detailed two-moment, modal aerosol scheme and detailed atmospheric chemistry scheme. These schemes aim to quantify the role of emissions changes and atmospheric oxidation on radiative forcing.
 
-We use the histSST-piX simulations performed using UKESM1.0 as part of the  Aerosol Chemistry Model Intercomparison (AerChemMIP) project from the Coupled-Model Intercomparison Project 6 (CMIP6) experiments. These experiments are designed to understand the role of changes in emissions of short-term climate forcers on the radiative balance of the atmosphere through transient, atmosphere-only experiments across the period 1850-2014, 
+We use the histSST-piX simulations performed using UKESM1 as part of the Aerosol Chemistry Model Intercomparison (AerChemMIP) project from the Coupled-Model Intercomparison Project 6 (CMIP6) experiments. These experiments are designed to understand the role of changes in emissions of short-term climate forcers on the radiative balance of the atmosphere through transient, atmosphere-only experiments across the period 1850-2014, 
 
-Here we present an analysis of the impact of changes in aerosol precursors, e.g.\ce{SO2}, ozone precursors (e.g. \ce{NO_x} and \ce{CO}, and methane on aerosol formation, and radiative forcing. We quantify the effect of changes in atmospheric oxidant levels, e.g. \ce{O3} and \ce{OH}, on aerosol formation, and the impact on cloud properties and radiative forcing.
+Here, we present an analysis of the impact of changes in aerosol precursors, e.g.\ce{SO2}, ozone precursors (e.g. \ce{NO_x} and \ce{CO}, and methane on aerosol formation and radiative forcing. We quantify the effect of changes in atmospheric oxidant levels, e.g. \ce{O3} and \ce{OH}, on aerosol formation and the impact on cloud properties and radiative forcing.
 
-We find strong sensitivity to the levels of tropospheric OH, mediated by methane and ozone precursors, and impacts on aerosol nucleation rate, and aerosol size distribution. The effect of historical increases in methane, for example, leads to suppressed OH (28\% lower) and lower nucleation rate, larger aerosols and lower cloud droplet number concentration (CDNC). As a result,\ce{CH4} contributes to a positive cloud radiative effect of 0.21$\pm$0.15 W m$^{-2}$ between 2000-2014, further adding to the warming impact of methane on the climate.
+We find strong sensitivity to the levels of tropospheric OH, mediated by methane and ozone precursors, and impacts on aerosol nucleation rate and aerosol size distribution. The effect of historical increases in methane, for example, leads to suppressed OH (28\% lower) and lower nucleation rate, larger aerosols and lower cloud droplet number concentration (CDNC). As a result,\ce{CH4} contributes to a positive cloud radiative effect of 0.21$\pm$0.15 W m$^{-2}$ between 2000-2014, further adding to the warming impact of methane on the climate.
 
-The effect of historical ozone precursor emissions changes is to enhance OH, with increased aerosol optical depth (10\%). Ultimately, ozone precursors increase the aerosol instantaneous radiative forcing by up to 0.08$\pm$0.05 W m$^{-2}$ between 2000-2014, which is 44\% of aerosol direct effect due to aerosol precursors, further cooling the climate.
+The effect of historical ozone precursor emissions changes is to enhance OH, with increased aerosol optical depth (10\%). Ultimately, ozone precursors increase the aerosol instantaneous radiative forcing by up to 0.08$\pm$0.05 W m$^{-2}$ between 2000 and 2014, which is 44\% of aerosol direct effect due to aerosol precursors, further cooling the climate.
 
-Increase in \ce{CH4} concentration and \ce{O3} precursors nearly completely offset each other in terms of OH, but the response of aerosols, clouds and forcing is more complex, with competing effects that only partially counteract each other--highlighting the importance of changes in oxidants in the atmosphere.
+Increase in \ce{CH4} concentration and \ce{O3} precursors nearly completely offset each other in terms of OH. Still, the response of aerosols, clouds, and forcing is more complex, with competing effects that only partially counteract each other--highlighting the importance of changes in oxidants in the atmosphere.
 
 
 \section{Introduction}
 
-In this chapter, the effects of oxidant changes on sulfate aerosol formation, aerosol and cloud properties and aerosol effective radiative forcing are investigated using a set of simulations performed by UKESM1. AerChemMIP proposed a series of single forcing experiments where one component of the oxidant-aerosol-climate nexus was held constant at 1850 levels and all other drivers of the system were allowed to vary in a transient simulation from 1850-2014 \citep{collinsAerChemMIPQuantifyingEffects2017}. The AerChemMIP transient historical prescribed sea-surface temperature experiments (\textit{histSST}s) runs allow for quantification of the oxidants' effects on the evolution of aerosol ERF, a subject that has so far received little attention in the literature. 
 
-The AerChemMIP experimental design complements the Climate Model Intercomparison Project Phase 6 (CMIP6) historical simulations by allowing the role of individual drivers of the changes in the coupled aerosol-oxidant-climate system to respond. By fixing \ce{CH4} to 1850 levels (\sstpich{}) the experiment allows for an increase in OH over time as increases in \ce{CH4} have led to a depletion in OH \citep{zhaoRoleTrendVariability2020}. Similarly, fixing \ce{SO2} and other aerosol emissions (black carbons and organic carbons) to 1850 levels (\sstpiaer{}) enables us to quantify the response of the system to the changes in aerosols. The use of transient experiments enables us to examine the response of the system to the spatio-temporal evolution of anthropogenic emission sources, which have driven the changes since the pre-industrial era. 
+This chapter investigates the effects of oxidant changes on sulfate aerosol formation, aerosol and cloud properties and aerosol effective radiative forcing using a set of simulations performed by UKESM1. AerChemMIP proposed a series of single forcing experiments where one component of the oxidant-aerosol-climate nexus was held constant at 1850 levels, and all other drivers of the system were allowed to vary in a transient simulation from 1850-2014 \citep{collinsAerChemMIPQuantifyingEffects2017}. The AerChemMIP transient historical prescribed sea-surface temperature experiments (\histsst{}s) runs allow for quantification of the oxidants' effects on the evolution of aerosol ERF, a subject that has so far received little attention in the literature. 
+
+The AerChemMIP experimental design complements the Climate Model Intercomparison Project Phase 6 (CMIP6) historical simulations by allowing the role of individual drivers of the changes in the coupled aerosol-oxidant-climate system to respond. By fixing \ce{CH4} to 1850 levels (\sstpich{}) the experiment allows for an increase in OH over time as increases in \ce{CH4} have led to a depletion in OH \citep{zhaoRoleTrendVariability2020}. Similarly, fixing \ce{SO2} and other aerosol emissions (black carbons and organic carbons) to 1850 levels (\sstpiaer{}) enables us to quantify the response of the system to the changes in aerosols. Transient experiments allow us to examine the system's response to the spatio-temporal evolution of anthropogenic emission sources, which have driven changes since the pre-industrial era. 
+
+\subsection{CMIP5/ IPCC AR6 on the importance of SLCF}
+\change[inline]{talk about uncertainty and why AerChemMIP did the things it did}
+
+\subsection{Results from AerChemMIP that is related to this chapter}
+\change[inline]{Mainly piclim-X simulations and how this is reported and how UKESM1 performs compared to other models}
 
 
-We investigate the time evolution of these processes due to changes in oxidants. In particular, we investigate the shift in aerosol size distribution over time due to oxidants which have a knock-on effect on aerosol effective radiative forcing. We examine the aerosol and cloud properties, and ultimately, aerosol ERF. 
+\subsection{SLCF and their influence on atmospheric oxidants}
 
+\change[inline]{talk about the chemical coupling between ch4, o3,oh h2o2.}
+
+\subsubsection{Impacts of \ce{CH4} on OH, O3, and H2O2}
+
+\subsubsection{Impacts of o3 precurosors on OH, O3, and H2O2}
+
+
+\subsection{The impact of oxidants on cloud-radiative effect}
+
+
+% Discuss Karset
+The impact of oxidants on ERF questions the consistency of ERF calculation, especially from aerosols that form \textit{in-situ}, such as sulfate and secondary organic aerosols. \citep{karsetStrongImpactsAerosol2018} indicated ambiguity in the oxidant fields used in CMIP6 simulations, especially for determining ERF using the 'double call' method, also referred to as the fixed sea-surface temperature method, recommended in \citet{ghanMinimalRepresentationAerosols2012} and \citet{forsterRecommendationsDiagnosingEffective2016}. This method requires two simulations: a controlled run and a perturbed run with sea-surface temperature taken from the controlled run. ERF is determined from the difference between the total outgoing solar radiation flux between the two simulations. In CMIP6, the two simulations are \textit{piClim-control}, which uses all emissions and forcers from the year 1850, and \textit{piClim-X}, a perturbed run which uses sea-surface temperature from \textit{piClim-control} and one or more forcers, \textit{X}, set to emission or concentration of the year 2014. While an increasing number of CMIP6 ESMs featured online chemistry, making the choice of oxidant relevant, there was no consensus on what oxidant field to use in either the \textit{piClim-control} or the perturbed simulation \citep{karsetStrongImpactsAerosol2018}. 
+
+To address this question, \citet{karsetStrongImpactsAerosol2018} utilised CAM5.3-Oslo \citep{kirkevagProductiontaggedAerosolModule2018} to simulate an experiment with three simulations to quantify the impact of oxidants on ERF estimation. There were two control runs: \textit{PIAER\_PIOXI}, which used pre-industrial aerosol precursor emissions with pre-industrial oxidants, and \textit{PIAER\_PDOXI}, which also used pre-industrial aerosol precursors but with present-day oxidants. For the perturbed run, \textit{PDAER\_PDOXI}, both aerosol precursors and oxidants were from near-present. Table \ref{tab:ch3:histSST-karset-compare} summarises the simulations used in work by \citet{karsetStrongImpactsAerosol2018} and relevant simulations designed as part of AerChemMIP.
+
+\begin{table}
+   \caption[Emission for fixed-SST experiments compared with simulations in work by \citet{karsetStrongImpactsAerosol2018}]{A summary of emission configuration used in AerChemMIP transient fixed-SST experiments compared with simulations in work by \citet{karsetStrongImpactsAerosol2018} and AerChemMIP time-slice simulations. Note that in \citet{karsetStrongImpactsAerosol2018} the oxidants includes OH, \ce{O3}, \ce{NO3}, and \ce{HO2}. All oxidants are climatological offline averages from the decade listed in the table. Aerosol precursors in \citet{karsetStrongImpactsAerosol2018} included DMS, \ce{SO2}, isoprene and monoterpene, while AerChemMIP includes \ce{SO2}, OC precursors, and BCs. Simulation is abbreviated to sim. in this table. }
+   \label{tab:ch3:histSST-karset-compare}
+   \centering
+   \begin{tabular}{l p{27mm} p{18mm} l}
+     \toprule
+     \multicolumn{4}{l}{AerChemMIP transient fixed-SST simulations}\\
+     \midrule
+     Simulation & Aerosol precursors & \ce{O3} precursors & Remarks \\
+     \midrule
+     \histsst{}      & Hist & Hist & Historical sim.\\
+     \sstpiaer{}     & 1850 & Hist & Targets aerosol precursors\\
+     \sstpio{}       & Hist & 1850 & Targets \ce{O3} \\
+     \sstpintcf{}    & 1850 & 1850 & Targets aerosols and \ce{O3}\\
+
+     \midrule
+     \multicolumn{4}{l}{AerChemMIP time-slice simulations for diagnosing ERF} \\
+     \midrule 
+     Simulation & Aerosol precursors & \ce{O3} precursors & Remarks \\
+     \midrule
+     \textit{piClim-NTCF} & 2014 & 2014 & Perturbed sim. with PD oxidants \\
+     \textit{piClim-aer} & 2014 & 1850 & Perturbed sim. with PI oxidants \\
+     \textit{piClim-SO2} & 2014 (\ce{SO2}), & 1850 & Perturbed sim. with PI oxidants \\
+     & 1850 (non-\ce{SO2}) \\
+     \textit{piClim-O3} & 1850 & 2014 & Control sim. with PD oxidants \\
+     \textit{piClim-control} & 1850 & 1850 & Control sim. with PI oxidants \\
+     
+     \midrule
+     \multicolumn{4}{l}{\citet{karsetStrongImpactsAerosol2018}}\\
+     \midrule
+     Simulation & Aerosol precursors & Oxidants* & Remarks \\
+     \midrule
+     \textit{PDAER\_PDOXI} & 2000 & 2000 & Perturbed sim. with PD oxidants \\
+     \textit{PIAER\_PDOXI} & 1855 & 2000 & Control sim. with PD oxidants \\
+     \textit{PIAER\_PIOXI} & 1855 & 1855 & Control sim. with PI oxidants \\
+     
+     \bottomrule     
+   \end{tabular}
+\end{table}
+
+
+\citet{karsetStrongImpactsAerosol2018} found that exposing pre-industrial aerosol precursors to pre-industrial oxidants as in the control run \textit{PIAER\_PIOXI} lengthened the precursor lifetimes due to decreased oxidation, inhibiting deposition and allowing precursors to be transported away from the emission sites. CDNC increased as a consequence. Aerosol ERF was calculated by subtracting either of the two different pre-industrial aerosols runs from the perturbed run, \textit{PDAER\_PDOXI}. When using the pre-industrial aerosol precursors with present-day oxidants, \textit{PIAER\_PDOXI}, the aerosol indirect effects,$\Delta CRE'$ was reported to be \qty{-1.32}{\watt\per\metre\squared}, which was \qty{0.25}{\watt\per\metre\squared} more negative than when the same pre-industrial aerosol precursor exposed to pre-industrial oxidants, \textit{PIAER\_PIOXI}, as summarised in Table \ref{tab:ch3:summary-erf}. This is due to more outgoing short-wave radiation in \textit{PIAER\_PIOXI}, reducing the difference in ERF between the perturbed and control simulations. The radiative effects of \ce{O3} were systematically excluded as the \ce{O3} climatology for radiation was different from the \ce{O3} climatology used for chemistry. Specifically, \ce{O3} climatology was the same in \textit{PIAER\_PDOXI} and \textit{PIAER\_PDOXI} for radiation. 
+
+
+In addition, \citet{oconnorApportionmentPreIndustrial2022} quantified the effects of \ce{CH4} in modulating the cloud radiative effects through modifying oxidants. Increased \ce{CH4} from the year 1850 to 2014 led to cloud radiative effects of \qty{0.12+-0.02}{\watt\per\metre\squared} from thermodynamic adjustments and aerosol-cloud interactions. In particular, the aerosol formation shifted towards larger aerosol, which decreased cloud droplet number concentration (CDNC). These results emphasised the importance of chemistry-aerosol interactions and their effects on climate forcing. 
+
+
+\subsection{Research opportunities and motivation}
+
+Compared to its predecessor, HadGEM2-ES, UKESM1 features many enhancement capabilities that allow investigating oxidant perturbations on radiation \citep{sellarUKESM1DescriptionEvaluation2019}. The most notable enhancement is the prognostic aerosol size distribution used by radiation and cloud microphysics, which improves the representation of aerosol radiative forcing. The coupling is both ways, allowing photolytic reaction rates to react to radiative intensity. Oxidation processes for sulfate aerosol are coupled to online chemistry. GLOMAP-mode simulates sulfate aerosol using chemical production from gas and aqueous phases. It also simulates aerosol number and mass concentration independently with inter-modal interactions such as coagulation, condensation, and wet and dry deposition. 
+
+We investigate the time evolution of these processes due to changes in oxidants. In particular, we investigate the shift in aerosol size distribution over time due to oxidants, which have a knock-on effect on aerosol effective radiative forcing. We examine the aerosol and cloud properties and, ultimately, aerosol ERF. 
+
+To summarise, research questions addressed in this chapter include:
+
+\begin{enumerate}
+    \item A 
+    \item B
+\end{enumerate}
 
 This chapter is outlined as follows. The information about the simulation is presented in Section \ref{sec:ch3:aerchemmip}. The oxidant chemistry in the model is described, followed by the aerosol module description. Results and discussions are presented and discussed in Section \ref{sec:ch3:results}.
+
 
 \section{Methods and data}
 \label{sec:ch3:methods}
 
-As described in Chapter \ref{ch2:title}, this work uses the UK's Earth System Model1, UKESM1 \citep{sellarUKESM1DescriptionEvaluation2019}, data provided for the AerChemMIP \citep{collinsAerChemMIPQuantifyingEffects2017} to examine the effects of \ce{SO2} oxidation on radiative balance. 
+This work uses the UK's Earth System Model 1, UKESM1 \citep{sellarUKESM1DescriptionEvaluation2019}, data provided for the AerChemMIP \citep{collinsAerChemMIPQuantifyingEffects2017} to examine the effects of \ce{SO2} oxidation on radiative balance. 
 
 Specifically, this chapter examines the global properties of \ce{SO2} oxidation, aerosol formation, cloud properties, and radiative effects. General model description and validation are detailed in Chapter \ref{ch2:title}. Concepts, simulations, and calculations unique to this chapter are described below. 
 
 \subsection{The Aerosol Chemistry Model Intercomparison Project}
 \label{sec:ch3:aerchemmip}
 
+One of the aims of AerChemMIP was to understand the effects of SLCF emissions on radiative forcing in the historical period. Transitional historical prescribed sea-surface temperature experiments (\histsst{}s) were proposed to address this aim. These simulations used atmosphere-only configurations with prescribed monthly mean sea-surface temperatures (SSTs) and sea ice taken from one ensemble member of the \hist{} simulation from the CMIP6 Diagnostic, Evaluation and Characterization of Klima (DECK) experiments \citep{eyringOverviewCoupledModel2016}. 
 
-The simulations used in this work were designed by the Aerosol Chemistry Model Intercomparison Project \citep[AerChemMIP;][]{collinsAerChemMIPQuantifyingEffects2017}. As part of the project, transient historical prescribed sea-surface temperature experiments (\textit{histSST}s) were proposed to investigate transient ERFs. These simulations use atmosphere-only configurations with prescribed monthly mean sea-surface temperatures (SSTs) and sea ice taken from one ensemble member of the \hist{} simulation from the CMIP6 Diagnostic, Evaluation and Characterization of Klima (DECK) experiments \citep{eyringOverviewCoupledModel2016}. 
-
-
-The experiment is set up as follows. The control simulation, \textit{histSST}, uses prescribed historical SSTs with all emissions set as is historical. The perturbed simulations have some of the emissions or concentrations set to the pre-industrial, i.e. 1850, level as shown in Table \ref{tab:ch3:histSST-exp} to determine its effect on the atmosphere. For example, \textit{histSST-piAer} has its aerosol precursor emissions set to pre-industrial levels. In this thesis, we refer to \textit{histSST-piAer} as \sstpiaer{}, \textit{histSST-piO3} as \sstpio{}, and so on, for brevity. 
-
+The experiment is set up as follows. The control simulation, \histsst{}, uses prescribed historical SSTs with all emissions set as is \hist{}. The perturbed simulations have some of the emissions or concentrations set to the pre-industrial, i.e. 1850, level, as shown in Table \ref{tab:ch3:histSST-exp}, to determine its effect on the atmosphere. For example, \textit{histSST-piAer} has its aerosol precursor emissions set to pre-industrial levels. In this thesis, we refer to \textit{histSST-piAer} as \sstpiaer{}, \textit{histSST-piO3} as \sstpio{}, and so on, for brevity. 
 
 \begin{table}
    \caption[Emission for fixed-SST experiments]{A summary of emission configuration used in AerChemMIP transient fixed-SST experiments.}
    \label{tab:ch3:histSST-exp}
    \centering
-   \begin{tabular}{l l l l l l}
-     \hline\hline
-     Experiment ID & \ce{CH4}  & Aerosol precursors & \ce{O3} precursors & Remarks \\
-     \hline
-     \textit{histSST}         & Hist & Hist & Hist & Historical experiment\\
-     \textit{histSST-piAer}   & Hist & 1850 & Hist & Targets \ce{SO2}\\
-     \textit{histSST-piO3}    & Hist & Hist & 1850 & Targets \ce{O3} \\
-     \textit{histSST-piCH4}   & 1850 & Hist & Hist & Targets \ce{OH} \\
-     \textit{histSST-piNTCF}  & Hist & 1850 & 1850 & Targets \ce{SO2} and \ce{O3}\\
-     \hline\hline
+   \begin{tabular}{l l l p{18mm} p{18mm} l}
+     \toprule
+     Experiment ID & Abbrev. & \ce{CH4}  & Aerosol precursors & \ce{O3} precursors & Remarks \\
+     \midrule
+     \histsst{}         & \histsst{}   & Hist & Hist & Hist & Historical simulation\\
+     \textit{histSST-piAer}   & \sstpiaer{}  & Hist & 1850 & Hist & Targets \ce{SO2}\\
+     \textit{histSST-piO3}    & \sstpio{}    & Hist & Hist & 1850 & Targets \ce{O3} \\
+     \textit{histSST-piCH4}   & \sstpich{}   & 1850 & Hist & Hist & Targets \ce{OH} \\
+     \textit{histSST-piNTCF}  & \sstpintcf{} & Hist & 1850 & 1850 & Targets \ce{SO2} and \ce{O3}\\
+     \bottomrule
    \end{tabular}
 \end{table}
+
+This transient SST experiment has unique benefits compared to other experiments. This setup allowed the calculation of transient radiative forcing over the entire historical period. It was not limited to a specific time slice, such as the near-present, as done in the time-slice simulations in \textit{piClim-X}. \textit{piClim-X} simulates are designed especially for quantifying ERF due to emissions from the near-present (2014). In \textit{piClim-X}, all emissions were kept at pre-industrial values with only the forcing in question (X, which could be aerosol precursors, \ce{CH4}, or any other forcings) set to near-present. 
+
+The transient SST experiment also allowed for investigating the effects of exposing SLCF emissions to their respective atmospheric conditions. Unlike \textit{piClim-X}, where the background emissions were that of pre-industrial with one forcing added, the ERF calculated from transient SST experiments was calculated from all historical emissions with one forcing removed following the recommendation by \citep{forsterRecommendationsDiagnosingEffective2016}. 
+
 
 \subsection{Short-lived climate forcer precursor emissions}
 \label{sec:ch3:emissions}
 
+
 AerChemMIP used historical forcing datasets and boundary conditions from the Community Emissions Data System \citep[CEDS;][]{hoeslyHistorical175020142018}. This dataset included historical emissions of short-lived climate forcer precursors: aerosol precursors, \ce{O3} precursors, and \ce{CH4}. 
 
-Short-lived climate forcers are either emitted directly into the atmosphere or have their concentration prescribed at the surface, as in the case of \ce{CH4} or produced through reactions from their precursors, as in the case of sulfate aerosols and \ce{O3}. Figure \ref{fig:ch3:emissions} shows the diagnosed emissions for \ce{SO2}, \ce{O3} precursor emissions, including carbon monoxide (\ce{CO}), biogenic volatile organic compounds (BVOCs), nitric oxide (\ce{NO}) as \ce{NO_x}, and methane (\ce{CH4}) concentration. The plots also show the 1850 counter-factual emissions used in perturbed runs (\textit{piX}).
+Short-lived climate forcers are either emitted directly into the atmosphere or have their concentration prescribed at the surface, as in the case of \ce{CH4} in UKESM1 or produced through reactions from their precursors, as in the case of sulfate aerosols and \ce{O3}. Figure \ref{fig:ch3:emissions} shows the diagnosed emissions for \ce{SO2}, \ce{O3} precursor emissions, including carbon monoxide (\ce{CO}), biogenic volatile organic compounds (BVOCs), nitric oxide (\ce{NO}) as \ce{NO_x}, and methane (\ce{CH4}) concentration. The plots also show the 1850 counter-factual emissions used in perturbed runs (\textit{piX}).
 
 \begin{figure}
     \centering
@@ -99,19 +198,17 @@ Aerosol precursors include \ce{SO2}, organic carbons (OCs) and black carbons (BC
 
 Total \ce{SO2} emissions are calculated from the \textit{emiso2} variable. This includes both primary volcanic and anthropogenic \ce{SO2} emissions but does not include secondary production from DMS oxidation. While anthropogenic \ce{SO2} emissions play a significant role in the overall \ce{SO2} budget, natural emissions are not negligible. However, the AerChemMIP simulations employed in this thesis did not archive the secondary natural \ce{SO2} production from DMS oxidation. Fortunately, secondary production is reported in The UKESM1 18-year AMIP simulation \citep{mulcahyDescriptionEvaluationAerosol2020}. The Atmospheric Model Intercomparison Project (AMIP) is an atmosphere-only configuration for detailed aerosol budget analysis driven by observed sea surface temperature (SST) and sea ice. It reported the emission rate for anthropogenic, primary and secondary natural \ce{SO2} emissions as 60.6, 14.06 and 16.69 Tg(S) yr$^{-1}$, respectively \citep{mulcahyDescriptionEvaluationAerosol2020}. 
 
-\subsection{Research opportunities and motivation}
-
-Compared to its predecessor, HadGEM2-ES, UKESM1 features many enhancement capabilities that allow investigating oxidant perturbations on radiation\citep{sellarUKESM1DescriptionEvaluation2019}. The most notable enhancement is the prognostic aerosol size distribution used by radiation and cloud microphysics, which improves the representation of aerosol radiative forcing. The coupling is both ways, allowing photolytic reaction rates to react to radiative intensity. Oxidation processes for sulfate aerosol are coupled to online chemistry. GLOMAP-mode simulates sulfate aerosol using chemical production from gas and aqueous phases. It also simulates aerosol number and mass concentration independently with inter-modal interactions such as coagulation, condensation, and wet and dry deposition. 
-
-this also us to dig deep into the feedback to aerosol production from changes in other SLCF .
-
 
 \section{Results and discussions}
 \label{sec:ch3:results}
 
+\change[inline]{Add intro to results}
 
+\change[inline]{Add that I will discuss changes to each topic from aerosol, O3, and CH4. followed  by summary in each section}
 
-\subsection{Oxidant changes due to near-term climate forcers}
+\subsection{Oxidant changes due to SLCFs}
+
+Sulfate aerosol is mainly produced in the atmosphere through oxidation. The available oxidants, including OH, \ce{O3} and \ce{H2O2}, are factors controlling the oxidation rates, and both \ce{O3} precursors and \ce{CH4} contribute to changes in the oxidant concentrations. Figure \ref{fig:ch3:oxidants} shows the global annual mean of tropospheric oxidants that influence \ce{SO2} oxidation. 
 
 \begin{figure}
     \centering
@@ -120,16 +217,20 @@ this also us to dig deep into the feedback to aerosol production from changes in
     \label{fig:ch3:oxidants}
 \end{figure}
 
-Available oxidants play an important role in controlling the oxidation rate. Figure \ref{fig:ch3:oxidants} shows global annual mean of tropospheric oxidants that influence \ce{SO2} oxidation, including \ce{OH}, \ce{O3}, \ce{H2O2} and \ce{SO2}. It shows that the \ce{SO2} mixing ratio follows the \ce{SO2} emission trends (Figure \ref{fig:ch3:emissions}), reaching its peak in 1975 with the maximum mixing ratio reaching 0.14 ppb. \ce{O3} precursor emissions decrease the \ce{SO2} mixing ratio by 27.5\% (from 0.13 to 0.10 ppb) as the decrease in oxidants in the counterfactual, \sstpio{}, decreases the chemical sink of \ce{SO2}. 
+Aerosol precursor emissions increase the \ce{SO2} mixing ratio in the historical period, following the historical \ce{SO2} emission trends (Figure \ref{fig:ch3:emissions}). \ce{SO2} emissions quadruple and reach their peak in 1975. This rise in emissions contributes to 0.14 ppb of \ce{SO2}, which is a 21.8\% increase from the level in 1850. The lower \ce{SO2} in \sstpiaer{} does not significantly affect other oxidants.
+
+\ce{O3} precursors act mainly to increase atmospheric \ce{O3} mixing ratio, but the precursors also interact with other oxidants. Comparing \histsst{} with \sstpio{} in Figure \ref{fig:ch3:oxidants}c, the \ce{O3} mixing ratio increases in the historical period with \ce{O3} precursor emissions contribute to a rise of 12.5 ppb globally between 1850 and 2014. 
+
+The OH production rates are lower due to lower \ce{O3} in \sstpio{}. The lack of increase in \ce{O3} precursor emissions lowers OH concentration by 15\% (from \num{1.25e6} to \qty{1.05e6}{\per\centi\metre\cubed}) as shown in \sstpio{} compared to the historical trajectory, \histsst{}. This decrease is due to less OH production by the reaction of water vapour with excited oxygen atoms \ce{(O(^1D))}, which are produced by \ce{O3} photolysis ($\lambda$ < 340 nm). 
+
+\ce{CO}, an \ce{O3} precursor, contributes to \ce{H2O2} via its reaction with \ce{OH} to form \ce{HO2}. In total, \ce{O3} precursors contribute to an increase of 0.10 ppb of \ce{H2O2} in 2014. \ce{O3} also directly affects \ce{SO2}. Without \ce{O3} precursor emissions, the chemical sink of \ce{SO2} is missing and results in a higher \ce{SO2} mixing ratio in \sstpio{}. Hence, it can be said that \ce{O3} precursor emissions decrease the \ce{SO2} mixing ratio by 23.1\% (from 0.13 to 0.10 ppb) in 2014. 
 
 
-Historical \ce{O3} mixing ratio is controlled by \ce{O3} precursor emissions and also \ce{CH4}. Comparing \histsst{} with \sstpio{} in Figure \ref{fig:ch3:oxidants}c, the \ce{O3} mixing ratios show an increase in the historical period with the main source of \ce{O3} coming from \ce{O3} precursors including \ce{NO_x}, \ce{CO} and BVOCs, all of which shows a monotonic increase since 1850 \citep{griffithsTroposphericOzoneCMIP62021}. \ce{CH4} is another source of \ce{O3} as \ce{CH4} forms methyl dioxide (\ce{CH_3O_2}) which reacts with \ce{NO} to form formaldehyde (\ce{HCHO}). \ce{HCHO} photolysis yields \ce{CO} which is a source of tropospheric \ce{O3}. Keeping \ce{CH4} at 1850 level decreases tropospheric \ce{O3} as shown in the Figure \ref{fig:ch3:oxidants}c in \sstpich{}.
+\ce{CH4} is the main sink for OH but \ce{CH4} also affects the chemical balances of \ce{O3} and \ce{H2O2}. In \sstpich{}, where \ce{CH4} concentration is held at the 1850 level, \ce{OH} concentrations increase above the historical trajectory. The absence of an increase in \ce{CH4} levels in \sstpich{} removes the OH sink via \ce{OH + CH4}. The effect of historical increases in \ce{CH4} on OH can be seen since 1875, with the \ce{OH} concentration in 2014 increasing to 133\% that of 1850. Overall, the effect of historical increases in \ce{CH4} is seen as a decrease in OH. 
 
+\ce{CH4} is another source of \ce{O3} as \ce{CH4} forms methyl dioxide (\ce{CH_3O_2}) which reacts with \ce{NO} to form formaldehyde (\ce{HCHO}). \ce{HCHO} photolysis yields \ce{CO} which is a source of tropospheric \ce{O3}. Keeping \ce{CH4} at 1850 level decreases tropospheric \ce{O3} by 10 ppb as shown in the Figure \ref{fig:ch3:oxidants}c. 
 
-Historical \ce{OH} concentrations remain constant until 1975 and increase by \qty{0.1e6}{\per\centi\metre\cubed} by the end of 2014 in the historical trajectory (histSST). The lack of increase in \ce{O3} precursor emissions lowers OH concentration by 15\% (from \num{1.25e6} to \qty{1.05e6}{\per\centi\metre\cubed}) as shown in \sstpio{} and \sstpintcf{} compared to the historical trajectory, \histsst{}. This decrease is due to less OH production by the reaction of water vapour with excited oxygen atoms \ce{(O(^1D))}, which are produced by \ce{O3} photolysis ($\lambda$ < 340 nm). In contrast, for \sstpich{}, where \ce{CH4} concentration is held at the 1850 level, \ce{OH} concentrations increase above the historical trajectory. In this case, OH production rates are lower due to lower \ce{O3} in this simulation. The absence of an increase in \ce{CH4} levels reduces the OH sink via \ce{OH + CH4}. Overall, the effect of historical increases in \ce{CH4} is seen as an increase in OH. The effect of historical increases in \ce{CH4} on OH can be seen since 1875, with the \ce{OH} concentration in 2014 increasing to 133\% that of 1850. 
-
-
-\ce{H2O2} mixing ratio in the historical period increases after 1850, which could be attributed to NTCF emissions and sea surface temperature (SST). \ce{HO2} produces \ce{H2O2}. Keeping \ce{CH4} at 1850 levels decreases \ce{H2O2} levels as \ce{CH4} is a source of \ce{HO2} radicals, via reactions that form \ce{HCHO} and \ce{HO2} radicals (and hence \ce{H2O2}). \ce{H2O2} is also contributed by \ce{CO}, an \ce{O3} precursor, via its reaction with \ce{OH} to form \ce{HO2}. 
+Keeping \ce{CH4} at 1850 levels decreases \ce{H2O2} levels as \ce{CH4} is a source of \ce{HO2} radicals, via reactions that form \ce{HCHO} and \ce{HO2} radicals (and hence \ce{H2O2}). \ce{H2O2} is 0.15 ppb higher because of \ce{CH4} increase in 2014. The change in \ce{CH4} concentration in the historical period is shown to have no effects on \ce{SO2} mixing ratio. 
 
 
 The historical changes of all oxidants are subject to the uncertainty of their sources and chemical processes included in the model. \citet{fanComparisonAnthropogenicEmission2022} reported that \ce{SO2} emissions over China in CMIP6 deviated from the bottom-up, country-level inventory after 2005. This would affect the accuracy of the \ce{SO2} mixing ratio and, consequently, the oxidation downstream. The recent rise in \ce{OH} concentration was also observed in other climate models \citep{zhaoIntermodelComparisonGlobal2019}. 
@@ -137,103 +238,199 @@ The historical changes of all oxidants are subject to the uncertainty of their s
 
 To summarise this section, historical \ce{O3} precursor emissions promote \ce{OH} concentration, \ce{O3} and \ce{H2O2} mixing ratio. The historical \ce{CH4} reacts away \ce{OH} but boosts \ce{O3} and \ce{H2O2}. The \ce{SO2} emissions from aerosol precursors increase the \ce{SO2} mixing ratio as its main anthropogenic source.
 
-\subsection{\texorpdfstring{\ce{SO2}}{SO2} oxidation and budget changes due to SLCFs}
+\subsection{\textsoo{} oxidation and budget changes due to SLCFs}
 
-\subsubsection{\textsoo{} oxidation}
+\subsubsection{\textsoo{} oxidation changes due to SLCFs}
 \label{sec:ch3:oxidation}
 
+In the UKESM1, \ce{SO2} reacts with \ce{OH} in the gas phase, forming sulfuric acid, which nucleates into sulfate aerosols. \ce{SO2} also reacts and with \ce{H2O2} and \ce{O3} in the aqueous phase to form sulfate aerosols. Figure \ref{fig:ch3:oxidation} shows total annual tropospheric \ce{SO2} oxidation tendencies in each pathway due to all historical emissions and due to keeping aerosol precursors, \ce{O3} precursors or \ce{CH4} at the 1850 level. The \ce{SO2 + OH} trend broadly follows the \ce{SO2} emissions and the \ce{OH} concentration trends. In the historical period, \ce{SO2} oxidation by \ce{OH} is the largest of the three pathways, contributing \qty{20}{Tg(S)~yr^{-1}} globally in 2014. Figure \ref{fig:ch3:oxidants}b shows that the global \ce{O3} mixing ratio monotonically increases after 1850, but historical \ce{SO2 + O3} does not share the trend. \ce{SO2 + O3} oxidation tendency rises from \qty{2.0}{Tg(S)~yr^{-1}} to \qty{8.9}{Tg(S)~yr^{-1}} in 1975 and falls to \qty{5.0}{Tg(S)~yr^{-1}} in 2014, making this pathway the only one that does not keep increasing over the entire historical period. The historical \ce{H2O2} oxidation tendency starts at 7.5 \qty{7.5}{Tg(S)~yr^{-1}} and increases to \qty{16}{Tg(S)~yr^{-1}} and stabilises after the 1980s.  
 
-In the UKESM1, \ce{SO2} reacts with \ce{OH} in the gas phase, forming sulfuric acids which nucleate into sulfate aerosols. \ce{SO2} also reacts and with \ce{H2O2} and \ce{O3} in the aqueous phase to form sulfate aerosols. Figure \ref{fig:ch3:oxidation} shows total annual tropospheric \ce{SO2} oxidation tendencies in each pathway. In the historical period, \ce{SO2} oxidation by \ce{OH} is the largest of the three pathways, contributing 20 Tg(S) yr$^{-1}$ globally in 2014. The \ce{SO2 + OH} trend broadly follows the \ce{SO2} emissions and the \ce{OH} concentration trends. The lower \ce{OH} concentration decreases \ce{SO2 + OH} reaction tendencies in \sstpio{}, and, similarly, the increase in OH concentration in \textit{piCH4} enhances \ce{SO2 + OH} reaction tendencies.
 
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{Chapter3/Figs/f03_oxidation.eps}
-    \caption[Global annual \ce{SO2} oxidation tendencies]{Global annual \ce{SO2} oxidation tendencies between 1850-2014 with changes due to constraining  methane concentration (\textit{piCH4}), aerosol precursors (\sstpiaer{}), ozone precursors (\sstpio{}) or both emissions (\textit{piNTCF}) at 1850 level.}
+    \caption[Global annual \ce{SO2} oxidation tendencies]{Global annual \ce{SO2} oxidation tendencies between 1850--2014 with changes due to constraining  methane concentration (\sstpich{}), aerosol precursors (\sstpiaer{}), ozone precursors (\sstpio{}) or both emissions (\sstpintcf{}) at 1850 level.}
     \label{fig:ch3:oxidation}
 \end{figure}
 
-
-\ce{SO2 + O3} reaction tendencies, however, are not sensitive to changes in \ce{O3} mixing ratios. Figure \ref{fig:ch3:oxidants}b shows that the global \ce{O3} mixing ratio monotonically increases after 1850, but historical \ce{SO2 + O3} does not share the trend. As a result of anthropogenic \ce{O3} precursor emissions being fixed at the 1850 level in \sstpio{}, the \ce{O3} concentration is lower than that of \textit{histSST}. Despite the 25\% decrease in \ce{O3} mixing ratio in \sstpio{} and \textit{piCH4}, there are minimal changes to \ce{SO2 - O3} tendencies in these experiments compared to \textit{histSST}. The lack of change implies that globally \ce{SO2 + O3} oxidation is not sensitive to historical changes in \ce{O3} and that the background tropospheric \ce{O3} is sufficient to saturate the pathway. 
-
-\ce{SO2 + H2O2} oxidation tendencies follow the \ce{SO2} emissions and \ce{H2O2} mixing ratio trends. The historical oxidation tendency starts at 7.5 Tg(S) yr$^{-1}$ and increases to 16 Tg(S) yr$^{-1}$ and stabilises after the 1980s. The \ce{SO2 + H2O2} reaction tendencies decrease by 15\% when the \ce{H2O2} mixing ratio decreases in the absence of anthropogenic \ce{CH4} which is a source of \ce{H2O2} precursor. 
+\ce{O3} precursor emissions are shown to increase \ce{OH}, \ce{O3} and \ce{H2O2} concentration. However, the perturbations in oxidants do not correspond to the changes in oxidation straightforwardly. The lower \ce{OH} concentration in \sstpio{} decreases \ce{SO2 + OH} reaction tendency, lowering the tendency by \qty{5.0}{Tg(S)~yr^{-1}}. \ce{SO2 + O3} reaction tendency, in contrast, is not affected by decreases in \ce{O3} mixing ratio. As a result of anthropogenic \ce{O3} precursor emissions being fixed at the 1850 level, the \ce{O3} concentration in \sstpio{} is 25\% lower than that of \histsst{}. Despite the decrease, there are no significant changes in the \ce{SO2 + O3} oxidation tendency. A similar lack of change is also seen in \ce{SO2} oxidation with \ce{H2O2} in the same \sstpio{} simulation where \ce{SO2 + H2O2} reaction tendency remained unchanged. In summary, it can be said that \ce{O3} precursor emissions act to increase the gas-phase oxidation of \ce{SO2} with OH, increasing the tendency by \qty{5}{Tg(S)~yr^{-1}} while having no effects on the aqueous-phase oxidation.
 
 
-While past measurements and laboratory research have determined that only \ce{OH} is important for the oxidation of \ce{SO2} in the gas phase during daytime \citep[][and reference therein]{rattiganUptakeGasphaseSO22000, eatoughConversionSO2Sulfate1994}, heterogeneous and aqueous-phase oxidation is more complex with multiple competing oxidants and aerosol properties at play \citep{pattantyusReviewSulfurDioxide2018, seinfeldAtmosphericChemistryPhysics2016}. 
+The rise in \ce{CH4} concentration in the historical period increases the concentration of \ce{O3} and \ce{H2O2} while decreasing OH concentration with measurable impact on \ce{SO2} oxidation in the \sstpich{} simulation. With \ce{CH4} concentration constrained at the 1850 level, OH concentration in \sstpich{} rises by 30\%. This increase leads to a 19\% rise in oxidation with OH from \num{21.3} to \qty{25.0}{Tg(S)~yr^{-1}}. \ce{SO2 + O3} oxidation tendency remained unchanged despite the decrease in tropospheric \ce{O3} from the decrease in \ce{CH4}. The absence of anthropogenic \ce{CH4}, which is a source of \ce{H2O2} precursor, lowers the \ce{SO2 + H2O2} reaction tendencies by 15\% when the \ce{H2O2} mixing ratio decreases. In total, the historical rise in \ce{CH4} leads to a greater OH sink, decreasing \ce{SO2} oxidation with OH by \qty{4}{Tg(S)~yr^{-1}}. However, \ce{CH4} increases the tropospheric \ce{H2O2} which adds \qty{2.5}{Tg(S)~yr^{-1}} to the \ce{SO2 + H2O2} oxidation tendency. Ultimately, \ce{CH4}, decrease the total oxidation tendency globally by \qty{-1.5}{Tg(S)~yr^{-1}} but the greater change is in shifting \ce{SO2} oxidation from gas- to aqueous-phase.
 
-Other \ce{SO2} oxidation pathways may be important in certain environments such as clean marine boundary layers and wintertime. The oxidation of S(IV) in the atmosphere includes organic peroxides, and iron and manganese as catalysts to oxygen \citet{alexanderTransitionMetalcatalyzedOxidation2009, seinfeldAtmosphericChemistryPhysics2016}. A further mechanism for \ce{SO2} oxidation in solution with sea water is proposed via halogen compounds \ce{HOCl} and \ce{HOBr} in the remote marine boundary layer \citep{vogtMechanismHalogenRelease1996}. Aside from oxidation with \ce{OH}, \ce{O3} and \ce{H2O2}, these further mechanisms are not included in the UKESM1 so they are not considered in this study. 
+One notable result is how \ce{SO2 + O3} tendencies are not sensitive to changes in \ce{O3} mixing ratios. Figure \ref{fig:ch3:oxidants}b shows that the global \ce{O3} mixing ratio monotonically increases after 1850, but historical \ce{SO2 + O3} does not share the trend. Despite the 25\% decrease in \ce{O3} mixing ratio in \sstpio{} and \sstpich{}, there are minimal changes to \ce{SO2 + O3} tendencies in these simulations compared to \histsst{}. The lack of change implies that globally \ce{SO2 + O3} oxidation is not sensitive to historical changes in \ce{O3} and that the background tropospheric \ce{O3} is sufficient to saturate the pathway. 
 
-
-%discuss change to oxidation if ph is changed in Tunnock
-
-
-Overall, the rate of \ce{SO2} oxidation with \ce{OH}, \ce{O3} and \ce{H2O2} is controlled by \ce{SO2} abundance, as the reaction tendency tends to be constant over time without aerosol precursor emissions (green line in Figure \ref{fig:ch3:oxidation}). The \ce{OH} and \ce{H2O2} pathways contribute equally to \ce{SO2} oxidation in the 1850s but the rate of growth of \ce{SO2 + OH} oxidation is greater post-1950s, making \ce{SO2 + OH} the most important oxidising pathway. \ce{O3} is the least important oxidant globally, contributing to the removal of at most 8 Tg(S) yr$^{-1}$. Overall, the \ce{SO2 + OH} pathway is the most sensitive to oxidant changes in which the spread between \sstpio{} and \textit{piCH4} is approximately 5 Tg(S) yr$^{-1}$ or 25\% of the \textit{histSST} oxidation rate in 2014.
+There are some discrepancies in \ce{SO2} oxidation between UKESM1 and observations. While past measurements and laboratory research have determined that only \ce{OH} is important for the oxidation of \ce{SO2} in the gas phase during daytime \citep[][and reference therein]{rattiganUptakeGasphaseSO22000, eatoughConversionSO2Sulfate1994}, heterogeneous and aqueous-phase oxidation is more complex with multiple competing oxidants and aerosol properties at play \citep{pattantyusReviewSulfurDioxide2018, seinfeldAtmosphericChemistryPhysics2016}. \ce{SO2} oxidation as parameterised in UKESM1 treats cloud droplet pH as a constant \citep{mulcahyDescriptionEvaluationAerosol2020}. The oxidation of S(IV) in the atmosphere includes organic peroxides and iron and manganese as catalysts to oxygen \citet{alexanderTransitionMetalcatalyzedOxidation2009, seinfeldAtmosphericChemistryPhysics2016}. Other \ce{SO2} oxidation pathways may be important in specific environments such as clean marine boundary layers and wintertime. A further mechanism for \ce{SO2} oxidation in solution with sea water is proposed via halogen compounds \ce{HOCl} and \ce{HOBr} in the remote marine boundary layer \citep{vogtMechanismHalogenRelease1996}. Aside from oxidation with \ce{OH}, \ce{O3}, and \ce{H2O2}, these further mechanisms are not included in the UKESM1, so they are not considered in this study. 
 
 
+Overall, the rate of \ce{SO2} oxidation with \ce{OH}, \ce{O3}, and \ce{H2O2} is controlled by \ce{SO2} abundance, as the reaction tendency tends to be constant over time without aerosol precursor emissions (green line in Figure \ref{fig:ch3:oxidation}). The \ce{OH} and \ce{H2O2} pathways contribute equally to \ce{SO2} oxidation in the 1850s, but the rate of growth of \ce{SO2 + OH} oxidation is greater post-1950s, making \ce{SO2 + OH} the most important oxidising pathway. \ce{O3} is the least significant oxidant to \ce{SO2} globally, contributing to the removal of at most \qty{8.1}{Tg(S)~yr^{-1}}. Overall, the \ce{SO2 + OH} pathway is the most sensitive to oxidant changes in which the spread between \sstpio{} and \sstpich{} is approximately \qty{5.0}{Tg(S)~yr^{-1}} or 25\% of the \histsst{} oxidation rate in 2014.
 
-\subsubsection{\texorpdfstring{\ce{SO2}}{SO2} and \texorpdfstring{\ce{SO4}}{SO4} burdens, losses, lifetimes, and budgets}
+
+\subsubsection{\textsoo{} and \textsoooo{} burdens, losses, lifetimes, and budgets and changes due to SLCFs}
+
+An atmospheric chemical budget is a way to account for the global source, sink, and atmospheric burden of a trace gas. The lifetime of a trace gas describes how long it stays in the atmosphere and is defined as the average time that a molecule of that species remains in a reservoir before removal. When the reservoir is the whole atmosphere, and the trace gas is in a steady state, the burden is considered constant, and the tropospheric lifetime of a compound is estimated by dividing the total tropospheric burden by total loss. 
+
+Oxidants affect the \ce{SO2} budget in various ways. So far, this chapter has quantified the source for \ce{SO2} and \ce{SO4} through \ce{SO2} oxidation. In this section, \ce{SO2} loss terms include chemical losses via oxidation with \ce{OH}, \ce{O3}, and \ce{H2O2}, wet and dry deposition are analysed. \ce{SO2} reacts with \ce{OH}, \ce{H2O2} and \ce{O3} to form sulfate so the budget of \ce{SO2} and \ce{SO4} are connected via these oxidation processes. Figure \ref{fig:ch3:s-budget} shows global and annual burdens, loss processes, and lifetimes of \ce{SO2} and \ce{SO4} in the troposphere. Table \ref{tab:ch3:budget-pothole}, \ref{tab:ch3:budget-near-present} and figure \ref{fig:ch3:so2-losses-bar} quantify the budget for 1960--1989 and 2000--2014 inclusive. These two periods are chosen for their high \ce{SO2} emissions. Both \ce{SO2} and \ce{SO4} are in steady-state, and the lifetimes are calculated from the total burden divided by the total losses.
+
 
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{Chapter3/Figs/f04_s-budget.eps}
-    \caption[Tropospheric sulfur budget: burdens, depositions and lifetimes]{Tropospheric \ce{SO2} and \ce{SO4} budget, including (a-b) burdens, (c-d) dry depositions, (e-f) wet depositions, and (g-h) lifetimes. The plots show budget terms between 1850-2014 with changes due to constraining  methane concentration (\textit{piCH4}), aerosol precursors (\sstpiaer{}), ozone precursors (\sstpio{}) or both emissions (\textit{piNTCF}) at the 1850 level.}
-    \label{fig:ch3:s-burden}
+    \caption[Tropospheric sulfur budget terms including burdens, depositions and lifetimes]{Tropospheric \ce{SO2} and \ce{SO4} budget, including (a-b) burdens, (c-d) dry depositions, (e-f) wet depositions, and (g-h) lifetimes. The plots show budget terms between 1850 and 2014 with changes due to constraining  methane concentration (\sstpich{}), aerosol precursors (\sstpiaer{}), ozone precursors (\sstpio{}) or both emissions (\sstpintcf{}) at the 1850 level.}
+    \label{fig:ch3:s-budget}
 \end{figure}
 
-\ce{SO2} reacts with \ce{OH}, \ce{H2O2} and \ce{O3} to form sulfate (\ce{SO4}) so the budget of \ce{SO2} and \ce{SO4} are linked via these oxidation processes. Figure \ref{fig:ch3:s-burden} shows that the \ce{SO2} burden trend follows that of \ce{SO2} emissions. \ce{SO2} is lost mainly through oxidation (45 Tg(S) yr$^{-1}$ in 2014) followed by dry deposition (28 Tg(S) yr$^{-1}$). The lifetime of \ce{SO2} is 3 days in the 1850s and decreases to 2.8 days in 2014. 
 
-Oxidants affect the \ce{SO2} budget in various ways. The lifetime of a trace gas describes how long it stays in the atmosphere and is defined as the average time that a molecule of that species remains in a reservoir before removal. Suppose the reservoir is the whole atmosphere and is in a steady state. In that case, the burden is considered constant, and the tropospheric lifetime of a compound is estimated by dividing the total tropospheric burden by total loss. \ce{SO2} loss terms include chemical losses via oxidation with \ce{OH}, \ce{O3}, and \ce{H2O2}, wet and dry deposition. \ce{SO4} is lost only via wet and dry deposition.
-
-The lower levels of \ce{O3} in \sstpio{} result in less \ce{OH}, which leads to a smaller \ce{SO2} sink than in \textit{histSST}. This increases the \ce{SO2} burden, dry and wet deposition and ultimately leads to a longer lifetime. This change to the \ce{SO2} budget due to lower \ce{O3} is also seen in \sstpiaer{} and \textit{piNTCF} where \ce{SO2} is kept at the 1850 level throughout the historical period. In \textit{piNTCF}, in which \ce{O3} precursor emissions are kept at the 1850 level (low \ce{O3}), the \ce{SO2} burden, wet and dry deposition and lifetime are lower compared to the case that \ce{O3} precursors follow the historical trajectory (\sstpiaer{}). This further indicates the role of \ce{O3} in the \ce{SO2} budget via oxidation with \ce{OH}.
+First, this section discusses the historical sulfate budgets simulated in \histsst{}. It can be seen from Figure \ref{fig:ch3:s-budget} that \ce{SO2} burden trend follows that of \ce{SO2} emissions. \ce{SO2} is lost mainly through oxidation (\qty{41.86}{Tg(S)~yr^{-1}} in 2014), with \ce{SO2 + OH} as the main oxidation pathway, followed by dry deposition (\qty{25.85}{Tg(S)~yr^{-1}}). The lifetime of \ce{SO2} is 3.1 days in the 1850s and decreases to 2.17 days in 2014. The lifetime of \ce{SO4} is 5.71 days, double that of \ce{SO2}. The \ce{SO4} burden is generally higher than that of \ce{SO2} because \ce{SO4} has a longer lifetime. The \ce{SO4} burden has increased from 0.30 to 0.69 \unit{Tg(S)} between 1850 and 2014. Because UKESM1 treats \ce{SO4} as soluble aerosol, the primary removal process for \ce{SO4} is wet deposition (84.5\% of total losses). 
 
 
-In contrast to \sstpio{}, where the lower \ce{O3} and oxidant levels increase \ce{SO2}, the \ce{SO2} burden stays roughly the same when \ce{CH4} concentration is kept at 1850 level in \textit{piCH4}, despite the huge differences in \ce{CH4} and as a result OH (see Figure \ref{fig:ch3:emissions}). This is because whilst there is a significant increase in \ce{SO2 + OH} oxidation in \textit{piCH4}, this is nullified by the decrease in \ce{SO2 + H2O2} oxidation as seen in figure \ref{fig:ch3:oxidation}a and c. In this case, the \ce{SO2} lifetime remains unchanged compared with the \textit{histSST}.
-
-Figure \ref{fig:ch3:s-burden} shows that, in \sstpio{}, exposing \ce{SO2} emissions to pre-industrial \ce{O3} increases the lifetime of both \ce{SO2} and \ce{SO4}. The effect of oxidant changes to \ce{SO2} lifetime was observed in a modelled study by \citep{karsetStrongImpactsAerosol2018}. They found that by replacing oxidants (\ce{NO3}, \ce{O3}, \ce{OH} and \ce{HO2}) from present-day to pre-industrial, the lifetime of pre-industrial \ce{SO2} increases from 29 hours (1.21 days) to 34 hours (1.42 days), which is an increase by 17\%. In this work, the \ce{SO2} lifetime increases by 28\% (from 2.17 days to 2.77 days). As aerosols have a longer lifetime, they are transported higher up in the atmosphere before oxidising, making them less likely to be removed by deposition. The dry deposition of the newly formed nucleation mode \ce{SO4} decreased by 2.6\%. 
-
-The \ce{SO4} burden is generally higher than that of \ce{SO2} because of its longer lifetime. The \ce{SO4} burden has increased from 0.3 to 0.7 Tg(S) yr$^{-1}$ between 1850 and 2014. Because UKESM1 treats \ce{SO4} as an aqueous aerosol, the primary removal process for \ce{SO4} is wet deposition. The lifetime of \ce{SO4} is 5.5-6 days, double that of \ce{SO2}. Changes in oxidants have a knock-on effect on \ce{SO4} budget and lifetime. In \sstpio{} where anthropogenic \ce{O3} is missing, there is less \ce{SO4} wet deposition as there is less conversion from \ce{SO2} to \ce{SO4} and more physical removal of \ce{SO2} (via both wet and dry deposition). This reduction in \ce{O3} and oxidants in \sstpio{} also results in an increase in \ce{SO4} lifetime compared to \textit{histSST}. 
+The historical \ce{SO2} emissions have more than quadrupled between 1850 and 2014. This shifts the proportion of \ce{SO2} loss from oxidation to deposition as seen when comparing between \histsst{} and \sstpiaer{}. In the 2000-2014 period, 62.7\% of \ce{SO2} is oxidised when \ce{SO2} emissions are constrained at the 1850 level. When \ce{SO2} emissions follow the historical trajectory, total oxidation decreases to 52.3\%, and 15.0\% more \ce{SO2} is dry deposited. The added \ce{SO2} emissions double \ce{SO2} burden, which should increase its lifetime. However, removal processes are efficient, resulting in shorter \ce{SO2} lifetime. It could be seen that as a result of increased \ce{SO2} emissions, the atmosphere cannot oxidise all the additional \ce{SO2} since a greater proportion of \ce{SO2} is being removed by deposition.
 
 
-The budget report in our work is comparable to that reported by the UKESM1 evaluation using AMIP simulation covering 1981-1998 \citep{mulcahyDescriptionEvaluationAerosol2020}. The AMIP \ce{SO2} and \ce{SO4} are 0.53 and 0.67 Tg(S), respectively, the same as our values. For dry deposition, the AMIP values for \ce{SO2} and \ce{SO4} are 28.98 and 7.10 Tg(S) yr$^{-1}$, comparable to that of ours of 28.90 and 7.13 Tg(S) yr$^{-1}$. As for the wet deposition, the AMIP reported 13.38 and 36.0 Tg(S) yr$^{-1}$ for \ce{SO2} and \ce{SO4}, while our results are 13.47 and 36.40 Tg(S) yr$^{-1}$. Finally, the AMIP lifetime of \ce{SO2} and \ce{SO4} are 2.08 and 5.56 days, respectively, which are comparable to our work (2.23 and 5.56 days).  
+Historical \ce{O3} precursor emissions act to increase oxidation. Consider the counterfactual historical simulation \sstpio{} compared to \histsst{}, the higher levels of \ce{O3} precursors in \sstpio{} result in increment of \ce{SO2 + OH} oxidation by \qty{4.53}{Tg(S)~yr^{-1}}, while dry deposition decreases by \qty{-1.92}{Tg(S)~yr^{-1}} in 2000--2014. With the greater total loss, \ce{SO2} burden decreases, shortening \ce{SO2} lifetime by 0.6 days (14.4 hours). The increased oxidation affects the sulfate budget. Sulfate wet and dry deposition increase to reflect more secondary sulfate production. Consequently, the global sulfate burden remains the same as \histsst{}. Since the sulfate burden is unchanged but loss decreases, the sulfate lifetime is 0.73 days shorter due to the historical \ce{O3} precursors. Therefore, it can be said that \ce{O3} precursors emissions increase \ce{SO2 + OH} oxidation and shorten \ce{SO2} and sulfate lifetime as \ce{O3} precursors increase the atmospheric oxidative power.
 
-The SLCFs simulated by UKESM1 have been evaluated against both ground-based measurements and field campaigns \citep[e.g.][]{griffithsTroposphericOzoneCMIP62021, russoSeasonalInterannualDecadal2023}. The UKESM1 CMIP6 simulations capture the \ce{SO4} trends compared to ground-based measurements \citep{mulcahyDescriptionEvaluationAerosol2020}. The observed decreasing trend in \ce{SO4} concentration across Europe is reproduced by the model. Although there is a consistent underprediction of the absolute values for all years, the model prediction sits within the observed variability. The UKESM1 overestimated \ce{SO2} concentration compared to the Atmospheric Tomography (ATom) field campaign which measures atmospheric constituents and chemical processes in marine remote areas across both hemispheres \citep{ranjithkumarConstraintsGlobalAerosol2021}. The UKESM1 model overestimated \ce{SO2} concentration by approximately a factor 2–6 in the boundary layer regions of the tropics and mid-latitudes and the tropical upper troposphere. The biases in the upper-tropospheric mid and high latitudes are negligible. This may imply that the \ce{SO2} removal process is underestimated or that the natural secondary emissions from DMS are overestimated.  
+\ce{O3} precursor emission's impacts on sulfur budgets can also be seen by comparing \sstpiaer{} and \sstpintcf{}. In both simulations, \ce{SO2} emissions are kept at the 1850 level throughout the historical period. In \sstpintcf{}, \ce{O3} precursor emissions are also kept at the 1850 level. \ce{SO2 + OH} oxidation tendency increases over the historical period in \sstpiaer{} as shown in Figure \ref{fig:ch3:s-budget}. In the 2000--2014 period, total oxidation increases by \qty{1.24}{Tg(S)~yr^{-1}} or 4.6\% due to \ce{O3} precursors increase, bringing down \ce{SO2} deposition by \num{-3.1}\%. The historical \ce{SO2} burden and lifetime slightly decrease over time as a response. Again, \ce{O3} precursors are shown to increase \ce{SO2 + OH} oxidation.
 
-An in-depth evaluation has shown that the UKESM1 underestimated the dry deposition process and there has been an update released for the model to amend for this error \citep{hardacreEvaluationSO2SO422021}. Model evaluation against ground-based measurements shows that while the UKESM1 captures historical trends for decreasing the concentration of \ce{SO2} and \ce{SO4}, it overpredicts \ce{SO2} by a factor of 3 and underpredicted surface \ce{SO4} by 25-35\% \citep{hardacreEvaluationSO2SO422021}. This has led to an update to the UKESM1 configuration called the UKESM1.1 \citep{mulcahyUKESM11DevelopmentEvaluation2023}. When a more realistic dry deposition scheme is implemented, it reduces the model’s overprediction of surface \ce{SO2} concentrations and total column \ce{SO2} but also decreases the overall \ce{SO4} loading, exacerbating the low bias.  Our study used the original UKESM1 thus the overestimation of \ce{SO2} is expected.
+Effects of co-emissions of \ce{O3} precursors with \ce{SO2} can be quantified by comparing two pairs of simulations:\histsst{}/\sstpio{} and \sstpiaer{}/\sstpintcf{}. Increased \ce{O3} precursors emissions in the atmosphere with high \ce{SO2} results in a 5.7\% promotion in \ce{SO2 + OH} oxidation (\histsst{}/\sstpio{}). Only a 3.1\% increase is seen in the low \ce{SO2} atmosphere in the 2000--2014 period (\sstpiaer{}/\sstpintcf{}). This further indicates the role of \ce{O3} in the \ce{SO2} budget via oxidation with \ce{OH}. Therefore, it can be said that co-emissions of \ce{O3} precursors with \ce{SO2} result in a larger increase in \ce{SO2 + OH} oxidation. 
+
+
+Similar to the analysis above for \ce{O3} precursors, increases in \ce{CH4} concentrations affect oxidants that \ce{SO2} reacts with. Comparing \histsst{} and \sstpich{}, \ce{SO2 + OH} decreases by \qty{-3.25}{Tg(S)~yr^{-1}} from 24.39 to \qty{21.14}{Tg(S)~yr^{-1}}. However, The total oxidation decreases only by \qty{-0.89}{Tg(S)~yr^{-1}} as there is an opposing increase of \num{0.21} and \qty{2.14}{Tg(S)~yr^{-1}} in \ce{O3} and \ce{H2O2} oxidation with \ce{SO2}, respectively. \ce{SO2} burden stays roughly the same when \ce{CH4} concentration is kept at 1850 level in \sstpich{}, despite the huge differences in \ce{CH4} and as a result OH (see Figure \ref{fig:ch3:emissions}). In summary, the increase in \ce{CH4} significantly reduces gas-phase oxidation and increases aqueous-phase oxidation but leaves other sulfur budget terms unchanged.
+
+\begin{figure}
+    \centering
+    \includegraphics{Chapter3/Figs/so2_losses_bar.png}
+    \caption[Global annual \ce{SO2} oxidation tendencies in 1960--1989 and 2000-2014]{Global annual \ce{SO2} oxidation tendencies in 1960--1989 and 2000-2014 with changes due to constraining \ce{CH4} concentration (\sstpich{}), aerosol precursors (\sstpiaer{}), ozone precursors (\sstpio{}) or both emissions (\sstpintcf{}) at 1850 level.}
+    \label{fig:ch3:so2-losses-bar}
+\end{figure}
+
+\begin{table}[]
+   \caption[Summary of tropospheric sulfur budget between 1960--1989]{Summary of tropospheric sulfur budget from relevant UKESM1 AerChemMIP simulations  covering the period 1960--1989 inclusive. Units for emission and loss tendencies are in \unit{Tg(S)~yr^{-1}}. Burdens are in \unit{Tg(S)}, and lifetimes are in days.}
+   \label{tab:ch3:budget-pothole}
+    \centering
+\begin{tabular}{l p{14mm} p{14mm} p{14mm} p{14mm} p{14mm}}
+
+\toprule
+& \histsst{} (\%) & \sstpio{} (\%) & \sstpich{} (\%) & \sstpiaer{} (\%) & \sstpintcf{} (\%) \\
+
+\midrule
+\ce{SO2} \\
+\midrule
+
+Primary emission & 72.72 & 72.72 & 72.72 & 15.23 & 15.23 \\
+\ce{SO2 (g) + OH} & 17.71 \textit{(21.5)} & 14.88 \textit{(18.0)} & 19.51 \textit{(23.5)} & 8.05 \textit{(27.8)} & 7.53 \textit{(25.9)} \\
+\ce{SO2 (aq) + O3} & 7.47 \textit{(9.1)} & 7.08 \textit{(8.6)} & 7.22 \textit{(8.7)} & 1.61 \textit{(5.5)} & 1.46 \textit{(5.0)} \\
+\ce{SO2 (aq) + H2O2} & 14.77 \textit{(17.9)} & 14.54 \textit{(17.6)} & 13.32 \textit{(16.0)} & 7.98 \textit{(27.5)} & 7.82 \textit{(26.9)} \\
+Total oxidation & 39.95 \textit{(48.5)} & 36.50 \textit{(44.2)} & 40.05 \textit{(48.2)} & 17.63 \textit{(60.9)} & 16.80 \textit{(57.8)} \\
+Dry deposition & 28.63 \textit{(34.7)} & 30.03 \textit{(36.4)} & 28.88 \textit{(34.8)} & 5.11 \textit{(17.6)} & 5.37 \textit{(18.5)} \\
+Wet deposition & 13.85 \textit{(16.8)} & 16.04 \textit{(19.4)} & 14.14 \textit{(17.0)} & 6.23 \textit{(21.5)} & 6.88 \textit{(23.7)} \\
+Total deposition & 42.48 \textit{(51.5)} & 46.07 \textit{(55.8)} & 43.02 \textit{(51.8)} & 11.33 \textit{(39.1)} & 12.26 \textit{(42.2)} \\
+Total loss & 82.42 & 82.57 & 83.07 & 28.97 & 29.06 \\
+Burden & 0.53 & 0.61 & 0.52 & 0.22 & 0.25 \\
+Lifetime & 2.29 & 2.67 & 2.27 & 2.76 & 3.11  \\
+
+\midrule
+\ce{SO4}  \\
+\midrule
+
+Primary emission & 1.87 \textit{(4.5)} & 1.87 \textit{(4.9)} & 1.87 \textit{(4.5)} & 0.39 \textit{(2.2)} & 0.39 \textit{(2.3)} \\
+Secondary emission & 39.95 \textit{(95.5)} & 36.50 \textit{(95.1)} & 40.05 \textit{(95.5)} & 17.63 \textit{(97.8)} & 16.80 \textit{(97.7)} \\
+Total emission & 41.81 & 38.37 & 41.91 & 18.02 & 17.20 \\
+Dry deposition & 6.95 \textit{(16.7)} & 6.31 \textit{(16.5)} & 7.02 \textit{(16.8)} & 2.80 \textit{(15.6)} & 2.61 \textit{(15.3)} \\
+Wet deposition & 34.65 \textit{(83.3)} & 31.86 \textit{(83.5)} & 34.67 \textit{(83.2)} & 15.15 \textit{(84.4)} & 14.51 \textit{(84.7)} \\
+Total loss & 41.6 & 38.16 & 41.69 & 17.95 & 17.13 \\
+Burden & 0.63 & 0.62 & 0.64 & 0.29 & 0.30 \\
+Lifetime & 5.46 & 5.81 & 5.53 & 5.84 & 6.30 \\
+\midrule
+Total \ce{SO2} and \ce{SO4} lifetime & 4.95 & 5.25 & 4.95 & 6.31 & 6.75 \\
+\bottomrule
+
+\end{tabular}
+\end{table}
+
+
+\begin{table}[]
+   \caption[Summary of tropospheric sulfur budget between 2000--2014]{Summary of tropospheric sulfur budget from relevant UKESM1 AerChemMIP simulations  covering the period 2000--2014 inclusive. Units for emission and loss tendencies are in \unit{Tg(S)~yr^{-1}}. Burdens are in \unit{Tg(S)}, and lifetimes are in days.}
+   \label{tab:ch3:budget-near-present}
+    \centering
+\begin{tabular}{l p{14mm} p{14mm} p{14mm} p{14mm} p{14mm}}
+
+\toprule
+& \histsst{} (\%) & \sstpio{} (\%) & \sstpich{} (\%) & \sstpiaer{} (\%) & \sstpintcf{} (\%) \\
+
+\midrule
+\ce{SO2} \\
+\midrule
+
+Primary emission & 69.68 & 69.68 & 69.68 & 15.23 & 15.23 \\
+\ce{SO2 (g) + OH} & 21.14 \textit{(26.4)} & 16.61 \textit{(20.7)} & 24.39 \textit{(30.1)} & 8.44 \textit{(29.1)} & 7.58 \textit{(26.0)} \\
+\ce{SO2 (aq) + O3} & 5.17 \textit{(6.5)} & 4.67 \textit{(5.8)} & 4.96 \textit{(6.1)} & 1.53 \textit{(5.3)} & 1.29 \textit{(4.4)} \\
+\ce{SO2 (aq) + H2O2} & 15.54 \textit{(19.4)} & 15.54 \textit{(19.4)} & 13.40 \textit{(16.6)} & 8.20 \textit{(28.3)} & 8.07 \textit{(27.7)} \\
+Total oxidation & 41.86 \textit{(52.3)} & 36.81 \textit{(45.9)} & 42.75 \textit{(52.8)} & 18.18 \textit{(62.7)} & 16.94 \textit{(58.1)} \\
+Dry deposition & 25.85 \textit{(32.3)} & 27.77 \textit{(34.7)} & 25.86 \textit{(31.9)} & 5.02 \textit{(17.3)} & 5.42 \textit{(18.6)} \\
+Wet deposition & 12.29 \textit{(15.4)} & 15.55 \textit{(19.4)} & 12.36 \textit{(15.3)} & 5.80 \textit{(20.0)} & 6.79 \textit{(23.3)} \\
+Total deposition & 38.15 \textit{(47.7)} & 43.32 \textit{(54.1)} & 38.21 \textit{(47.2)} & 10.83 \textit{(37.3)} & 12.21 \textit{(41.9)} \\
+Total loss & 80.00 & 80.13 & 80.96 & 29.00 & 29.15 \\
+Burden & 0.48 & 0.62 & 0.47 & 0.21 & 0.25 \\
+Lifetime & 2.17 & 2.77 & 2.11 & 2.58 & 3.13 \\
+
+\midrule
+\ce{SO4}  \\
+\midrule
+
+Primary emission & 1.79 \textit{(4.1)} & 1.79 \textit{(4.6)} & 1.79 \textit{(4.0)} & 0.39 \textit{(2.1)} & 0.39 \textit{(2.3)} \\
+Secondary emission & 41.86 \textit{(95.9)} & 36.81 \textit{(95.4)} & 42.75 \textit{(96.0)} & 18.18 \textit{(97.9)} & 16.94 \textit{(97.7)} \\
+Total emission & 43.65 & 38.60 & 44.53 & 18.57 & 17.33 \\
+Dry deposition & 6.72 \textit{(15.5)} & 5.90 \textit{(15.4)} & 7.00 \textit{(15.8)} & 2.92 \textit{(15.8)} & 2.66 \textit{(15.4)} \\
+Wet deposition & 36.67 \textit{(84.5)} & 32.45 \textit{(84.6)} & 37.26 \textit{(84.2)} & 15.57 \textit{(84.2)} & 14.60 \textit{(84.6)} \\
+Total loss & 43.39 & 38.35 & 44.26 & 18.49 & 17.26 \\
+Burden & 0.69 & 0.69 & 0.71 & 0.29 & 0.31 \\
+Lifetime & 5.71 & 6.44 & 5.79 & 5.74 & 6.48 \\
+\midrule
+Sulfur lifetime & 5.17 & 5.75 & 5.18 & 6.17 & 6.89 \\
+\bottomrule
+
+\end{tabular}
+\end{table}
+
+
+A modelling study by \citep{karsetStrongImpactsAerosol2018} quantified the effect of oxidants to \ce{SO2} lifetime. By replacing oxidants (\ce{NO3}, \ce{O3}, \ce{OH} and \ce{HO2}) from present-day to pre-industrial, the lifetime of pre-industrial \ce{SO2} increased from 29 hours (1.21 days) to 34 hours (1.42 days), which was an increase by 17\%. This conclusion is similar to the work in this thesis, which shows 28\% increase in \ce{SO2} lifetime from 2.17 days to 2.77 days due to constraining \ce{O3} precursors emissions to 1850, a similar pre-industrial condition.  
+
+
+In summary, this section has shown that \ce{O3} precursor emissions act to increase \ce{SO2 + OH} oxidation, resulting in decreased \ce{SO2} and \ce{SO4} lifetimes. Meanwhile, historical \ce{CH4} concentration shifts \ce{SO2} oxidation towards more aqueous-phase reactions by removing OH in the atmosphere without impacting the other budget terms.
 
 
 \subsection{Aerosol properties changes due to SLCFs}
 
-\subsubsection{Aerosol optical depth}
+\ce{SO2} oxidation determines aerosol properties. In UKESM1, \ce{SO2} oxidises with OH and produces sulfuric acid, which nucleates into new aerosol particles \citep{mannDescriptionEvaluationGLOMAPmode2010}. In contrast, aqueous-phase oxidation adds mass to existing accumulation- and coarse-mode aerosol without creating new particles. In the previous section, SLCF emissions have been shown to perturb the proportion of \ce{SO2} being oxidised in the gas or aqueous phase. The described oxidation changes may impact aerosol properties, especially aerosol size distribution. 
+
+Once formed, aerosols undergo various processes that further modify their bulk properties. Aerosols may grow by coagulation or be removed by deposition. These aerosol processes are simulated in UKESM1 using the GLOMAP-mode aerosol scheme. This section investigates historical aerosol properties and the changes to aerosol properties from SLCF emissions.  
+
+Aerosol optical depth (AOD) is a dimensionless number that measures the amount of incoming solar radiation that atmospheric particles prevent from reaching the surface. The amount of aerosol in the atmosphere is linked to \ce{SO2} oxidation tendency as oxidation produces \ce{SO4} aerosols. Figure \ref{fig:ch3:AOD} shows annual global mean AOD from fixed-SST simulations. It indicates that aerosol precursor emissions increase AOD by 50\% in 2014 and are the main contributor to global AOD. AOD in the \sstpio{} simulation is 0.05 lower than \histsst{}, suggesting that \ce{O3} contributes to aerosol loading. Global AOD is unchanged under lower \ce{CH4} condition in \sstpich{}.
+
 
 \begin{figure}
     \centering
     \includegraphics{Chapter3/Figs/f05_aod-trend.eps}
-    \caption[Global annual mean aerosol AOD between 1850-2014 with changes due to SLCFs]{Global annual mean aerosol AOD between 1850-2014 with changes due to constraining methane concentration (\textit{piCH4}), aerosol precursors (\sstpiaer{}), ozone precursors (\sstpio{}) or both emissions (\textit{piNTCF}) at 1850 level.}
+    \caption[Global annual mean AOD between 1850-2014 with changes due to SLCFs]{Global annual mean AOD between 1850-2014 with changes due to constraining the following SLCFs at 1850 level: methane concentration (\sstpich{}), aerosol precursors (\sstpiaer{}), ozone precursors (\sstpio{}) or both aerosol precursor and ozone precursor emissions (\sstpintcf{}).}
     \label{fig:ch3:AOD}
 \end{figure}
 
 
-The amount of aerosol in the atmosphere is linked to \ce{SO2} oxidation tendency as it produces \ce{SO4} aerosols. Figure \ref{fig:ch3:AOD} shows annual global mean AOD from different experiments. It shows that aerosol precursors increase AOD by 50\% and are the main contributor to global AOD. AOD in the piO3 experiment is lower than histSST by 0.05, suggesting that ozone contributes to some aerosol formation. Global AOD is unchanged under lower \ce{CH4} condition in piCH4.
+
+In addition to global trends, the spatial pattern of AOD gives insight into the distribution of AOD to locate its potential climate impact. Figure \ref{fig:ch3:AOD-map} shows the distribution of AOD and changes due to historical \ce{O3} precursor emissions and \ce{CH4} between 1980 and 1989 when emissions are largest from North America and Europe. Unhatched areas in subfigure b--d denote significant differences between \histsst{} and each counterfactual simulation ($p \leq 0.05$). Areas with elevated AOD include Sub-Saharan Africa, Central America, Northeast America, Central Europe, and Eastern Asia. Apart from Sub-Saharan Africa and Central America, aerosol precursor emissions are responsible for increases in AOD in the 1980s.
 
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{Chapter3/Figs/f06_aod-map.png}
-    \caption[Mean aerosol AOD at 550 nm from 1980-1989 and changes to AOD due to SLCFs]{(a) Decadal mean aerosol AOD at 550 nm from 1980-1989. (b-d) Difference of aerosol AOD at 550 nm from 1980-1989 between \textit{histSST} and \sstpiaer{}, \sstpio{}, and \textit{piCH4}, respectively. Hatched areas denote areas in which the difference is not statically significant (p$\leq$0.05)}
+    \caption[Mean AOD at 550 nm from 1980-1989 and changes to AOD due to SLCFs]{(a) Decadal mean AOD at 550 nm from 1980-1989. (b-d) Difference of AOD at 550 nm from 1980-1989 between \histsst{} and \sstpiaer{}, \sstpio{}, and \sstpich{}, respectively. Hatched areas denote areas in which the difference is not statically significant ($p \leq 0.05$)}
     \label{fig:ch3:AOD-map}
 \end{figure}
 
-
-Figure \ref{fig:ch3:AOD-map} shows the location of AOD changes due to oxidants. There is a localised increase of AOD in the high emission areas such as Northern America, Central Europe, and Eastern Asia due to aerosol precursor emissions in the 1980s, when the main aerosol precursor is \ce{SO2}. \ce{O3} precursors are responsible for 20\% of AOD in these areas (0.08 out of 0.4 over the European region, for example). \ce{CH4} has an insignificant effect on AOD. This is due to the nullifying nature of the change: increase of \ce{SO2 + OH} oxidation and the decrease in \ce{SO2 + H2O2} which results in approximately net zero change in total oxidation tendency compared to \textit{histSST}. This shows that although a global change of reaction tendency was observed, it may not be reflected in some aerosol diagnostics such as AOD. We note here that anthropogenic \ce{CH4} is shown, in the next section, to affect cloud properties.
-
-% Compare the AOD evaluation in Mulcahy and also discuss the updated AOD from Hardarcre and UKESM1.1
-AOD simulated by the UKESM1 against both ground-based measurements and satellite retrievals and found good agreement in trends but underestimated the absolute values \citep{mulcahyDescriptionEvaluationAerosol2020}. The global annual mean AOD trends from AMIP simulation between 1980-2015 show an overall increase in AOD which is consistent with the Collection 6 MODIS merged dataset (MODIS C6) satellite retrieval. The absolute AOD is underestimated by 0.03 but is still within the lower end of the range of the satellite AOD. The spatial distribution shows that the UIKESM1 has higher AOD in the winter seasons of each hemisphere. This is due to the high sea-salt emission which peaks in the winter months. The high bias in sea-salt AOD does not affect our analysis which subtracts AOD from \sstpiaer{}, \sstpio{} and \textit{piCH4} with \textit{histSST}.
-
-% discuss the updated effect of dry deposition from UKESM1 with UKESM1.1
-The UKESM1 was updated with a new dry deposition scheme and a revised dust tuning which affects the predicted aerosol AOD \citep{mulcahyUKESM11DevelopmentEvaluation2023}. The new version of UKESM1, the UKESM1.1, predicted a lower aerosol AOD, with a difference of at least 0.02 starting from 1980 due to a higher \ce{SO2} dry deposition which removes \ce{SO2} from the atmosphere, leaving less to oxidise to form \ce{SO4}. This new dry deposition scheme further increases the low bias in \ce{SO4} concentration compared to measurements. The annual mean AOD from UKESM1 and UKESM1.1 over 2003-2014 shows that the global mean AOD predicted by the models are 0.137 and 0.146, respectively, which are lower than most satellite measurements from MODIS (0.162), ORAC (0.170) and Swansea (0.135). These products, their uncertainties and details of the evaluation procedure are described in detail in \citet{mulcahyDescriptionEvaluationAerosol2020}. The spatial increase in the AOD in UKESM1.1 stems from the revised dust tuning which increases the dust AOD over and downwind of major dust source regions. This update is not relevant to \ce{SO2} oxidation. However, there is a decrease in AOD in UKESM1.1 over China due to an increase in \ce{SO2} dry deposition. Our work used output from the original UKESM1 thus the AOD will have a less low bias in absolute AOD and higher overall \ce{SO4} loading.
+Figure \ref{fig:ch3:AOD}c shows that \ce{O3} precursors are responsible for 20\% of AOD in high-emission areas (0.08 out of 0.4 over the European region, for example). \ce{CH4} has an insignificant effect on AOD. This is due to the nullifying nature of the change: increase of \ce{SO2 + OH} oxidation and the decrease in \ce{SO2 + H2O2}, which results in approximately net zero change in total oxidation tendency compared to \histsst{}. Although reaction tendency has shifted due to \ce{CH4}, some aerosol diagnostics, such as AOD, may remain unchanged. 
 
 
+One significant improvement in GLOMAP-mode aerosol schemes over classic schemes is its ability to independently simulate aerosol size and number for aerosol species and distributions. Figure \ref{fig:ch3:aerosol-size-dist-time} shows, in the top row, the aerosol size distribution for aerosol with diameter between \qty{1}{\nano\metre} and \qty{10}{\micro\metre} at 1 km above the surface for the period 2010--2014. Aerosol at 1 km altitude is relevant for cloud formation. Along with historical aerosol size distribution (black lines), top panels (a--c) show percentage changes in aerosol size distributions due to aerosol precursor emissions, \ce{O3} precursor emissions and \ce{CH4} concentration calculated by subtracting \histsst{} with \sstpiaer{}, \sstpio{} and \sstpich{}, respectively. The bottom panels (d--f) show the progression of change in aerosol size over time. In the bottom panels, each horizontal stripe denotes the percentage difference of global decadal mean aerosol size distribution at 1 km between \histsst{} and the perturbed simulations. For example, the percentage differences for 2010--2014 in figures (a--c) are plotted as the topmost colour bar in figures (d--f). Vertical dashed lines in all panels mark the location of aerosol diameter equal to \qty{50}{\nano\metre}. The subset of aerosol with a diameter above \qty{50}{\nano\metre} is called N50 and is an important cloud condensation nuclei. This will be relevant in the next section.
 
-\subsubsection{Aerosol size distribution}
-\label{sec:ch3:result:aerosol-size-dist}
 
 \begin{figure}
     \centering
@@ -243,77 +440,199 @@ The UKESM1 was updated with a new dry deposition scheme and a revised dust tunin
 \end{figure}
 
 
-Perturbation to oxidants modifies global aerosol size distribution over the historical period. The top panels of figure \ref{fig:ch3:aerosol-size-dist-time} show aerosol size distribution and percentage differences between \textit{histSST} and the \sstpiaer{}, \sstpio{} and \textit{piCH4} simulations for 2010-2014 at 1 km. The bottom panels show the progression of change in aerosol size over time. In panels (d - f), each horizontal bar denotes the percentage difference of global decadal mean aerosol size distribution at 1 km between \textit{histSST} and the perturbed simulations. For example, the percentage differences for 2010-2014 in figures (a-c) are plotted as the topmost colour bar in figures (d-f). 
+Aerosols are simulated in four modes according to their diameter: nucleation, Aitken, accumulation and coarse. At 1 km, Aitken and accumulation mode aerosol has the highest distribution, followed by nucleation-mode aerosols. As shown by figure \ref{fig:ch3:aerosol-size-dist-time}d, historical aerosol precursor emissions increase aerosol concentrations with diameters smaller than 50 nm by more than 40\%  between the 1960s and 1980s. The number of N50 particles has increased by 30-35\%, which is likely to affect the concentration of cloud condensation nuclei (CCN) \citep{seinfeldAtmosphericChemistryPhysics2016}. 
 
-As shown by figure \ref{fig:ch3:aerosol-size-dist-time}d, historical aerosol precursor emissions increase aerosol concentrations with diameters smaller than 50 nm by more than 40\%  between the 1960s and 1980s. The number of particles greater than 50 nm in diameter (N50 -- dashed grey vertical line) has increased by 30-35\% and this is likely to affect the concentration of cloud condensation nuclei (CCN) \citep{seinfeldAtmosphericChemistryPhysics2016}. In contrast, historical \ce{O3} precursors increase the concentration of particles with a diameter of less than 50 nm by 30\% but only increase the concentration of particles with a diameter above 50 nm by 4\%. As shown in Section \ref{sec:ch3:oxidation}, the \ce{O3} precursors affect only the \ce{SO2 + OH} reaction tendency which forms new sulfate aerosol particles. The \textit{piCH4} shows that the historical increase in \ce{CH4} leads to an increase in the aerosol concentration with a diameter above 1000 nm by 8\% after the 1970s; however, the concentration of aerosol at this size is negligible, with only 1-2 particles per cm${^3}$. More importantly, an increase in \ce{CH4} concentration decreases the aerosol concentration up to 300 nm diameter as the increase in \ce{CH4} decreases the \ce{SO2 + OH} reaction tendency which contributes to new aerosol formation. 
+
+Historical \ce{O3} precursors increase the concentration of particles with a diameter of less than 50 nm by 30\% but only increase the concentration of particles with a diameter above 50 nm by approximately 4\%. As shown in Section \ref{sec:ch3:oxidation}, the \ce{O3} precursors affect only the \ce{SO2 + OH} reaction tendency, which forms new sulfate aerosol particles. 
+
+Figure \ref{fig:ch3:aerosol-size-dist-time}f shows that the historical increases in \ce{CH4} lead to a rise in the aerosol concentration with a diameter above 1000 nm by 8\% after the 1970s. However, the number concentration of aerosols with this size is only 1--2 particles per \unit{\centi\metre\cubed}, rendering the 8\% change negligible. More importantly, an increase in \ce{CH4} concentration decreases the aerosol number of aerosol with a diameter up to 300 nm by 15\%. This is more significant as the number concentration of aerosol with this size is one order of magnitude greater. That is, decreases in \ce{SO2 + OH} reaction tendency from increases in \ce{CH4} inhibit new aerosol formation for aerosol with a diameter below 300 nm.
+
 
 % add discussions on the results by O'Connor
-This result agrees with other work which reported a change in aerosol size distribution due to \ce{CH4} \citep{oconnorApportionmentPreIndustrial2022}. They found that an increase in \ce{CH4} concentration in the present day leads to a significant reduction in aerosol number concentration in Aitken and accumulation mode. The reduction in N50 occurs across all latitudes and through the depths of the atmosphere. As \citet{oconnorApportionmentPreIndustrial2022} used timeslice simulations in their work, this work adds to their finding that the reduction in N50 occurs as early as the 1920s and increases in magnitude over time, to a maximum relative difference of 15\% in 2010. 
+The results for aerosol size distribution due to historical \ce{CH4} concentration discussed in this chapter agree with the work of \citet{oconnorApportionmentPreIndustrial2022}, which reported a change in aerosol size distribution due to \ce{CH4}. They found that an increase in \ce{CH4} concentration in the present day led to a significant reduction in aerosol number concentration in Aitken and accumulation mode. The reduction in N50 occurred across all latitudes and through the depths of the atmosphere. As \citet{oconnorApportionmentPreIndustrial2022} used time-slice simulations in their work, this chapter adds to their finding that the reduction in N50 occurs as early as the 1920s and increases in magnitude over time, to a maximum relative difference of 15\% in 2010. 
 
-\subsection{Cloud properties}
+In summary, this section has quantified the impact of oxidant perturbation due to historical \ce{O3} precursors and \ce{CH4}. \ce{O3} precursors act to increase AOD as it contribute to \ce{SO2 + OH} oxidation. The aerosols with diameters less than \qty{50}{nm} see the largest increase. \ce{CH4} reduces number of aerosols with diameter below \qty{300}{nm} but does not significantly modify AOD.
+
+
+\subsection{Cloud properties changes due to SLCFs}
+
+Aerosol affects cloud properties by the increase in the concentration of aerosol particles large enough to activate cloud droplets or cloud condensation nuclei  \citep[CCN; ][]{aitkenDustFogsClouds1881,kohlerNucleusGrowthHygroscopic1936, bellouinBoundingGlobalAerosol2020}. This way, more numerous CCNs lead to increasing cloud droplet number concentration (CDNC) and implies a decrease in cloud droplet effective radius \citep[\Reff{}; ][]{bellouinBoundingGlobalAerosol2020}. 
+
+In UKESM1, aerosol-cloud interactions are only simulated in a warm cloud, and aerosol activates according to the activation scheme by \citet{abdul-razzakParameterizationAerosolActivation2000}. The model determines the number of CCN as theorised by \citet{kohlerNucleusGrowthHygroscopic1936} with empirical fits to cloud parcel models \citep{mulcahyDescriptionEvaluationAerosol2020}. CDNC impacts \Reff{} and is also used to calculate cloud albedo to represent aerosol indirect effects \citep{bellouinImpactModalAerosol2013}. 
+
+Although UKESM1 interactively simulates CCN using aerosol size distribution, composition, and meteorological conditions, the simulated CCN number concentrations were not archived in AerChemMIP simulations by UKESM1 used in this thesis. Therefore, aerosols with a diameter above \qty{50}{nm} (N50) are assumed to act as cloud condensation nuclei (CCN) in which their concentration modifies cloud properties. Figure \ref{fig:ch3:cloud} shows the global decadal mean N50 concentration and cloud properties, including CDNC, \Reff{} and cloud fraction at 1 km, assumed to be in the low-level clouds. It shows that aerosol precursor emissions contribute to rises in N50 from \qty{390}{\per\centi\metre\cubed} in 1850 to \qty{600}{\per\centi\metre\cubed} in the 1980s. N50 then decreases slightly to \qty{575}{\per\centi\metre\cubed} at the end of the simulation period. CDNC and \Reff{} similarly respond to historical precursor emission, with CDNC increasing by \qty{40}{\per\centi\metre\cubed} and the latter decreasing. Mean cloud fraction also increases by 0.1--0.2\%, as expected from aerosols inhibiting rain and lengthening cloud lifetime.
 
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{Chapter3/Figs/f09_cloud-props.png}
-    \caption{Change in annual mean (a) concentration of particles greater than 50 nm diameter (N50), (b) cloud droplet number concentration (CDNC), (c) effective cloud droplet radius (R$_{\textrm{eff}}$) and (d) cloud fraction at 1 km. A 10-year rolling mean was applied to the data. Shaded areas denote the standard deviation from the 10-year mean.}
+    \caption[N50 and cloud properties at 1 km due to SLCF emissions from fixed-SST simulations]{Global annual mean (a) number concentration of aerosol with a diameter greater than \qty{50}{nm} (N50), (b) cloud droplet number concentration (CDNC), (c) effective cloud droplet radius (\Reff{}) and (d) cloud fraction. All properties are at 1 km altitude with a 10-year rolling mean applied to the data. Shaded areas denote the standard deviation from the 10-year mean.}
     \label{fig:ch3:cloud}
 \end{figure}
 
-Aerosols with a diameter above 50 nm (N50) act as cloud condensation nuclei (CCN) in which their concentration modifies cloud properties. Figure \ref{fig:ch3:cloud} shows the global decadal mean N50 concentration as well as cloud properties including cloud droplet number concentration (CDNC), cloud droplet effective radius (R$_{\textrm{eff}}$) and cloud fraction at 1 km. It shows that N50 rises from 400 cm$^{-3}$ in 1850 to 600 cm$^{-3}$ in the 1980s then decreases slightly in the historical period. This trend is in line with cloud properties change. \ce{O3} precursors are responsible for 12.5\% (75 cm$^{-3}$  of 600 cm$^{-3}$) of total N50 in 1980s. Meanwhile, an increase in N50 in \textit{piCH4} implies that historical anthropogenic methane emissions lower N50 concentration.
+\info[inline]{ Last five year data for Reff \newline
+sstpiaer [10.047614 10.045411 10.043983 10.0431   10.044414]\newline
+sstpio3  [9.552398 9.552899 9.555356 9.558805 9.564247]\newline
+sstpich4 [9.431016 9.432555 9.432909 9.43637  9.44189 ]\newline
+histsst [9.5231   9.523898 9.525325 9.5285   9.531817]\newline
 
-Cloud properties show signs of changes due to aerosol precursors and oxidant changes. Figure \ref{fig:ch3:cloud}b shows global mean cloud properties at 1 km above ground. CDNC increases by 40 cm$^{-3}$ due to aerosol precursors. Historical \ce{O3} precursors increase CDNC while \ce{CH4} decreases CDNC. This is linked to the change in \ce{SO2 + OH} reaction tendency as this reaction increases aerosol number in the atmosphere, which will affect CDNC \citep{twomeyInfluencePollutionShortwave1977}. While AOD, seen in figure \ref{fig:ch3:AOD-map}, does not indicate a significant change due to \ce{CH4}, cloud properties show a clear increase to CDNC and a decrease to R$_{\textrm{eff}}$. This is in line with work done by \citet{karsetStrongImpactsAerosol2018}, which found that the distribution of the changes in aerosol number concentration does not always correspond directly to the distribution of the changes in cloud and radiative properties. In essence, historical \ce{CH4} increases the cloud effective radius and decreases CDNC.
+N50\newline
+sstpiaer [390.7627759  390.75977398 390.00174188 390.80873347 392.03991176]\newline
+sstpio3  [515.81493888 514.87963094 516.20017919 516.05044488 515.76667736]\newline
+sstpich4 [621.65749269 618.32074753 617.45910279 618.51945897 614.74142594]\newline
+histsst  [577.35172124 574.28768652 572.77445232 572.09089525 569.36423889]\newline
 
-Cloud fraction increases by 0.2\% due to aerosol precursors. However, \ce{O3} and \ce{CH4} do not significantly alter cloud fractions as shown in \ref{fig:ch3:cloud}c. 
+CDNC\newline
+sstpiaer [68.937096 69.07281  69.19412  69.30619  69.28673 ]\newline
+sstpio3 [103.730995 103.890274 103.917946 103.798416 103.620544]\newline
+sstpich4 [112.98755 112.97266 113.03949 112.92993 112.73299]\newline
+histsst [107.610344 107.63855  107.68668  107.55977  107.33319 ]\newline
+}
 
+Cloud properties are susceptible to feedback from warming tropospheric temperatures, which may be induced by \ce{CH4} or \ce{O3} or cooling due to aerosols. Cloud feedback refers to the changes in cloud properties and behaviours in response to a warming climate, which in turn affect the Earth's radiative balance and amplify or dampen global warming \citep{wangCompensationCloudFeedback2021, grosvenorChangeAerosoldrivenCloudfeedbackdriven2023}. Fixed-SST simulations used in this chapter are atmosphere-only simulations with fixed sea-surface temperatures. This rules out the impact of temperature due to cloud feedback and allows only the effects of changes in chemistry on clouds when comparing between \histsst{} and the perturbed runs during the same period. 
 
-\subsection{Radiative effects due to SLCFs}
+Cloud properties show signs of changes due to oxidant changes in \sstpio{}. \ce{O3} precursors adds 12.5\% (\qty{75}{\per\centi\metre\cubed} of \qty{600}{\per\centi\metre\cubed}) to mean N50 number concentration, contributing to a 4.5\% increase in CDNC (\qty{5}{\per\centi\metre\cubed} of \qty{110}{\per\centi\metre\cubed}) in 1980s as shown by the difference between \sstpio{} and \histsst{}. Global mean \Reff{} reduces by \qty{-0.03}{\micro\metre} or 0.3\% in 2010, while global mean cloud fraction does not show a significant response to \ce{O3} precursors. 
 
-Greenhouse gases, aerosols, and clouds could perturb the Earth's radiative balance. One way to quantify the effect of each of the forcings is through the decomposition of effective radiative forcing (ERF) as described in Section \ref{sec:ch2:erf}. The ERF is decomposed into the clear and clean sky part or $ERF_{cs,clean}$, the instantaneous radiative forcing of the aerosol (ie, scattering and absorption) or aerosol IRF, and the cloud radiative effect or $\Delta$CRE'. Here we show that \ce{O3} precursors affect aerosol IRF and that \ce{CH4} affects the cloud radiative effect.
+Historical increase in \ce{CH4} concentration impacts cloud formation through oxidant shifts. An increase in N50 in \sstpich{} implies that historical anthropogenic methane emissions lower N50 concentration. This is linked to the change in \ce{SO2 + OH} reaction tendency as this reaction increases aerosol number in the atmosphere, which will affect CDNC.  While AOD, seen in figure \ref{fig:ch3:AOD-map}, does not indicate a significant change due to \ce{CH4}, cloud properties show an apparent increase to CDNC and a decrease to \Reff{}. In other words, the N50 number concentration trend decreases is significant from the 1940s due to \ce{CH4}, as seen from the difference between \histsst{} and \sstpich{}. In 2010, \ce{CH4} concentration is responsible for reduction of 7.9\% of N50 (\qty{-45.4}{\per\centi\metre\cubed} of baseline \qty{569}{\per\centi\metre\cubed}), resulting in 5.03\% fewer cloud droplets. 
+
+In essence, clouds respond to oxidant changes induced by \ce{O3} precursors and \ce{CH4}. Historical rise in \ce{O3} precursors increase N50 and CDNC through increasing \ce{SO2 + OH} oxidation. Rise in \ce{CH4} does not change the AOD but shifts the aerosol size distribution and reduces the number of N50 through shifting oxidation from gas to aqueous phase. Fewer N50 leads to less CDNC and larger cloud droplets.
+
+\subsection{Effective radiative forcing due to SLCFs}
+
+Since the availability of oxidants has been shown to influence aerosols and clouds, one could expect a degree of change in aerosol-cloud interaction, which impacts global radiation. Figure \ref{fig:ch3:erf} shows the global annual mean aerosol ERF from aerosol precursors, \ce{O3} precursors and \ce{CH4}. Aerosol precursor ERF is the most negative between 1970-1990 due to an increase in both cloud radiative effect and instantaneous radiative forcing, leading to negative radiative forcing, which maximises at \qty{-1.5}{\watt\per\metre\squared}. Aerosol precursors contribute mainly through cloud radiative effects (\qty{-1.01+-0.19}{\watt\per\metre\squared}), followed by aerosol instantaneous radiative forcing (IRF; \qty{-0.18+-0.04}{\watt\per\metre\squared}) in 2014. 
+
 
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{Chapter3/Figs/f10_erf.png}
-    \caption[Global mean radiative forcing due to SLCFs]{Global mean aerosol radiative forcing due to (a) aerosol precursors, (b) \ce{O3} precursors and (c) \ce{CH4}. A 10-year rolling mean was applied to the data. Shaded areas denote the standard deviation from the 10-year mean.}
+    \caption[Global mean radiative forcing due to SLCFs]{Global mean aerosol radiative forcing due to (a) aerosol precursors, (b) \ce{O3} precursors and (c) \ce{CH4}. ERF is calculated from subtracting top-of-atmosphere radiative flux from \histsst{} with (a) \sstpiaer{}, (b) \sstpio{} and (c) \sstpich{}. A 10-year rolling mean was applied to the data. Shaded areas denote the standard deviation from the 10-year mean.}
     \label{fig:ch3:erf}
 \end{figure}
-% sstpiaer
-% irf -0.2772347016768022
-% irf_std 0.031058704
-% cre -1.0905492262406782
-% cre_std 0.19105731
-% sstpio3
-% irf -0.08279982263391668
-% irf_std 0.05211312
-% cre -0.04306954470547763
-% cre_std 0.16057429
-% sstpich4
-% irf 0.039096790010278874
-% irf_std 0.037890494
-% cre 0.21275067762895067
-% cre_std 0.15470749
 
-Figure \ref{fig:ch3:erf} shows the global annual mean aerosol ERF from aerosol precursors, \ce{O3} precursors and \ce{CH4}. Figure \ref{fig:ch3:erf}a shows that aerosol precursors contribute mostly to the cloud radiative effects (-1.01$\pm$0.19 W m$^{-2}$), followed by aerosol IRF (-0.18$\pm$0.04 W m$^{-2}$). Aerosol precursor ERF is the most negative between 1970-1990 due to an increase in both cloud radiative effect and instantaneous radiative forcing. Aerosol precursors include absorbing aerosols such as black carbons which contribute to net positive IRF in some regions such as eastern central China \citep{seoImpactsAerosolEmissions2020, oconnorAssessmentPreindustrialPresentday2021}. 
+Aerosol precursors include not only \ce{SO2} but also organic carbon (OC) precursors and primary black carbon (BC) emissions. Absorbing aerosols such as black carbons contribute to net positive IRF in some regions such as eastern central China \citep{seoImpactsAerosolEmissions2020, oconnorAssessmentPreindustrialPresentday2021}. Using UKESM1 simulations for attribution experiments from AerChemMIP with 2014 emissions, \citet{oconnorAssessmentPreindustrialPresentday2021} showed that anthropogenic \ce{SO2} accounts for 79\% of total aerosol ERF. The ratio of \ce{SO2} emission to the total emission only decreases from 1950 \citep{hoeslyHistorical175020142018}, so it is possible to assume that \ce{SO2} is the primary aerosol precursor outside of 2014. 
+
+\info[inline]{ 
+sstpiaer \newline
+irf -0.2772347016768022\newline
+irf_std 0.031058704\newline
+cre -1.0905492262406782\newline
+cre_std 0.19105731\newline
+sstpio3\newline
+irf -0.08279982263391668\newline
+irf_std 0.05211312\newline
+cre -0.04306954470547763\newline
+cre_std 0.16057429\newline
+sstpich4\newline
+irf 0.039096790010278874\newline
+irf_std 0.037890494\newline
+cre 0.21275067762895067\newline
+cre_std 0.15470749\newline
+}
 
 
-\ce{O3} is an important greenhouse gas \citep{forsterEarthEnergyBudget2021}. By itself, the present-day change in \ce{O3} has a positive (warming) clear-sky radiative forcing of 0.25 W m$^{-2}$ compared to 1850. There is a slight decrease in aerosol IRF due to \ce{O3} precursors starting in the 1960s and up to 0.08$\pm$0.05 W m$^{-2}$ between 2000-2014. This is due to the increase in new aerosol formation from the \ce{SO2 + OH} reaction tendency since the amount of scattered solar radiation is proportional to the total column mass burden of particles \citep{nemesureDirectShortwaveForcing1995}. As seen in Figure \ref{fig:ch3:AOD-map}, there is a statistically significant change to AOD due to \ce{O3} precursors. There is no clear change to cloud radiative effects due to \ce{O3}, consistent with \citet{skeieHistoricalTotalOzone2020}, who reported that cloud adjustments due to \ce{O3} are in the order of 0.02 W m$^{-2}$. However, we note that the UKESM1 is the only model with troposphere and stratosphere chemistry that gives negative ERF in the present-day \citet{skeieHistoricalTotalOzone2020}. 
+\ce{O3} is an important greenhouse gas \citep{forsterEarthEnergyBudget2021}. By itself, the present-day change in \ce{O3} has a positive (warming) clear-sky radiative forcing of \qty{0.25}{\watt\per\metre\squared} compared to 1850. A slight increase in aerosol IRF due to \ce{O3} precursors starts in the 1960s and rises to \qty{-0.08+-0.08}{\watt\per\metre\squared} between 2000 and 2014. This is due to the increase in new aerosol formation from the \ce{SO2 + OH} reaction tendency since the amount of scattered solar radiation is proportional to the total column mass burden of particles \citep{nemesureDirectShortwaveForcing1995}. Figure \ref{fig:ch3:AOD-map} shows that \ce{O3} precursors significantly increase AOD. There is no clear change to cloud radiative effects due to \ce{O3}, consistent with \citet{skeieHistoricalTotalOzone2020}, who reported that cloud adjustments due to \ce{O3} were insignificant and were in the order of \qty{0.02}{\watt\per\metre\squared}.
 
-\ce{CH4} is a greenhouse gas that also affects the cloud adjustment \citep{oconnorApportionmentPreIndustrial2022}. The increase in \ce{CH4} in the present-day has resulted in an increase in the clear-sky radiative forcing of 1.0 W m$^{-2}$ since 1850. Changes in \ce{CH4} since 1850 have resulted in negligible changes in the aerosol direct effect. This is due to the reaction tendency of \ce{SO2 + OH} and \ce{SO2 + H2O2} roughly cancelling out, resulting in an unchanged aerosol loading as shown in the aerosol AOD, figure \ref{fig:ch3:AOD-map}. On the other hand, the decrease to CDNC and increase in cloud droplet effective radius from 1850s to historical \ce{CH4} results in a positive cloud radiative effect of 0.21$\pm$0.15 W m$^{-2}$. These results agree with the time slice study reported in \citep{oconnorApportionmentPreIndustrial2022}.
+\ce{CH4} is a potent greenhouse gas that has been shown to affect the cloud adjustments \citep{oconnorApportionmentPreIndustrial2022}. The increase in \ce{CH4} in the present-day increased in the clear-sky radiative forcing by \qty{1.0}{\watt\per\metre\squared} but leaves the aerosol IRF unaffected. This is due to the reaction tendency of \ce{SO2 + OH} and \ce{SO2 + H2O2} roughly cancelling out, resulting in an unchanged aerosol loading as shown in sulfate burden and AOD, figure \ref{fig:ch3:AOD-map}. On the other hand, the decrease to CDNC and increase in \Reff{} from 1850s to historical \ce{CH4} results in a positive cloud radiative effect of \qty{0.21+-0.15}{\watt\per\metre\squared}. 
+
+This chapter has shown that when aerosol precursors from the present-day are exposed to the present-day oxidants, as in \histsst{}, the ERF is more negative than when the same precursors are exposed to an atmosphere with lower oxidative power in \sstpio{}. 
+
 
 % discuss oconnor in details
-\citet{oconnorApportionmentPreIndustrial2022} showed that the increase in \ce{CH4} concentration leads to changes to aerosol properties, which leads to a positive total \ce{CH4} ERF. Their study used two timeslice experiments: pre-industrial and pre-industrial with present-day \ce{CH4} to calculate the aerosol ERF. The ERF estimates suggest that the total \ce{CH4} ERF from UKESM1 includes a significant indirect contribution from aerosols. The direct CH4 ERF at the present-day relative to the preindustrial period is 0.85$\pm$0.03 W m$^{-2}$ \citep{oconnorAssessmentPreindustrialPresentday2021}.
+These results from \sstpich{} agree with the time slice study reported by \citet{oconnorApportionmentPreIndustrial2022}.\citet{oconnorApportionmentPreIndustrial2022} showed that the increase in \ce{CH4} concentration led to changes to aerosol properties, which led to a positive total \ce{CH4} ERF. Their study used two time-slice simulations: pre-industrial and pre-industrial with present-day \ce{CH4} to calculate the aerosol ERF. The ERF estimates suggested that the total \ce{CH4} ERF from UKESM1 included a significant indirect contribution from aerosols. The direct \ce{CH4} ERF at the present-day relative to the pre-industrial period was reported at \qty{0.85+-0.03}{\watt\per\metre\squared}, of which \qty{0.12+-0.02}{\watt\per\metre\squared} is contributed by cloud-radiative effects.
 
-% Discuss Thornhill 2021 (Multi model Aerosol ERF calculation from different NTCF including CH4 and O3 - See Table 5)
 
+% Discuss Thornhill 2021 (Multi model Aerosol ERF calculation from different SLCF including CH4 and O3 - See Table 5)
+
+
+\subsection{Aerosol precursor ERF calculated using control simulation with pre-industrial oxidants}
+
+% Discuss Karset
+The impact of oxidants on ERF questions the consistency of ERF calculation, especially from aerosols that form \textit{in-situ}, such as sulfate and secondary organic aerosols. \citep{karsetStrongImpactsAerosol2018} indicated ambiguity in the oxidant fields used in CMIP6 simulations. They found that the choice of oxidants for the control run when estimating ERF changed cloud radiative effects by \qty{0.39}{\watt\per\metre\squared}. Simulations from AerChemMIP can be used to quantify these effects, which is this section's primary goal. A comparison of experiment designs for work by \citet{karsetStrongImpactsAerosol2018} and AerChemMIP are given in Table \ref{tab:ch3:histSST-karset-compare}.
+
+
+The effect of oxidants on ERF calculation could be quantified with existing AerChemMIP simulations, assuming that \ce{O3} precursors are the main contributor to oxidant changes in the historical period. Figure \ref{fig:ch3:erf-piNTCF} shows the ERF using \histsst{} subtracted by \sstpiaer{}, \sstpio{}, and \sstpintcf{}, with near-present values (2005--2014) summarised results in Table \ref{tab:ch3:summary-erf}. Subtracting \histsst{} by \sstpiaer{} is the equivalent of using \textit{PIAER\_PDOXI}. \ce{O3} precursors increase the atmospheric oxidant concentration, making the absence of \ce{O3} precursors in \sstpintcf{} equivalent to \textit{PIAER\_PIOXI} in work by \citet{karsetStrongImpactsAerosol2018}, in a broad sense. However, it is important to note that \ce{CH4} is also shown to impact the atmospheric oxidants (Figure \ref{fig:ch3:oxidants}), and this is not constrained to pre-industrial level in \sstpintcf{}. Using \sstpintcf{} as control instead of \sstpiaer{} to calculate ERF increases the total ERF by \qty{0.60}{\watt\per\metre\squared} due to the impact of \ce{O3} in the clean-and-clear-sky ERF, \ERFcsclean{}, rather than the decreasing in CRE or aerosols IRF. Both aerosol direct effects and cloud radiative effects are not significantly modified by using \sstpintcf{} instead of \sstpiaer{}, except for a \qty{0.20}{\watt\per\metre\squared} decrease in CRE' after 1980.
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{Chapter3/Figs/f11_erf_piNTCF.png}
+    \caption[Global mean radiative forcing due to combined SLCFs]{Global mean aerosol radiative forcing due to (a) aerosol precursors, (b) \ce{O3} precursors and (c) both aerosol and \ce{O3} precursors. ERF is calculated from subtracting top-of-atmosphere radiative flux from \histsst{} with (a) \sstpiaer{}, (b) \sstpio{} and (c) \sstpintcf{}. A 10-year rolling mean was applied to the data. Shaded areas denote the standard deviation from the 10-year mean.}
+    \label{fig:ch3:erf-piNTCF}
+\end{figure}
+
+This chapter has shown the opposite model response to results in work by \citet{karsetStrongImpactsAerosol2018} regarding aerosol-cloud interaction. While \citet{karsetStrongImpactsAerosol2018} concluded that a less oxidative atmosphere allowed the precursors to be transported further away and had more significant effects on CDNC, this chapter has shown that oxidation decreases when aerosol precursors from the near-present are exposed to an atmosphere with lower oxidative power in \sstpio{} compared to \histsst{}, which leads to lower AOD, CDNC, and warming in the near present. Similar decreases in oxidation and CDNC are observed in Figure \ref{fig:ch3:cloud} when switching to a less oxidative atmosphere in \sstpiaer{} to \sstpintcf{}. 
+
+Both work in this chapter and \citet{karsetStrongImpactsAerosol2018} agree that less oxidative atmosphere increases \ce{SO2} lifetimes, (Figure \ref{fig:ch3:s-budget} and Table \ref{tab:ch3:budget-pothole}--\ref{tab:ch3:budget-near-present}). Exposing pre-industrial aerosol precursor to pre-industrial oxidants increases \ce{SO2} lifetime by \qty{0.55}{days}, as seen by comparing \sstpintcf{} with \sstpiaer{} in Figure \ref{fig:ch3:s-budget}. A similar increase of \ce{SO2} lifetime by \qty{0.55}{days} is seen when historical aerosol precursors are exposed to pre-industrial oxidants instead of near-present oxidants as seen in \sstpio{} vs \histsst{}. 
+
+Time-slice simulations from AerChemMIP further aid in investigating the choice of oxidants on ERF and eliminate the effects of rising sea-surface temperature on cloud feedback in \histsst{}-type simulations. Table \ref{tab:ch3:summary-erf} shows the ERF from UKESM1 AerChemMIP time-slice simulations. The aerosol precursor ERF from time-slice simulations obtained from subtracting \textit{piClim-control} by \textit{piClim-aer} is \qty{-1.10+-0.22}{\watt\per\metre\squared} which is \qty{0.16}{\watt\per\metre\squared} less negative than that obtained from transient simulations using \histsst{} and \sstpiaer{}. The main difference comes from lower IRF in time-slice simulations. Although both experiments target aerosol precursors, the experiment designs are opposite. In the time-slice experiment, the control and perturbed simulations have pre-industrial oxidants, while higher oxidants are used in control and perturbed runs. Thus, the difference between these two sets of experiments could be narrowed down to the impact of additional oxidation provided by oxidant fields. In other words, additional oxidants from \ce{O3} precursors in \histsst{} contribute towards aerosol direct effects while having insignificant effects on cloud radiative effects. The aerosol direct effects were not reported in \citet{karsetStrongImpactsAerosol2018}, rendering direct comparison impossible.
+
+
+\begin{table}
+\centering
+\caption{ For AerChemMIP time-slice simulations, present-day (year 2014) ERFs relative to the pre-industrial (year 1850) period. All values are shown in \unit{\watt\per\metre\squared} with uncertainties (if reported) calculated as the standard deviation of the annual mean.}
+\label{tab:ch3:summary-erf}
+\begin{tabular}{l l c c c c}
+
+\toprule
+Perturbed & Control & IRF & CRE & \ERFcsclean{} & ERF \\ 
+
+\midrule
+\multicolumn{4}{l}{AerChemMIP transient fixed-SST simulations (2005--2014)} \\
+\midrule
+\histsst{} & \sstpiaer{}   & \num{-0.28+-0.03} & \num{-1.09+-0.19} & \num{0.10+-0.17}  & \num{-1.27+-0.31} \\ 
+\histsst{} & \sstpio{}     & \num{-0.08+-0.05} & \num{-0.04+-0.16} & \num{0.18+-0.13}  & \num{0.06+-0.25}  \\ 
+\histsst{} & \sstpintcf{}  & \num{-0.28+-0.05} & \num{-1.07+-0.16} & \num{0.24+-0.08}  & \num{-1.11+-0.15} \\ 
+
+\midrule
+\multicolumn{4}{l}{AerChemMIP time-slice historical simulations}\\
+\midrule
+\textit{piClim-aer} & \textit{piClim-control} & \num{-0.15+-0.03} & \num{-1.00+-0.12} & \num{0.05+-0.13} & \num{-1.1+-0.22} \\ 
+\textit{piClim-SO2} & \textit{piClim-control} & \num{-0.49+-0.03} & \num{-0.91+-0.13} & \num{0.03+-0.14} & \num{-1.37+-0.18} \\ 
+\textit{piClim-O3} & \textit{piClim-control} & \num{-0.02+-0.03} & \num{0.07+-0.13}  & \num{0.16+-0.11} & \num{0.21+-0.21}  \\
+
+\textit{piClim-NTCF} & \textit{piClim-control} & \num{-0.24+-0.04} & \num{-1.00+-0.12} & \num{0.21+-0.16} & \num{-1.03+-0.21} \\ 
+\textit{piClim-NTCF} & \textit{piClim-O3} & \num{-0.22+-0.03} & \num{-1.07+-0.12} & \num{0.06+-0.12} & \num{-1.24+-0.19} \\ 
+
+
+\midrule
+\multicolumn{4}{l}{\citet{karsetStrongImpactsAerosol2018}} \\
+\midrule
+\textit{PDAER\_PDOXI} & \textit{PIAER\_PDOXI} &  & \num{-1.32} \\ 
+\textit{PDAER\_PDOXI} & \textit{PIAER\_PIOXI} &  & \num{-1.07} \\ 
+
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+
+In summary, aerosol ERF computed from [\textit{PDAER\_PDOXI} minus \textit{PIAER\_PDOXI}] is the equivalent to [\histsst{} minus \sstpiaer{}] and [\textit{piClimNTCF} minus \textit{piClim-O3}], and [\textit{PDAER\_PDOXI} minus \textit{PIAER\_PIOXI}] is equivalent to [\histsst{} minus \sstpintcf{}] and [\textit{piClimNTCF} minus \textit{piClim-control}] with some caveats. By switching from PD oxidants to PI oxidants, \citet{karsetStrongImpactsAerosol2018} showed that aerosol indirect effects became less negative due to more aerosol formation in \textit{PIAER\_PIOXI}. The UKESM1 simulations do not share this behaviour, as there are insignificant changes to cloud radiative effects by using PI oxidants instead of PD oxidants in the control runs in both the transient-SST and the time-slice experiments. 
+
+The caveats for the comparison across the three experiments are as follows. Firstly, the pre-industrial oxidants in work by \citet{karsetStrongImpactsAerosol2018} included the effects of \ce{CH4} on the oxidants. The AerChemMIP \sstpintcf{}, \textit{piClim-O3}, and \textit{piClim-NTCF} do not put constraints on \ce{CH4} consistently with the first using historical \ce{CH4} while the latter two use PI \ce{CH4}. 
+
+
+Second, calculating ERF using the \textit{piClim-O3} as the control run is not well-defined. The 'double-call' method uses the sea-surface temperature from the coupled atmosphere-ocean control run, which allows the temperature to reach equilibrium. The equilibrium sea-surface temperature balances the incoming and outgoing radiation at the top of the atmosphere. Using the sea-surface temperature from the control run to calculate the ERF from a single forcing is defined as the change in the top-of-atmosphere radiative flux between the control, which is in equilibrium, and the perturbed, which is not in equilibrium. However, when using \textit{piClim-O3} as the control, the control and perturbed, \textit{piClim-NTCF}, are both not in equilibrium. 
+
+Thirdly, the emissions or oxidant fields are not from the same year. This may be important in case the emission location dictates the oxidation efficiency. Using different definitions of pre-industrial (1855 vs 1850) may be trivial, but \ce{SO2} emission has seen a substantial increase in East Asia between 2000 and 2014.
+
+
+Moreover, comparing work in this chapter with work by  \citet{karsetStrongImpactsAerosol2018} is not straightforward due to differences in the model. Cam5.3-Oslo, used in work by \citet{karsetStrongImpactsAerosol2018} utilised climatological offline oxidants, while UKESM1 features online oxidants. \ce{SO2} emission height is set at the surface for UKESM1 while Cam5.3-Oslo injected half of \ce{SO2} at elevated levels to emulate chimney stacks. Most importantly, Cam5.3-Oslo does not use a modal aerosol microphysics scheme that simulates aerosol mass and number independently like UKESM1's GLOMAP-mode.  Instead, the lookup tables precomputed with a detailed offline size-resolving model (AeroTab) are used to determine size distributions and optical properties during simulations. 
+
+
+% 
+Overall, work in this section agrees with \citet{karsetStrongImpactsAerosol2018} that oxidants used for diagnosing ERF should be consistent across models if model intercomparison projects' objective is to standardise their methodologies. This chapter argues that the choice of oxidants in PD simulations is as important when calculating ERF as, if not more important than, PI simulations. With more precursors, more oxidants, which are present in the near-present atmosphere, enhance aerosol formation. 
 
 
 \section{Conclusions}
 
-Changes in oxidants due to \ce{O3} precursors and \ce{CH4} affect sulfate aerosol formation, cloud formation and potentially radiative balance, but the impacts of oxidants on ERF are not well understood. In this work, we used results from AerChemMIP experiments to investigate the effects of oxidant changes on sulfate aerosol formation, aerosol and cloud properties and aerosol effective radiative forcing. We have explained the relationship between a net negative change to IRF by \ce{O3} and a net positive change by \ce{CH4} to CRE to changes in oxidation due to respective forcers.  
+Changes in oxidants due to \ce{O3} precursors and \ce{CH4} affect sulfate aerosol formation, cloud formation and potentially radiative balance, but oxidants' impacts on ERF are poorly understood. In this work, we used results from AerChemMIP experiments to investigate the effects of oxidant changes on sulfate aerosol formation, aerosol and cloud properties and aerosol effective radiative forcing. The motivation for this study lies in the UKESM1's novel ability to simulate coupling between chemistry, aerosol, cloud, and radiation.
+
+
+A broad range of analyses has been examined to investigate this phenomenon as thoroughly as possible. This chapter has explained the relationship between a net negative change to IRF by \ce{O3} and a net positive change by \ce{CH4} to CRE to changes in oxidation due to respective forcers.  
 
 % Effects due to O3
-Historical \ce{O3} precursor emissions increase \ce{O3} mixing ratio as well as \ce{OH} and \ce{H2O2}. These oxidant increases enhance the \ce{SO2 + OH} reaction tendency and significantly increase the aerosol AOD near high \ce{SO2} emission regions.  Due to \ce{O3} precursors, the concentration of aerosols with size below 50 nm increases, which increases the cloud droplet number concentration but does not result in significant changes in cloud radiative effects. Ultimately, ozone precursors increase the aerosol instantaneous radiative forcing by up to 0.08$\pm$0.05 W m$^{-2}$ between 2000-2014, which is 44\% of aerosol IRF due to aerosol precursors, further cooling the climate.
+Historical \ce{O3} precursor emissions increase \ce{O3} mixing ratio as well as \ce{OH} and \ce{H2O2}. These oxidant increases enhance the \ce{SO2 + OH} reaction tendency and significantly increase the AOD near high \ce{SO2} emission regions.  Due to \ce{O3} precursors, the concentration of aerosols with size below 50 nm increases, increasing the cloud droplet number concentration but not significantly changing cloud radiative effects. Ultimately, \ce{O3} precursors increase the aerosol instantaneous radiative forcing by up to \qty{-0.08+-0.05}{\watt\per\metre\squared} between 2000 and 2014, which is 44\% of aerosol IRF due to aerosol precursors, further cooling the climate.
 
 % Effects due to CH4
-On the other hand, \ce{CH4} decreases the OH concentration as \ce{CH4} acts as an OH sink. Increases in \ce{CH4} also increases \ce{H2O2} and \ce{O3} mixing ratios. These changes in oxidants decrease the OH reaction tendency (\ce{SO2 + OH}) but increase the \ce{SO2 + H2O2} reaction tendency, resulting in an unchanged sulfate budget but a larger mean aerosol diameter as the \ce{H2O2} oxidation occurs in the liquid phase where aerosol growth occurs more easily. This change in aerosol size distribution minimises CDNC and enhances the effective cloud droplet radius. As a result,\ce{CH4} contributes to a positive cloud radiative effect of 0.21$\pm$0.15 W m$^{-2}$ between 2000-2014, further adding to the warming impact of methane on the climate.
+On the other hand, \ce{CH4} decreases the OH concentration as \ce{CH4} acts as an OH sink. Increases in \ce{CH4} also increases \ce{H2O2} and \ce{O3} mixing ratios. These changes in oxidants decrease the OH reaction tendency (\ce{SO2 + OH}) but increase the \ce{SO2 + H2O2} reaction tendency, resulting in an unchanged sulfate budget but a larger mean aerosol diameter as the \ce{H2O2} oxidation occurs in the liquid phase where aerosol growth occurs more easily. This change in aerosol size distribution minimises CDNC and enhances the effective cloud droplet radius. As a result,\ce{CH4} contributes to a positive cloud radiative effect of \qty{0.21+-0.15}{\watt\per\metre\squared} between 2000 and 2014, further adding to the warming impact of methane on the climate.
 
-Changes in aerosol precursor emissions have had an important impact on the climate offsetting a significant fraction of the warming from long-lived greenhouse gases \citep{szopaShortlivedClimateForcers2021}. However, we have shown here that accounting for oxidants over the historical period is important to accurately simulate sulfate aerosol formation and the resulting aerosol radiative effects. Up to 40\% of the change in aerosol direct radiative may be the result if ERF is calculated using oxidant from the present day.  
+Changes in aerosol precursor emissions have had an important impact on the climate, offsetting a significant fraction of the warming from long-lived greenhouse gases \citep{szopaShortlivedClimateForcers2021}. However, this chapter has shown that accounting for oxidants over the historical period is essential to accurately simulate sulfate aerosol formation and the resulting aerosol radiative effects. Up to 40\% of the change in aerosol direct radiative may result if ERF is calculated using oxidant from the present day.
