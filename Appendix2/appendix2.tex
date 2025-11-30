@@ -1,13 +1,52 @@
 %!TEX root = ../thesis.tex
 % ******************************* Thesis Appendix B ********************************
 
-\chapter{Installing the CUED class file}
+\chapter{Supplementary information for Chapter \ref{ch5:title}}
+\label{app2:title}
 
-\LaTeX.cls files can be accessed system-wide when they are placed in the
-<texmf>/tex/latex directory, where <texmf> is the root directory of the user’s \TeX installation. On systems that have a local texmf tree (<texmflocal>), which
-may be named ``texmf-local'' or ``localtexmf'', it may be advisable to install packages in <texmflocal>, rather than <texmf> as the contents of the former, unlike that of the latter, are preserved after the \LaTeX system is reinstalled and/or upgraded.
 
-It is recommended that the user create a subdirectory <texmf>/tex/latex/CUED for all CUED related \LaTeX class and package files. On some \LaTeX systems, the directory look-up tables will need to be refreshed after making additions or deletions to the system files. For \TeX Live systems this is accomplished via executing ``texhash'' as root. MIK\TeX users can run ``initexmf -u'' to accomplish the same thing.
 
-Users not willing or able to install the files system-wide can install them in their personal directories, but will then have to provide the path (full or relative) in addition to the filename when referring to them in \LaTeX.
 
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=\linewidth]{Appendix2/figs/emioa_series_histsst.png}
+    \caption{a) Global and regional time series organic carbon aerosol emissions (\histsst{}). b-c) Global distribution of organic carbon aerosol emissions between 1960--1990 and 2000--2015. }
+    \label{fig:app2:emioa_series}
+\end{figure}
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=\linewidth]{Appendix2/figs/emibc_series_histsst.png}
+    \caption{a) Global and regional time series of black carbon aerosol emissions (\histsst{}). b-c) Global distribution of black carbon aerosol emissions between 1960--1990 and 2000--2015. }
+    \label{fig:app2:emibc_series}
+\end{figure}
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=\linewidth]{Appendix2/figs/emibvoc_series_histsst.png}
+    \caption{a) Global and regional time series of biogenic volatile organic compound (BVOC) emissions (\histsst{}). b-c) Global distribution of BVOC emissions between 1960--1990 and 2000--2015.}
+    \label{fig:app2:emibvoc_series}
+\end{figure}
+
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=\linewidth]{Chapter5/Figs/regional_so2_series_histsst_sstpiaer.png}
+    \caption{a) Global and regional time series of changes in total \ce{SO2} burden due to aerosol precursor emissions (\histsst{} minus \sstpiaer{}). b-c) Global distribution of changes in total \ce{SO2} burden due to aerosol precursor emissions between 1960--1990 and 2000--2015. }
+    \label{fig:app2:so2_series}
+\end{figure}
+
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=\linewidth]{Chapter5/Figs/regional_net_toa_cloudy_series_histsst_sstpiaer.png}
+    \caption{a) Global and regional time series of changes in cloud radiative effects ($CRE'$), calculated from the cloudy part of the radiative balance, due to aerosol precursor emissions (\histsst{} minus \sstpiaer{}). b-c) Global distribution of changes in $CRE'$ due to aerosol precursor emissions between 1960--1990 and 2000--2015.}
+    \label{fig:ch5:cre_series}
+\end{figure}
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=\linewidth]{Chapter5/Figs/regional_net_toa_hazy_series_histsst_sstpiaer.png}
+    \caption{a) Global and regional time series of changes in aerosol instantaneous radiative forcing (Aerosol IRF), calculated from the hazy part of the radiative balance, due to aerosol precursor emissions (\histsst{} minus \sstpiaer{}). b-c) Global distribution of changes in aerosol IRF due to aerosol precursor emissions between 1960--1990 and 2000--2015.}
+    \label{fig:ch5:irf_series}
+\end{figure}

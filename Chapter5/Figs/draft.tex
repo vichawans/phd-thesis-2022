@@ -1,0 +1,96 @@
+
+1. Analyse the sensitivity of variables
+
+
+Consider [\ce{SO2}] in steady state. The concentration of \ce{SO2} is related to its emissions, E_{\ce{SO2}} by
+
+\begin{align}
+    d[SO2]/dt  = E_{\ce{SO2}} - L'[SO2] = 0 \\
+    [SO2] = E_{\ce{SO2}}/L' \\
+    L'=k[OH]+ k_{O3} + k_{H2O2} + Wet dep + dry dep\\
+\end{align}
+
+That is, for the change in \ce{SO2} emission between PD and PI, $\Delta E_{\ce{SO2}}$,
+
+\begin{align}
+    d[\ce{SO2}] = \gamma_{[SO2],emi} d E_{\ce{SO2}} ; \gamma_{[SO2],emi} = \frac{1}{k_1[OH]+ k_2 F' [O3] + k_3 F' [H2O2]} 
+\end{align}
+
+$\gamma_{[SO2],emi}$ is the sensitivity of [SO2] to change in \ce{SO2} emission. Assume that the change in oxidant concentration due $\Delta E_{\ce{SO2}}$ is negligible, \gamma_{[SO2],emi} could be calculated from the linear relationship between $\Delta [\ce{SO2}]$ and $\Delta E_{\ce{SO2}}$
+
+
+Consider total sulfate production tendency, $P_{sulfate}$, as the summation of each production pathways, $P_{\ce{OH}}$, $P_{\ce{O3}}$ and $P_{\ce{H2O2}}$.
+
+\begin{align}
+    P_{OH}([\ce{SO2}],[OH],[M],T)      &= k_1 [\ce{SO2}][OH] &; k([M],T) \\
+    
+    P_{\ce{O3}}(F,L,[\ce{SO2}],[\ce{O3}], [\ce{H+}],[M],T) &= F \cdot \left( \dfrac{d[S(IV)]}{dt}\right) \cdot L \cdot N_a \cdot \frac{1}{\rho_w} & k_2([M],T);\\
+
+    P_{\ce{O3}}(F,L,[\ce{SO2}],[\ce{O3}], [\ce{H+}],[M],T) &= F \cdot \left( \dfrac{d[S(IV)]}{dt}\right) \cdot L \cdot N_a \cdot \frac{1}{\rho_w} & k_2([M],T);\\
+\end{align}
+
+where $F$ is the cloud fraction, $ \dfrac{d[S(IV)]}{dt}$ is the aqueous-phase reaction rate, $L$ is the cloud liquid water content, $N_a$ is the Avogadro's constant, and $\rho_w$ is the density of water. In the model version used in this work, global cloud pH is set to 4.0 where the local \ce{SO2} mixing ratio exceeds 0.5 ppb, or 5.0 if not.
+
+Consider reaction tendenct as the total mass of sulfate (in \unit{Tg(S)~yr^{-1}}). This removes the reaction depencency on [M]. [\ce{H+}] is constant in UKESM1. There is no change in surface air temperature in atmosphere only simulations, as the surface temperature is constrained. Assume that changes in air temperature is negligible. Cloud fraction and liquid water content is linked, and cannot be liearlised. Define a new internal change in cloud, $F' = F\cdot L$ . Again, assume that the change in oxidant concentration due the reactions with \ce{SO2} is negligible and [OH], [O3] and [H2O2] are now treated as constant per area of interest.
+
+That is,
+\begin{align}
+    P_{tot} = P_{OH}([\ce{SO2}]) + P_{\ce{O3}}(F',[\ce{SO2}]) + P_{\ce{H2O2}}(F',[\ce{SO2}])
+\end{align}
+
+The total derivative of sulfate production could be written as
+
+\begin{align}
+    d(P_{tot})  &= 
+    \frac{d P_{OH}}{d [\ce{SO2}]} d[\ce{SO2}] +
+   
+    \frac{\partial P_{\ce{O3}}}{\partial F'}\bigg|_{[\ce{SO2}]} dF' + 
+    \frac{\partial P_{\ce{O3}}}{\partial [SO2]}\bigg|_{F'} d[SO2] +
+   
+    \frac{\partial P_{\ce{H2O2}}}{\partial F'}\bigg|_{[\ce{SO2}]} dF' + 
+    \frac{\partial P_{\ce{H2O2}}}{\partial [SO2]}\bigg|_{F'} d[SO2] + \\
+
+    &= \left[ \frac{d P_{OH}}{d [\ce{SO2}]} + \frac{\partial P_{\ce{O3}}}{\partial [SO2]}\bigg|_{F'} + \frac{\partial P_{\ce{H2O2}}}{\partial [SO2]}\bigg|_{F'}\right] d[\ce{SO2}] + 
+                
+    \left[\frac{\partial P_{\ce{O3}}}{\partial F'}\bigg|_{[\ce{SO2}]} +  \frac{\partial P_{\ce{H2O2}}}{\partial F'}\bigg|_{[\ce{SO2}]} dF' \right] dF' \\
+
+    d(P_{tot}) &= \gamma_{P_{tot},[SO2]} d[\ce{SO2}] + \gamma_{P_{tot},F'} dF'
+\end{align}
+
+Again, $\gamma_{P_{tot},[SO2]}$ could be calculated from the linear relationship between total oxidation tendency and [SO2]. Similarly for and $\gamma_{P_{tot},F'}$ which is the linear relationship between P_tot and F' .
+
+Next, consider the impact of sulfate aeroosol production to sulfate burden.
+
+\begin{align}
+    d[SO4]/dt = P_{tot} - L'[SO4] = 0 \\
+    [SO4] = P_{tot}/L'
+\end{align}
+
+where L' is sulfate aerosol wet and dry deposition. Both wet and dry deposition does not change with other variables (other than concentration of itself) that is affected by change in aerosols precursor emissions.
+
+\begin{align}
+    d[SO4] = \frac{d[SO4]}{dP_{tot}} dP_{tot} \\
+    d[SO4] = \gamma_{[SO4],P_{tot}} dP_{tot} \\
+\end{align}
+
+aerosol optical depth, $\tau_a$, which is part of the aerosol direct effect. AOD is the vertical integration of sulfate aerosol burden. Consider sulfate aerosol burden relationship to its production when the aerosol burden in in steady state.
+
+\begin{align}
+    d\tau_a = \frac{\tau_a}{[SO4]} d[SO4] \\
+    d\tau_a = \gamma_{\tau_a,[SO4]} d[SO4] \\
+\end{align}
+
+Now this connects with Bellouin to cloud and radiative effects. The change in radiative effect due to aerosol forcing could be written as
+
+\begin{align}
+    F   &= \Delta R = ARI + ACI + RA \\
+    ARI &= \frac{\partial R}{\partial \tau_a} \Delta \tau_a \\
+    ACI &= \frac{dR}{ln N_d} \Delta ln N_d 
+    RA  &= \frac{\partial R}{\partial R_{atm}} \fdrac{d R_atm}{d \tau_a} \Delta \tau_a 
+\end{align}
+
+
+Where F is ERF which is the sum of aerosol-radiation interaction (ARI), aerosol-cloud interaction (ACI) + rapid adjustment (RA)
+
+Let us consider each of the radiative effects.
+

@@ -1,7 +1,7 @@
 % ******************************* PhD Thesis Template **************************
 % Please have a look at the README.md file for info on how to use the template
 
-\documentclass[a4paper,12pt,times,authoryear,print,index]{PhDThesisPSnPDF}
+\documentclass[a4paper,12pt,times,authoryear,print]{PhDThesisPSnPDF}
 
 % ******************************************************************************
 % ******************************* Class Options ********************************
@@ -78,11 +78,17 @@
 % Uncomment to change page style
 %\pagestyle{PageStyleII}
 \usepackage{setspace} 
-\doublespacing
+\onehalfspacing
 % ********************************** Preamble **********************************
 % Preamble: Contains packages and user-defined commands and settings
+
+\input{nomenclature}
 \input{Preamble/preamble}
+
+
 \usepackage[version=4]{mhchem}
+\usepackage{mathtools}
+\usepackage{amsmath}
 \usepackage{array}
 \usepackage{float}
 \usepackage{booktabs}% http://ctan.org/pkg/booktabs
@@ -94,10 +100,19 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{newunicodechar}
+\usepackage{physics}
+
+\AtBeginDocument{\RenewCommandCopy\qty\SI}
+
+%  for nice quote 
+\usepackage[autostyle, english = american]{csquotes}
+\MakeOuterQuote{"}
 
 % Setup for units
 \sisetup{uncertainty-mode = separate}
 \sisetup{separate-uncertainty-units = single} % This is mathematically incorrect, but I think this reads fine. See documentation for more settings https://texdoc.org/serve/siunitx/
+
+
 
 % user-defined commands
 \newcommand{\histsst}{\textit{histSST}}
@@ -109,6 +124,8 @@
 \newcommand{\histpiaer}{\textit{hist-piAer}}
 \newcommand{\Reff}{R\textsubscript{eff}}
 \newcommand{\ERFcsclean}{ERF\textsubscript{cs,clean}}
+\newcommand{\dcre}{$\Delta$CRE'}
+\newcommand{\irf}{Aerosol IRF}
 
 \newcommand{\tabitem}{~~\llap{\textbullet}~~}
 \newcommand{\textsoo}{\texorpdfstring{\ce{SO2}}{SO2}}
@@ -129,14 +146,19 @@
 \newcommandx{\improvement}[2][1=]{\todo[linecolor=Plum,backgroundcolor=Plum!25,bordercolor=Plum,#1]{#2}}
 \newcommandx{\thiswillnotshow}[2][1=]{\todo[disable,#1]{#2}}
 
-\reversemarginpar
-\paperwidth=\dimexpr \paperwidth + 6cm\relax % For some reasons it has to be > 2* \evensidemargin
-\oddsidemargin=\dimexpr \oddsidemargin + 3cm\relax % For some reasons this works instead of 2cm
-\evensidemargin=\dimexpr \evensidemargin + 2cm\relax
-\marginparwidth=\dimexpr \marginparwidth + 2cm\relax
+% \reversemarginpar
+% \paperwidth=\dimexpr \paperwidth + 6cm\relax % For some reasons it has to be > 2* \evensidemargin
+% \oddsidemargin=\dimexpr \oddsidemargin + 3cm\relax % For some reason, this works instead of 2cm
+% \evensidemargin=\dimexpr \evensidemargin + 2cm\relax
+% \marginparwidth=\dimexpr \marginparwidth + 2cm\relax
 
 % Declare special characters
 \DeclareUnicodeCharacter{2212}{-}
+
+%German language
+% \usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 
 % ************************ Thesis Information & Meta-data **********************
 % Thesis title and author information, refernce file for biblatex
@@ -169,40 +191,31 @@
 
 \maketitle
 
-% \include{Dedication/dedication}
+% \include{Dedication/dedication} % I have no use for this.
 % \include{Declaration/declaration}
 % \include{Acknowledgement/acknowledgement}
-\include{Abstract/abstract}
+% \include{Abstract/abstract}
 
 % *********************** Adding TOC and List of Figures ***********************
 
 \tableofcontents
-
 \listoffigures
-
 \listoftables
 
-% \printnomenclature[space] space can be set as 2em between symbol and description
-%\printnomenclature[3em]
-
+\setlength{\nomlabelwidth}{3cm}
 \printnomenclature
 
-
-\listoftodos
+% \listoftodos % Print notes
 
 % ******************************** Main Matter *********************************
 \mainmatter
 
-
 % \include{Chapter1/chapter1}
 % \include{Chapter2/chapter2}
 % \include{Chapter3/chapter3} % SLCF+aerosol formation
-\include{Chapter4/chapter4} % Seasonal changes + pothole cooling
-% \include{Chapter5/chapter5} % Regional aerosol formation efficiency
-% \include{Chapter6/chapter6} % Conclusion and future work
-%\include{Chapter7/chapter7}
-
-
+% \include{Chapter4/chapter4} % Seasonal changes + pothole cooling
+\include{Chapter5/chapter5} % Regional aerosol formation efficiency
+\include{Chapter6/chapter6} % Conclusion and future work
 
 % ********************************** Back Matter *******************************
 % Backmatter should be commented out, if you are using appendices after References
@@ -210,6 +223,7 @@
 
 % ********************************** Bibliography ******************************
 \begin{spacing}{0.9}
+\cleardoublepage
 
 % To use the conventional natbib style referencing
 % Bibliography style previews: http://nodonn.tipido.net/bibstyle.php
@@ -218,25 +232,24 @@
 \bibliographystyle{apalike}
 %\bibliographystyle{unsrt} % Use for unsorted references  
 % \bibliographystyle{plainnat} % use this to have URLs listed in References
-\cleardoublepage
 \bibliography{References/references} % Path to your References.bib file
 
 
-% If you would like to use BibLaTeX for your references, pass `custombib' as
+% If you want to use BibLaTeX for your references, pass `custombib' as
 % an option in the document class. The location of 'reference.bib' should be
 % specified in the preamble.tex file in the custombib section.
 % Comment out the lines related to natbib above and uncomment the following line.
 
-\printbibliography[heading=bibintoc, title={References}]
-
+% \printbibliography 
 
 \end{spacing}
 
 % ********************************** Appendices ********************************
 
-\begin{appendices} % Using appendices environment for more functunality
+\begin{appendices} % Using appendices environment for more functionality
 
-% \include{Appendix1/appendix1}
+% \include{Appendix1/appendix1} 
+\include{Appendix2/appendix2}
 % \include{Appendix2/appendix2}
 
 \end{appendices}

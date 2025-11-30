@@ -1,0 +1,62 @@
+%!TEX root = ../thesis.tex
+
+\chapter{Computational resources and CMIP archived data used in this work}
+
+\section{Computational resources}
+
+This work used JASMIN, the UK collaborative data analysis facility.
+
+\section{Model data variables from CMIP6 archive and from models}
+
+
+The CMIP6 requires that participating models archive a standardised set of variables processed in specific ways. For example, the AerChemMIP archives sulfate aerosol formation tendency in two variables: \texttt{cheaqpso4} and \texttt{chegpso4}. These are the aqueous- and gas-phase production rates of \ce{SO4}, respectively. While this is useful for model intercomparison studies, \ce{O3} and \ce{H2O2} oxidation are added up to \texttt{cheaqpso4}, making it impossible to perform analysis based on individual channels. The native model data is more beneficial for in-depth analysis specific to a model. This project uses both the processed AerChemMIP archive and UKESM1 native data.
+
+The work of this thesis aims to inform other ESMs of potential intercomparison. The variables must be available from the CMIP6 diagnostic archive to do so. All variables used from both the archive and model native datasets are listed in Table \ref{tab:cmip6-diagnostics} and \ref{tab:stash-ids}.
+
+\change[inline]{Add a table for model variables from CMIP6 and from model archive on MASS}
+
+
+\begin{table}
+    \centering
+    \begin{tabular}{l l l l}
+        \hline
+        Variable name &  CMIP6 diagnostic label & Description & Units \\
+        \hline
+        TAS &\\
+        OSR & rsut\\
+        OSRclr & rsutcs \\
+        & rsutcsaf \\
+        & rlut\\
+        \hline
+        mmrso4 & mmrso4\\
+        \ce{O3} & o3\\
+        \ce{H2O2} & h2o2 \\
+        & wetso2 \\
+        & dryso2\\
+        & wetso4\\
+        & dryso4\\
+        & emiso2\\
+        & emiso4\\
+        & cheaqpso4\\
+        & chegpso4\\
+        \hline
+        
+    \end{tabular}
+    \caption{Table for data from CMIP6 diagnostics used in this study}
+    \label{tab:cmip6-diagnostics}
+\end{table}
+
+
+
+\change[inline]{Look at ppdownload excel for full list of stash items}
+\begin{table}
+    \centering
+    \begin{tabular}{l l l l}
+        \hline
+        Variable name &  STASHid & Description & Units \\
+        \hline
+        
+    \end{tabular}
+    \caption{Table for data that is only available from native model used in this study}
+    \label{tab:stash-ids}
+\end{table}

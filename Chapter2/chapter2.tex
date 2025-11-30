@@ -3,81 +3,18 @@
 %****************************** Second Chapter *********************************
 %*******************************************************************************
 
-\chapter{Methods, simulations and data}
+\chapter{Description of the UKESM1 model and research methodology}
 \label{ch2:title}
 
-
-\section{CMIP6 experiment design and data archive}
-\label{sec:2.CMIP6}
-
-CMIP, an initiative to compare global climate models, has evolved into a significant international multi-model research activity that has shaped climate science research over the last 20 years \citep{eyringOverviewCoupledModel2016}. CMIP aims to better understand past, present, and future climate change using climate models. An essential part of CMIP is the research community's involvement in designing standardized simulations and output formats that facilitate multi-model analysis. 
-
-As such, models developed worldwide routinely participate in this exercise. According to the CMIP organization literature, the public availability of standardized model output is an important part of CMIP. The broader climate community and users could utilise the data \citep{eyringOverviewCoupledModel2016}. How this project benefits from CMIP is discussed at the end of this section.
-
-\subsection{The DECK experiments}
-
-Since its inception, CMIP has increased complexity and includes more models with diverse complexities and processes \citep{eyringOverviewCoupledModel2016}. Coordination of the project has become more complex, requiring more structure moving forward. CMIP6 proposed a standard set of simulations for all models to tackle this challenge, known as the Diagnostic, Evaluation and Characterization of Klima (DECK). 
-
-According to the CMIP6 overview paper \citep{eyringOverviewCoupledModel2016}, the DECK experiments are designed to provide continuity across past and future phases of CMIP, to be well-established and incorporate simulations that modelling centres perform as part of their own development cycle, and to be relatively independent of the forcings and scientific objectives of a specific phase of CMIP. 
-
-The DECK includes four baseline experiments: a pre-industrial control simulation (\textit{piControl} or \textit{esm-piControl}); a recent historical atmosphere-only Atmospheric Model Intercomparison Project (\textit{amip}); a simulation forced by an abrupt quadrupling of \ce{CO2} (\textit{abrupt-4$\times$CO2}), and finally a simulation forced by a 1\% yr$^{-1}$ \ce{CO2} increase (\textit{1pctCO2}). CMIP6 also suggests a historical transient coupled simulation from 1850 to the present.  The \textit{piControl} experiment serves as the control simulation for the AerChemMIP attribution experiment (see next section), and the historical simulation is used in the same way to provide sea-surface temperatures for \textit{amip}-style attribution experiments in AerChemMIP.
-
-\subsection{The AerChemMIP experiments}
-
-The CMIP6 endorses other projects to evaluate models in specific criteria and goals such as the Aerosol Chemistry Model Intercomparison Project or AerChemMIP \citep{collinsAerChemMIPQuantifyingEffects2017}. The experimental design of AerChemMIP aims to quantify the climate and air quality effects of atmospheric composition change of near-term climate forcings (NTCFs: methane, tropospheric ozone and aerosols, and their precursors). NTCFs especially aerosols were identified in the IPCC AR6 as the main source of uncertainty in the total anthropogenic ERF from 1750 to 2019 \citep[see figure \ref{fig:1.ERF} and][]{forsterEarthEnergyBudget2021}.
-
-The list of AerChemMIP experiments is rather large, being divided into various tiers using different experimental protocols. The experiments from the AerChemMIP that are useful for this research are detailed here. The AerChemMIP proposed historical coupled-ocean experiments which cover the period 1850 to 2014 to attribute aerosols and ozone to climate change over the historical period, i.e. \textit{hist-piNTCF} (aerosol precursors and \ce{O3} precursor emission kept at 1850 level) and \textit{hist-piAer} (aerosol precursor emission kept at 1850 level). 
-
-AerChemMIP also proposes transient historical prescribed SST simulations which use atmosphere-only configurations with prescribed sea surface temperature (SSTs) and sea ice. The use of historical SSTs rather than pre-industrial SSTs eliminate the effects of inconsistent background climate state such as different cloud cover and natural emissions that could affect aerosol and relative species concentrations. This set of historical prescribed SST experiments features more types of chemical species than the historical coupled-ocean experiments mentioned above, making them useful for investigating the effects of oxidant changes on oxidation branching ratio. Experiments that are relevant to \ce{SO2} oxidation include \textit{histSST}, \textit{histSST-piNTCF}, \textit{histSST-piAer}, \textit{histSST-piO3} and \textit{histSST-piCH4}. The suffix -piX denotes that the emission of X species is fixed at the 1850 level.
+This chapter introduces the UK Earth System Model version 1.0 (UKESM1) and its relevant simulations provided for the CMIP6 and AerChemMIP, which are used throughout this thesis. Section \ref{ch2:sec:defs_terms} provides definitions of terms used and analysis methods central to this Thesis. Each chapter has its own methodology section to provide further details specific to the chapter.
 
 
-\subsection{Use cases of CMIP6 and its endorsed MIPs data for this research}
-
-This research, which focuses on \ce{SO2} oxidation, benefits from the existing CMIP and AerChemMIP datasets in the following ways. CMIP \textit{historical} and AerChemMIP historical coupled-ocean experiments could be used to investigate the evolution of \ce{SO2} emission, budget, oxidation branching ratio and their effects on the climate in the historical period. The transient historical prescribed SST simulations are useful for investigating the effects of oxidant changes on sulfate aerosol size distribution and cloud properties.  For the purpose of this work which investigates the atmospheric composition of the atmosphere, the prescribed SST simulations which have a wider range of experiments are more versatile and were employed.
-
-
-
-\section{CMIP6 and AerChemMIP experiment design}
-
-This research focuses on \ce{SO2} oxidation and aerosol formation and utilizes data from the AerChemMIP transient historical atmosphere-only prescribed SST simulations \citep{collinsAerChemMIPQuantifyingEffects2017}. These simulations were designed to calculate transient ERFs that drive climate change.  While the simulations were not precisely designed for the purpose of this research, their configurations and emissions align well this research purpose.
-
-
-Table \ref{tab:2.exps} shows the simulation configurations with all historical transient experiments from AerChemMIP that experiments cover the period between 1850 and 2014. "AOGCM" means atmosphere-ocean coupled simulation. "AGCM" means atmosphere-only simulation. The "AER" suffix means the models should at least calculate tropospheric aerosol driven by emission fluxes. The "CHEM$^\text{S}$" suffix means at least stratospheric chemistry is required; "CHEM$^\text{T}$" means at least tropospheric chemistry is required. "Hist" means the concentration or emission should evolve as for the CMIP historical simulation. "1850" means the concentrations or emissions should be fixed to the year 1850. 
-
-\begin{table}
-   \caption[AerChemMIP experiments related to this work]{A summary of AerChemMIP experiments related to this work.}
-   \label{tab:2.exps}
-   \centering
-   \begin{tabular}{l p{30mm} l p{18mm} p{18mm} l}
-    \toprule
-     Experiment ID & Minimum model configuration & \ce{CH4} & Aerosol precursors & \ce{O3} precursors & suite-id \\
-    \midrule
-     \textit{historical}      & AOGCM AER & Hist & Hist & Hist & u-bc179\\
-     \textit{hist-piAer}      & AOGCM AER & Hist & 1850 & Hist & u-bg705\\
-     \textit{hist-piNTCF}     & AOGCM AER & Hist & 1850 & 1850 & u-bg946\\
-     \textit{histSST}         & AGCM AER & Hist & Hist & Hist & u-bh626\\
-     \textit{histSST-piAer}   & AGCM AER & Hist & 1850 & Hist & u-bi541\\
-     \textit{histSST-piO3}    & AGCM CHEM$^{\text{T}}$ & Hist & Hist & 1850 & u-bl670\\
-     \textit{histSST-piCH4}   & AGCM CHEM$^{\text{T/S}}$ & 1850 & Hist & Hist & u-bl551\\
-     \textit{histSST-piNTCF}  & AGCM AER & Hist & 1850 & 1850 & u-bl277\\
-     \bottomrule
-   \end{tabular}
-\end{table}
-
-
-
-\change[inline]{comment on how there is another set of simulations but was not run by UKESM1 hist-aer etc which is a limitation for this work.}
-
-
-
-
-
-
-\section{UKESM1 model}  
+\section{UKESM1 model description}  
 \label{sec:1.ukesm1}
 
-\subsection{Model description}
-UKESM1 is a coupled atmosphere-ocean climate model, based on the Global Coupled model version 3.1 \citep[HadGEM3-GC3.1;][]{kuhlbrodtLowResolutionVersionHadGEM32018, brownUnifiedModelingPrediction2012}, Nucleus for European Modelling of the Ocean (NEMO) model \citep{storkeyUKGlobalOcean2018}, the Los Alamos Sea Ice (CICE) model \citep{ridleySeaIceModel2018} and utilising separate the Join UK Land Environment Simulator (JULES) model for the land surface \citep{bestJointUKLand2011} and the Model of Ecosystem Dynamics, nutrient Utilisation, Sequestration and Acidification (MEDUSA) model to simulate ocean biogeochemistry \citep{yoolMEDUSA2IntermediateComplexity2013}. UKESM1 also features the stratospheric-tropospheric atmospheric chemistry scheme (StratTrop) implemented as part of the United Kingdom Chemistry and Aerosol (UKCA) model \citep{archibaldDescriptionEvaluationUKCA2020}, which is coupled with the aerosol scheme GLOMAP-mode \citep{mulcahyDescriptionEvaluationAerosol2020}. 
+UKESM1, which forms the basis for this thesis, is an Earth System Model which is intended to be a community tool for climate research and is documented in \citet{sellarUKESM1DescriptionEvaluation2019}. The model is capable of simulating many processes directly, where possible, rather than prescribing parameters from other sources, which makes the model great for understanding the interactions between various processes and components.
+
+UKESM1 is formed from a series of component models representing different parts of the Earth system. UKESM1 is built on the Global Coupled model version 3.1 \citep[HadGEM3-GC3.1;][]{kuhlbrodtLowResolutionVersionHadGEM32018, brownUnifiedModelingPrediction2012}, Nucleus for European Modelling of the Ocean (NEMO) model \citep{storkeyUKGlobalOcean2018}, the Los Alamos Sea Ice (CICE) model \citep{ridleySeaIceModel2018} and utilising separate the Join UK Land Environment Simulator (JULES) model for the land surface \citep{bestJointUKLand2011} and the Model of Ecosystem Dynamics, nutrient Utilisation, Sequestration and Acidification (MEDUSA) model to simulate ocean biogeochemistry \citep{yoolMEDUSA2IntermediateComplexity2013}. UKESM1 also features the stratospheric-tropospheric atmospheric chemistry scheme (StratTrop) implemented as part of the United Kingdom Chemistry and Aerosol (UKCA) model \citep{archibaldDescriptionEvaluationUKCA2020}, which is coupled with the aerosol scheme GLOMAP-mode \citep{mulcahyDescriptionEvaluationAerosol2020}. 
 
 
 %The atmospheric chemistry, aerosol and cloud schemes modelled by the UKCA model that is relevant to the sulfur cycle are briefly described here. 
@@ -116,16 +53,21 @@ GLOMAP-mode, a two-moment aerosol scheme, simulates aerosol mass and size indepe
    \end{tabular}
 \end{table}
 
-The HadGEM radiation scheme accounts for aerosol direct and semi-direct effects by computing aerosol optical properties averaged across 6 shortwave and 9 longwave bands \citep{bellouinImpactModalAerosol2013}.
+
+In UKESM1, aerosol-cloud interactions are only simulated in a warm cloud, using the activation scheme by \citet{abdul-razzakParameterizationAerosolActivation2000}. The model determines the number of CCN as theorised by \citet{kohlerNucleusGrowthHygroscopic1936} with empirical fits to cloud parcel models \citep{mulcahyDescriptionEvaluationAerosol2020}. CDNC impacts \Reff{} and is also used to calculate cloud albedo to represent aerosol indirect effects \citep{bellouinImpactModalAerosol2013}. 
+
+The HadGEM radiation scheme accounts for aerosol direct and semi-direct effects by computing aerosol optical properties averaged across six shortwave and nine longwave bands \citep{bellouinImpactModalAerosol2013}.
 
 
 
-\subsection{Sulfate production rates in UKESM1}
+
+
+\subsection{Sulfate production in UKESM1}
 \label{ch2:sec:so4-prod-rate}
 
-The majority of sulfate aerosols are produced in the atmosphere via oxidation. Approximately 5\% of total sulfate production is from primary emissions, which reflects 2.5\% of anthropogenic \ce{SO2} emissions that are assumed to enter the atmosphere as sulfate aerosols. The other 95\% of sulfate aerosol in UKESM1 are produced in two pathways: gas-phase oxidation of \ce{SO2} and OH, producing sulfuric acid, which nucleates into new particles, and aqueous-phase oxidation in cloud droplets. 
+The majority of sulfate aerosols are produced in the atmosphere via oxidation. Approximately 5\% of total sulfate production is from primary emissions, which reflects 2.5\% of anthropogenic \ce{SO2} emissions that are assumed to enter the atmosphere as sulfate aerosols. The other 95\% of sulfate aerosols in UKESM1 are produced in two pathways: gas-phase oxidation of \ce{SO2} and OH, producing sulfuric acid, which nucleates into new particles, and aqueous-phase oxidation in cloud droplets. 
 
-Gas-phase oxidation of \ce{SO2 + OH} is a termolecular reaction, Reaction \ref{ch1:eq:so2-oh}, with the parameters for rate constant given in Table \ref{ch4:tab:so2-oh-reaction-consts} a function of the concentration of air, [M], and temperature, T.
+Gas-phase oxidation of \ce{SO2 + OH} is a termolecular reaction, Reaction \ref{ch1:eq:so2-oh}, with the parameters for rate constant given in Table \ref{ch4:tab:so2-oh-reaction-consts} as a function of the concentration of air, [M], and temperature, T.
 \begin{align}
     \dfrac{d[\ce{SO2}]}{dt} =  k_{([M],T)} [\ce{SO2}][\ce{OH}][\ce{M}] \label{ch4:eq:so2-oh-prod}
 \end{align}
@@ -159,7 +101,6 @@ where $F$ is the cloud fraction, $ \dfrac{d[S(IV)]}{dt}$ is the aqueous-phase re
 
 GLOMAP-mode, the aerosol module simulating aerosol processes in UKESM1, treats aerosol number concentration for each aerosol mode separately with interaction such as coagulation and between modes. The aerosol number for each mode is represented by a log-normal distribution with a geometric mean diameter $\bar{D}$ covering the nucleation ($\bar{D} < 10$ \unit{\nano\metre}), Aitken ($10 \leq \bar{D} < 100$ \unit{\nano\metre}), accumulation ($100 \leq \bar{D} < 1000$ \unit{\nano\metre}), and coarse ($\bar{D} \geq 1000$ \unit{\nano\metre}) mode. The mass concentration of each component, including sulfate, sea salt, black carbon, organic carbon and dust in each mode, is also calculated separately. 
 
-
 % \subsection{Specific ERF}
 % \subsection{Adjusted HadCRUT5}
 % \subsection{Seasonal mean surface anomaly}
@@ -167,14 +108,14 @@ GLOMAP-mode, the aerosol module simulating aerosol processes in UKESM1, treats a
 
 The following sub-section explores the theoretical range of all oxidation pathways due to variations in temperature, cloud droplet pH, and cloud fraction to confirm the modelled observation.
 
-\subsubsection{Theoretical range of \texorpdfstring{\ce{SO2}}{SO2} oxidation reaction rates}
+\subsection{Theoretical range of sulfate aerosol production rates in UKESM1}
 
-In this section, I quantify the factors that limit sulfate production rates in summer and winter conditions by calculating the rates from equations in UKESM1 using parameter values from observation or model averages. 
+In this section, I quantify the factors that limit sulfate production rates in summer and winter conditions by calculating the rates from equations in UKESM1 using parameter values from observations or model averages. 
 
 The equations describing sulfate production includes Equation \ref{ch4:eq:so2-oh-prod}--\ref{ch4:eq:so2-oh-k_MT} for gas-phase reactions, and Equation \ref{ch1:eq:Henry-eq}--\ref{ch1:eq:aq-conc} and \ref{ch4:eq:in-cloud-sulfate-prod} for aqueous-phase reactions. The parameters needed for the gas-phase reaction include concentration of OH and \ce{SO2}, atmospheric temperature and pressure. Aqueous-phase productions by \ce{O3} and \ce{H2O2} are more complex and require cloud parameters, including cloud fraction, liquid water content and cloud pH, in addition to oxidant concentrations, atmospheric temperature and pressure. 
 
 
-\begin{figure}
+\begin{figure}[h!]
     \centering
     \includegraphics{Chapter4/Figs/oxidation_sensitivity.png}
     \caption[\ce{SO2} oxidation range]{\ce{SO4} production rates for a range of a) atmospheric temperature, b) pressure, c) cloud pH and d) cloud fraction when other parameters are set to average values shown in the first three rows in Table \ref{ch4:tab:sensitivity-test}.}
@@ -214,7 +155,7 @@ UKESM1 annual average & 0.2 & 1.3$\times 10^{6} $ & 34.4 & 0.8 & 4.0 & 10.0 & 0.
 % Describe the oxidant values from different measurement campaigns
 The ranges of the sulfate production rates in summer and winter are calculated using oxidant concentrations from different measurement campaigns listed in Table \ref{ch4:tab:sensitivity-test}. \ce{SO2} concentrations are from an urban area in Beijing, China \citep{linCharacteristicsRecentTrends2012}. OH concentrations are taken from two measurement campaigns to cover nighttime and daytime from an urban site in Birmingham, UK \citep{heardHighLevelsHydroxyl2004, khanNighttimeNO3OH2008}. \ce{H2O2} concentrations are taken from rural measurements in Guangzhou, China \citep{huaAtmosphericHydrogenPeroxide2008}. The cloud pH is set to 4.0 as the aerosol module in UKESM1 uses a cloud pH of 4.0 when the concentration of \ce{SO2} is greater than 0.5 ppb \citep{mannDescriptionEvaluationGLOMAPmode2010}. Pressure, cloud fraction and liquid water content are treated as constants.
 
-\begin{figure}
+\begin{figure}[h!]
     \centering
     \includegraphics{Chapter4/Figs/theoretical_oxidation.png}
     \caption[\ce{SO4} production rates calculated for summer, winter, and average conditions]{\ce{SO4} production rates calculated for summer, winter, and average conditions as given in Table \ref{ch4:tab:sensitivity-test}.}
@@ -242,29 +183,86 @@ An in-depth evaluation has shown that the UKESM1 underestimated the dry depositi
 AOD simulated by the UKESM1 against both ground-based measurements and satellite retrievals and found good agreement in trends but underestimated the absolute values \citep{mulcahyDescriptionEvaluationAerosol2020}. The global annual mean AOD trends from AMIP simulation between 1980-2015 show an overall increase in AOD which is consistent with the Collection 6 MODIS merged dataset (MODIS C6) satellite retrieval. The absolute AOD is underestimated by 0.03 but is still within the lower end of the range of the satellite AOD. The spatial distribution shows that the UIKESM1 has higher AOD in the winter seasons of each hemisphere. This is due to the high sea-salt emission which peaks in the winter months. The high bias in sea-salt AOD does not affect our analysis which subtracts AOD from \sstpiaer{}, \sstpio{} and \sstpich{} with \histsst{}.
 
 % discuss the updated effect of dry deposition from UKESM1 with UKESM1.1
-The UKESM1 was updated with a new dry deposition scheme and a revised dust tuning which affects the predicted aerosol AOD \citep{mulcahyUKESM11DevelopmentEvaluation2023}. The new version of UKESM1, the UKESM1.1, predicted a lower aerosol AOD, with a difference of at least 0.02 starting from 1980 due to a higher \ce{SO2} dry deposition which removes \ce{SO2} from the atmosphere, leaving less to oxidise to form \ce{SO4}. This new dry deposition scheme further increases the low bias in \ce{SO4} concentration compared to measurements. The annual mean AOD from UKESM1 and UKESM1.1 over 2003-2014 shows that the global mean AOD predicted by the models are 0.137 and 0.146, respectively, which are lower than most satellite measurements from MODIS (0.162), ORAC (0.170) and Swansea (0.135). These products, their uncertainties and details of the evaluation procedure are described in detail in \citet{mulcahyDescriptionEvaluationAerosol2020}. The spatial increase in the AOD in UKESM1.1 stems from the revised dust tuning which increases the dust AOD over and downwind of major dust source regions. This update is not relevant to \ce{SO2} oxidation. However, there is a decrease in AOD in UKESM1.1 over China due to an increase in \ce{SO2} dry deposition. Our work used output from the original UKESM1 thus the AOD will have a less low bias in absolute AOD and higher overall \ce{SO4} loading.
+The UKESM1 was updated with a new dry deposition scheme and a revised dust tuning which affects the predicted aerosol AOD \citep{mulcahyUKESM11DevelopmentEvaluation2023}. The new version of UKESM1, the UKESM1.1, predicted a lower aerosol AOD, with a difference of at least 0.02 starting from 1980 due to a higher \ce{SO2} dry deposition which removes \ce{SO2} from the atmosphere, leaving less to oxidise to form \ce{SO4}. This new dry deposition scheme further increases the low bias in \ce{SO4} concentration compared to measurements. The annual mean AOD from UKESM1 and UKESM1.1 over 2003-2014 shows that the global mean AOD predicted by the models are 0.137 and 0.146, respectively, which are lower than most satellite measurements from MODIS (0.162), ORAC (0.170) and Swansea (0.135). These products, their uncertainties and details of the evaluation procedure are described in detail in \citet{mulcahyDescriptionEvaluationAerosol2020}. The spatial increase in the AOD in UKESM1.1 stems from the revised dust tuning which increases the dust AOD over and downwind of major dust source regions. This update is not relevant to \ce{SO2} oxidation. However, there is a decrease in AOD in UKESM1.1 over China due to an increase in \ce{SO2} dry deposition. Our work used output from the original UKESM1, thus the AOD will have a lower bias in absolute AOD and higher overall \ce{SO4} loading.
+
+\section{CMIP6 experiment design and data archive}
+\label{sec:2.CMIP6}
+
+CMIP, an initiative to compare global climate models, has evolved into a significant international multi-model research activity that has shaped climate science research over the last 20 years \citep{eyringOverviewCoupledModel2016}. CMIP aims to better understand past, present, and future climate change using climate models. An essential part of CMIP is the research community's involvement in designing standardised simulations and output formats that facilitate multi-model analysis. 
+
+As such, models developed worldwide routinely participate in this exercise. According to the CMIP organisation literature, the public availability of standardised model output is an integral part of CMIP. The broader climate community and users could utilise the data \citep{eyringOverviewCoupledModel2016}. How this project benefits from CMIP is discussed at the end of this section.
+
+\subsection{The DECK experiments}
+
+Since its inception, CMIP has increased complexity and includes more models with diverse complexities and processes \citep{eyringOverviewCoupledModel2016}. Coordination of the project has become more complex, requiring more structure moving forward. CMIP6 proposed a standard set of simulations for all models to tackle this challenge, known as the Diagnostic, Evaluation and Characterization of Klima (DECK). 
+
+According to the CMIP6 overview paper \citep{eyringOverviewCoupledModel2016}, the DECK experiments are designed to provide continuity across past and future phases of CMIP, to be well-established and incorporate simulations that modelling centres perform as part of their own development cycle, and to be relatively independent of the forcings and scientific objectives of a specific phase of CMIP. 
+
+The DECK includes four baseline experiments: a pre-industrial control simulation (\textit{piControl} or \textit{esm-piControl}); a recent historical atmosphere-only Atmospheric Model Intercomparison Project (\textit{amip}); a simulation forced by an abrupt quadrupling of \ce{CO2} (\textit{abrupt-4$\times$CO2}), and finally a simulation forced by a 1\% yr$^{-1}$ \ce{CO2} increase (\textit{1pctCO2}). CMIP6 also suggests a historical transient coupled simulation from 1850 to the present.  The \textit{piControl} experiment serves as the control simulation for the AerChemMIP attribution experiment (see next section), and the historical simulation is used in the same way to provide sea-surface temperatures for \textit{amip}-style attribution experiments in AerChemMIP.
+
+\subsection{The AerChemMIP experiments}
+
+The CMIP6 endorses other projects to evaluate models in specific criteria and goals such as the Aerosol Chemistry Model Intercomparison Project or AerChemMIP \citep{collinsAerChemMIPQuantifyingEffects2017}. The experimental design of AerChemMIP aims to quantify the climate and air quality effects of atmospheric composition change of near-term climate forcings (NTCFs: methane, tropospheric ozone and aerosols, and their precursors). NTCFs especially aerosols were identified in the IPCC AR6 as the main source of uncertainty in the total anthropogenic ERF from 1750 to 2019 \citep[see figure \ref{fig:1.ERF} and][]{forsterEarthEnergyBudget2021}.
+
+The list of AerChemMIP experiments is rather large, being divided into various tiers using different experimental protocols. The experiments from the AerChemMIP that are useful for this research are detailed here. The AerChemMIP proposed historical coupled-ocean experiments which cover the period 1850 to 2014 to attribute aerosols and ozone to climate change over the historical period, i.e. \textit{hist-piNTCF} (aerosol precursors and \ce{O3} precursor emission kept at 1850 level) and \textit{hist-piAer} (aerosol precursor emission kept at 1850 level). 
+
+AerChemMIP also proposes transient historical prescribed SST simulations which use atmosphere-only configurations with prescribed sea surface temperature (SSTs) and sea ice. The use of historical SSTs rather than pre-industrial SSTs eliminate the effects of inconsistent background climate state such as different cloud cover and natural emissions that could affect aerosol and relative species concentrations. This set of historical prescribed SST experiments features more types of chemical species than the historical coupled-ocean experiments mentioned above, making them useful for investigating the effects of oxidant changes on oxidation branching ratio. Experiments that are relevant to \ce{SO2} oxidation include \textit{histSST}, \textit{histSST-piNTCF}, \textit{histSST-piAer}, \textit{histSST-piO3} and \textit{histSST-piCH4}. The suffix -piX denotes that the emission of X species is fixed at the 1850 level.
+
+
+\subsection{Use cases of CMIP6 and its endorsed MIPs data for this research}
+
+
+This research focuses on \ce{SO2} oxidation and aerosol formation and utilises data from the AerChemMIP transient historical atmosphere-only prescribed SST simulations \citep{collinsAerChemMIPQuantifyingEffects2017}. These simulations were designed to calculate transient ERFs that drive climate change.  While the simulations were not precisely designed for this goal, their configurations and emissions align well with this research purpose.
+
+
+% This research, which focuses on \ce{SO2} oxidation, benefits from the existing CMIP and AerChemMIP datasets in the following ways. CMIP \textit{historical} and AerChemMIP historical coupled-ocean experiments could be used to investigate the evolution of \ce{SO2} emission, budget, oxidation branching ratio and their effects on the climate in the historical period. The transient historical prescribed SST simulations are useful for investigating the effects of oxidant changes on sulfate aerosol size distribution and cloud properties.  For the purpose of this work which investigates the atmospheric composition of the atmosphere, the prescribed SST simulations which have a wider range of experiments are more versatile and were employed.
 
 
 
-\section{Aerosol size distribution from log-normal distribution}
-\change[inline]{Describe calculation of aerosol size distribution}
+Table \ref{tab:2.exps} shows the simulation configurations with all historical transient experiments from AerChemMIP that cover the period between 1850 and 2014. "AOGCM" means atmosphere-ocean coupled simulation. "AGCM" means atmosphere-only simulation. The "AER" suffix means the models should at least calculate tropospheric aerosol driven by emission fluxes. The "CHEM$^\text{S}$" suffix means at least stratospheric chemistry is required; "CHEM$^\text{T}$" means at least tropospheric chemistry is required. "Hist" means the concentration or emission should evolve as for the CMIP historical simulation. "1850" means the concentrations or emissions should be fixed at 1850. 
+
+\begin{table}
+   \caption[AerChemMIP experiments related to this work]{A summary of AerChemMIP experiments related to this work.}
+   \label{tab:2.exps}
+   \centering
+   \begin{tabular}{l p{30mm} l p{18mm} p{18mm} l}
+    \toprule
+     Experiment ID & Minimum model configuration & \ce{CH4} & Aerosol precursors & \ce{O3} precursors & suite-id \\
+    \midrule
+     \textit{historical}      & AOGCM AER & Hist & Hist & Hist & u-bc179\\
+     \textit{hist-piAer}      & AOGCM AER & Hist & 1850 & Hist & u-bg705\\
+     \textit{hist-piNTCF}     & AOGCM AER & Hist & 1850 & 1850 & u-bg946\\
+     \textit{histSST}         & AGCM AER & Hist & Hist & Hist & u-bh626\\
+     \textit{histSST-piAer}   & AGCM AER & Hist & 1850 & Hist & u-bi541\\
+     \textit{histSST-piO3}    & AGCM CHEM$^{\text{T}}$ & Hist & Hist & 1850 & u-bl670\\
+     \textit{histSST-piCH4}   & AGCM CHEM$^{\text{T/S}}$ & 1850 & Hist & Hist & u-bl551\\
+     \textit{histSST-piNTCF}  & AGCM AER & Hist & 1850 & 1850 & u-bl277\\
+     \bottomrule
+   \end{tabular}
+\end{table}
+
+
+
+\change[inline]{comment on how there is another set of simulations, but they were not run by UKESM1 hist-aer etc, which is a limitation for this work.}
+
 
 
 \section{Definitions of terms and methods}
-\label{sec:2.terms}
-The main definitions used in this work relate to the concept of the atmospheric chemical budget. The budget of a trace gas consists of three quantities: its global source, global sink, and atmospheric burden. For the sulfur budget, all masses are represented in the Tg of sulfur, not in the Tg of \ce{SO2}.
+\label{ch2:sec:defs_terms}
 
-\subsubsection{Source / Emission}
+The main definitions used in this work relate to the concept of the atmospheric chemical budget. The budget of a trace gas consists of three quantities: its global source, global sink, and atmospheric burden. For the sulfur budget, all masses are represented in the Tg of sulfur (S), not in the Tg of \ce{SO2}.
+
+\subsubsection{Source/Emission}
 
 The source of a trace gas (Tg yr$^{-1}$) is the sum of all sources, including primary emission from surface emission and \textit{in situ} chemical production, also called secondary emission. For sulfur dioxide, the source terms include primary emission from both natural and anthropogenic sources, and secondary emission from oxidation of \ce{H2S}, DMS and dimethyl disulfide. CMIP6 uses various sources of \ce{SO2} emission as listed in section \ref{sec:1.ukesm1}. In UKESM1, source terms are outputted in mol s$^{-1}$ per grid box for each type of emission and are referred to as fluxes. SO4 source terms comprise primary emission which is 2.5\% of anthropogenic \ce{SO2} emission and secondary emission from \ce{SO2} oxidation.
 
-\subsubsection{Sink / Loss}
+\subsubsection{Sink/Loss}
 
 Similar to source terms, sinks of a trace gas (Tg yr$^{-1}$) is the sum of all sinks or losses, which could be wet and dry deposition, and \textit{in situ} chemical loss. UKESM1 outputs source terms in mol s$^{-1}$ per grid box for each type of emission. \ce{SO2} sink terms include wet and dry deposition and chemical loss via oxidation with OH, \ce{O3} and \ce{H2O2}. \ce{SO4} is loss via wet and dry deposition.
 
-\subsubsection{Burden}
+\subsubsection{Atmospheric Burden}
 
-The burden (Tg) is the total mass of the gas integrated over the atmosphere. The burden could be calculated for related reservoirs, for example, troposphere only or both troposphere and stratosphere. In this work, only tropospheric burden is considered for all species, including \ce{SO2}, \ce{SO4}, OH, \ce{O3} and \ce{H2O2}. Unless specified, burden is calculated for mass below the tropopause only.
+The atmospheric burden (Tg) is the total mass of the gas integrated over the atmosphere. The burden could be calculated for related reservoirs, for example, troposphere only or both troposphere and stratosphere. In this work, only tropospheric burden is considered for all species, including \ce{SO2}, \ce{SO4}, OH, \ce{O3} and \ce{H2O2}. Unless specified, burden is calculated for mass below the tropopause only.
 
 \subsubsection{Lifetime/residence time}
 
@@ -278,7 +276,12 @@ If the reservoir is the whole atmosphere and is in a steady state, that is, the 
 \end{equation}
 
 
-\section{Aerosol effective radiative forcing calculation}
+
+\subsection{Aerosol size distribution from log-normal distribution}
+\change[inline]{Describe calculation of aerosol size distribution}
+
+
+\subsection{Aerosol effective radiative forcing calculation}
 \label{sec:ch2:erf}
 
 
@@ -304,68 +307,11 @@ This way, direct radiative forcing from aerosol could be calculated by subtracti
 \end{split}
 \end{equation}
 
-We also note that the definition of transient ERF used here differs from the usual definition of effective radiative forcing (ERF) where the SSTs are specified to be fixed repeating climatology \citep{eyringOverviewCoupledModel2016}. In contrast, The SSTs in the experiments are from prescribed historical SSTs, with all emissions set as historical. This work defines transient ERF as a global average of the difference in the top-of-atmosphere radiative flux. The average is calculated as a moving decadal mean.   
+We also note that the definition of transient ERF used here differs from the usual definition of effective radiative forcing (ERF) where the SSTs are specified to be fixed repeating climatology \citep{eyringOverviewCoupledModel2016}. In contrast, the SSTs in the experiments are from prescribed historical SSTs, with all emissions set as historical. This work defines transient ERF as a global average of the difference in the top-of-atmosphere radiative flux. The average is calculated as a moving decadal mean.   
 
 
 
-\section{Statistical methods}
+\subsection{Statistical methods}
 \change[inline]{Add Student T-test - AND MAYBE LOOK FOR REPLACING WITH Mann-Whitney U test, same as in Johnny's thesis?}
 
-\section{Model data variables from CMIP6 archive and from models}
 
-
-The CMIP6 requires that participating models archive a standardized set of variables processed in specific ways. For example, the AerChemMIP archives sulfate aerosol formation tendency in two variables: \texttt{cheaqpso4} and \texttt{chegpso4}. These are the aqueous- and gas-phase production rates of \ce{SO4}, respectively. While this is useful for model intercomparison studies, \ce{O3} and \ce{H2O2} oxidation are added up to \texttt{cheaqpso4}, making it impossible to perform analysis based on individual channels. The native model data is more beneficial for in-depth analysis specific to a model. This project uses both the processed AerChemMIP archive and UKESM1 native data.
-
-The work of this thesis aims to inform other ESMs of potential intercomparison. The variables must be available from the CMIP6 diagnostic archive to do so. All variables used from both the archive and model native datasets are listed in Table \ref{tab:cmip6-diagnostics} and \ref{tab:stash-ids}.
-
-\change[inline]{Add a table for model variables from CMIP6 and from model archive on MASS}
-
-
-\begin{table}
-    \centering
-    \begin{tabular}{l l l l}
-        \hline
-        Variable name &  CMIP6 diagnostic label & Description & Units \\
-        \hline
-        TAS &\\
-        OSR & rsut\\
-        OSRclr & rsutcs \\
-        & rsutcsaf \\
-        & rlut\\
-        \hline
-        mmrso4 & mmrso4\\
-        \ce{O3} & o3\\
-        \ce{H2O2} & h2o2 \\
-        & wetso2 \\
-        & dryso2\\
-        & wetso4\\
-        & dryso4\\
-        & emiso2\\
-        & emiso4\\
-        & cheaqpso4\\
-        & chegpso4\\
-        \hline
-        
-    \end{tabular}
-    \caption{Table for data from CMIP6 diagnostics used in this study}
-    \label{tab:cmip6-diagnostics}
-\end{table}
-
-
-
-\change[inline]{Look at ppdownload excel for full list of stash items}
-\begin{table}
-    \centering
-    \begin{tabular}{l l l l}
-        \hline
-        Variable name &  STASHid & Description & Units \\
-        \hline
-        
-    \end{tabular}
-    \caption{Table for data that is only available from native model used in this study}
-    \label{tab:stash-ids}
-\end{table}
-
-\section{Computational resources}
-
-This work used JASMIN, the UK collaborative data analysis facility.

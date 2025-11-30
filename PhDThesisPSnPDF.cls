@@ -1041,19 +1041,19 @@ wish to left align your text}
 \RequirePackage[intoc]{nomencl}
 \makenomenclature
 \renewcommand{\nomgroup}[1]{%
-\ifthenelse{\equal{#1}{A}}{\item[\textbf{\@nomenclatureromans}]}{% 
-\ifthenelse{\equal{#1}{G}}{\item[\textbf{\@nomenclaturegreeks}]}{%
-\ifthenelse{\equal{#1}{Z}}{\item[\textbf{\@nomenclatureacronyms}]}{%
-\ifthenelse{\equal{#1}{R}}{\item[\textbf{\@nomenclaturesuperscripts}]}{%
-\ifthenelse{\equal{#1}{S}}{\item[\textbf{\@nomenclaturesubscripts}]}{%
-\ifthenelse{\equal{#1}{X}}{\item[\textbf{\@nomenclatureothers}]}
+\ifthenelse{\equal{#1}{C}}{\item[\textbf{Chemical Species Abbreviations}]}{% 
+\ifthenelse{\equal{#1}{E}}{\item[\textbf{Equation Symbols}]}{%
+\ifthenelse{\equal{#1}{F}}{\item[\textbf{Scientific Term Abbreviations}]}{% F to sort after Equation/E
+\ifthenelse{\equal{#1}{O}}{\item[\textbf{Organisation, Report, Project Name Abbreviations}]}{%
+\ifthenelse{\equal{#1}{M}}{\item[\textbf{Model-related Terms and Model Name Abbreviations}]}{%
+\ifthenelse{\equal{#1}{Z}}{\item[\textbf{Others}]}
 {}
-}% matches mathematical symbols > X
-}% matches Subscripts           > S
-}% matches Superscripts         > R
-}% matches Abbreviations        > Z
-}% matches Greek Symbols        > G
-}% matches Roman Symbols        > A
+}%
+}% 
+}% 
+}% 
+}% 
+}% 
 
 % To add nomenclature in the header
 \renewcommand{\nompreamble}{\markboth{\nomname}{\nomname}}
