@@ -202,11 +202,11 @@ The DECK includes four baseline experiments: a pre-industrial control simulation
 
 \subsection{The AerChemMIP experiments}
 
-The CMIP6 endorses other projects to evaluate models in specific criteria and goals such as the Aerosol Chemistry Model Intercomparison Project or AerChemMIP \citep{collinsAerChemMIPQuantifyingEffects2017}. The experimental design of AerChemMIP aims to quantify the climate and air quality effects of atmospheric composition change of near-term climate forcings (NTCFs: methane, tropospheric ozone and aerosols, and their precursors). NTCFs especially aerosols were identified in the IPCC AR6 as the main source of uncertainty in the total anthropogenic ERF from 1750 to 2019 \citep[see figure \ref{fig:1.ERF} and][]{forsterEarthEnergyBudget2021}.
+The CMIP6 endorses other projects to evaluate models against specific criteria and goals, such as the Aerosol Chemistry Model Intercomparison Project (AerChemMIP) \citep{collinsAerChemMIPQuantifyingEffects2017}. The experimental design of AerChemMIP aims to quantify the climate and air quality effects of atmospheric composition change of near-term climate forcings (NTCFs: methane, tropospheric ozone, aerosols, and their precursors). NTCFs, especially aerosols, were identified in the IPCC AR6 as the main source of uncertainty in the total anthropogenic ERF from 1750 to 2019 \citep[see figure \ref{fig:1.ERF} and][]{forsterEarthEnergyBudget2021}.
 
-The list of AerChemMIP experiments is rather large, being divided into various tiers using different experimental protocols. The experiments from the AerChemMIP that are useful for this research are detailed here. The AerChemMIP proposed historical coupled-ocean experiments which cover the period 1850 to 2014 to attribute aerosols and ozone to climate change over the historical period, i.e. \textit{hist-piNTCF} (aerosol precursors and \ce{O3} precursor emission kept at 1850 level) and \textit{hist-piAer} (aerosol precursor emission kept at 1850 level). 
+The list of AerChemMIP experiments is quite large, divided into tiers with different experimental protocols. The AerChemMIP experiments useful for this research are detailed here. The AerChemMIP proposed historical coupled-ocean experiments which cover the period 1850 to 2014 to attribute aerosols and ozone to climate change over the historical period, i.e. \textit{hist-piNTCF} (aerosol precursors and \ce{O3} precursor emission kept at 1850 level) and \textit{hist-piAer} (aerosol precursor emission kept at 1850 level). 
 
-AerChemMIP also proposes transient historical prescribed SST simulations which use atmosphere-only configurations with prescribed sea surface temperature (SSTs) and sea ice. The use of historical SSTs rather than pre-industrial SSTs eliminate the effects of inconsistent background climate state such as different cloud cover and natural emissions that could affect aerosol and relative species concentrations. This set of historical prescribed SST experiments features more types of chemical species than the historical coupled-ocean experiments mentioned above, making them useful for investigating the effects of oxidant changes on oxidation branching ratio. Experiments that are relevant to \ce{SO2} oxidation include \textit{histSST}, \textit{histSST-piNTCF}, \textit{histSST-piAer}, \textit{histSST-piO3} and \textit{histSST-piCH4}. The suffix -piX denotes that the emission of X species is fixed at the 1850 level.
+AerChemMIP also proposes transient historical prescribed SST simulations, which use atmosphere-only configurations with prescribed sea surface temperature (SSTs) and sea ice. The use of historical SSTs rather than pre-industrial SSTs eliminates the effects of inconsistent background climate states, such as different cloud cover and natural emissions, that could affect aerosol and relative species concentrations. This set of historical prescribed SST experiments features a wider range of chemical species than the historical coupled-ocean experiments mentioned above, making them useful for investigating the effects of oxidant changes on oxidation branching ratios. Experiments that are relevant to \ce{SO2} oxidation include \textit{histSST}, \textit{histSST-piNTCF}, \textit{histSST-piAer}, \textit{histSST-piO3} and \textit{histSST-piCH4}. The suffix -piX denotes that the emission of X species is fixed at the 1850 level.
 
 
 \subsection{Use cases of CMIP6 and its endorsed MIPs data for this research}
@@ -243,30 +243,30 @@ Table \ref{tab:2.exps} shows the simulation configurations with all historical t
 
 
 
-\change[inline]{comment on how there is another set of simulations, but they were not run by UKESM1 hist-aer etc, which is a limitation for this work.}
+\change[inline]{comment on how there is another set of simulations, but they were not run by UKESM1 hist-aer etc., which is a limitation for this work.}
 
 
 
 \section{Definitions of terms and methods}
 \label{ch2:sec:defs_terms}
 
-The main definitions used in this work relate to the concept of the atmospheric chemical budget. The budget of a trace gas consists of three quantities: its global source, global sink, and atmospheric burden. For the sulfur budget, all masses are represented in the Tg of sulfur (S), not in the Tg of \ce{SO2}.
+The main definitions used in this work concern the atmospheric chemical budget. The budget of a trace gas consists of three quantities: its global source, global sink, and atmospheric burden. For the sulfur budget, all masses are represented in the Tg of sulfur (S), not in the Tg of \ce{SO2}.
 
 \subsubsection{Source/Emission}
 
-The source of a trace gas (Tg yr$^{-1}$) is the sum of all sources, including primary emission from surface emission and \textit{in situ} chemical production, also called secondary emission. For sulfur dioxide, the source terms include primary emission from both natural and anthropogenic sources, and secondary emission from oxidation of \ce{H2S}, DMS and dimethyl disulfide. CMIP6 uses various sources of \ce{SO2} emission as listed in section \ref{sec:1.ukesm1}. In UKESM1, source terms are outputted in mol s$^{-1}$ per grid box for each type of emission and are referred to as fluxes. SO4 source terms comprise primary emission which is 2.5\% of anthropogenic \ce{SO2} emission and secondary emission from \ce{SO2} oxidation.
+The source of a trace gas (Tg yr$^{-1}$) is the sum of all sources, including primary emissions from surface sources and \textit{in situ} chemical production, also called secondary emissions. For sulfur dioxide, the source terms include primary emissions from both natural and anthropogenic sources, and secondary emissions from the oxidation of \ce{H2S}, DMS, and dimethyl disulfide. CMIP6 uses various sources of \ce{SO2} emission as listed in section \ref{sec:1.ukesm1}. In UKESM1, source terms are output in mol s$^{-1}$ per grid box for each emission type and are referred to as fluxes. SO4 source terms comprise primary emission, which is 2.5\% of anthropogenic \ce{SO2} emission, and secondary emission from \ce{SO2} oxidation.
 
 \subsubsection{Sink/Loss}
 
-Similar to source terms, sinks of a trace gas (Tg yr$^{-1}$) is the sum of all sinks or losses, which could be wet and dry deposition, and \textit{in situ} chemical loss. UKESM1 outputs source terms in mol s$^{-1}$ per grid box for each type of emission. \ce{SO2} sink terms include wet and dry deposition and chemical loss via oxidation with OH, \ce{O3} and \ce{H2O2}. \ce{SO4} is loss via wet and dry deposition.
+Similar to source terms, sinks of a trace gas (Tg yr$^{-1}$) is the sum of all sinks or losses, which could be wet and dry deposition, and \textit{in situ} chemical loss. UKESM1 outputs source terms in mol s$^{-1}$ per grid box for each type of emission. \ce{SO2} sink terms include wet and dry deposition and chemical loss via oxidation with OH, \ce{O3} and \ce{H2O2}. \ce{SO4} is lost via wet and dry deposition.
 
 \subsubsection{Atmospheric Burden}
 
-The atmospheric burden (Tg) is the total mass of the gas integrated over the atmosphere. The burden could be calculated for related reservoirs, for example, troposphere only or both troposphere and stratosphere. In this work, only tropospheric burden is considered for all species, including \ce{SO2}, \ce{SO4}, OH, \ce{O3} and \ce{H2O2}. Unless specified, burden is calculated for mass below the tropopause only.
+The atmospheric burden (Tg) is the total mass of the gas integrated over the atmosphere. The burden could be calculated for related reservoirs, for example, troposphere only or both troposphere and stratosphere. In this work, only tropospheric burden is considered for all species, including \ce{SO2}, \ce{SO4}, OH, \ce{O3} and \ce{H2O2}. Unless specified, the burden is calculated for mass below the tropopause only.
 
 \subsubsection{Lifetime/residence time}
 
-The lifetime of a trace gas is defined as the average time that a molecule of that species remains in a reservoir before removal. Atmospheric lifetimes vary from seconds for reactive radicals to years for stable molecules. Lifetimes or residence time of a substance is different from the \textit{e-folding lifetime of a reaction} (also known as the \textit{mean lifetime of A against a reaction}). 
+The lifetime of a trace gas is the average time a molecule of that species spends in a reservoir before removal. Atmospheric lifetimes vary from seconds for reactive radicals to years for stable molecules. Lifetimes or residence time of a substance is different from the \textit{e-folding lifetime of a reaction} (also known as the \textit{mean lifetime of A against a reaction}). 
 
 If the reservoir is the whole atmosphere and is in a steady state, that is, the burden is considered constant, and the atmospheric lifetime of a compound is estimated from 
 
@@ -287,16 +287,16 @@ If the reservoir is the whole atmosphere and is in a steady state, that is, the 
 
 Aerosol affects the climate directly via scattering and indirectly by altering the thermal structure of the atmosphere and hence cloud thermodynamics (aerosol direct effect or aerosol-radiation interaction) and via microphysical effects such as increasing the number of condensation nuclei and decreasing the effective radii of cloud droplets, referred to as the aerosol cloud albedo effect and the cloud lifetime effect \citep{twomeyInfluencePollutionShortwave1977, albrechtAerosolsCloudMicrophysics1989,pincusEffectPrecipitationAlbedo1994}.
 
-Greenhouse gases, aerosols, and clouds could perturb the Earth's radiative balance. One way to quantify the effect of each forcings is through the decomposition of effective radiative forcing (ERF) as described in Section \ref{sec:ch2:erf}. The ERF is decomposed into the clear and clean sky part or $ERF_{cs,clean}$, the instantaneous radiative forcing of the aerosol (ie, scattering and absorption) or aerosol IRF, and the cloud radiative effect or $\Delta$CRE'. Here we show that \ce{O3} precursors affect aerosol IRF and that \ce{CH4} affects the cloud radiative effect.
+Greenhouse gases, aerosols, and clouds could perturb the Earth's radiative balance. One way to quantify the effect of each forcing is through the decomposition of effective radiative forcing (ERF) as described in Section \ref{sec:ch2:erf}. The ERF is decomposed into the clear and clean sky part or $ERF_{cs,clean}$, the instantaneous radiative forcing of the aerosol (ie, scattering and absorption) or aerosol IRF, and the cloud radiative effect or $\Delta$CRE'. Here we show that \ce{O3} precursors affect aerosol IRF and that \ce{CH4} affects the cloud radiative effect.
 
 
 
 The ERF is calculated from the difference in the net top-of-atmosphere radiative flux ($\Delta F$) between the perturbed simulation (e.g. \textit{piAer}) and \textit{histSST} simulation as  $\text{ERF} = \Delta F$
 
-To understand the contributions of various processes to the overall effective radiative forcing (ERF) we can separate the ERF that is due to direct radiative forcing from that due to the effects of clouds and aerosol instantaneous radiative effects. Following the method of \citet{ghanTechnicalNoteEstimating2013}, the contribution of the aerosol-radiation interactions to the ERF can be distinguished from that of the aerosol–cloud interactions by using a "double-call" method.
+To understand the contributions of various processes to the overall effective radiative forcing (ERF), we can separate the ERF that is due to direct radiative forcing from that due to the effects of clouds and aerosol instantaneous radiative effects. Following the method of \citet{ghanTechnicalNoteEstimating2013}, the contribution of the aerosol-radiation interactions to the ERF can be distinguished from that of the aerosol–cloud interactions by using a "double-call" method.
 
 % describe double call method
-In the "double-call" method, radiative flux diagnostics are calculated first for all-sky and then again ignoring the scattering and absorption of solar radiation by the aerosol. For each call, the model calculates the shortwave radiative flux at the top of the atmosphere (TOA) and a diagnostic TOA flux with with cloud neglected. The first call yields all-sky TOA shortwave flux, $F$, and clear sky, i.e. "cs", flux, $F_{\text{cs}}$. The second call, the aerosol-free or clean-sky, yields clean sky TOA shortwave flux, $F_{\text{clean}}$, and clean-and-clear TOA shortwave flux, $F_{\text{cs,clean}}$.
+In the "double-call" method, radiative flux diagnostics are first calculated for all-sky conditions and then recalculated, ignoring the scattering and absorption of solar radiation by aerosols. For each call, the model calculates the shortwave radiative flux at the top of the atmosphere (TOA) and a diagnostic TOA flux with cloud neglected. The first call yields all-sky TOA shortwave flux, $F$, and clear sky, i.e. "cs", flux, $F_{\text{cs}}$. The second call, the aerosol-free or clean-sky, yields clean sky TOA shortwave flux, $F_{\text{clean}}$, and clean-and-clear TOA shortwave flux, $F_{\text{cs,clean}}$.
 
 This way, direct radiative forcing from aerosol could be calculated by subtracting clean sky flux from all-sky flux, $\Delta (F - F_{\text{clean}})$. Cloud radiative forcing is then calculated from the cloudy part of the sky by subtracting clean and clear sky flux with clean sky flux, $\Delta (F_{\text{clean}} - F_{\text{cs,clean}})$. Finally, the surface albedo and greenhouse gas effects are calculated from the clean and clear sky flux, $\Delta F_{\text{cs,clean}}$. This could be summarised as follows.
 \begin{equation}[] 
@@ -307,11 +307,11 @@ This way, direct radiative forcing from aerosol could be calculated by subtracti
 \end{split}
 \end{equation}
 
-We also note that the definition of transient ERF used here differs from the usual definition of effective radiative forcing (ERF) where the SSTs are specified to be fixed repeating climatology \citep{eyringOverviewCoupledModel2016}. In contrast, the SSTs in the experiments are from prescribed historical SSTs, with all emissions set as historical. This work defines transient ERF as a global average of the difference in the top-of-atmosphere radiative flux. The average is calculated as a moving decadal mean.   
+We also note that the definition of transient ERF used here differs from the usual definition of effective radiative forcing (ERF), where the SSTs are specified to be fixed repeating climatology \citep{eyringOverviewCoupledModel2016}. In contrast, the SSTs in the experiments are prescribed historical SSTs, with all emissions set to historical values. This work defines transient ERF as a global average of the difference in the top-of-atmosphere radiative flux. The average is calculated as a moving decadal mean.   
 
 
 
-\subsection{Statistical methods}
-\change[inline]{Add Student T-test - AND MAYBE LOOK FOR REPLACING WITH Mann-Whitney U test, same as in Johnny's thesis?}
+% \subsection{Statistical methods}
+% \change[inline]{Add Student T-test - AND MAYBE LOOK FOR REPLACING WITH Mann-Whitney U test, same as in Johnny's thesis?}
 
 

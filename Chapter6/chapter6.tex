@@ -1,4 +1,4 @@
-\chapter{Summary, Conclusions and Future Directions}
+\chapter{Conclusions and future work}
 % **************************** Define Graphics Path **************************
 \ifpdf
     \graphicspath{{Chapter6/Figs/Raster/}{Chapter6/Figs/PDF/}{Chapter6/Figs/}}
@@ -9,84 +9,167 @@
 
 \section{Summary of key results}
 
-The main aim of this thesis has been to quantify the role of atmospheric chemistry in climate models by analysing the \ce{SO2} oxidation pathways using the state-of-the-art Earth system model, UKESM1, which features fully interactive atmospheric chemistry and emission-driven aerosol simulations \citep{sellarUKESM1DescriptionEvaluation2019,archibaldDescriptionEvaluationUKCA2020}. UKESM1 provided extensive simulations for AerChemMIP, which has been the primary source of model output for this thesis.
+The fundamental aim of this thesis has been to quantify the role of atmospheric chemistry in climate models by analysing the \ce{SO2} oxidation pathways using the state-of-the-art Earth system model, UKESM1, which features fully interactive atmospheric chemistry and emission-driven aerosol simulations \citep{sellarUKESM1DescriptionEvaluation2019,archibaldDescriptionEvaluationUKCA2020}. UKESM1 provided extensive simulations for AerChemMIP \citep{collinsAerChemMIPQuantifyingEffects2017}, which has been the primary source of model output for this thesis. Chapter \ref{ch2:title} described the model and the simulations.
 
 This section details the conclusions of this thesis in the context of the aims and research questions outlined in Section \ref{ch1:sec:questions}.
 
-\subsubsection*{In Chapter 3, I investigated the following questions related to historical trends of sulfate aerosol formation and radiative effects: }
+\subsubsection*{Chapter \ref{ch3:title} investigated the following questions related to global historical trends of sulfate aerosol formation and radiative effects: }
 
     \begin{enumerate}
-        \item  \textbf{How do oxidant levels respond to changes in SLCF emissions over the historical period?}\\
+        \item  \textbf{How do sulfate aerosol precursors respond to rises in \ce{O3} precursor emissions and \ce{CH4} levels over the historical period?}\\
         \ce{SO2} oxidation with OH, \ce{O3}, and \ce{H2O2} are the principal sources of sulfate aerosol in the atmosphere. Historical increases in both \ce{O3} precursors and \ce{CH4} modify the atmospheric oxidant levels available to \ce{SO2} oxidation. \\
-        \ce{O3} precursors including \ce{NO_x}, \ce{CO}, and BVOCs are the main contributors to tropospheric \ce{O3} levels. \ce{O3} level also have secondary effects to production of OH and \ce{H2O2}. The historical increases of \ce{O3} precursors increase global mean \ce{O3} concentration by ... ,  \\
-        \ce{CH4} is a greenhouse gas and is the primary sink of OH in the atmosphere. The historical increase in \ce{CH4} decreases OH concentration by . The OH reduction limits the formation of \ce{H2O2}, resulting in xxx\% lower \ce{H2O2} concentration. 
+        \ce{O3} precursors including \ce{NO_x}, \ce{CO}, and BVOCs are the main contributors to tropospheric \ce{O3} levels. \ce{O3} level also have secondary effects to production of OH and \ce{H2O2}. The historical rises in \ce{O3} precursors in 2014 from the 1850 levels increase global mean concentration of OH, \ce{O3} and H2O2 concentrations by 26\%, 15\%, and 18\%  \\
+        \ce{CH4} is a greenhouse gas and is the primary sink of OH in the atmosphere. The historical increases in \ce{CH4} reduce OH concentration by 133\%. However, the increases in \ce{CH4} promote\ce{H2O2} formation, resulting in 30\% higher \ce{H2O2} concentration. 
         \item  \textbf{How do \ce{SO2} budget and oxidation tendencies respond to changes in oxidant levels over the historical period?} \\
-        The historical increases in \ce{O3} precursor emissions increase \ce{SO2} oxidation in the gas-phase with OH by xxx\%, resulting in a total increase in oxidation of xxx Tg/year, which is xxxx\% of the global total oxidation of xxx Tg/year.\\
-        The historical increases in \ce{CH4} have two opposing effects. There is a xxx Tg/year reduction in \ce{SO2 + OH} oxidation while \ce{SO2 + H2O2} oxidation increases by xxx Tg/year. The oxidation shifts to less gas-phase and more aqueous-phase oxidation, but leaves global total oxidation unchanged.
+        The historical \ce{O3} precursor emissions increase the total \ce{SO2} oxidation through its gas-phase oxidation with OH by \qty{5.0}{Tg(S)~yr^{-1}} in 2014. The aqueous-phase oxidation with \ce{O3} and \ce{H2O2} remains unchanged despite the increases in both oxidants. The lack of change implies that globally \ce{SO2 + O3} oxidation is not sensitive to historical changes in \ce{O3} and that the background tropospheric \ce{O3} is sufficient to saturate the pathway. \\
+        The historical increases in \ce{CH4} have two opposing effects on \ce{SO2} oxidation. There is a \qty{3.7}{Tg(S)~yr^{-1}} reduction in \ce{SO2 + OH} oxidation while \ce{SO2 + H2O2} oxidation increases by \qty{3.5}{Tg(S)~yr^{-1}}. The oxidation shifts to less gas-phase and more aqueous-phase oxidation, but leaves global total oxidation roughly unchanged. 
         \item \textbf{How does sulfate aerosol size distribution respond to oxidant perturbation?} \\
+        The concentration of aerosol particles with diameters above 50 nm is used as a proxy for cloud condensation nuclei.\\
         \ce{O3} precursors increase the aerosol number concentration in the nucleation mode with slight increases in the aerosol number above 50 nanometers in diameter. \\
         \ce{CH4}, on the other hand, increases the growth of aerosol size, resulting in the shift of aerosol size to larger diameter and increases the aerosol that activates cloud formation.
         \item \textbf{At the process level, how do oxidant changes affect aerosol radiative forcing due to changes in oxidants?} \\
-        Historical \ce{O3} precursor emissions act to increase the aerosol loading, increasing the aerosol AOD, resulting in a more negative aerosol-radiation interaction term of ERF. The global mean aerosol IRF due to an increase in \ce{O3} precursor is xxx W/m2, which is xxx\% of the aerosol ERF. \\
-        Historical increases in \ce{CH4} concentration alter aerosol-cloud interactions by shifting oxidation to the aqueous phase. This results in xxx W/m2 less negative ERF, which is xxx\% of the aerosols' ERF at the end of the simulation period.
+        Historical \ce{O3} precursor emissions act to increase the aerosol loading, increasing the aerosol optical depth, resulting in a more negative aerosol-radiation interaction term of ERF. The global mean change to ERF due to an increase in \ce{O3} precursor is \qty{0.08+-0.05}{W~m^{-2}}, which is 44\% of the aerosol direct effects due to aerosol precursors. \\
+        Historical increases in \ce{CH4} concentration suppress aerosol-cloud interactions by shifting oxidation to the aqueous phase. This results in \qty{0.21+-0.15}{W~m^{-2}} less negative ERF, which is 21\% of the aerosols' ERF at the end of the simulation period.\\
+        Existing AerChemMIP simulations were used to estimate the impact of switching from pre-industrial oxidants to present-day oxidant fields on aerosol ERF calculation. The change in aerosol-cloud interaction is statistically insignificant and contradicts the results of \citet{karsetStrongImpactsAerosol2018} in which aerosol-cloud interaction was more negative due to the same switch. However, the definition of present-day oxidant in \citet{karsetStrongImpactsAerosol2018} included present-day \ce{CH4} as well as \ce{O3} precursor emissions, while work in Chapter \ref{ch3:title} includes present-day changes to oxidants due to \ce{O3} precursor emissions only.  
     \end{enumerate}
 
 
-\subsubsection*{In Chapter 4, I investigated the following questions related to the importance of seasonal variability in sulfate aerosol formation:}
+\subsubsection*{Chapter \ref{ch4:title} investigated the following questions related to the importance of seasonal variability in sulfate aerosol formation:}
 
     \begin{enumerate}[resume]
         \item \textbf{How do changes in seasonal levels of oxidants affect aerosol formation and subsequent radiative effects?}\\
-        SO2 emitted in summer is readily oxidised, altering cloud properties. This results in the specific ERF of xxx (w/m2)/(Tgs/year)  
-        \item \textbf{How does UKESM1 perform regarding simulating GSAT seasonal variability?}
-        pothole is ... \\
-        The TAS responds to sulfate aerosol formation well and during the pothole
+        Aerosol precursor emissions are concentrated in the Northern Hemisphere due to increases in industrial activity between 1850 and 2014, so seasons here are defined relative to the Northern Hemisphere climate. \\
+        In summer, up to 80\% of total sulfate production occurs via gas-phase oxidation by OH, when high OH and low cloud cover are present. Gas-phase oxidation contributes to new particle formation, leading to significant changes in modelled aerosol and cloud properties in summer. \\
+        In winter, aqueous-phase reactions of \ce{SO2} with \ce{O3} and \ce{H2O2} account for up to 90\% of the aerosol mass without creating new aerosol particles. \\
+        In the model, cloud albedo increases by 10\% in the summer months, leading to a cloud radiative effect of \qty{-1.9}{W~m^{-2}}, compared to \qty{-0.9}{W~m^{-2}} in winter. These results illustrate that the emission season determines oxidation tendency via the availability of oxidants and meteorological properties, such as clouds. The effective radiative forcing per unit of \ce{SO2} emissions in boreal summer is four times greater than in winter.     
+        \item \textbf{How does UKESM1 perform regarding simulating GSAT seasonal variability?}\\
+        Aerosols impact historical trends of global and local surface air temperature. Aerosol cooling is the strongest in the northern latitudes, co-locating with the aerosol precursor emissions. At the maximum in the 1980s, aerosols cool down TAS by 1.5 K globally and by 2 K in the northern hemisphere. \\
+        A phenomenon known as "pothole cooling" is a low bias in surface air temperatures in CMIP6 ESMs during the 1960--1989 period. Near-global mean $\Delta$TAS aggregated by month shows that during the pothole period, aerosol cooling increases from July through November. Aerosol precursor emissions during the pothole period cause a slight global cooling of \qty{-0.03}{\kelvin} between the most and least affected months relative to the near-present period. 
     \end{enumerate}
 
-\subsubsection*{In Chapter 5, I investigated the following questions regarding the role of emission location in determining sulfate aerosol formation and the resulting radiative effects:}
-    
+\subsubsection*{Chapter \ref{ch5:title} investigated the following questions regarding the role of emission location in determining sulfate aerosol formation and the resulting radiative effects:}
+
    \begin{enumerate}[resume]
-    \item \textbf{What is the effect of emission location change on oxidation tendencies?}
-    \item \textbf{How sensitive is sulfate aerosol formation to the emission location?}
-    \item \textbf{What processes in chemistry-aerosol-cloud-radiation interaction are the most sensitive to the location of aerosol precursor emissions?}
+    \item \textbf{What is the effect of emission location on sulfate aerosol formation and aerosol properties?}\\
+    Analysis focusing on four regions: Europe, East North America, East Asia and South Asia, shows that location plays an important part in determining the partition between each reaction. \ce{SO2 + O3} dominates in Europe due to high cloud cover, while in the other three regions, gas-phase oxidation by OH dominates.
+    \item \textbf{How sensitive is sulfate aerosol formation to the emission location?}\\
+    The relationship between a driver, for example, sulfate aerosol formation, and a response, in this case, \ce{SO2} burden, is linear throughout the simulation period and is termed the sensitivity, $\gamma$ of sulfate formation. The sensitivity of each reaction depends on the emission location.\\
+    For the same increase in the historical \ce{SO2} burden, the \ce{SO2 + OH} tendency sees the largest increase in South Asia, where the sensitivity is double that of East Asia and East North America. The sensitivity analysis provides a quantitative understanding of how oxidation tendency responds to changes in \ce{SO2} burden and offers a method to predict the consequences of future emissions changes.
+    \item \textbf{Which processes in chemistry-aerosol-cloud-radiation interaction are the most sensitive to the location of aerosol precursor emissions?}\\
+    A process is said to be insensitive to location if its sensitivity is the same at all locations. The impact of changes in N50 to CDNC is the least sensitive to location.\\
+    On the other hand, oxidation tendency, $\gamma_2$, is the most sensitive to location as this process changes most drastically across regions. The sensitivity of IRF to AOD, $\gamma_{5a}$, is another process with high sensitivity to location, although the driver of the sensitivity differs from $\gamma_2$.\\
     \end{enumerate}
 
 
 \section{Future directions}
 
-Despite the known effects of aerosols on atmospheric chemistry \citep[e.g.,][]{oconnorApportionmentPreIndustrial2022}, sulfate aerosol modelling remains an active area of study with many open questions. For example, as a large number of chemical species slows down the progress of the study due to computational resource limits, there remain gaps in treatment of aerosol composition (e.g., nitrate, secondary organic aerosols) in many regions \citep[e.g.,][]{mulcahyDescriptionEvaluationAerosol2020}, and parameterizations of sub-grid processes add to the uncertainty of model prediction so that much of the feedback between aerosol and other components of the Earth system is not yet fully explored \citep{seikiImprovementGlobalCloudSystemResolving2015}. 
+% Despite the well-known effects of aerosols on atmospheric chemistry \citep[e.g.,][]{oconnorApportionmentPreIndustrial2022}, modelling of sulfate aerosols remains an active area of study with many open questions, especially pertaining to the role of the chemical background of the atmosphere, chemical, aerosol and cloud parameterisation in ESMs, and uncertainty in its radiative effects \citep[e.g.][]{watson-parrisLargeUncertaintyFuture2022,wilcoxRegionalAerosolModel2022}. 
 
-Aerosols contribute to significant uncertainty in future warming \citep{watson-parrisLargeUncertaintyFuture2022,wilcoxRegionalAerosolModel2022}
+The work in this thesis has advanced the understanding of the role of interactive chemistry in UKESM1. The novelty of this thesis lies solely in applying new analyses to existing simulations, and this last section provides suggestions on future work, which is grouped into three broad directions: enhancing model capabilities, using current model capabilities to perform targeted simulations or new analyses, and applying the analysis presented in this work to other models.
 
-\subsection{Impacts of oxidants on secondary aerosols}
+\subsection{Enhancing model capabilities to advance sulfate aerosol modelling in UKESM1}
 
-pdClim timeslice experiment from AerChemMIP2 is excellent and would be a great experiment to inform the effects of oxidants. This is a direct follow-up of the results from this thesis. 
+UKESM1 features state-of-the-science such that aerosol processes are coupled to a full chemistry scheme \citep[][]{archibaldDescriptionEvaluationUKCA2020, mulcahyDescriptionEvaluationAerosol2020,sellarUKESM1DescriptionEvaluation2019}. Oxidants are interactive, so gas‑phase chemistry co‑evolves with aerosol formation. Natural sources of sulfate aerosol precursors, i.e., DMS, are interactive and climate‑sensitive, albeit simplified. UKESM1 is likely to benefit from the following developments regarding \ce{SO2} precursor emissions and oxidation, as well as improvements in aerosol processes. 
 
-There is some continuity here, and I am still the only one looking at aerosol-oxidants in the most detailed way from oxidation straight to ERF, apart from Karset.
+First, the natural sources of sulfate aerosol precursors from the marine environment are simplistic, and the chemical mechanism for DMS is similarly simplified and not up to date with the current literature, which has recently discovered new chemical species and mechanisms. In UKESM1, DMS emissions are simulated interactively, with seawater concentrations calculated by the MEDUSA ocean biogeochemistry model based on chlorophyll, light, and nutrients. A multi-model study shows that DMS emissions are globally underestimated, except in the Southern Ocean, compared to observations \citep[][]{bockEvaluationOceanDimethylsulfide2021}. Compared to other ESMs with interactive DMS emissions, UKESM1 produced the lowest global mean emission, suggesting that the background \ce{SO2} chemically produced from DMS is likely near the lower end of the multi-model estimates. Reducing the UKESM1 negative bias in DMS emissions would lead to a more realistic background \ce{SO} and, in turn, a more realistic background aerosol loading, especially in clean atmospheres and equatorial regions. 
 
-\subsection{Looking beyond sulfate aerosol production to other secondary aerosol types and emission sources}
+In addition, instead of the highly simplified three-reaction two-species mechanism currently in use in UKESM1, a near-explicit DMS oxidation mechanism has been developed and implemented in UKCA \citep[][]{calaDevelopmentIntercomparisonEvaluation2023}. However, this mechanism is detailed and would put pressure on the computational resources. Work is underway to implement a simplified mechanism in UKESM to reduce the complexity important for background natural sulfate without sacrificing computational speed (L. Jacob and Y. Ge, University of Cambridge, personal communication, January 2026). This future development will improve the model's capability to accurately simulate the response of sulfate aerosol production to background conditions to future increases in global temperature. dms emissions to the atmosphere are expected to increase and play an important role in sulfate aerosol production. 
 
-Even though organic soa is not the most important in the historical period. Its importance grows as SO2 emissions decline in the future. Organic soa would also be affected by oxidants and it would be informative to apply the methods presented in this thesis to soa. 
+Second, the \ce{SO2} emissions may be too high due to a possible combination of overly high emissions in the CMIP6 inventory and the injection of emissions into the surface layer only. Multiple lines of evidence have shown that the emission inventory used for CMIP6 overestimated \ce{SO2} emissions from China by as much as \qty{10}{Tg(S)~yr^{-1}} in 2014 \citep[][]{fanComparisonAnthropogenicEmission2022}. This has been rectified in the follow-up cycle of CMIP \citep[][]{durackEarthSystemForcing2025}. 
 
-Natural sources of aerosol precursors, such as DMS, are essential in pristine environments, and dedicated simulations targeting DMS oxidation would enhance the understanding of aerosol ERF from natural sources. 
-
-
-
-\subsection{piSO2 simulations}
-Computational resource constraints aside, histSST-SO2 would be tremendously helpful for understanding the clean climate impact of SO2 emissions and the interaction between oxidant-aerosol-cloud-climate.
-
-\subsection{Region-focused simulations for SO2 and aerosol impacts on climate for historical emissions}
-
-RAMIP focuses on the future impacts of emission location, which is excellent. A similar experimental design would also be helpful in the historical SO2 emissions context.
-
-\subsection{Expanding the analysis to other ESMs}
-
-CMIP7 is on the horizon, and more models than ever will feature online chemistry coupled with radiation. 
-
-Applying the unique, detailed process-level analysis in this thesis as a template for other ESM would help in understanding and diagnosing inter-model behaviour, including Understanding model behaviour with seasonal and regional context  \citep{bellouinRegionalSeasonalRadiative2016}.
+Third, the current UKESM1 likely underestimates \ce{SO2} oxidation as some \ce{SO2} oxidation pathways are not implemented in the model. This is true for the fast multiphase and heterogeneous routes, which are crucial in polluted and aerosol‑rich conditions \citep{ranjithkumarConstraintsGlobalAerosol2021,hardacreEvaluationSO2SO422021,mulcahyDescriptionEvaluationAerosol2020}. The current \ce{SO2} chemistry in UKESM1 does not include enhanced surface‑catalysed routes, such as Mn- or Fe‑catalysed oxidation on aerosol surfaces, which is a known oxidation pathway \citep[][and reference therein]{seinfeldAtmosphericChemistryPhysics2016,turnockModelledObservedChanges2015}. Consequently, UKESM1 likely misses a substantial fast-sulfate source in polluted, high-particle-matter environments.
 
 
+Fourth, the current version of UKESM1 prescribes cloud droplet pH at 5.0 \citep[][]{mulcahyDescriptionEvaluationAerosol2020}. However, observations show that cloud pH fluctuates between -1 and 8, depending on the aerosol type and the atmospheric concentration of \ce{SO2} and organic compounds such as ammonia \citep[][]{pyeAcidityAtmosphericParticles2020}. Globally, aqueous phase oxidation accounts for 60–-80\% of tropospheric sulfate formation \citep[][]{barthSulfurChemistryNational2000,roelofsAnalysisRegionalBudgets2001}. This thesis speculates that regional aerosol radiative forcings over the period 1970 to 2009 are likely to be particularly sensitive to changes in cloud water pH, due to high emissions from regions with elevated sensitivity to \ce{SO2 + O3} oxidation, i.e., Europe and North America. In-cloud oxidation plays an important role in East Asia, which is also the main source of \ce{SO2}. While \ce{SO2 + H2O2} is less sensitive to cloud pH, the reaction rate of \ce{SO2 + O3} increases by 2--3 orders of magnitude as cloud pH decreases from pH 6 to 4. Following the exploratory work by \citet{turnockImpactChangesCloud2019}, an interactive pH scheme for UKESM has been developed and will be featured in the new release of the model.
 
 
+Lastly, the majority of uncertainty in the top-of-the-atmosphere radiative flux could be traced to the parameters that affect cloud reflectivity \citet{regayreAerosolPhysicalAtmosphere2018}. Results reveal that the cloud radiation parameter, which controls cloud reflectivity, accounts for more than 60\% of the variance in outgoing solar radiation. Thus, constraining this parameter using dedicated parameter-space ensemble sampling coupled with improved observations will likely improve the model's skill in ERF estimation.
 
 
+\subsection{Using the current UKESM1 capabilities to answer more scientific questions regarding aerosol radiative effects} 
 
+\subsubsection{Looking beyond anthropogenic sulfate aerosol production to more secondary aerosol types and precursor sources}
+
+Natural sources of sulfate aerosol precursors, such as dimethyl sulfide (DMS) from oceanic sources, are essential contributors to aerosol in pristine environments \citep{bockEvaluationOceanDimethylsulfide2021}. Dedicated simulations targeting the role of DMS oxidation for providing secondary \ce{SO2} emissions would enhance understanding of the aerosol ERF from natural sources, especially for establishing the background aerosol burden.
+
+Additionally, while a multi-model study shows that secondary organic aerosols (SOAs) contribute \qty{-0.25}{W~m^{-2}} to ERF using 2014 emissions, which is \~25\% of ERF from \ce{SO2} \citep[][]{thornhillEffectiveRadiativeForcing2021}, the importance of SOAs is expected to rise as \ce{SO2} emissions decline in the future due to cleaner ship fuel and shift in global energy supply \citep[][]{mcduffieGlobalAnthropogenicEmission2020,yoshiokaWarmingEffectsReduced2024}. Similar to sulfate aerosols, SOAs are secondary aerosols whose formation depends on oxidants. Unlike sulfate aerosols, SOAs comprise from a wide range of sources, including many biogenic and anthropogenic organic compounds. This variety of precursors and reaction pathways poses a challenge for model parameterisation and for understanding the role of chemistry in their formation. Thus, a simulation experiment to quantify the role of secondary organic aerosols is important for determining future trends in aerosol radiative effects. 
+
+
+\subsubsection{Impacts of present-day oxidants on secondary aerosols with \textit{pdClim-aer} from AerChemMIP2}
+
+This thesis provides evidence from multiple angles that chemistry plays a significant role in sulfate aerosol formation, and that the interaction between chemistry and radiation is not a direct response to increasing emissions. In particular, Chapter \ref{ch3:title} shows that the background oxidants could modify the radiative effects of aerosols by as much as 21\% for the case of \ce{O3}. This raises the question of redefining ERF estimates, as one of the benefits of ERF is estimating the surface temperature response to a climate forcing agent. 
+
+An exciting development in this research area is the proposal of a new set of simulations by phase two of AerChemMIP (AerChemMIP2) as part of the coming CMIP7 cycle \citep[][]{fiedlerAerChemMIP2NdashUnraveling2025}. To explore the dependency of ERF on the background state of the atmosphere, AerChemMIP2 proposes a new family of \textit{pdClim-X} simulations. Instead of using a pre-industrial state as the control simulation, pdClim-control uses the present-day state (defined here as the emissions from year2021) as the control. The perturbed simulation is the same as \textit{pdClim-control} except for one forcing agent, which is to be prescribed by its pre-industrial values. For instance, \textit{pdClim-aer} uses surface temperatures, along with all emissions and boundary conditions from 2021, with aerosol precursor emissions set to values from 1850. The resulting ERF gained from the difference between pdClim-control and the perturbed forcing could be compared with the ERF from the conventional \textit{piClim-control} minus \textit{piClim-aer}. The difference between the two ERFs will signify the relevance of oxidants to their radiative effects. 
+
+Not only does the \textit{pdClim-X} simulation set, for the first time, enable addressing the importance of oxidants on aerosol radiative effects through a multi-model study, but it also sets the direction of travel for the research community toward a more tightly coupled aerosol-chemistry.
+
+\subsubsection{New \textit{histSST-piSO2} simulations for addressing the low bias in surface air temperature between 1950 and 1990}
+
+CMIP6 reveals ESMs reduction in skill of surface air temperature prediction \citep[][]{flynnStrongAerosolCooling2023}. Overwhelming evidence suggests that sulfate aerosol plays a significant role in this low bias \citep[][]{zhangRoleAnthropogenicAerosols2021}, as the bias follows closely with aerosol burden, which sulfate dominates, but the precise cause remains unknown \citep[][]{zhangRoleAnthropogenicAerosols2021,flynnStrongAerosolCooling2023}. While analysis in Chapter \ref{ch4:title} suggests that precision in simulating seasonal variation may play a role in improving TAS, the role of sulfate aerosol could not be isolated due to limitations in simulation design. 
+
+Given no computational resource constraints, \textit{hist-SO2}, a coupled atmosphere-ocean simulation that includes all anthropogenic emissions except \ce{SO2} and follows the historical trajectory, would be tremendously helpful for understanding the climate impacts of \ce{SO2} emissions and the interactions among oxidants, aerosols, clouds, and the climate. 
+
+
+\subsubsection{Region-focused simulations for \ce{SO2} and aerosol impacts on climate for historical emissions}
+
+Regional Aerosol Model Intercomparison Project (RAMIP) recognised the impact of a shift in the region of aerosol precursor emissions on the climate and set out to further explore the aerosol impact using a joint effort by multiple models \citep[][]{wilcoxRegionalAerosolModel2022}. RAMIP aims to quantify robust regional climate responses to near-future emissions of anthropogenic aerosols, both near and remotely from the emission sources. This is done using CMIP6 future scenarios, coupled with targeted emission patterns in key aerosol-emitting regions.
+
+As quantifying the radiative effect of aerosols was not the objective of the MIP, simulation pairs for diagnosing aerosol ERF were not proposed. Despite this, the sulfate aerosol budget can be analysed using the existing RAMIP simulation, and the analysis in Chapter \ref{ch5:title} of this thesis would provide a better understanding of the role of aerosol formation location sensitivity in the future.
+
+
+\subsubsection{Extended sensitivity analysis to further quantify the role of seasonal cycle on aerosol formation and radiative effects}
+
+As a penultimate analysis of seasonal aerosol formation, the sensitivity analysis proposed in Chapter \ref{ch5:title} could be adapted to analyse seasonal data.
+
+Seasonal sensitivity to aerosol formation. group data by month of the year, average over region, then apply sensitivity to see changes in sensitivity in the seasons. This should yield a seasonal cycle of sensitivities (x-month of year, y-gammas) for each process, with the annual mean presented in Chapter \ref{ch5:title} as a single data point. This analysis would help understand the role of seasons/background state of the atmosphere/climate in sulfate formation and radiative effects. 
+
+This would help with global policy on the co-benefit of controlling coal burning and GHG emissions.
+
+
+\subsection{Applying the analysis presented in this thesis to other models}
+
+% CMIP7 is on the horizon, and more models than ever will feature online chemistry coupled with radiation. Most analysis in this thesis could be applied to other models. 
+
+% Analysis in this thesis has been shown to provide a detailed view for process-level understanding of ESMs. We do have standardised simulation, why can't we have standardised analysis provided by each institution to answer the same questions? The number of models keeps rising, each model is getting more complicated, and outsiders will never understand the process-level inner working of a model better than those who mainly work with one model; model results are getting bigger and bigger. 
+
+% Isn't it more useful to have a standard way of understanding how each model behaves in a more fine-grained way than just reporting the observables or final metrics?
+
+The upcoming CMIP7 exercise presents both an opportunity and a challenge for the aerosol-chemistry-climate community. While more ESMs than ever will feature online chemistry coupled with radiation, enabling richer process-level investigation, the growing number and complexity of models risks overwhelming our capacity for deep understanding. The analyses presented in this thesis demonstrate the value of detailed, mechanistic examination of model behaviour. However, such analysis is resource-intensive and benefits enormously from intimate familiarity with a particular model's structure. This raises an important question: could standardised analysis protocols, applied by each modelling institution, complement our existing standardised simulation protocols? 
+
+Such an approach would leverage each group's expertise with its own model while ensuring comparable process-level diagnostics across the multi-model ensemble, yielding insights beyond what aggregate metrics or validation against observations can provide.
+
+\subsubsection{Understanding the role of oxidants in models that submitted relevant AerChemMIP simulations}
+
+In addition to UKESM1, five other ESMs provide the necessary AerChemMIP output for applying the oxidant analysis framework developed in Chapter \ref{ch3:title}: EC-Earth3-AerChem, GFDL-ESM4, GISS-E2-1-G, MIROC6, and MPI-ESM-1-2-HAM (Table \ref{tab:ch6:aerchemmip_models}). All six models submitted chemical production variables for sulfate aerosol across multiple AerChemMIP experiments, enabling comprehensive inter-model comparison of oxidant-mediated aerosol formation pathways.
+
+\begin{table}[htbp]
+\centering
+\caption{ESMs that participated in AerChemMIP that provided chemical production of sulfate aerosol variables. An 'x' indicates the model submitted output for that simulation. The list of models from CMIP6 archive, https://esgf-node.ornl.gov/search, accessed 30 January 2026}
+\label{tab:ch6:aerchemmip_models}
+\begin{tabular}{l c c c c}
+\toprule
+Model & \textit{hist-piAer} & \textit{hist-piNTCF} & \textit{histSST-piAer} & \textit{histSST-piNTCF} \\
+\midrule
+EC-Earth3-AerChem & x & x & x & x \\
+GFDL-ESM4 & x & x & x & x \\
+GISS-E2-1-G & x & x & x & x \\
+MIROC6 & x & x & x & x \\
+MPI-ESM-1-2-HAM & x & & x & \\
+UKESM1-0-LL & x & x & x & x \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+These models differ fundamentally in their representation of atmospheric chemistry and aerosol processes. Critically, they employ contrasting approaches to oxidant fields: MPI-ESM-1-2-HAM uses diagnostic oxidant fields (prescribed from offline calculations), while GFDL-ESM4 and UKESM1-0-LL calculate oxidants prognostically within the coupled system \citep{zhangRoleAnthropogenicAerosols2021}. The models also vary in their aerosol microphysics schemes, ranging from UKESM1-0-LL's five-mode GLOMAP scheme to MPI-ESM-1-2-HAM's seven-mode HAM2.3 configuration, and in their treatment of aqueous-phase sulfate production pathways. These structural differences provide an ideal testbed for the process-level analysis framework developed in this thesis.
+
+The persistent surface air temperature bias between 1950 and 1990, the so-called ``pothole anomaly'' in the global mean surface air temperature, remains inadequately explained across the CMIP6 ensemble. While \citet{zhangRoleAnthropogenicAerosols2021} examined several of these models and confirmed the widespread presence of this feature, they could not identify the mechanistic causes of inter-model differences in pothole magnitude or timing. 
+
+Applying the stepwise budget decomposition from Chapter \ref{ch3:title} to each model individually would reveal where models diverge in their chemical processing of sulfate aerosol precursors. By examining production, loss, and transport terms alongside oxidant availability for each model's sulfate budget, this analysis could determine whether differences in \ce{OH} fields, aqueous-phase reaction rates, or the strength of aerosol-chemistry coupling drive the varying temperature responses. Such granular, process-oriented comparison moves beyond the aggregate metrics that have thus far proven insufficient for diagnosing the pothole's origins.
+
+\subsubsection{The use case for sensitivity studies in investigating the role of chemistry on model adjustments}
+
+Beyond inter-model comparison, the sensitivity analysis framework demonstrated in this thesis offers a method for tracking the impacts of model development within individual ESMs. The seasonal and regional budget decomposition applied to UKESM1 (Chapters \ref{ch3:title} and \ref{ch4:title}) provides a template that could be systematically applied across model versions, revealing how changes to parameterisations propagate through the coupled aerosol-chemistry-radiation system \citep[][]{bellouinBoundingGlobalAerosol2020}.
+
+Sensitivity-based diagnostics enable meaningful comparisons even when absolute values differ between model configurations. By examining relative changes in sulfate aerosol burden, oxidant concentrations, and cloud properties in response to controlled perturbations, this approach isolates the effects of specific model updates independent of baseline biases. For instance, when a modelling centre updates its aerosol microphysics scheme or chemical reaction rates, the sensitivity of aerosol ERF to oxidant availability, as quantified through perturbation experiments as in Chapter \ref{ch3:title}, can reveal whether the update has altered not merely the magnitude but the mechanistic pathways of aerosol forcing. 
+
+This methodology would prove invaluable for model development communities seeking to understand whether structural changes enhance or diminish the coupling strength between atmospheric chemistry and aerosol radiative effects, informing decisions about which parameterisation improvements yield more physically consistent representations of the coupled system.

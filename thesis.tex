@@ -85,7 +85,6 @@
 \input{nomenclature}
 \input{Preamble/preamble}
 
-
 \usepackage[version=4]{mhchem}
 \usepackage{mathtools}
 \usepackage{amsmath}
@@ -111,8 +110,6 @@
 % Setup for units
 \sisetup{uncertainty-mode = separate}
 \sisetup{separate-uncertainty-units = single} % This is mathematically incorrect, but I think this reads fine. See documentation for more settings https://texdoc.org/serve/siunitx/
-
-
 
 % user-defined commands
 \newcommand{\histsst}{\textit{histSST}}
@@ -248,9 +245,8 @@
 
 \begin{appendices} % Using appendices environment for more functionality
 
-% \include{Appendix1/appendix1} 
+\include{Appendix1/appendix1} 
 \include{Appendix2/appendix2}
-% \include{Appendix2/appendix2}
 
 \end{appendices}
 
