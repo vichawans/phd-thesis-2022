@@ -1,4 +1,4 @@
-\chapter{The impacts of emission location of aerosol precursors on the aerosol formation and radiative effects}
+\chapter{The impact of emission location on process sensitivity of aerosol formation and radiative effects}
 \label{ch5:title}
 % **************************** Define Graphics Path **************************
 \ifpdf
@@ -7,41 +7,38 @@
     \graphicspath{{Chapter5/Figs/Vector/}{Chapter5/Figs/}}
 \fi
 
-\section*{Abstracts}
+\section*{Abstract}
 
-Anthropogenic emissions, including aerosol precursors, have been concentrated in highly industrialised regions, i.e., Europe, North America, and Japan in the 1980s, and have subsequently been followed by rapid industrialisation in China and South Asia. This results in emissions in the Northern Hemisphere having shifted equatorward, where oxidants are expected to have higher concentrations due to greater photochemical activity. A large number of processes are involved in the chain from emissions of aerosol precursor gases to impacts on radiative forcing. These processes manifest in many relationships that can be expressed as factors driving aerosol effects on cloud radiative forcing, which are termed here as process sensitivities. Existing frameworks exist for the relationship between aerosol optical depth and effective radiative forcing, and for cloud droplet number concentration and cloud radiative forcing. To quantify the importance of emission location, this chapter extended the framework to include the relationships between \ce{SO2} emission, aerosol optical depth, and the number concentration of cloud condensation nuclei. 
+Anthropogenic emissions, including aerosol precursors, were historically concentrated in industrialised regions of Europe, North America, and Japan until the 1990s. A rapid decrease in emissions in Europe and North America over the following decade, coupled with rising emissions in China and South Asia, has caused emissions in the Northern Hemisphere to shift equatorward, where oxidant levels are expected to be higher due to greater photochemical activity. Quantifying the effect of emission location on aerosol formation and the processes underlying aerosol radiative effects will improve our understanding of these effects. While there are existing frameworks that describe the relationships between aerosol optical depth and effective radiative forcing (ERF), and between cloud droplet number concentration and cloud radiative forcing, none as yet treat chemistry. 
 
-This chapter examined the regional characteristics of processes involved in aerosol formation and their radiative effects in four bounded areas: East North America, Europe, East Asia, and South Asia between 1850 and 2014 using UKESM1 output for AerChemMIP. \ce{SO2} emission trends evolved over the historical period, starting with a rapid increase over Europe, which persisted until 1970, when they declined just as rapidly. The combination of high latitude and high cloudiness in this region makes \ce{SO2 + O3} the primary oxidation pathway, contributing half of the total oxidation, setting it apart from other regions. In East North America, the proportion of \ce{SO2 + OH} oxidation is larger, with all pathways contributing equally to sulfate production. East Asia exhibits a similar partitioning to that of East North America, while South Asia exhibits a uniquely high OH oxidation rate, with negligible \ce{SO2 + O3} oxidation. These findings could be summarised in terms of process sensitivities to compare across regions. The sensitivity of the reaction tendencies quantitatively confirms the partitioning of pathways, with \ce{SO2 + O3} as the most sensitive pathway to changes in the \ce{SO2} burden in Europe. The total sulfate aerosol production over Europe is the least sensitive to increases in \ce{SO2} burden, while East North America and South Asia are the most sensitive. 
+This chapter extends the framework to include relationships among \ce{SO2} emissions, aerosol optical depth, and the number concentration of cloud condensation nuclei. This addition facilitates quantification of how the location of emissions influences downstream radiative forcing, in terms of these individual processes. Four bounded areas: East North America, Europe, East Asia, and South Asia were selected for analysis of the regional characteristics of the processes involved in aerosol formation and their radiative effects. Using a historical simulation spanning 1850 and 2014, we show that \ce{SO2} oxidation exhibits strong regional characteristics. In Europe, the combination of high latitude and high cloudiness makes \ce{SO2 + O3} the primary oxidation pathway, accounting for 50\% of total oxidation in the region. In East North America, all pathways contribute equally to sulfate production. In East Asia, the relative contributions of the three channels are similar to those in East North America, whereas in South Asia, \ce{SO2} is principally oxidised by OH, with minimal contribution from \ce{O3}. Applying the sensitivity framework, the process sensitivity analysis reveals a linear relationship among all processes across all regions, despite the simulation spanning 165 years and encompassing diverse emission trends, underscoring the robustness of the analysis. The derived sensitivity of reaction tendencies is consistent with pathway partitioning, with \ce{SO2 + O3} as the most sensitive pathway to changes in the \ce{SO2} burden in Europe, with the sensitivity of \qty{38.3}{Tg(S)~yr^{-1}} of sulfate aerosol produced per \unit{Tg(S)} of increase in \ce{SO2} burden. In contrast, only \qty{1.99}{Tg(S)~yr^{-1}} is produced via \ce{SO2 + OH} per the same burden in South Asia. 
 
-The proposed framework for teasing out ERF uncertainty across models could assist in model intercomparison, especially for quantifying the impacts of future aerosol emissions.
-
+As more Earth system models progress towards emission-based configurations, this framework shows promise for understanding climate responses to emissions and the drivers of the physical and chemical processes that shape the effective radiative forcing. Applications of inter-model comparison to quantify process sensitivity, especially for assessing the impacts of future aerosol emissions, are discussed.
 
 \section{Introduction}
 
-Many reasons contribute to the uncertainty in aerosols' radiative effect estimates. Because aerosols' lifetimes are in the range of days, their radiative effects operate differently from those of long-lived climate-forcing agents such as \ce{CO2} \citep[e.g.][]{forsterEarthEnergyBudget2021, szopaShortlivedClimateForcers2021}. Aerosol radiative effects are localised and also short-term without sustained emissions. Moreover, aerosols are produced in the atmosphere through chemical reactions, so atmospheric conditions determine their production efficiency. These are the impacts of emissions location, which is unique to short-lived climate forcing agents such as aerosols.
-
-Geographic location can substantially influence the cooling potential of a given aerosol precursor emission. Relative climate effects of combined sulfate, black carbon, and organic carbon aerosol emissions equivalent to China's total annual emissions in 2000 vary when emitted at other locations \citep{persadDivergentGlobalscaleTemperature2018}. Regional source efficiencies are higher in regions with dry atmospheric conditions and lower export, suggesting that aerosol lifetime, together with regional export, is vital for determining regional radiative effects \citep{yangGlobalSourceAttribution2017}. 
-
-The atmospheric conditions at precursor emission locations may influence the efficiency of secondary aerosol production by altering radiation, available reactants, and temperature, yet research on aerosol production remains limited. Drawing from adjacent studies on ozone production, \citet{zhangTroposphericOzoneChange2016} showed that ozone production increases when the precursors are emitted closer to the equator. 
-
-One method for bounding uncertainty in aerosol radiative effects is to examine each process that contributes to aerosol radiative effects and determine the sensitivity of each process. Bounding uncertainty in this way is useful and has been attempted to assess the impact of industrial period changes on AOD and CDNC \citep{bellouinBoundingGlobalAerosol2020,ghanChallengesConstrainingAnthropogenic2016}. However, the formalism and quantitative studies are not available for the chemical production of sulfate aerosols. This chapter examines regional differences in sulfate aerosol formation, aerosol and cloud properties, and the radiative effect, suggests a method for determining the sensitivity of each aerosol formation process to the radiative effect, and finally quantifies the regional differences in the sensitivities of each process.
+% Aerosol radiative effects are complex! This is problematic because it is difficult to study and understand.
+Aerosol radiative effects differ from those of long-lived climate-forcing agents such as \ce{CO2}, as aerosols are localised due to their short lifetime, making their climate effects short-term in the absence of sustained emissions \citep[e.g.][]{forsterEarthEnergyBudget2021, szopaShortlivedClimateForcers2021}. Aerosols' radiative effects are complex, as they involve many processes with their own complexities. The complexity of aerosol formation and uncertainty in cloud processes have contributed to uncertainty in aerosol radiative effects \citep[e.g.,][]{bellouinBoundingGlobalAerosol2020}. 
 
 
-\subsection{\texorpdfstring{\ce{SO2}}{SO2} emissions trends over different regions and influence on ERF}
+% there is a proposed approach to disentangle the complexity of aerosol radiative effects. That is the process sensitivity analysis. However, this is only studied in terms of global estimates. Another problem is that the proposed analysis is only applicable for aerosol loading, cloud and radiative effects and omits the aerosol formation process.
+One method for disentangling the processes underlying aerosol radiative effects is to examine each process independently and determine the sensitivity of each sub-process response to changes to the driver. Process-level analysis in this way is useful and has been used to assess the impact of industrial-period changes on AOD and CDNC \citep{bellouinBoundingGlobalAerosol2020,ghanChallengesConstrainingAnthropogenic2016}. However, this is only studied in terms of global and long-term estimates. The existing analysis is applicable only to aerosol loading, cloud, and radiative effects and omits the aerosol formation process; the formalism and quantitative studies are not available for the chemical production of sulfate aerosols.
 
-% emission is geographically heterogeneous, and leads to asymmetric rf.
-Anthropogenic emissions, including aerosol precursors, have been concentrated in highly industrialised regions, i.e. Europe, North America and Japan in the 1980s, and then followed by rapid industrialisation in China and South Asia \citep{szopaShortlivedClimateForcers2021}. The majority of the industrialised regions are situated in the Northern hemisphere, leading to zonal asymmetry in anthropogenic aerosol precursor emission and the resulting climate forcing \citep{diaoAnthropogenicAerosolEffects2021}. 
+% the aerosol formation part is important because aerosol formation relies on the background state of the atmosphere and the background state is greatly localised and a global approach to sensitivity analysis may be misleading and put some of the chemical production process as more important than the other.
+Another dimension of the complexity of aerosol-climate effects is that most sulfate aerosols are chemically produced in the atmosphere, so local and background atmospheric conditions determine their production \citep{karsetStrongImpactsAerosol2018}. Drawing on adjacent studies of ozone and nitrogen oxides, \citet{zhangTroposphericOzoneChange2016} showed that ozone production increases when precursors are emitted closer to the equator. \citet{fuglestvedtClimaticForcingNitrogen1999} showed that the climate effect of emissions of nitrogen monoxide (\ce{NO}) and nitrogen dioxide (\ce{NO2}) is determined by the emission region due to the nonlinearities in \ce{O3} chemistry. Similarly, atmospheric conditions influence the efficiency of secondary sulfate aerosol formation by altering radiation, available reactants, and temperature, yet research on aerosol production remains limited.
 
-In addition to the hemispheric asymmetry, emissions in the Northern Hemisphere have shifted equatorward, where oxidants are expected to have higher concentrations due to greater photochemical activity. \citet{persadDivergentGlobalscaleTemperature2018} employed the atmosphere-only global simulation and noted that \ce{SO2} emitted in a high-impact region, Western Europe, resulted in double the burden of sulfate compared to the same unit of emission emitted in a low-impact region, the United States. However, the atmospheric burdens of the aerosols generated by each regional precursor emissions were uncorrelated with the relative change in ERF or global mean temperature. This study provided an important insight: the same unit of \ce{SO2} emitted at different locations resulted in markedly divergent sulfate loading and the subsequent radiative effects, but did not investigate the reasons for this diversity.
+Historically, anthropogenic emissions, including aerosol precursors, were concentrated in highly industrialised regions, i.e., Europe, North America, and Japan, in the 1980s, and were subsequently followed by rapid industrialisation in China and South Asia \citep{szopaShortlivedClimateForcers2021}. The majority of industrialised regions are situated in the Northern Hemisphere, leading to zonal asymmetry in anthropogenic aerosol precursor emissions and the resulting climate forcing \citep{diaoAnthropogenicAerosolEffects2021}.  
 
-These results demonstrated that geographic location substantially influences the cooling potential of aerosol precursor emissions. However, the processes underlying the influence of location are not well understood and need further investigation.
+In addition to the hemispheric asymmetry, emissions in the Northern Hemisphere have shifted equatorward, where oxidants are expected to be more concentrated due to greater photochemical activity. \citet{persadDivergentGlobalscaleTemperature2018} employed an atmosphere-only global simulation and noted that \ce{SO2} emitted in a high-impact region, Western Europe, resulted in a sulfate burden twice that of the same amount emitted in a low-impact region, the United States. However, the atmospheric burdens of the aerosols generated by each regional precursor emission were uncorrelated with the relative change in ERF or global mean temperature. This study provided an important insight: the same amount of \ce{SO2} emitted at different locations resulted in markedly divergent sulfate loadings and subsequent radiative effects, but it did not investigate the reasons for this diversity. In regions with dry atmospheric conditions and lower export, the efficiencies of a unit of emitted precursor are higher, suggesting that aerosol lifetime, together with regional export, is vital for determining regional radiative effects \citep{yangGlobalSourceAttribution2017}. 
+
+This chapter aims to provide a process-level understanding of aerosol formation in different geographical regions by suggesting a method for determining the sensitivity of each aerosol formation process to the radiative effect, examining regional differences in sulfate aerosol formation, aerosol and cloud properties, and the radiative effect, and finally quantifying the regional differences in the sensitivities of each process.
 
 \subsection{Estimating the aerosol ERF uncertainty in processes leading to aerosol ERF}
 
-Estimation of the aerosol ERF suffers from limited precision because ESMs predict a wide range of ERF values, as each ESM employs different approaches to simulating aerosol processes. Radiative forcing of sulfate aerosol precursor through aerosol arises through a chain of processes from emission of precursor gas, \ce{SO2}, to production of sulfate aerosol, and to the resulting aerosol burden. Then, the chain splits into aerosol-radiation interaction and aerosol-cloud interaction. For aerosol-radiation interaction, the sulfate burden affects aerosol optical depth, which in turn affects radiative forcing. For aerosol-cloud interaction, the sulfate burden affects cloud condensation nuclei (CCN) formation, which in turn affects cloud droplet number concentration (CDNC), thereby changing cloud radiative forcing. 
+Multi-model estimates of aerosol ERF suffer from limited precision because ESMs predict a wide range of ERF values, as each ESM employs its own approaches to simulating aerosol and cloud microphysical processes \citep{forsterEarthEnergyBudget2021}. Radiative forcing of sulfate aerosol precursors arises from a chain of processes, from the emission of the precursor gas, \ce{SO2}, to the production of sulfate aerosol, the resulting aerosol burden, which then, by themselves, trigger aerosol-radiation interactions or contribute to cloud nucleation, thereby leading to aerosol-cloud interactions. In aerosol-radiation interactions, the sulfate burden influences aerosol optical depth, which in turn affects radiative forcing. In aerosol-cloud interactions, the sulfate burden influences cloud condensation nuclei (CCN) formation, which in turn affects cloud droplet number concentration (CDNC), thereby altering cloud radiative forcing. 
 
 % speaks about uncertainty in the erf and the efforts to constrain the uncertainty
-\citet{ghanChallengesConstrainingAnthropogenic2016} derived process sensitivities, including the impact of aerosols on the IRF and the relationship between changes in CDNC and ERF. Sensitivity is a valuable concept because it is numerical and can be compared across models. Following notation by \citet{ghanChallengesConstrainingAnthropogenic2016}, which formalised the aerosol-cloud interaction in effective radiative forcing, the aerosol-cloud-radiation chain of processes could be expanded as follows.
+To quantify these processes, \citet{ghanChallengesConstrainingAnthropogenic2016} derived process sensitivities, including the impact of aerosols on the IRF and the relationship between changes in CDNC and ERF. Sensitivity is a valuable concept because it provides a metric for comparing models. Following the notation of \citet{ghanChallengesConstrainingAnthropogenic2016}, which formalised the aerosol-cloud interaction in terms of effective radiative forcing, the aerosol-cloud-radiation chain of processes can be expanded as follows.
 
 \begin{equation} \label{ch5:eq:ghan2016}
     \begin{aligned}
@@ -52,18 +49,17 @@ Estimation of the aerosol ERF suffers from limited precision because ESMs predic
     \end{aligned}
 \end{equation}
 
-where an overbar denotes the quantity is averaged over a time period long enough for clouds to adjust to aerosol or for reaching chemical equilibrium. $R$, and $R_{af}$ are the all-sky, and \textit{a}erosol-\textit{f}ree radiative fluxes, respectively. $N_d$ and $N_{CCN}$ are the number concentrations of cloud and cloud condensation nuclei, respectively. Lastly, $E$ stands for the emission of aerosol precursor gases.
-
-Aerosols have been theorised as a climate forcing agent since 1929 \citep{angstromAtmosphericTransmissionSun1929}, but only recently have the chemical production of atmospheric aerosols been included across multiple climate models in CMIP6 \citep[e.g.][]{collinsAerChemMIPQuantifyingEffects2017, kalisorasDecomposingEffectiveRadiative2024}. However, as models now simulate aerosol production with interactive chemistry, the concept of sensitivity needs to be expanded to account for the additional chemical complexity.
+where an overbar denotes that the quantity is averaged over a time period long enough for clouds to adjust to aerosol or to reach chemical equilibrium. $R$, and $R_{af}$ are the all-sky, and \textit{a}erosol-\textit{f}ree radiative fluxes, respectively. In this specific case, aerosol-free radiative flux refers to all areas of the sky, including cloudy skies, and excludes only areas with aerosol cover. $N_d$ and $N_{CCN}$ are the number concentrations of cloud and cloud condensation nuclei, respectively. Lastly, $E$ stands for the emission of aerosol precursor gases.
 
 
 \subsection{Theoretical framework for sensitivity analysis of chemistry-aerosol-cloud-radiation interaction}
 
+Aerosols have been theorised as a climate forcing agent since 1929 \citep{angstromAtmosphericTransmissionSun1929}, but only recently have the chemical production of atmospheric aerosols been included across multiple climate models in CMIP6 \citep[e.g.][]{collinsAerChemMIPQuantifyingEffects2017, kalisorasDecomposingEffectiveRadiative2024}. However, as models now simulate aerosol production with interactive chemistry, the concept of sensitivity needs to be expanded to account for the additional chemical complexity.
 
-To capture the complete chemistry-aerosol-cloud-raidation chain of processes leading to radiative effect, first, this Chapter combines the methods by \citet{ghanMinimalRepresentationAerosols2012} for estimating aerosol ERF, which specifies the additional radiative fluxes for aerosol-free (clean) and cloud-free (clear) sky parts of the atmosphere with Equation \ref{ch5:eq:ghan2016} and aerosol-cloud interaction chain of processes with aerosol-raidation process and rapid adjustments, as elaborated by \citet{bellouinBoundingGlobalAerosol2020}. 
+To capture the complete chemistry-aerosol-cloud-radiation chain of processes leading to radiative forcing, this Chapter first extends the methods by \citet{ghanMinimalRepresentationAerosols2012} for estimating aerosol ERF, which specifies the additional radiative fluxes for aerosol-free (clean) and cloud-free (clear) sky parts of the atmosphere with Equation \ref{ch5:eq:ghan2016} with work by \citet{bellouinBoundingGlobalAerosol2020} on the aerosol-cloud interaction chain of processes with aerosol-radiation process and rapid adjustments.
 
 
-\begin{equation}\label{}
+\begin{equation}\label{ch5:eq:ghan2016+bellouin2020}
     \begin{aligned}
         \dv{\overline{R}}{\overline{E}} = 
             \dv{(\overline{R}-\overline{R}_{af})}{\overline{\tau}_a}
@@ -75,133 +71,64 @@ To capture the complete chemistry-aerosol-cloud-raidation chain of processes lea
     \end{aligned}
 \end{equation}
 
-As recommended by \citet{ghanMinimalRepresentationAerosols2012}, the radiative flux of the atmosphere is decomposed as $R=(R-R_{af})+(R_{af}-R_{cs,af})+ R_{cs,af}$, where $R_{cs,af}$ is the radiative flux from the \textit{c}lear-\textit{s}ky, i.e. radiative flux that neglects absorption and scattering by both clouds and aerosols. $\tau_a$ is the aerosol optical depth. In other words, from left to right, the RHS terms are the instantaneous radiative flux changes due to aerosols in a hazy sky, $R_{hazy}=R-R_{af}$, cloud forcing, $R_{cloudy}=R_{af}-R_{cs,af}$, and the rapid adjustment of a clean and clear sky, $R_{cs,af}$. Note that the aerosol-cloud radiation term is slightly different from Equation \ref{ch5:eq:ghan2016}.
+As recommended by \citet{ghanMinimalRepresentationAerosols2012}, the radiative flux of the atmosphere is decomposed as $R=(R-R_{af})+(R_{af}-R_{cs,af})+ R_{cs,af}$, where $R_{cs,af}$ is the radiative flux from the \textit{c}lear-\textit{s}ky and \textit{a}erosol-\textit{f}ree part of the sky, i.e. radiative flux that neglects absorption and scattering by both clouds and aerosols. $\tau_a$ is the aerosol optical depth. In other words, from left to right, the RHS terms are the instantaneous radiative flux changes due to aerosols in a hazy sky, $R_{hazy}=R-R_{af}$, cloud forcing, $R_{cloudy}=R_{af}-R_{cs,af}$, and the rapid adjustment of a clean and clear sky, $R_{cs,af}$. Note that the aerosol-cloud radiation term differs slightly from that in Equation \ref{ch5:eq:ghan2016}, in that the radiative imbalance is calculated from $R_{af}$ in Equation \ref{ch5:eq:ghan2016}, while in \ref{ch5:eq:ghan2016+bellouin2020} the aerosol-cloud radiation uses only the cloudy part of the sky, $R_{af}-R_{cs,af}$.
 
-Ultimately, this chapter adds the sulfate production chain and decomposes d$E$ into production and precursor burdens, and omits the rapid adjustments as follows. 
-\begin{equation}\label{}
-    \begin{aligned}
-        \dv{\overline{R}}{\overline{P}_{\ce{SO2}}} = 
-        \Bigg[
-            \dv{\overline{R}_{hazy}}{\overline{\tau}_a}
-            \dv{\overline{\tau}_a}{\overline{Q}_{\ce{S(VI)}}} +
-            \dv{\overline{R}_{cloudy}}{\overline{N}_d} 
-            \dv{\overline{N_d}}{\overline{N}_{CCN}} 
-            \dv{\overline{N}_{CCN}}{\overline{Q}_{\ce{S(VI)}}}
-        \Bigg]
-            \dv{\overline{Q}_{\ce{S(VI)}}}{\overline{P}_{\ce{S(VI)}}}
-            \dv{\overline{P}_{\ce{S(VI)}}}{\overline{Q}_{\ce{SO2}}}
-            \dv{\overline{Q}_{\ce{SO2}}}{\overline{P}_{\ce{SO2}}}
-    \end{aligned}
-\end{equation}
-
-where an overbar denotes the quantity is averaged over a time period long enough for clouds to adjust to aerosol or for reaching chemical equilibrium. $P_X$ and $Q_X$ denote the production and burden of X, respectively, where X is either \ce{SO2} or sulfate aerosol (\ce{S(VI)}). 
-
-The above equation could be visualised as chains of processes with respective sensitivity, $\gamma_n$, as 
-
-\begin{equation} 
-\label{ch5:eq:flow-of-response}
-\begin{aligned}
-    P_{\ce{SO2}} 
-    \xRightarrow{\gamma_1} Q_{\ce{SO2}}
-    \xRightarrow{\gamma_2} P_{S(VI)}
-    \xRightarrow{\gamma_3} Q_{S(VI)}
-    & \xRightarrow{\gamma_{4a}} \tau_{a} 
-    && \xRightarrow{\gamma_{5a}} R_{hazy}\\
-    Q_{S(VI)}
-    & \xRightarrow{\gamma_{4b}} N_{CCN}
-    \xRightarrow{\gamma_{5b}} N_{d} 
-    && \xRightarrow{\gamma_{6b}} R_{cloudy}
-\end{aligned}
-\end{equation}
-
-In the model estimates, the influence of each process is determined from the difference between pairs of simulations, i.e., \histsst{} and \sstpiaer{}, with the only difference between the simulations being the anthropogenic aerosol precursor emissions.
-
-\begin{equation} \label{ch5:eq:final_chain}
-    \begin{aligned}
-        \Delta R = \Bigg[ 
-        \frac{\Delta\overline{R}_{hazy}}{\Delta \overline{\tau}_a}
-        \frac{\Delta \overline{\tau}_a}{\Delta \overline{Q}_{\ce{S(VI)}}} 
-        + \frac{\Delta\overline{R}_{cloudy}}{\Delta \overline{N}_d}
-        \frac{\Delta \overline{N_d}}{\Delta \overline{N}_{CCN}}
-        \frac{\Delta \overline{N}_{CCN}}{\Delta \overline{Q}_{\ce{S(VI)}}}
-        \Bigg]
-        \frac{\Delta \overline{Q}_{\ce{S(VI)}}}{\Delta \overline{P}_{\ce{S(VI)}}}
-        \frac{\Delta \overline{P}_{\ce{S(VI)}}}{\Delta \overline{Q}_{\ce{SO2}}}
-        \frac{\Delta \overline{Q}_{\ce{SO2}}}{\Delta \overline{P}_{\ce{SO2}}} 
-        \cdot \Delta \overline{P}_{\ce{SO2}} 
-    \end{aligned}
-\end{equation}
-
-$\Delta$ denotes the difference in the temporal and spatial mean of the quantities between the two simulations, $\Delta X = X_{PD} - X_{PI}$. In this way, all of the sensitivities could be estimated from CMIP6 models participating in AerChemMIP simulations, including UKESM1.
-
-\subsection{Research gaps/questions}
-
-Despite acknowledging that aerosol production efficiency and the radiative effects differ across emission regions, quantitative research explaining this phenomenon is limited. \citet{bellouinRegionalSeasonalRadiative2016} uses model simulations to diagnose ERF across different regions, but did not provide a detailed analysis to complement the findings. \citet{bellouinBoundingGlobalAerosol2020} analysed process-level sensitivity for both aerosol-radiation and aerosol-cloud interactions at a global level, but did not include any details on aerosol emission or production. \citet{kalisorasDecomposingEffectiveRadiative2024} conducts a multi-model intercomparison of atmosphere-only timeslice simulations and transient simulations using output from AerChemMIP. The study included aerosol AOD from multiple models but did not extend to aerosol chemical production or attempt to diagnose model sensitivity. 
-
-Arguably, only the final uncertainty matters; efforts to reduce the uncertainty in ERF are most effectively focused when the uncertainty in each term is known. The sensitivity of aeroosl aerosol direct and indirect impacts on ERF is a useful tool for understanding the root of uncertainty in ERF. \citet{ghanChallengesConstrainingAnthropogenic2016} laid out a framework for sensitivity of aerosol-cloud-radiation and analysed multiple pre-CMIP6 models. While uncertainty in each term from aerosol-cloud interaction to ERF has been shown by \citet{ghanChallengesConstrainingAnthropogenic2016} and from aerosol AOD by \citet{bellouinBoundingGlobalAerosol2020}, the uncertainty from each term leading to aerosol production has never been attempted before.
-
-
-\section{Methodology}
-
-\subsection{Derivation of sulfate aerosol production sensitivities}
-
-The following subsections present the chain of processes that lead to aerosol production from precursor emissions.
+This Chapter contributes to the existing literature by extending the framework to include the chemical formation of sulfate aerosols from \ce{SO2} emissions. The following subsections show the calculation of the chain of processes that lead to aerosol production from precursor emissions for Earth system models with interactive chemistry. In essence, from Equation \ref{ch5:eq:ghan2016+bellouin2020}, the change in aerosol optical depth due to changes in emissions, $\dv{\overline{\tau}_a}{\overline{E}}$, and the changes in cloud condensation nuclei due to emissions, $\dv{\overline{N}_{CCN}}{\overline{E}}$, are expanded.
 
 \subsubsection*{Sulfate burden as a function of \ce{SO2} emission}
 
-The change in the material balance of \ce{SO2} over time can be written as the sum of production and removal tendencies.
+First, starting from emissions, i.e. production, of \ce{SO2}, the change in the material balance of \ce{SO2} over time can be written as the sum of production and removal tendencies.
 \begin{align}
     \dv{Q_{\ce{SO2}}}{t} 
     & = \sum_i P_{\ce{SO2}}^i - \sum_j R_{\ce{SO2}}^j  \\
     &= P_{\ce{SO2}}^n + P_{\ce{SO2}}^a + P_{\ce{SO2}}^c 
-    - R_{\ce{SO2}}^d - R_{\ce{SO2}}^w - R_{\ce{SO2}}^t - R_{\ce{SO2}}^c 
+    - R_{\ce{SO2}}^d - R_{\ce{SO2}}^w - R_{\ce{SO2}}^t - R_{\ce{SO2}}^c  
 \end{align}
 
-Where, $P_{\ce{SO2}}^i$ denote production of \ce{SO2} from combination of natural ($n$), anthropogenic ($a$), and chemical ($c$) sources. Similarly, \ce{SO2} removal, $R_{\ce{SO2}}^j$, is the sum of wet ($w$) and dry ($d$) deposition, transport out of the region or air parcel, and chemical ($c$) losses.
+Where, $P_{\ce{SO2}}^i$ denote production of \ce{SO2} from combination of \textit{n}atural ($n$), \textit{a}nthropogenic ($a$), and \textit{c}hemical ($c$) sources. Similarly, \ce{SO2} removal, $R_{\ce{SO2}}^j$, is the sum of wet ($w$) and dry ($d$) deposition, transport out of the region or air parcel, and chemical ($c$) losses.
 
-Consider \ce{SO2} in steady state. The change in \ce{SO2} burden over time is zero.
+For \ce{SO2} in steady state, the change in \ce{SO2} burden over time is zero.
 
-\begin{equation}
-\begin{aligned}
+% \begin{equation}
+\begin{align}
     0 & = \sum_i P_{\ce{SO2}}^i - \sum_j R_{\ce{SO2}}^j \\
     \sum_i P_{\ce{SO2}}^i &= \sum_j R_{\ce{SO2}}^j \\
-    &= \sum_j L_{\ce{SO2}}^j Q_{\ce{SO2}} 
-\end{aligned}
-\end{equation}
+    \sum_i P_{\ce{SO2}}^i &= \sum_j L_{\ce{SO2}}^j Q_{\ce{SO2}} \label{ch5:eq:dq/dt} 
+\end{align}
+% \end{equation}
 
-For historical simulation and control simulation, define $\Delta X$ as the change in X, where X is a chemical or atmospheric state, due to the changes in the historical aerosol precursor emissions. $\Delta X = X_{\text{\histsst{}}}-X_{\text{\sstpiaer{}}}$. 
+In Earth system models, we can quantify the change in a chemical or atmospheric state, $X$, due to a specified pertubation as $\Delta X = X_{pert} - X_{ctl}$. To do so, two simulations are required: control simulation and the perturbed simulation, which has all the same external forcing except the forcing that is being perturbed. In our case, to quantify the impact of the aerosol precursor emissions in the historical period, the difference between \histsst{} and \sstpiaer{} could be used, such that $\Delta X = X_{\text{\histsst{}}}-X_{\text{\sstpiaer{}}}$. 
 
-For instance, the total change in \ce{SO2} production due to historical anthropogenic emission is 
-\begin{equation}
-\begin{aligned}
+X could represent the total change in \ce{SO2} production. In our case, all \ce{SO2} emissions are identical in \histsst{} and \sstpiaer{}, except historical anthropogenic emissions.  
+\begin{align}
     \Delta P_{\ce{SO2}}
-    & = \sum_i P_{\ce{SO2}, \text{\histsst{}}}^i - \sum_i P_{\ce{SO2}, \text{\sstpiaer{}}} \\
+    & = \sum_i P_{\ce{SO2}, \text{\histsst{}}}^i - \sum_i P_{\ce{SO2}, \text{\sstpiaer{}}}^i \\
     & = P_{\ce{SO2}, \text{\histsst{}}}^a - P_{\ce{SO2}, \text{\sstpiaer{}}}^a \\
-    & = \Delta P_{\ce{SO2}}^a
-\end{aligned}
-\end{equation}
+    & = \Delta P_{\ce{SO2}}^a \label{ch5:eq:Dp=Dpa}
+\end{align}
 
-That is, for the change in \ce{SO2} emission between PD and PI, 
-\begin{equation}
-    \Delta Q_{\ce{SO2}} = \gamma_1 \Delta P_{\ce{SO2}}
-\end{equation}
+That is, combining Equation \ref{ch5:eq:dq/dt} and \ref{ch5:eq:Dp=Dpa}, the linear relationship between the change in \ce{SO2} burden due to changes in emission between PD and PI could be written as, 
+\begin{align}
+    P_{\ce{SO2},\histsst{}}^a &= \sum_j L_{\ce{SO2},\histsst{}}^j Q_{\ce{SO2},\histsst{}} \\
+    P_{\ce{SO2},\sstpiaer{}}^a &= \sum_j L_{\ce{SO2},\sstpiaer{}}^j Q_{\ce{SO2},\sstpiaer{}} \\
+    P_{\ce{SO2},\histsst{}} - P_{\ce{SO2},\sstpiaer{}} &= \big(\sum_j L_{\ce{SO2},\histsst{}}^j - \sum_j L_{\ce{SO2},\sstpiaer{}}^j\big)  \big(Q_{\ce{SO2},\histsst{}}^a - Q_{\ce{SO2},\sstpiaer{}}^a\big) \\
+    \Delta Q_{\ce{SO2}} &= \gamma_1 \Delta P_{\ce{SO2}}^a
+\end{align}
 
-where $\gamma_1$ is the sensitivity of \ce{SO2} burden, and is an arithmetic sum of all the pseudo first-order loss rate constant, $\sum_j L_{\ce{SO2}}^j$, $ \Delta Q_{\ce{SO2}}$ to change in \ce{SO2} emission, $\Delta Q_{\ce{SO2}}$. $\gamma_1$ could be calculated from the linear relationship between the change in oxidant concentration due to $\Delta P_{\ce{SO2}}$ and the change in oxidant concentration due to $\Delta Q_{\ce{SO2}}$
+where $\gamma_1$ is defined to be the sensitivity of \ce{SO2} burden due to changes in anthropogenic emissions, and is a reciprocal of an arithmetic sum of all the pseudo first-order loss rate constants, $(\Delta\sum_j L_{\ce{SO2}}^j)^{-1}$. $\gamma_1$ could be calculated from the slope of linear relationship between the change in oxidant concentration due to $\Delta P_{\ce{SO2}}^a$ and the change in oxidant concentration due to $\Delta Q_{\ce{SO2}}$.
 
-\subsubsection*{Production of sulfate as a function of SO2 burden}
+\subsubsection*{Production of sulfate as a function of \ce{SO2} burden}
 
-Let us consider the reaction rate of sulfate aerosol, collectively written as sulfur in the +6 oxidation state (S(VI)), as parameterised in UKESM1, as described by \citet{mannDescriptionEvaluationGLOMAPmode2010}. The production of S(VI) (in \unit{molecules~cm^{−3}~s^{−1}}), written using function notation, i.e. $f(x,y)$ is a function of $x$ and $y$, is given by
+To consider the production of sulfate aerosols, let us consider the reaction rate of sulfate aerosol, collectively written as sulfur in the +6 oxidation state (S(VI)), as parameterised in UKESM1, as described by \citet{mannDescriptionEvaluationGLOMAPmode2010}. The production of S(VI) (in \unit{molecules~cm^{−3}~s^{−1}}), written using function notation, i.e. $f(x,y)$ is a function of $x$ and $y$, is given by
 
-\begin{equation}
-\begin{aligned}
-    rate_{\ce{SO2 + OH}}([\ce{SO2}],[OH],[M],T) &= k_1[\ce{SO2}][\ce{OH}] \\
+\begin{align}
+    rate_{\ce{SO2 + OH}}([\ce{SO2}],[OH],[M],T) &= k_1(T,[M])[\ce{SO2}][\ce{OH}] \\
     rate_{\ce{SO2 + O3}}(F,L,[\ce{SO2}],[\ce{O3}], [\ce{H+}],[M],T) &= F \cdot \left( \dv{[S(IV)]}{t}\right)_{\ce{SO2 + O3}} \cdot L \cdot N_a \cdot \frac{1}{\rho_w}\\
     rate_{\ce{SO2 + H2O2}}(F,L,[\ce{SO2}],[\ce{H2O2}], [\ce{H+}],[M],T) &= F \cdot \left( \dv{[S(IV)]}{t}\right)_{\ce{SO2 + H2O2}} \cdot L \cdot N_a \cdot \frac{1}{\rho_w}
-\end{aligned}
-\end{equation}
+\end{align}
 
 
-where rate constants, $k_i$, depend on temperature, T, and air concentration, [M]. The aqueous-phase productions, $\left( \dv{[S(IV)]}{t}\right)_{\ce{SO2 + O3}}$ and $\left( \dv{[S(IV)]}{t}\right)_{\ce{SO2 + H2O2}}$,  follow Equation \ref{ch4:eq:in-cloud-sulfate-prod} and is a function of aerosol droplet pH, [\ce{H+}], T, and the gas-phase concentration of the reactants, [\ce{O3}] or [\ce{H2O2}]. $F$ is the cloud fraction; $L$ is the cloud liquid water content; $N_a$ is the Avogadro's constant; and $\rho_w$ is the density of water. In the model version used in this work, global cloud pH is set to 4.0 when the local \ce{SO2} mixing ratio exceeds 0.5 ppb, and to 5.0 otherwise. 
+where rate constants, $k_1$, depend on temperature, T, and air concentration, [M]. The aqueous-phase productions, $\left( \dv{[S(IV)]}{t}\right)_{\ce{SO2 + O3}}$ and $\left( \dv{[S(IV)]}{t}\right)_{\ce{SO2 + H2O2}}$,  follow Equation \ref{ch4:eq:in-cloud-sulfate-prod} and is a function of aerosol droplet pH, [\ce{H+}], T, and the gas-phase concentration of the reactants, [\ce{O3}] or [\ce{H2O2}]. $F$ is the cloud fraction; $L$ is the cloud liquid water content; $N_a$ is the Avogadro's constant; and $\rho_w$ is the density of water. In the model version used in this work, global cloud pH is set to 4.0 when the local \ce{SO2} mixing ratio exceeds 0.5 ppb, and to 5.0 otherwise. 
 
 The total rate of chemical production of S(VI), $rate_{\text{S(VI)}}$, is a summation of each production pathway. 
 
@@ -217,20 +144,20 @@ The total rate of chemical production of S(VI), $rate_{\text{S(VI)}}$, is a summ
 Reaction rate of X, $\dv{[\text{X}]}{t}$ in \unit{molecule~cm^{-3}~s^{-1}}, which is an intensive variable, can be expressed as atmospheric production tendency, in $P_\text{X}$ \unit{Tg(X)~yr^{-1}}, an extensive variable, by
 
 \begin{align*}
-    P_\text{X} & = \boxed{\dv{[\text{X}]}{t}} \frac{\unit{molecules~X}}{\unit{cm^3~s}} 
+    P_\text{X} =& \boxed{\dv{[\text{X}]}{t}} \frac{\unit{molecules~X}}{\unit{cm^3~s}} 
     \cdot \frac{10^6~\unit{cm^3}}{1~\unit{m^3}}
     \cdot \boxed{vol}~\unit{m^3}\\
     & \cdot \frac{1~\unit{mol~X}}{N_A~\unit{molecules~X}}
     \cdot \frac{M_\text{X}~\unit{kg(X)}}{1~\unit{mol~X}}
     \cdot \frac{10^{-9}~\unit{Tg(X)}}{1~\unit{kg(X)}}
     \cdot \frac{N_{\text{s-in-yr}}~\unit{s}}{1~\unit{year}}\\
-    &= \boxed{\dv{[\text{X}]}{t}} \cdot \boxed{vol}\cdot \frac{M_{\text{X}} N_{\text{s-in-yr}}}{N_A} \cdot 10^{-3} \label{eq:p_rate_conv}
+    =& \boxed{\dv{[\text{X}]}{t}} \cdot \boxed{vol}\cdot \frac{M_{\text{X}} N_{\text{s-in-yr}}}{N_A} \cdot 10^{-3} \unit{Tg(S)~yr^{-1}} \label{ch5:eq:p_rate_conv}
 \end{align*}
 
-Boxed variables or expressions are those that could be obtained from the UKESM1 output. Similarly, concentration of trace gas X, [X] in \unit{molecule~cm^{-3}~s^{-1}}, which is an intensive variable, can be expressed as the burden, $Q_\text{X}$ in \unit{Tg(X)}, an extensive variable, as
+Boxed variables or expressions are those that could be obtained from the UKESM1 output. $vol$ stands for the grid volume, $M_X$ are the molar mass of $X$, and $N_{\text{s-in-yr}}$ is the number of seconds in a year. Similarly, concentration of trace gas X, [X] in \unit{molecule~cm^{-3}~s^{-1}}, which is an intensive variable, can be expressed as the burden, $Q_\text{X}$ in \unit{Tg(X)}, an extensive variable, as
 
 \begin{equation}
-    Q_\text{X}= \boxed{[\text{X}]} \cdot \boxed{vol}\cdot \frac{M_{\text{X}} }{N_A} \cdot 10^{-3}
+    Q_\text{X}= \boxed{[\text{X}]} \cdot \boxed{vol}\cdot \frac{M_{\text{X}} }{N_A} \cdot 10^{-3} \unit{Tg(S)}
 \end{equation}
 
 Using the conversions above, Equation \ref{ch5:eq:rate_s(vi)} then can be expressed as
@@ -280,15 +207,17 @@ This derivation assumes that all variables are independent.
 To take into account the aerosol-cloud interaction and its effects on cloud properties, $\dd{F'}$ could be written as a composite function which is expressed as a chained derivation as follows, assuming that \ce{SO2} burden is the only perturbation.
 
 \begin{equation}
-    \dd{F'} = \pdv{F'}{N_d} \pdv{N_d}{N_{50}} \pdv{N_{50}}{Q_{\text{S(VI)}}} \pdv{Q_{\text{S(VI)}}}{P_{\text{S(VI)}}} \pdv{P_{\text{S(VI)}}}{Q_{\ce{SO2}}} \dd{Q_{\ce{SO2}}}
+    \dd{F'} = \pdv{F'}{N_d} \pdv{N_d}{N_{50}} \pdv{N_{50}}{Q_{\text{S(VI)}}} \pdv{Q_{\text{S(VI)}}}{P_{\text{S(VI)}}} \pdv{P_{\text{S(VI)}}}{Q_{\ce{SO2}}} \dd{Q_{\ce{SO2}}} \label{ch5:eq:dF/dQ}
 \end{equation}
+
+In another word, it could be said that changes in \ce{SO2} burden has an indirect effect on to cloud properties.
 
 In full, 
 \begin{align}
     \Delta{P_{\text{S(VI)}}} 
-    = & \gamma_{2,\ce{OH}} \Delta{Q_{\ce{SO2}}}\\ 
+    = & \gamma_{2,\ce{OH}} \Delta{Q_{\ce{SO2}}}\nonumber\\ 
       & + (\gamma_{2, \ce{O3}}^{direct} + \gamma_{2, \ce{O3}}^{indirect}) \Delta{Q_{\ce{SO2}}} \\ 
-      & + (\gamma_{2, \ce{H2O2}}^{direct} + \gamma_{2, \ce{H2O2}}^{indirect}) \Delta{Q_{\ce{SO2}}} \\
+      & + (\gamma_{2, \ce{H2O2}}^{direct} + \gamma_{2, \ce{H2O2}}^{indirect}) \Delta{Q_{\ce{SO2}}} \nonumber\\
     = & (\gamma_{2,\ce{OH}} + \gamma_{2,\ce{O3}} + \gamma_{2,\ce{H2O2}}) \Delta{Q_{\ce{SO2}}} \\
      \Delta {P_{\text{S(VI)}}} = & \gamma_2 \Delta{Q_{\ce{SO2}}} 
 \end{align}
@@ -296,15 +225,15 @@ In full,
 
 Again, $\gamma_{2}$ and its component from each production pathway could be calculated from the linear relationship between oxidation tendency and burden. 
 
-\subsubsection{Sulfate aerosol production on the sulfate burden}
+\subsubsection*{Sulfate aerosol production on the sulfate burden}
 
-Next, consider the impact of sulfate aerosol production on the sulfate burden. The derivation is the same as the production of \ce{SO2} burden from production. 
+Next, consider the impact of sulfate aerosol production on the sulfate burden. The derivation is identical to the production of \ce{SO2} burden from production. 
  
 \begin{equation}
     \Delta Q_{\text{S(VI)}} = \gamma_3 \Delta P_{\text{S(VI)}}
 \end{equation}
 
-\subsubsection{sulfate burden on aerosol optical depth}
+\subsubsection*{sulfate burden on aerosol optical depth}
 
 Aerosol optical depth, $\tau_a$, is a measurable aerosol property that is shown to contribute towards the aerosol direct effect. Aerosol optical depth is the radiative property in which aerosols of all types are used. The total aerosol loading, $Q_{\text{tot}}$, is the sum of all aerosol burdens. 
 
@@ -317,34 +246,130 @@ Aerosol optical depth, $\tau_a$, is a measurable aerosol property that is shown 
 \end{aligned}
 \end{equation}
 
-The aerosol precursor includes OC and BC emissions, and the equation reflects that. However, as shown in Chapter \ref{ch3:title}, aerosol burden is primarily from \ce{SO2}, so the estimation below could be made.
+The aerosol precursor includes OC and BC emissions, and the equation reflects that. However, as shown in Chapter \ref{ch3:title}, aerosol burden is at least 80\% from sulfate burden, so the estimation below could be made.
 
 \begin{equation}
     \Delta \tau_a \approx \gamma_{4a}\Delta Q_{\text{S(VI)}}
 \end{equation}
 
-This connects burden to the theoretical framework in \citet{bellouinAerosolForcingClimate2011} and \citet{ghanChallengesConstrainingAnthropogenic2016}, which analysed the impact of forcing due to changes in aerosol optical depths and aerosol-induced cloud on radiative effects. 
+This connects the burden to the theoretical framework in \citet{bellouinAerosolForcingClimate2011} and \citet{ghanChallengesConstrainingAnthropogenic2016}, which analysed the impact of forcing from changes in aerosol optical depth and aerosol-induced cloud on radiative effects. 
 
-\subsection{Defintion of regions}
+\subsubsection*{Summary of the process sensitivity framework}
+
+Ultimately, this chapter adds the sulfate production chain, decomposes d$E$ into production and precursor burdens, and omits the rapid adjustments, as follows. 
+\begin{equation}\label{}
+    \begin{aligned}
+        \dv{\overline{R}}{\overline{P}_{\ce{SO2}}} = 
+        \Bigg[
+            \dv{\overline{R}_{hazy}}{\overline{\tau}_a}
+            \dv{\overline{\tau}_a}{\overline{Q}_{\ce{S(VI)}}} +
+            \dv{\overline{R}_{cloudy}}{\overline{N}_d} 
+            \dv{\overline{N_d}}{\overline{N}_{CCN}} 
+            \dv{\overline{N}_{CCN}}{\overline{Q}_{\ce{S(VI)}}}
+        \Bigg]
+            \dv{\overline{Q}_{\ce{S(VI)}}}{\overline{P}_{\ce{S(VI)}}}
+            \dv{\overline{P}_{\ce{S(VI)}}}{\overline{Q}_{\ce{SO2}}}
+            \dv{\overline{Q}_{\ce{SO2}}}{\overline{P}_{\ce{SO2}}}
+    \end{aligned}
+\end{equation}
+
+where an overbar denotes the quantity is averaged over a time period long enough for clouds to adjust to aerosol or for reaching chemical equilibrium. $P_X$ and $Q_X$ denote the production and burden of X, respectively, where X is either \ce{SO2} or sulfate aerosol (\ce{S(VI)}). 
+
+The above equation could be visualised as chains of processes with respective sensitivity, $\gamma_n$, as 
+
+\begin{equation} 
+\label{ch5:eq:flow-of-response}
+\begin{aligned}
+    P_{\ce{SO2}} 
+    \xRightarrow{\gamma_1} Q_{\ce{SO2}}
+    \xRightarrow{\gamma_2} P_{S(VI)}
+    \xRightarrow{\gamma_3} Q_{S(VI)}
+    \xRightarrow{\gamma_{4a}} & \tau_{a} 
+    \xRightarrow{\gamma_{5a}} R_{hazy}\\
+    Q_{S(VI)}
+    \xRightarrow{\gamma_{4b}} & N_{CCN}
+    \xRightarrow{\gamma_{5b}} N_{d} 
+    \xRightarrow{\gamma_{6b}} R_{cloudy}
+\end{aligned}
+\end{equation}
+
+In the model estimates, the influence of each process is determined from the difference between pairs of simulations, i.e., \histsst{} and \sstpiaer{}, with the only difference between the simulations being the anthropogenic aerosol precursor emissions. In this way, the external forcing agent is aerosol precursor emissions, $\Delta \overline{P}_{\ce{SO2}}$, and the downstream changes, $\Delta X$, arise from internal processes $X$.
+
+\begin{align}
+        \Delta \overline{R} = &\Bigg[ 
+        \frac{\Delta\overline{R}_{hazy}}{\Delta \overline{\tau}_a}
+        \frac{\Delta \overline{\tau}_a}{\Delta \overline{Q}_{\ce{S(VI)}}} 
+        + \frac{\Delta\overline{R}_{cloudy}}{\Delta \overline{N}_d}
+        \frac{\Delta \overline{N_d}}{\Delta \overline{N}_{CCN}}
+        \frac{\Delta \overline{N}_{CCN}}{\Delta \overline{Q}_{\ce{S(VI)}}}
+        \Bigg]
+        \frac{\Delta \overline{Q}_{\ce{S(VI)}}}{\Delta \overline{P}_{\ce{S(VI)}}}
+        \frac{\Delta \overline{P}_{\ce{S(VI)}}}{\Delta \overline{Q}_{\ce{SO2}}}
+        \frac{\Delta \overline{Q}_{\ce{SO2}}}{\Delta \overline{P}_{\ce{SO2}}} 
+        \cdot \Delta \overline{P}_{\ce{SO2}}  \label{ch5:eq:final_chain} \\
+        \Delta \overline{R} \approx & [ \gamma_{5a}\gamma_{4a} + \gamma_{6b}\gamma_{5b}\gamma_{4b}] \gamma_3\gamma_2\gamma_1   \Delta \overline{P}_{\ce{SO2}} 
+\end{align}
+
+$\Delta$ denotes the difference in the temporal and spatial mean of the quantity, $\overline{X}$, between the two simulations, $\Delta \overline{X} = \overline{X}_{PD} - \overline{X}_{PI}$. In this way, all sensitivities could be estimated from CMIP6 models participating in the AerChemMIP simulations, including UKESM1. This framework is not limited to global analysis and can thus be applied to regions to quantify the sensitivity of processes to location.
+
+\subsection{Research gaps and questions}
+
+Despite evidence that aerosol production efficiency and the radiative effects differ across emission regions, quantitative research explaining this phenomenon is limited. \citet{bellouinRegionalSeasonalRadiative2016} uses model simulations to diagnose ERF across different regions, but did not provide a detailed analysis to complement the findings. Subsequently, \citet{bellouinBoundingGlobalAerosol2020} analysed process-level sensitivity for both aerosol-radiation and aerosol-cloud interactions at a global level, but did not include any details on aerosol emission or production. To evaluate aerosol ERF, \citet{kalisorasDecomposingEffectiveRadiative2024} conducts a multi-model intercomparison of atmosphere-only timeslice simulations and transient simulations using output from AerChemMIP. The study included aerosol AOD from multiple models but did not extend to aerosol chemical production or attempt to diagnose model sensitivity. 
+
+For assessemnts, the overall uncertainty is the main focus. While uncertainty in each term from aerosol-cloud interaction to ERF has been shown by \citet{ghanChallengesConstrainingAnthropogenic2016} and from aerosol AOD by \citet{bellouinBoundingGlobalAerosol2020}, efforts to reduce uncertainty in ERF can be made by understanding each process in the aerosol foramtion and radiative effects. It has been shown that the sensitivity of aeroosl aerosol direct and indirect impacts on ERF is a useful tool for understanding the root of uncertainty in ERF. \citet{ghanChallengesConstrainingAnthropogenic2016} laid out a framework for sensitivity of aerosol-cloud-radiation and analysed multiple pre-CMIP6 models. This Chapter will evaluate the senstivity from each process leading to aerosol production in the geographical and global context which has never been attempted before.
+
+\section{Methods and data}
+
+
+\subsection{Model simulations}
+
+This chapter employs the fixed-SST transient simulation and time-slice simulation results from UKESM1. Both the model and simulation set-up are described in Chapter \ref{ch2:title}. In brief, the control fixed-SST transient simulation, \textit{histSST}, uses prescribed historical SSTs from \hist{} with all historical emissions. The perturbed simulation, \textit{histSST-piAer} (referred to as \sstpiaer{} for brevity), also uses historical SST from \hist{} and sets aerosol precursor emissions to pre-industrial (\textit{pi}), i.e., 1850. The time-slice simulations are used to analyse the contribution of each aerosol precursor. All simulations were performed with an AGCM configuration, meaning the model was run with time-varying, fixed SST and an atmosphere-only setup. A summary of simulations used in this chapter is given in Table \ref{ch5:tab:simulation}. 
+
+\begin{table}[!ht]
+   \caption[AerChemMIP simulations used in Chapter \ref{ch5:title}]{A summary of AerChemMIP simulations used in Chapter \ref{ch5:title}}
+   \label{ch5:tab:simulation}
+   \centering
+   \begin{tabular}{l c c c c}
+    \toprule
+     Experiment ID & Simulation period & \ce{SO2} & OC precursors & BC \\
+    \midrule
+     \textit{histSST}         & 1850--2014 & Hist & Hist & Hist\\
+     \textit{histSST-piAer} & 1850--2014 & 1850 & 1850 & 1850\\
+    \midrule
+     \textit{piClim-control} & 1850 clim. & 1850 & 1850 & 1850 \\
+     \textit{piClim-SO2} & 1850 clim. & 2014 & 1850 & 1850 \\
+     \textit{piClim-OC} & 1850 clim. & 1850 & 2014 & 1850 \\
+     \textit{piClim-BC} & 1850 clim. & 1850 & 1850 & 2014 \\
+     \textit{piClim-aer} & 1850 clim. & 2014 & 2014 & 2014 \\
+     \bottomrule
+   \end{tabular}
+\end{table}
+
+\subsection{Sensitivity analysis of aerosol formation, cloud and radiation processes}
+
+In this chapter, sensitivity is calculated by identifying the process driver and response, as detailed in Equation \ref{ch5:eq:final_chain}. For example, to calculate $\gamma_1$, which has \ce{SO2} emissions as the driver and \ce{SO2} burden as the response, the sensitivity is obtained from the slope of a linear relationship between the driver and the response, fitted using a root-mean-square error (RMSE) regression model. 
+
+Each data point is the annual mean of the difference between \histsst{} and \sstpiaer{} in both the driver and the response over a defined region. The slope of this regression model is then taken as the sensitivity of this specific process, with the accompanying goodness-of-fit ($R^2$) and the standard error of the slope for quantitative analysis. 
+
+\subsection{Global and regional \ce{SO2} emissions over the historical period}
 
 \begin{figure}[ht!]
     \centering
     \includegraphics{Chapter5/Figs/blank_ipcc_region_map_all_regions.png}
-    \caption{Definition of domain boundary following the IPCC report. Five land regions: East North America (ENA), North Europe (NEU), West and Central Europe (WCE), South Asia (SAS), and East Asia (EAS) are noted for their usage throughout the chapter. NEU and WEU are grouped in this report and referred to as the European region (EU).}
+    \caption[IPCC domain boundary definition with key land regions: ENA, NEU, WCE, SAS, and EAS.]{Definition of domain boundary following the IPCC report. Five land regions: East North America (ENA), North Europe (NEU), West and Central Europe (WCE), South Asia (SAS), and East Asia (EAS) are noted for their usage throughout the chapter. NEU and WEU are grouped in this report and referred to as the European region (EU).}
     \label{fig:ch5:region-def}
 \end{figure}
 
-This report adopts the definition of land regions from the IPCC report. Figure \ref{fig:ch5:region-def} shows the domain boundaries of the regions of interest. East North America (ENA), North Europe (NEU), and West and Central Europe were chosen for their early increase in emissions. South Asia (SAS) and East Asia (EAS) are selected for their characteristic recent growth in emissions. For simplicity, North Europe and West and Central Europe are combined to summarise the impacts from Europe. This definition excludes the Mediterranean and Eastern Europe for simplicity only. The Mediterranean region is excluded from this report because it is considered a mixed land-ocean region. Eastern Europe is excluded due to its less clear emission trend, and the bounded area is limited to facilitate cross-comparison with the other three regions.
-
+This chapter adopts the IPCC's definition of land regions to quantify regional differences. Figure \ref{fig:ch5:region-def} shows the domain boundaries of the regions of interest. East North America (ENA), North Europe (NEU), and West and Central Europe were chosen for their early increase in emissions in the 1980s. South Asia (SAS) and East Asia (EAS) are selected for their characteristic recent growth in emissions. North, West, and Central Europe are combined to summarise the impacts from Europe, excluding the Mediterranean and Eastern Europe, for simplicity. The Mediterranean region is excluded because it is considered a mixed land-ocean region. Eastern Europe is excluded because its emissions trend lags behind that of other European regions.
 
 \begin{figure}[ht!]
     \centering
     \includegraphics{Chapter5/Figs/emiso2_series_histsst.png}
-    \caption{a) Global and regional time series of changes in \ce{SO2} emissions due to aerosol precursor emissions. b-c) Global distribution of change in \ce{SO2} emission due to aerosol precursor emissions between 1960--1990 and 2000--2015.}
+    \caption[Global and regional \ce{SO2} emission changes due to aerosol precursor emissions, 1960--2015.]{a) Global and regional time series of changes in \ce{SO2} emissions due to aerosol precursor emissions in the historical period. b-c) Global distribution of change in \ce{SO2} emission due to aerosol precursor emissions between 1960--1990 and 2000--2015, respectively.}
     \label{fig:ch5:emission_series}
 \end{figure}
 
-Figure \ref{fig:ch5:emission_series} shows the changes in \ce{SO2} emissions due to aerosol precursors (\histsst{} minus \sstpiaer{}). The global increase in the historical \ce{SO2} emissions increases to \qty{80}{Tg(S)~yr^{-1}} in 1975 and remained above \qty{65}{Tg(S)~yr^{-1}}. Europe and East North America drive the initial rise. When emissions are restricted in these regions, high \ce{SO2} emissions persist due to rapid growth in East and South Asia, illustrating a divergence in the four selected regions.
+Figure \ref{fig:ch5:emission_series} shows the changes in global nad for regions chosen for detailed analysis \ce{SO2} emissions due to aerosol precursors (\histsst{} minus \sstpiaer{}). The global historical \ce{SO2} emissions increases to \qty{80}{Tg(S)~yr^{-1}} in 1975 and remains above \qty{65}{Tg(S)~yr^{-1}}. Europe and East North America drive the initial rise. When regulations to cut down on emissions were enacted in these regions in the post--1990 period, high global \ce{SO2} emissions persisted due to rapid growth in East and South Asia, highlighting divergence among the four selected regions.
 
 % \begin{figure}[ht!]
 %     \centering
@@ -355,203 +380,295 @@ Figure \ref{fig:ch5:emission_series} shows the changes in \ce{SO2} emissions due
 
 \section{Results and discussions}
 
-This chapter investigates the regional characteristics of sulfate aerosol formation and the impact of emission location on radiative forcing. Similar to the other chapters, this chapter examines regional trends in aerosol precursor emissions and aerosol formation, and their effects on cloud properties and climate. All analyses show the change due to aerosol precursor emissions, i.e., the result of subtracting \sstpiaer{} from \histsst{} unless noted otherwise. As a connection to Chapter \ref{ch4:title}, the anomalous cooling (1960--1990) and near-present (2000-2015) periods are chosen for analysis of global distribution and seasonal variability. Then, a new analysis of process sensitivity, using the framework in Equation \ref{ch5:eq:flow-of-response}, is presented by region. 
+This chapter leverages the concept of sensitivity in aerosol-climate interactions to investigate the regional characteristics of sulfate aerosol formation. The analysis is applied to each component of the sensitivity, summarised in Equation \ref{ch5:eq:final_chain}, across four regions, and the results are compared with global values.
 
-\subsection{Regional difference of OH, \ce{O3}, \ce{H2O2}, and \ce{SO2}}
+This chapter shows the change attributable to aerosol precursor emissions, i.e., the result of subtracting \sstpiaer{} from \histsst{} unless otherwise noted. The anomalous cooling (1960--1990) and near-present (2000--2015) periods are chosen for the analysis of global distribution. 1960--1990 is the period when \ce{SO2} emissions over Europe and Eastern North America peaked, and 2000--2015 covers the rise in industrialisation in East and South Asia, following stringent emission policies in Europe and Eastern North America that led to reduced emissions in those regions.
+
+Firstly, the first section describes the characteristics of parameters that underpin sulfate aerosol formation, including precursor concentrations and cloud properties. Then, the driver and response for each sensitivity term, $\gamma_x$, are explored. A summary of all sensitivities across all regions is provided at the end of the results section.
+
+
+\subsection{Sensitivity of \ce{SO2} burden due to changes in \ce{SO2} emission [$\gamma_1$]}
+
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics{Chapter5/Figs/regional_so2_series_histsst_sstpiaer.png}
+    \caption[Global and regional changes in \ce{SO2} burden due to aerosol precursor emissions presented as historical time series and global distribution]{a) Global and regional time series of changes in annual-mean tropospheric \ce{SO2} burden over Europe, East North America, East Asia, and South Asia due to changes in historical aerosol precursor emissions. b-c) Global distribution of changes in tropospheric \ce{SO2} burden between 1960--1990 and 2000--2015, respectively. Changes calculated from \ce{SO2} burden from \histsst{} minus \sstpiaer{}. }
+    \label{fig:ch5:so2_burden_series}
+\end{figure}
+
+The first step in the expansion of impacts of \ce{SO2} emissions in Equation \ref{ch5:eq:final_chain} is a change in \ce{SO2} burden. Figure \ref{fig:ch5:so2_burden_series} shows the changes in annual tropospheric \ce{SO2} burden due to changes in aerosol precursor emissions over the historical period. Overall, \ce{SO2} burden trends in all regions follow changes in emission shown earlier in Figure \ref{fig:ch5:emission_series}. The changes in \ce{SO2} burden over Europe due to aerosol precursor emissions increased gradually since 1875, then grew rapidly after 1950, reaching a maximum of \qty{0.052}{Tg(S)} in 1975. The region saw a rapid decline in burden afterwards to a burden lower than that of 1950. Changes in \ce{SO2} burden in East North America have shown similarities to those in Europe, with a gradual increase since 1875. However, the \ce{SO2} burden in East North America did not increase sharply after 1950. The burden decreased after 1990, falling below the 1950 level. 
+
+In contrast, both East and South Asia showed growth in \ce{SO2} burden since 1950. The rate of increase in burden in East Asia is twice that of South Asia, resulting in a burden of \qty{0.0065}{Tg(S)} in East Asia versus \qty{0.003}{Tg(S)} in South Asia at the end of the simulation. 
+
+While there are clear similarities in how \ce{SO2} burdens grew over the historical period, driven by changes in \ce{SO2} emissions, there are also nuanced differences. For example, at the end of the simulation, emissions in East Asia were \qty{17.2}{Tg(S)~yr^{-1}}, which was three times those in South Asia (\qty{5.1}{Tg(S)~yr^{-1}}). If we assume the relationship between \ce{SO2} emissions and burden is identical in all regions, we would expect the same ratio, i.e. three times, between East and South Asia. However, this is not the case, as the \ce{SO2} burden over East Asia is only twice as much as that of South Asia, and one way to quantify the behaviour of the \ce{SO2} burden response to \ce{SO2} emissions is to use the concept of sensitivity.
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[]{Chapter5/Figs/sensitivity_demiso2_dso2_histsst_sstpiaer.png}
+    \caption[$\gamma_1$: \ce{SO2} burden response to historical anthropogenic \ce{SO2} emissions across regional and global domains.]{$\gamma_1$: Response of \ce{SO2} burden ($\Delta Q_{\ce{SO2}}$) to historical anthropogenic \ce{SO2} emissions ($\Delta P_{\ce{SO2}}$). Each data point is the difference between the annual means of the perturbed (\histsst{}) and control (\sstpiaer{}) simulations, with the driver plotted against the response for the four regional domains and the global domain.}
+    \label{fig:ch5:emiso2_vs_so2}
+\end{figure}
+
+Sensitivity is calculated by identifying the process driver and response: \ce{SO2} emissions and \ce{SO2} burden, respectively, for $\gamma_1$. Figure \ref{fig:ch5:emiso2_vs_so2} shows the relationship between \ce{SO2} emissions and burden over selected regions. The global and regional \ce{SO2} burden responds linearly to the emission driver, with a coefficient of determination ($R^2$) of 0.99--1.00 across all regions. All regions exhibit lower sensitivity than the global relationship, and amongst all regions, South Asia has the highest sensitivity of \ce{SO2} burden to emissions. This higher sensitivity captures the differences in the rates of increase in emissions and burden observed earlier in South and East Asia. The values of $\gamma_1$ and all subsequent sensitivities are summarised in Table \ref{ch5:tab:sensitivity}.
+
+The loss of \ce{SO2} determines burden and its response to emissions, with greater loss corresponding to lower sensitivity of burden to emissions, as $\gamma_1 = \frac{1}{\Sigma L^j}$. That is, total \ce{SO2} removal is efficient in Europe and East North America, but less so in South Asia and globally.
+
+
+\subsection{Regional trends of parameters that underpin sulfate aerosol production}
+
+The next immediate process that follows the change in \ce{SO2} burden is \ce{SO2} oxidation, which, as established in this thesis, responds to oxidant concentration and cloud properties, both of which are variable in time and location. Secondary sulfate aerosols form via either gas- or aqueous-phase oxidation of \ce{SO2}. In gas-phase oxidation with OH, the reaction tendency depends directly on gas concentration and the reaction rate constant. Aqueous-phase oxidation involves more factors, including cloud liquid water content. As with the gaseous precursors, cloud properties vary significantly across regions, further complicating the determination of the tendency toward sulfate aerosol production. This subsection examines both parameters as means of understanding the subsequent oxidation.
 
 
 \begin{figure}[ht!]
     \centering
     \includegraphics{Chapter5/Figs/ox_conc_annual_mean_histsst_surface_to_5km.png}
-    \caption{Annual mean of historical oxidant concentration from the surface up to 5 km. The concentrations are derived from \histsst{} simulation, showing the historical concentration level, not the change due to historical aerosol precursor emissions. Note the difference in the y-axis scale across the subfigures. }
+    \caption[Annual mean of historical oxidant concentration from the surface up to 5 km over the historical period]{Annual mean of historical concentrations of a) \ce{OH}, b) \ce{O3}, c) \ce{H2O2}, and d) \ce{SO2} from the surface up to 5 km over the historical period in four regions.}
     \label{fig:ch5:oxidant_series}
 \end{figure}
 
 
-Location may influence aerosol formation by altering reactant concentrations. Figure \ref{fig:ch5:oxidant_series} shows the annual mean historical concentration of the oxidants from the surface up to 5 km altitude. OH concentrations rise over the historical period for all regions. The baseline level of OH in South Asia is double that in other areas due to its lower latitude, which promotes \ce{O3} photolysis and produces \ce{O(1D)}, which can react with \ce{H2O} to form OH. OH concentrations over East and South Asia steadily increase while those over Europe and Eastern North America plateau after 1990. This trend is attributable to the \ce{O3} precursor trends, which promote \ce{O3} concentration and, hence, OH.
+Figure \ref{fig:ch5:oxidant_series} shows the trends in oxidants involved in all \ce{SO2} oxidation. Note that these are trends of concentration from the historical transient simulation, \histsst{}, and not the changes due to aerosol precursors. OH concentrations increase over the historical period across all regions. The baseline level of OH in South Asia is double that in other areas due to its lower latitude, which promotes \ce{O3} photolysis and produces \ce{O(1D)}, which can react with \ce{H2O} to form OH. OH concentrations over East and South Asia steadily increase while those over Europe and Eastern North America plateau after 1990. This reflects the trend in \ce{O3} precursors, which promote \ce{O3} concentration and, hence, OH.
 
-\ce{O3} concentration increases globally and regionally over the historical period. The average concentration is between \num{6.0e11} and \qty{7.5e12}{cm^{-3}} in 1850 and rises to approximately \qty{1e12}{cm^{-3}} for all regions. The \ce{O3} trends and magnitude in all regions are comparable.
+\ce{O3} concentration increases globally and regionally over the historical period with less regional variance compared to other oxidants. The average concentration is between \num{6.0e11} and \qty{7.5e12}{cm^{-3}} in 1850 and rises to approximately \qty{1e12}{cm^{-3}} for all regions. The \ce{O3} trends and magnitude in all regions are comparable.
 
-Location plays a role in determining the baseline concentration level of \ce{H2O2}. Figure \ref{fig:ch5:oxidant_series}c) shows that \ce{H2O2} concentration over Europe is the lowest, at \qty{4.2}{cm^{-3}} at the beginning of the simulation.  Meanwhile, the \ce{H2O2} concentration over South Asia is three times that over Europe at the same time. This is likely due to higher photochemical activity in lower-latitude regions.  Over the historical period, \ce{H2O2} concentration increases in all regions, but the increase is smaller in Europe and Eastern North America than in other Asian regions. 
+Figure \ref{fig:ch5:oxidant_series}c) shows that \ce{H2O2} concentration over Europe is the lowest, at \qty{4.2e9}{cm^{-3}} at the beginning of the simulation. Meanwhile, the \ce{H2O2} concentration over South Asia is three times that over Europe at the same time, reflecting higher photochemical activity in lower-latitude regions. Over the historical period, \ce{H2O2} concentration increases in all regions, but the increment is muted in Europe and Eastern North America compared to Asian regions. 
 
-Finally, the \ce{SO2} concentration shows the most distinctive features among all tracers. The regional trends in \ce{SO2} concentration follow that of emissions. The \ce{SO2} concentration in Europe and East North America peaks between 1960 and 1975, then decreases thereafter. In contrast, the increases in East and South Asia begin in 1950 and continue until the end of the simulation period.
 
-In short, the precursor gases to sulfate aerosol formation vary widely between regions, depending on the emission profile, in the case of \ce{SO2}, as well as the photochemical activities over the areas, which determine the photolysis rate of \ce{O3}, OH and \ce{H2O2}.
+Finally, the regional trends in \ce{SO2} concentration follow emissions. The \ce{SO2} concentration in Europe and East North America peaks between 1960 and 1975, then decreases thereafter. In contrast, the increases in East and South Asia begin in 1950 and continue until the end of the simulation period.
 
-\subsection{Regional difference in historical sulfate aerosol production}
-
-Secondary sulfate aerosols form via either gas- or aqueous-phase oxidation of \ce{SO2}. In gas-phase oxidation with OH, the reaction tendency depends directly on gas concentration and the reaction rate constant. Aqueous-phase oxidation involves more factors, including cloud liquid water content. As with the gaseous precursors, cloud properties vary significantly across regions, further complicating the determination of the tendency toward sulfate aerosol production. 
 
 \begin{figure}[ht!]
     \centering
     \includegraphics{Chapter5/Figs/regional_cl_times_lwc_series_histsst_sstpiaer_histsst_only.png}
-    \caption{a) Annual mean of products of cloud fraction (cf) and cloud liquid water content (lwc) below 10 km in the historical period from \histsst{}. b-c) Global distribution of the products of cf and lwc averaged between 1960--1990 and 2000--2015. }
+    \caption[Annual mean and global distribution of cloud fraction and liquid water content products from \histsst{}, 1960--2015.]{a) Annual mean of products of cloud fraction (cf) and cloud liquid water content (lwc) below 10 km in the historical period from \histsst{}. b-c) Global distribution of the products of cf and lwc averaged between 1960--1990 and 2000--2015.}
     \label{fig:ch5:cf_times_lwc_series}
 \end{figure}
 
-Cloud fraction and liquid water content are involved in aqueous-phase oxidation and determine the available soluble liquid at a simulation grid point, as described in Section \ref{ch1:so2-oxidation}. The products of the two parameters, termed $cf \times lwc$, are an essential determinant of sulfate aerosol formation. Figure \ref{fig:ch5:cf_times_lwc_series} shows the annual mean and global distribution from the surface up to 10 km. Global mean $cf \times lwc$ is constant over the historical period at \qty{0.025}{\gram\per\cubic\metre}. South Asia has the lowest $cf\times lwc$ at 50\% that of the global average, while Europe is the cloudiest of the four regions.
+The available soluble liquid for aqueous-phase oxidation is determined by the product of the two parameters, termed $cf \times lwc$. Figure \ref{fig:ch5:cf_times_lwc_series} shows the annual mean and global distribution from the surface up to 10 km. Global mean $cf \times lwc$ is constant over the historical period at \qty{0.025}{\gram\per\cubic\metre}. South Asia has the lowest $cf\times lwc$ at 50\% that of the global average, while Europe is the cloudiest of the four regions.
+
+
+In short, the baseline concentrations and trends of precursor gases that connect to sulfate aerosol formation vary widely between regions, depending on the emission profile, in the case of \ce{SO2}, as well as the photochemical activities over the areas, which determine the photolysis rate of \ce{O3}, OH and \ce{H2O2}. The available cloud liquid water, which determines the tendency for aqueous-phase oxidation, varies spatially.
+
+
+\subsection{Sensitivity of sulfate aerosol production due to changes in \ce{SO2} burden [$\gamma_2$]}
+
+Sulfate aerosols are formed within the troposphere as the product of \ce{SO2} oxidation. While \ce{SO2} is the main precursor of sulfate aerosols, the local background state plays an important role in modulating this process, especially in determining the partitioning amongst the reaction pathways and also the total reaction tendency. This dependence on local background parameters leads to variability in the sensitivity of \ce{SO2} oxidation across locations. First, we examine trends in \ce{SO2} oxidation by the three oxidants across regions, followed by changes in the total tendency, as inputs to the sensitivity analysis. 
 
 
 \begin{figure}[ht!]
     \centering
     \includegraphics{Chapter5/Figs/regional_oxidation_series_histsst_sstpiaer_diff.png}
-    \caption{Annual mean of total oxidation tendency over a) Europe, b) East North America, c) East Asia, and d) South Asia due to changes in the historical aerosol precursor emissions (\histsst{} minus \sstpiaer{}).}
+    \caption[Annual mean total oxidation tendency changes over EU, ENA, EA, and SA (\histsst{} minus \sstpiaer{}).]{Annual mean of total oxidation tendency over a) Europe, b) East North America, c) East Asia, and d) South Asia due to changes in the historical aerosol precursor emissions (\histsst{} minus \sstpiaer{}).}
     \label{fig:ch5:oxidation_series}
 \end{figure}
 
 
-\ce{SO2} oxidation is the main production of sulfate aerosols in an urban atmosphere. Figure \ref{fig:ch5:oxidation_series} shows sulfate formation tendency from \ce{SO2} reaction with OH, \ce{O3} and \ce{H2O2} due to changes in aerosol precursor emissions over the historical period in Europe, East North America, East Asia, and South Asia. \ce{SO2} oxidation trends in Europe follow those of \ce{SO2} emissions, with rapid increases from the beginning of the simulation to 1975, followed by a rapid decrease. Amongst the three pathways, \ce{SO2 + O3} shows the greatest increase at \qty{2.1}{Tg(S)~yr^{-1}} during the maximum production in 1975. Despite \ce{SO2 + H2O2} being an aqueous-phase reaction, it does not share the same trend as \ce{SO2 + O3}. Compared to the global average and to other regions, high cloud liquid water over Europe facilitates aqueous-phase oxidation (Figure \ref{fig:ch5:cf_times_lwc_series}), making \ce{H2O2} concentration the limit of reaction rate, and not cloud properties.
+Figure \ref{fig:ch5:oxidation_series} shows changes in sulfate formation tendency from \ce{SO2} reaction with OH, \ce{O3} and \ce{H2O2} due to changes in aerosol precursor emissions over the historical period in Europe, East North America, East Asia, and South Asia. \ce{SO2} oxidation trends in Europe broadly follow those of \ce{SO2} emissions, with rapid increases from the beginning of the simulation to 1975, followed by a rapid decrease. Amongst the three pathways, \ce{SO2 + O3} shows the greatest increase at \qty{2.1}{Tg(S)~yr^{-1}}, the maximum production in 1975. It can be seen that \ce{SO2 + H2O2} does not share the same incremental trend with \ce{SO2 + O3}. Compared to the global average and to other regions, high cloud liquid water over Europe facilitates aqueous-phase oxidation (Figure \ref{fig:ch5:cf_times_lwc_series}), making \ce{H2O2} concentration the limit of reaction rate, and not cloud properties, as discussed in Section \ref{ch2:sec:so4-prod-rate}.
 
-Increases in \ce{SO2} emissions cause \ce{SO2} oxidation in East North America to gradually rise until the oxidation tendency reaches a maximum in 1975, similar to Europe. Unlike Europe, total oxidation is distributed almost equally among the three pathways, with the gas-phase reaction slightly above the other pathways from 1960 onwards. The higher proportion of \ce{SO2 + OH} oxidation is due to the lower $cf\times lwc$ in the region, combined with a higher OH concentration than that of Europe. 
+Increases in \ce{SO2} emissions cause the \ce{SO2} oxidation tendency in East North America to gradually rise until it reaches a maximum in 1975, similar to Europe. Unlike trends in Europe, total oxidation is distributed almost equally among the three pathways, peaking at 0.95--\qty{1.02}{Tg(S)~yr^{-1}}, with the gas-phase reaction slightly above the other two from 1960 onwards. The higher proportion of \ce{SO2 + OH} relative to that in Europe reflects lower available cloud liquid water, $cf\times lwc$, combined with a higher OH concentration in the region. 
 
-Figure \ref{fig:ch5:oxidation_series}c) shows sharp increases of \ce{SO2} oxidation in East Asia, with gas-phase oxidation with OH as the primary pathway. East Asia has the same latitude band as East North America and shares similar cloud profiles. Their main difference lies in the evolution of \ce{SO2} emissions over the historical period. 
+Figure \ref{fig:ch5:oxidation_series}c) shows sharp increases of \ce{SO2} oxidation in East Asia after 1950, with gas-phase oxidation with OH as the primary pathway, reaching the maximum in the near present at \qty{2.9}{Tg(S)~yr^{-1}}. East Asia is located in the same latitude band, which controls the incoming radiation, as East North America and shares similar cloud profiles. Their main difference lies in the evolution of \ce{SO2} emissions over the historical period.
 
-The South Asian region shows a sharp rise in \ce{SO2} oxidation post-1950. The main effect is observed in the gas-phase oxidation, which rose to \qty{2.3}{Tg(S)~yr^{-1}} in 2015. Despite high \ce{O3} and \ce{H2O2} concentration and high \ce{SO2} emission over the region, changes in aqueous-phase oxidation are limited. South Asia has a characteristic low $cf \times lwc$, which constrains aqueous-phase oxidation and favours gas-phase oxidation. 
+The changes in the \ce{SO2} oxidation tendency in South Asia increase after 1950, similar to those in East Asia. The main difference between the two regions is observed in the gas-phase oxidation, which rose to \qty{2.3}{Tg(S)~yr^{-1}} in 2015. Despite high \ce{O3} and \ce{H2O2} concentration and high \ce{SO2} emission over the region, changes in aqueous-phase oxidation are limited. South Asia has a characteristic limited availability of cloud liquid water, $cf \times lwc$, which constrains aqueous-phase oxidation and favours gas-phase oxidation. 
 
-Comparing the four regions, Europe's and Eastern North America's early increases and emission restrictions led to a peak in \ce{SO2} oxidation in the 1970s. However, the two regions exhibit different oxidation activities due to the difference in background pollution and cloud abundance. \ce{SO2 + O3} is the most important reaction in Europe, while the increases in oxidation over East North America do not show a clear dominance. East North America and East Asia may have different emission trends, but their oxidation features are similar. All \ce{SO2} oxidation reactions contribute nearly equally towards sulfate production. South Asia, on the other hand, shows a characteristically high gas-phase oxidation rate and a minimal \ce{SO2 + O3} tendency, a stark contrast to Europe.
+Comparing the four regions, early increases and emission reduction in Europe and Eastern North America led to a peak in \ce{SO2} oxidation in the 1970s. However, due to differences in background state, such as oxidant levels and cloud abundance, \ce{SO2 + O3} is the dominant channel in Europe, whereas the oxidation tendencies over East North America are equally split between all channels. \ce{SO2} emissions in East North America and East Asia may have evolved differently during the historical period, but their oxidation characteristics are similar. In particular, all \ce{SO2} oxidation reactions contribute nearly equally towards sulfate production. South Asia, on the other hand, shows a characteristically high gas-phase oxidation rate and a minimal \ce{SO2 + O3} tendency, a stark contrast to Europe.
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics{Chapter5/Figs/sensitivity_doxi_demiss_histsst_sstpiaer.png}
+    \caption[$\gamma_{2,i}$: Secondary sulfate production response to \ce{SO2} burden changes across regional and global domains.]{Response of secondary sulfate production ($\Delta P_{\text{S(VI)}}^i$) to \ce{SO2} burden ($\Delta Q_{\ce{SO2}}$) changes, $\gamma_{2,i}$. Each data point is the difference between the annual means of the perturbed (\histsst{}) and control (\sstpiaer{}) simulations, with the driver plotted against the response for the four regional domains and the global domain.}
+    \label{fig:ch5:so2_vs_oxidation}
+\end{figure}
+
+\ce{SO2} oxidation is the next immediate response to changes to \ce{SO2} burden because oxidation depends on the available \ce{SO2}. Figure \ref{fig:ch5:so2_vs_oxidation} shows the sensitivity of each of the oxidation pathways to an increase in \ce{SO2} burden, driven by the historical aerosol precursor emissions, $\gamma_{2,i}$. Here, the sensitivity of oxidation changes varies across regions. Europe exhibits the strongest sensitivity of \ce{SO2 + O3} to the increase in burden, while \ce{SO2 + H2O2}, another aqueous-phase oxidation route, is only 25\% as sensitive. Apart from Europe, \ce{SO2 + OH} oxidation is the most sensitive of the three oxidation pathways to an increase in \ce{SO2} burden. Gas-phase oxidation over South Asia is the most sensitive to changes in burden, with a sensitivity of \qty{77.2}{yr^{-1}}, twice the global sensitivity. 
 
 
 \begin{figure}[ht!]
     \centering
     \includegraphics{Chapter5/Figs/regional_tot_so2_oxi_series_histsst_sstpiaer.png}
-    \caption{a) Global and regional time series of changes in total \ce{SO2} oxidation due to aerosol precursor emissions (\histsst{} minus \sstpiaer{}). b-c) Global distribution of changes in total \ce{SO2} oxidation due to aerosol precursor emissions between 1960--1990 and 2000--2015. }
+    \caption[Global and regional total \ce{SO2} oxidation changes due to aerosol precursor emissions, 1960--2015.]{a) Global and regional time series of changes in total \ce{SO2} oxidation due to aerosol precursor emissions (\histsst{} minus \sstpiaer{}). b-c) Global distribution of changes in total \ce{SO2} oxidation due to aerosol precursor emissions between 1960--1990 and 2000--2015. }
     \label{fig:ch5:tot_oxidation_series}
 \end{figure}
 
-The combined oxidation shown in Figure \ref{fig:ch5:tot_oxidation_series} illustrates the trends and location of oxidation. Total \ce{SO2} oxidation over Europe makes the most significant share at its peak production in 1975, contributing \qty{4.48}{Tg(S)~yr^{-1}} or 11\& of to the global total secondary production. As East Asian emissions ramp up, their total oxidation overtakes Europe in 1990 and adds \qty{6.68}{Tg(S)~yr^{-1}} to the global total. Global distribution of oxidation shows that sulfate aerosols are formed near the emission location (Figure \ref{fig:ch5:emission_series}) and that most of the production is confined within the defined region boundary.
+The total oxidation, which is the summation of total tendency from the three pathways, is shown in Figure \ref{fig:ch5:tot_oxidation_series}. Total \ce{SO2} oxidation over Europe contributes \qty{4.48}{Tg(S)~yr^{-1}} or 11\% of the global total secondary production. As East Asian emissions ramp up, their total oxidation overtakes Europe's in 1990, adding \qty{6.68}{Tg(S)~yr^{-1}} to the global total. Global distribution of oxidation shows that sulfate aerosols are formed near the emission location (Figure \ref{fig:ch5:emission_series}) and that most of the production is confined within the defined region boundary.
 
 
-In short, the conditions at the \ce{SO2} emission source play an essential role in determining oxidation tendency, which exhibits considerable variability across the selected regions. Europe exhibits high cloud cover and low OH levels, so aqueous-phase oxidation dominates, whereas South Asia, which has minimal cloud cover, tends toward more gas-phase oxidation. That is, the emission location determines the atmospheric parameters and tracers available for the reaction, leading to a drastic difference in sulfate formation.
+\begin{figure}[ht!]
+    \centering
+    \includegraphics{Chapter5/Figs/sensitivity_dso2_dtot_oxi_histsst_sstpiaer.png}
+    \caption[$\gamma_2$ and $\gamma_{2,i}$: Regional and global secondary sulfate production response to \ce{SO2} burden changes by oxidation pathway.]{a) Regional response of total secondary sulfate aerosol production ($\Delta P_{\text{S(VI)}}$) to historical \ce{SO2} burden ($\Delta Q_{\ce{SO2}}$) changes, $\gamma_{2}$. b) Global response to changes in \ce{SO2} burden ($\Delta Q_{\ce{SO2}}$) on secondary sulfate aerosol production from each oxidation pathway and total oxidation, $\gamma_{2,i}$. Each data point is the difference between the annual means of the perturbed (\histsst{}) and control (\sstpiaer{}) simulations, with the driver plotted against the response for the four regional domains and the global domain.}
+    \label{fig:ch5:so2_vs_totoxi}
+\end{figure}
+
+The total secondary production is the sum of production from all three pathways, and its sensitivity to changes in \ce{SO2} burden indicates the efficiency of sulfate aerosol production within a defined domain. Figure \ref{fig:ch5:so2_vs_totoxi}a) shows the regional and global sensitivity, $\gamma_2$, which is a linear response with $R^2$ greater than 0.99, demonstrating a strong correlation in all regions. Global $\gamma_2$ is \qty{78.7}{yr^{-1}} and all regions except Europe have higher sensitivity than the global value. This variation in sensitivity shows that higher emissions do not imply equal growth in oxidation. Local environmental conditions control deposition and oxidation, thereby altering sensitivity.
 
 
-\subsection{Regional difference in historical aerosol properties}
+In short, the conditions at the \ce{SO2} emission source play an essential role in determining the oxidation tendency, which varies considerably across the selected regions. Europe exhibits high cloud cover and low OH levels, so aqueous-phase oxidation dominates, whereas South Asia, which has minimal cloud cover, tends toward more gas-phase oxidation. That is, the emission location determines the atmospheric parameters and tracers available for the reaction, leading to a drastic difference in sulfate formation.
 
-In GLOMAP-mode, the aerosol microphysical scheme used in UKESM1 simulates aerosol number and mass concentrations independently, allowing the aerosol formation pathway to influence their properties. The key parameters to consider for aerosol-radiation interactions are aerosol mass loading and particle number concentration. These two show the microscopic properties of aerosols. Aerosols with diameters greater than 50 nm (N50) are relevant to cloud formation as they activate cloud droplet condensation. 
+
+\subsection{Sensitivity of sulfate aerosol burden due to changes in sulfate aerosol production [$\gamma_3$]}
+
+In this section, we examine the effects of the sulfate oxidation tendency on the sulfate mass burden. In GLOMAP-mode, the aerosol microphysical scheme used in UKESM1 simulates aerosol number and mass concentrations independently, allowing the aerosol formation pathway to influence their properties. The key parameters to consider in aerosol-radiation interactions are aerosol mass loading (i.e., burden) and particle number concentration. Aerosols with diameters greater than 50 nm (N50) are relevant to cloud formation as they activate cloud droplet condensation.
 
 
 \begin{figure}[ht!]
     \centering
     \includegraphics{Chapter5/Figs/regional_mmrso4_series_histsst_sstpiaer.png}
-    \caption{a) Global and regional time series of changes in tropospheric sulfate aerosol burden due to aerosol precursor emissions (\histsst{} minus \sstpiaer{}). Readers are to refer to Figure \ref{fig:ch3:s-budget} for the full global trend. b-c) Global distribution of changes in total sulfate aerosol burden due to aerosol precursor emissions between 1960--1990 and 2000--2015.}
+    \caption[Global and regional tropospheric sulfate aerosol burden changes due to aerosol precursor emissions, 1960--2015.]{a) Global and regional time series of changes in tropospheric sulfate aerosol burden due to aerosol precursor emissions (\histsst{} minus \sstpiaer{}). Readers are to refer to Figure \ref{fig:ch3:s-budget} for the full global trend. b-c) Global distribution of changes in total sulfate aerosol burden due to aerosol precursor emissions between 1960--1990 and 2000--2015, respectively.}
     \label{fig:ch5:so4_series}
 \end{figure}
 
 
-Sulfate aerosol is the direct product of \ce{SO2} oxidation. Figure \ref{fig:ch5:so4_series} shows the global and regional changes in sulfate aerosol burden due to increased historical aerosol precursor emissions. All oxidation reactions produce sulfate aerosol mass, so there is a direct relationship to total oxidation in Figure \ref{fig:ch5:tot_oxidation_series}. For instance, the model simulates an increase of \qty{0.025}{Tg(S)} in sulfate aerosol burden at the peak of production in Europe. The global distribution of sulfate aerosol burden is more dispersed than its production tendency, and is not captured within the region boundaries. The distribution of burden outside of the region boundary is one of the limitations of using a static regional boundary to define the regional effect of emission location. However, in this case of sulfate burden, a large proportion of aerosols remains within the region's borders. Hence, the regional trends in sulfate burden remain valid and reflect the characteristics of their emissions. For example, aerosol produced in the defined European region is transported eastward out of the bounded area, yet the trends in Figure \ref{fig:ch5:so4_series}a still follow that of Figure \ref{fig:ch5:tot_oxidation_series}a.
+First, we consider the change to total sulfate aerosol mass burden, which is the direct product of \ce{SO2} oxidation. Figure \ref{fig:ch5:so4_series} shows the global and regional changes in sulfate aerosol burden due to increased historical aerosol precursor emissions. All oxidation reactions produce sulfate aerosol mass, so there is a direct relationship to total oxidation, Figure \ref{fig:ch5:tot_oxidation_series}. An increase of \qty{0.025}{Tg(S)} in sulfate aerosol burden at the peak of production in Europe is shown in Figure \ref{fig:ch5:so4_series}b) and c). The global distribution of sulfate aerosol burden is more dispersed than its production tendency, and not all sulfate mass produced from \ce{SO2} oxidation is contained within regional boundaries. 
 
 
 \begin{figure}[ht!]
     \centering
-    \includegraphics{Chapter5/Figs/regional_od550aer_series_histsst_sstpiaer.png}
-    \caption{a) Global and regional time series of changes in aerosol optical depth (AOD) at 550 nm due to aerosol precursor emissions (\histsst{} minus \sstpiaer{}). b-c) Global distribution of changes in AOD due to aerosol precursor emissions between 1960--1990 and 2000--2015.}
-    \label{fig:ch5:aod_series}
+    \includegraphics{Chapter5/Figs/sensitivity_dtot_so2_oxi_dmmrso4_histsst_sstpiaer_zoom.png}
+    \caption[$\gamma_3$: Sulfate aerosol burden response to secondary sulfate production changes across regional and global domains.]{Response of sulfate aerosol burden ($\Delta Q_{\text{S(VI)}}$) to secondary sulfate aerosol production ($\Delta P_{\text{S(VI)}}$) changes, $\gamma_3$. Each data point is the difference between the annual means of the perturbed (\histsst{}) and control (\sstpiaer{}) simulations, with the driver plotted against the response for the four regional domains and the global domain.}
+    \label{fig:ch5:so2_oxi_vs_so4}
 \end{figure}
 
-
-% \begin{figure}[ht!]
-%     \centering
-%     \includegraphics{Chapter5/Figs/regional_od550aer_seasons_histsst_sstpiaer.png}
-%     \caption{Caption}
-%     \label{fig:placeholder}
-% \end{figure}
+Sulfate aerosol production and removal by wet deposition control the total burden. As with sulfate production, sulfate wet deposition, the main removal process, is also controlled by the presence of clouds and precipitation, which vary greatly across locations. Figure \ref{fig:ch5:so2_oxi_vs_so4} shows the response of sulfate aerosol burden to the change in secondary sulfate aerosol production, $\gamma_3$. Globally, sulfate aerosol burden responds well to total oxidation, with greater sensitivity than in any region. Europe, East North America, and East Asia share a similarly low sensitivity due to the regions' efficient wet removal. The response is linear, with $R^2\ge 0.90$ across all domains despite sulfate aerosol burden transported beyond the domains, as shown in Figure \ref{fig:ch5:so4_series}.
 
 
-Aerosols are typically 10-100 nm in size, making them efficient at scattering short-wave radiation via Mie scattering. The impacts of historical change in aerosol precursor emissions on aerosol optical depth at 550 nm are shown in Figure \ref{fig:ch5:aod_series}. Global mean aerosol optical depth, discussed in Chapter \ref{ch3:title}, shows a steep increase starting from 1950, reaching 0.42 in 2015. The regional mean shows the heterogeneity and local variation in the change. AOD above Europe and East North America is similar in both the magnitude and evolution, with a rapid increase from 1875 to 1975 and a steep decline thereafter. East and South Asia also show similar trends, with increased AOD up to the end of 2014. One notable feature is that the AOD above Asia is 50\% greater than that of the peak of Europe and East North America (0.31 compared to 0.18). In South Asia, this could be due to higher black and organic carbon emissions, as shown in Figure \ref{fig:app2:emioa_series}--\ref{fig:app2:emibvoc_series} of Appendix \ref{app2:title}.
+\subsection{Sensitivity of aerosol optical depth due to changes in sulfate aerosol burden [$\gamma_{4a}$]}
 
+Aerosols are typically 10--100 nm in size, making them efficient at scattering short-wave radiation via Mie scattering. In AerChemMIP, aerosol precursor emissions include multiple precursors for each aerosol type, such as black carbon, organic carbon, and sulfate. Here, I quantify the change in AOD attributable to each aerosol precursor component using timeslice simulations, thereby justifying the assumption that sulfate aerosol is the primary contributor to changes in aerosol properties. 
 
-To distinguish the effects of each aerosol precursor component, timeslice simulations with each component are analysed and compared with AOD from the \histsst{} simulation. The timeslice simulations, \textit{piClim-X}, where X is a climate forcing agent, are designed to quantify the radiative effects of that agent. Pre-industrial surface temperatures are constrained to pre-industrial values, and a single forcing agent is used, with the emission or concentration from the present day (2014) set for each simulation. In AerChemMIP simulation, aerosol forcing (\textit{aer}) is the combination of organic carbon (\textit{OC}), black carbon (\textit{BC}) aerosol emissions and \ce{\textit{SO2}} emissions. This timeslice experiment is estimated as the breakdown of the last year of \histsst{} simulation.
+The timeslice simulations, \textit{piClim-X}, where X is a climate forcing agent, are designed to quantify the radiative effects of that agent. Pre-industrial surface temperatures are constrained to pre-industrial values, and a single forcing agent is used, with the present-day (2014) emission or concentration set for each simulation. In AerChemMIP simulation, aerosol forcing (\textit{aer}) is the combination of organic carbon (\textit{OC}), black carbon (\textit{BC}) aerosol emissions and \ce{\textit{SO2}} emissions. This timeslice experiment is estimated as the breakdown of the last year of \histsst{} simulation.
 
 \begin{figure}[ht!]
     \centering
     \includegraphics{Chapter5/Figs/aod_map_piClim.png}
-    \caption{Global distribution of aerosol optical depth at 550 nm from 30-year mean of timeslice simulations. Plots show difference between \textit{piClim-control} and a) \textit{piClim-OC}, b) \textit{piClim-BC}, c) \textit{piClim-SO2}, and d) \textit{piClim-aer}. Colourbar ranges in figure a-b) are 25\% of figure c-d).}
+    \caption[Global AOD at 550 nm differences between \textit{piClim-control} and \textit{piClim-OC}, \textit{-BC}, \textit{-SO2}, and \textit{-aer} from 30-year timeslice means.]{Global distribution of aerosol optical depth at 550 nm from the 30-year mean of timeslice simulations. Plots show difference between \textit{piClim-control} and a) \textit{piClim-OC}, b) \textit{piClim-BC}, c) \textit{piClim-SO2}, and d) \textit{piClim-aer}. Colourbar ranges in figure a-b) are 25\% of figure c-d).}
     \label{fig:ch5:aod_map_piClim}
 \end{figure}
 
 Figure \ref{fig:ch5:aod_map_piClim} shows the impacts of present-day emissions of each aerosol component and the total aerosol precursor on AOD. The change in AOD is calculated by subtracting \textit{piClim-control} from \textit{piClim-X}, with X being \textit{OC}, \textit{BC}, \textit{SO2} and \textit{aer}, using the last 30 years of the 45-year timeslice simulation. OC aerosol emissions increase AOD in Canada, Southeast Asia, the Amazon forest, and Siberia, all of which are outside the boundary of the regions of interest of this Chapter. Black carbon aerosol emissions are shown to increase AOD in both East and South Asia. \textit{piClim-SO2} is the primary contributor to the total change in AOD in Figure \ref{fig:ch5:aod_map_piClim}d. 
 
+
 \begin{figure}[ht!]
     \centering
     \includegraphics{Chapter5/Figs/piClim-X-aod-component.png}
-    \caption{Regional change in aerosol AOD at 550 nm from timeslice simulations and transient fixed-SST simulation. The changes in aerosol AOD from the difference between AOD from  \textit{piClim-X} minus \textit{piClim-control} using the last 30 years' output, and from \histsst{} minus \sstpiaer{} for the transient simulation using the last five years' output (2005--2015). The error bars show one standard deviation from the regional mean.}
+    \caption[Regional AOD changes at 550 nm from timeslice (\textit{piClim-X} minus \textit{piClim-control}) and transient (\histsst{} minus \sstpiaer{}) simulations.]{Regional change in aerosol AOD at 550 nm from timeslice simulations and transient fixed-SST simulation. The changes in aerosol AOD from the difference between AOD from  \textit{piClim-X} minus \textit{piClim-control} using the last 30 years' output, and from \histsst{} minus \sstpiaer{} for the transient simulation using the last five years' output (2005--2015). The error bars show one standard deviation from the regional mean.}
     \label{fig:ch5:piClim-aod-component}
 \end{figure}
 
 To further quantify the regional impact of each component of aerosol precursor emissions, Figure \ref{fig:ch5:piClim-aod-component} shows regional and global mean changes in AOD due to each aerosol component from timeslice simulations and from the last 5 years of \histsst{} minus \sstpiaer{} simulation (2005--2015). \ce{SO2} is the main aerosol component that changes the AOD. A similar conclusion could be drawn for the East North America region. In East Asia, black carbon aerosol emissions contributed \num[]{0.02+-0.05}, or 10\%, to the increase in AOD, amounting to \num[]{0.19+-0.06}, with the remaining 90\% of AOD coming from \ce{SO2} emissions. Aerosol emission in South Asia is more diverse, with the increase in AOD from OC (\num[]{0.02+-0.08}; 9.1\%), BC (\num[]{0.03+-0.09}; 13.6\%), \ce{SO2} (\num[]{0.18+-0.12}; 82\%) of the total AOD of \num[]{0.22+-0.11}. That is, for present-day (2014) aerosol precursor emissions, \ce{SO2} is the primary contributor to AOD for all four selected regions.
 
-Present-day atmospheric oxidants play an essential role in increasing AOD estimation. Aside from slightly lower \ce{SO2} emission in \histsst{} (averaged emission from 2005--2015) versus in \textit{piClim-aer} (2015), these two pairs of simulations are similar. The difference lies in the atmospheric background state. In the timeslice simulation, the control simulation \textit{piClim-control} features pre-industrial surface temperatures and short-lived climate forcing, including \ce{O3} and \ce{CH4}. The transient simulation pair, on the other hand, features time-dependent surface temperatures and other emissions that increase background oxidants for sulfate aerosol formation. This results in a 33\% increase in AOD in East and South Asia, emphasising the role of oxidants in aerosol formation.
-
-% The UKESM1 AOD trends and global distribution were evaluated with satellite and ground-based observations in \citet{mulcahyDescriptionEvaluationAerosol2020}. UKESM1 consistently underestimated AOD at 550 nm relative to multiple satellite products. The model can simulate the global distribution of aerosols, showing AOD hotspots over East Asia, South Asia, and sub-Saharan Africa, consistent with observations.  
+Present-day atmospheric oxidants play an essential role in increasing AOD estimation. There is a non-negligible difference in the atmospheric background state when comparing timeslice simulation pair (\textit{piClim-aer} minus \textit{piClim-control}) and transient simulations (\histsst{} minus \sstpiaer{}). In the timeslice simulation, the control simulation \textit{piClim-control} features pre-industrial surface temperatures and short-lived climate forcing, including \ce{O3} and \ce{CH4}. The transient simulation pair, on the other hand, features time-dependent surface temperatures and other emissions that increase background oxidants, thereby enhancing sulfate aerosol formation. This results in a 33\% increase in AOD in East and South Asia, emphasising the role of oxidants in aerosol formation. Nonetheless, the assumption that \ce{SO2} is the main contributor to aerosol properties is held in both pairs.
 
 
 \begin{figure}[ht!]
     \centering
+    \includegraphics{Chapter5/Figs/regional_od550aer_series_histsst_sstpiaer.png}
+    \caption[Global and regional AOD changes at 550 nm due to aerosol precursor emissions, 1960--2015.]{a) Global and regional time series of changes in aerosol optical depth (AOD) at 550 nm due to aerosol precursor emissions (\histsst{} minus \sstpiaer{}). b-c) Global distribution of changes in AOD due to aerosol precursor emissions between 1960--1990 and 2000--2015.}
+    \label{fig:ch5:aod_series}
+\end{figure}
+
+
+We have established that sulfate aerosol precursor, \ce{SO2}, is the main driver for sulfate aerosol, which is the primary type of aerosol in the regions of interest. Figure \ref{fig:ch5:aod_series} shows the impacts of historical change in aerosol precursor emissions on aerosol optical depth at 550 nm. Global mean aerosol optical depth, discussed in Chapter \ref{ch3:title}, shows a steep increase starting from 1950, reaching 0.42 in 2015. The regional mean shows the heterogeneity and local variation in the change. AOD over Europe and East North America is similar in both the magnitude and evolution, with a rapid increase from 1875 to 1975 and a steep decline thereafter. East and South Asia also show similar trends, with AOD increasing through the end of 2014. One notable feature is that the AOD above Asia is 50\% greater than that of the peak of Europe and East North America (0.31 compared to 0.18). In South Asia, this could be due to higher black and organic carbon emissions, as shown in Figure \ref{fig:app2:emioa_series}--\ref{fig:app2:emibvoc_series} of Appendix \ref{app2:title}.
+
+
+Aerosols' direct impact on the radiation budget arises from aerosol interactions with radiation, with the aerosol optical depth (AOD), $\tau_a$, as the first quantifiable parameter. So far, sensitivities have been calculated using extensive variables such as burden and total tendencies. However, the domain-average AOD is an intensive variable and must be compared with another intensive variable to obtain a meaningful sensitivity. ERF, the next quantity in the analysis, is also an intensive variable. To bridge this change from extensive variables to intensive variables, the sulfate aerosol burden, an extensive variable, is divided by the domain area to convert it to an intensive variable. 
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics{Chapter5/Figs/sensitivity_dso4_per_area_dod550aer_histsst_sstpiaer.png}
+    \caption[$\gamma_{4a}$: AOD response to sulfate aerosol burden per area changes across regional and global domains.]{Response of aerosol optical depth ($\Delta \tau_a$) to sulfate aerosol burden per area ($\Delta Q_{\text{S(VI)}}/area$) changes, $\gamma_{4a}$. Each data point is the difference between the annual means of the perturbed (\histsst{}) and control (\sstpiaer{}) simulations, with the driver plotted against the response for the four regional domains and the global domain.}
+    \label{fig:ch5:so4_pa_vs_aod}
+\end{figure}
+
+Figure \ref{fig:ch5:so4_pa_vs_aod} shows the linear response of AOD to the change in the sulfate burden per domain area, $\gamma_{4a}$,  with $R^2 \ge 0.97$ across all regions. All regions show similar sensitivity of AOD to sulfate burden, indicating that burden and AOD relate similarly globally.
+
+\subsection{Sensitivity of N50 concentration due to changes in sulfate aerosol burden [$\gamma_{4b}$]}
+
+
+In addition to AOD, \ce{SO2} oxidation also affects aerosol number concentration, which is sensitive to both the production pathway and the overall production rate. In UKESM1, \ce{SO2} oxidised in the gas phase produces sulfuric acid vapours which readily nucleate into new sulfate aerosol particles. However, \ce{SO2} that undergoes aqueous-phase oxidation is assumed to react in existing aerosol particles, and does not create new particles. 
+
+\begin{figure}[ht!]
+    \centering
     \includegraphics{Chapter5/Figs/regional_n50_series_histsst_sstpiaer.png}
-    \caption{a) Global and regional time series of changes in tropospheric sulfate aerosol burden due to aerosol precursor emissions (\histsst{} minus \sstpiaer{}) from surface to 10 km altitude. b-c) Global distribution of changes in total sulfate aerosol burden due to aerosol precursor emissions between 1960--1990 and 2000--2015.}
+    \caption[Global and regional tropospheric sulfate aerosol burden changes (surface to 10 km) due to aerosol precursor emissions, 1960--2015.]{a) Global and regional time series of changes in tropospheric sulfate aerosol burden due to aerosol precursor emissions (\histsst{} minus \sstpiaer{}) from surface to 10 km altitude. b-c) Global distribution of changes in total sulfate aerosol burden due to aerosol precursor emissions between 1960--1990 and 2000--2015.}
     \label{fig:ch5:N50_series}
 \end{figure}
 
-In addition to AOD, \ce{SO2} oxidation also affects aerosol number concentration, which is sensitive to both the production pathway and the overall production rate. In UKESM1, \ce{SO2} oxidised in the gas phase produces sulfuric acid vapours which readily nucleate into new sulfate aerosol particles. However, \ce{SO2} that undergoes aqueous-phase oxidation is assumed to react in existing aerosol particles, and does not create new particles. 
 
 Figure \ref{fig:ch5:N50_series} shows the time evolution of the number concentration of aerosols with a diameter above 50 nm due to increased aerosol precursor emissions. The N50 concentration is shown here, as aerosols with diameters above 50 nm act as cloud condensation nuclei. Globally, N50 increases by \qty{95.9}{\per\cubic\centi\metre}, while within the European boundary, the average aerosol number concentration more than doubled the global average, reaching above \qty{240}{\per\cubic\centi\metre} between 1960 and 1990. Despite a 50\% higher total oxidation tendency and a sulfate aerosol mass burden, the N50 concentration in Europe is in the same ballpark as East North America. This low N50 is likely due to Europe's higher aqueous-phase oxidation, which does not form new aerosol particles. 
 
 A similar pattern in particle density is also observed when comparing East and South Asia. The average increase in N50 number concentration in both regions is the same in 2015, even though the total oxidation in East Asia is double that in South Asia in the 2010s (Figure \ref{fig:ch5:tot_oxidation_series}). South Asia has high levels of gas-phase oxidation, which promotes sulfate aerosol particle nucleation, potentially explaining the higher new particle density per unit of oxidation tendency. Another explanation is that aerosol particle coagulation imposes an upper bound on the aerosol number concentration by increasing collisions and decreasing the number of particles at higher aerosol number density. As with sulfate burden and AOD, while much of the increase in aerosol number concentration is localised near the source, the change in aerosol number is seen beyond the defined region boundaries due to transport. 
 
+
+Aerosols indirectly modify radiation through aerosol-cloud interactions, which involve numerous cloud-related steps. The first process involves aerosols with diameters greater than 50 nm (N50), which are considered important for cloud droplet activation.  As with the previous analysis involving intensive-extensive quantities, here, the area burden is divided by domain area to express it as an intensive variable. 
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics{Chapter5/Figs/sensitivity_dso4_per_area_dn50_histsst_sstpiaer.png}
+    \caption[$\gamma_{4b}$: N50 concentration response to sulfate aerosol burden per area changes across regional and global domains.]{Response of N50 concentration to changes in sulfate aerosol burden per domain area, $\gamma_{4b}$. Each data point is the difference between the annual means of the perturbed (\histsst{}) and control (\sstpiaer{}) simulations, with the driver plotted against the response for the four regional domains and the global domain.}
+    \label{fig:ch5:so4_vs_n50}
+\end{figure}
+
+Figure \ref{fig:ch5:so4_vs_n50} shows $\gamma_{4b}$, the response of N50 concentration to an increase in sulfate aerosol burden per domain area. East Asia is the region with the highest sensitivity of N50 to changes in sulfate burden, with East North America the close second. Both East North America and East Asia exhibit strong gas-phase production sensitivity, $\gamma_{2i}$, proving the point that there is some correlation between sensitivity in $P_{\ce{SO2 + OH}}$ and N50 formation (Table \ref{ch5:tab:sensitivity}). However, South Asia does not exhibit the expected correlation between gas-phase production and high N50 concentration, and no clear explanation is available.
+
+
 So far, this section has shown that unique regional factors, such as the proportion of aqueous-phase oxidation driven by cloud cover, influence aerosol properties, especially the number concentration of cloud condensation nuclei per unit of oxidation.  
 
 
+\subsection{Sensitivity of cloud droplet number concentration due to changes in N50 concentration [$\gamma_{5b}$]}
 
-\subsection{Regional difference in historical cloud properties }
-
-Aerosols play a role in cloud formation by serving as a germ for cloud condensation. Sulfate oxidation may provide cloud condensation nuclei, depending on whether \ce{SO2} is oxidised with OH or in existing cloud droplets with \ce{O3} and \ce{H2O2}. As shown in the previous section, the oxidation location plays an essential role in determining the amount of new aerosol particle formation. This section analyses changes in cloud properties resulting from emissions of aerosol precursors across the four regions of interest during the historical period.
+As shown in the previous section, the oxidation location plays an essential role in determining the amount of new aerosol particle formation. This section analyses changes in cloud properties resulting from emissions of aerosol precursors across the four regions of interest during the historical period. CDNC is then used as the response of perturbation to aerosol formation in sensitivity analysis.
 
 
 \begin{figure}[ht!]
     \centering
-    \includegraphics{Chapter5/Figs/regional_cdnc_series_histsst_sstpiaer.png}
-    \caption{a) Global and regional time series of changes in cloud droplet number concentration (CDNC) due to aerosol precursor emissions (\histsst{} minus \sstpiaer{}) from surface to 10 km altitude. b-c) Global distribution of changes in CDNC due to aerosol precursor emissions between 1960--1990 and 2000--2015.}
+    \includegraphics{Chapter5/Figs/regional_cdnc_series_histsst_sstpiaer_diff.png}
+    \caption[Global and regional CDNC changes (surface to 10 km) due to aerosol precursor emissions, 1960--2015.]{a) Global and regional time series of changes in cloud droplet number concentration (CDNC) due to aerosol precursor emissions (\histsst{} minus \sstpiaer{}) from surface to 10 km altitude. b-c) Global distribution of changes in CDNC due to aerosol precursor emissions between 1960--1990 and 2000--2015.}
     \label{fig:ch5:cdnc_series}
 \end{figure}
 
 With increased aerosol number, cloud droplet number concentration would increase as there are more nuclei for cloud droplets to condense onto. Figure \ref{fig:ch5:cdnc_series} shows the historical changes in average cloud droplet number concentration (CDNC) below 10 km due to increases in aerosol precursor emissions. Globally, aerosol precursors add \qty{32.8}{\per\cubic\centi\metre} of CDNC, which maximises at 1975 and stabilises until 2015, as also discussed in Chapter \ref{ch3:title}. 
 
-Regionally, in Europe, CDNC increases and plateaus in 1910 at \qty{52.4}{\per\cubic\centi\metre}, then rises again during the pothole period between 1960 and 1990 to \qty{94.1}{\per\cubic\centi\metre}. Thereafter, CDNC over Europe decreases rapidly, reaching only slightly above the global mean of \qty{40.1}{\per\cubic\centi\metre} in the present day.
+Regionally in Europe, CDNC increases and plateaus at \qty{52.4}{\per\cubic\centi\metre} in 1910, then rises again during the pothole period between 1960 and 1990 to \qty{94.1}{\per\cubic\centi\metre}. Thereafter, CDNC over Europe decreases rapidly, reaching only slightly above the global mean of \qty{40.1}{\per\cubic\centi\metre} in the present day.
 
-CDNC over East North America shows the same rate of increase as in Europe during the initial simulation years, from 1850 to 1910, but stabilises at a 30\% higher concentration, \qty{96.3}{\per\cubic\centi\metre}, than in Europe during the same period. Despite lower total oxidation in East North America than in Europe, CDNC over East North America shows a larger increase, consistent with the assumption that a greater fraction of gas-phase oxidation leads to more CCN formation and thus greater changes in cloud properties. 
+CDNC over East North America shows the same rate of increase as in Europe during the initial simulation years, from 1850 to 1910, but stabilises at a concentration 30\% higher, \qty{96.3}{\per\cubic\centi\metre}, than in Europe during the same period. Despite lower total oxidation in East North America than in Europe, CDNC over East North America shows a larger increase, consistent with the assumption that a greater fraction of gas-phase oxidation leads to more CCN formation and thus greater changes in cloud properties. 
 
-An increase in aerosol precursor emissions over East Asia leads to a rapid rise in CDNC from 1950 onward, only to slow slightly after 1990 and reach a maximum in the present day at \qty{143.4}{\per\cubic\centi\metre}, 25\% higher than the highest level in East North America. This relationship is expected, as the N50 concentration over East Asia is almost twice that over East North America during the same period.
+An increase in aerosol precursor emissions over East Asia leads to a rapid rise in CDNC from 1950 onward, which then slows slightly after 1990 and reaches a present-day maximum of \qty{143.4}{\per\cubic\centi\metre}, 25\% higher than the highest level in East North America. This relationship is expected, as the N50 concentration over East Asia is almost twice that over East North America during the same period.
 
-In South Asia, the response of CDNC to the rise in aerosol precursor emissions resembles that of East Asia, with the same rate of change from 1950. Unlike East Asia, the rate of increase of CDNC does not dampen in 1990, leading to a substantial difference in the present day of \qty{194}{\per\cubic\centi\metre}.
+In South Asia, CDNC's response to the rise in aerosol precursor emissions resembles that in East Asia, with the same rate of change since 1950. Unlike in East Asia, the rate of increase in CDNC does not dampen in 1990, leading to a substantial difference in the near-present of \qty{194}{\per\cubic\centi\metre}.
 
-The impact of aerosol precursor emissions extends far beyond their source regions, especially during the peak in emissions over Europe and East North America. Figure \ref{fig:ch5:cdnc_series}b shows that the increase in CDNC covers the whole of the Eurasian continent and the entirety of North America.
-The impact of East and South Asian emissions is concentrated in the regions where they are emitted. CDNC changes are predominantly observed over continental areas. 
+The impact of aerosol precursor emissions extends far beyond their source regions, especially during peak emission periods over Europe and East North America. Figure \ref{fig:ch5:cdnc_series}b shows that the increase in CDNC covers the whole of the Eurasian continent and the entirety of North America. The impact of East and South Asian emissions is concentrated in the regions where they are emitted. CDNC changes are predominantly observed over continental areas. 
 
-% \begin{figure}[ht!]
-%     \centering
-%     \includegraphics{Chapter5/Figs/regional_cl_seasons_histsst_sstpiaer.png}
-%     \caption{Caption}
-%     \label{fig:placeholder}
-% \end{figure}
-
-As the cloud droplet number increases with aerosol number, each cloud droplet shrinks in size, and the cloud droplet effective radius (\Reff{}) reflects these changes. Figure \ref{fig:ch5:reff_series} shows the impacts of the historical increase in aerosol precursor emissions on \Reff{} averaged in four regions below 10 km. The global mean \Reff{} decreases, and more so regionally. In addition to cloud microphysical properties, aerosols affect cloud optical properties, as shown by changes in cloud optical depth (Figure \ref{fig:ch5:cod_series}). Cloud optical depths increase globally, with larger changes near sources of aerosol precursors.
+As the cloud droplet number increases with aerosol number, each cloud droplet shrinks in size, and the cloud droplet effective radius (\Reff{}) reflects these changes. Figure \ref{fig:ch5:reff_series} shows the impacts of the historical increase in aerosol precursor emissions on \Reff{} averaged in four regions below 10 km. The global mean \Reff{} decreases, with greater decreases regionally. In addition to cloud microphysical properties, aerosols affect cloud optical properties, as shown by changes in cloud optical depth (Figure \ref{fig:ch5:cod_series}). Cloud optical depths increase globally, with larger changes near sources of aerosol precursors.
 
 
-This section shows that historical changes in aerosol precursor emissions alter cloud microphysical and optical properties with regional signatures. Europe shows lower CDNC sensitivity to total oxidation because a lower proportion of \ce{SO2} oxidation occurs in the gas phase. Meanwhile, South Asia shows greater changes in cloud properties due to higher gas-phase oxidation of \ce{SO2}. The susceptibility of CDNC to CCN density is one of the major factors controlling the highly uncertain change in the amount of solar radiation reflected by clouds, which is quantified by cloud optical depth, when aerosol emissions are perturbed. 
+\begin{figure}[ht!]
+    \centering
+    \includegraphics{Chapter5/Figs/sensitivity_dn50_dcdnc_histsst_sstpiaer.png}
+    \caption[$\gamma_{5b}$: CDNC response to N50 concentration changes across regional and global domains.]{Response of mean cloud droplet number concentration (CDNC; $N_d$) to changes in N50 concentration, $\gamma_{5b}$. Each data point is the difference between the annual means of the perturbed (\histsst{}) and control (\sstpiaer{}) simulations, with the driver plotted against the response for the four regional domains and the global domain.}
+    \label{fig:ch5:n50_vs_cdnc}
+\end{figure}
 
 
-\subsection{Regional difference in historical ERF due to aerosols}
+More numerous CCN are directly linked to a greater concentration of cloud droplets, as shown by modelling and observations \citep{jordanHowWellAre2024, virtanenHighSensitivityCloud2025}. Figure \ref{fig:ch5:n50_vs_cdnc} shows the response of CDNC due to changes in N50 concentration. The global and regional relationships between N50 and cloud droplet number concentrations (CDNC) are linear, with $R\ge0.95$. The sensitivities, $\gamma_{5b}$, from the global and regional analyses lie within the same range, indicating that location does not substantially influence this process.
 
-Radiative forcing by aerosols is the most important anthropogenic cooling component, and these interactions remain the largest source of uncertainty in radiative forcing estimates \citep{forsterEarthEnergyBudget2021, bellouinBoundingGlobalAerosol2020}. As with the preceding Chapters, aerosol effective radiative forcing (ERF) is decomposed into cloud radiative effects (\dcre{}), aerosol direct effect (\irf), and the albedo plus clean-and-clear-sky component (\ERFcsclean).
+This section has shown that historical changes in aerosol precursor emissions alter cloud microphysical and optical properties with regional signatures. Europe shows lower CDNC sensitivity to total oxidation because a smaller fraction of \ce{SO2} is oxidised in the gas phase. Meanwhile, South Asia shows greater changes in cloud properties due to higher gas-phase oxidation of \ce{SO2}. The susceptibility of CDNC to CCN density is one of the major factors controlling the highly uncertain change in the amount of solar radiation reflected by clouds, which is quantified by cloud optical depth, when aerosol emissions are perturbed. 
+
+
+\subsection{Sensitivity of ERF due to changes in AOD and in CDNC [$\gamma_{5a}$ and $\gamma_{6b}$]}
+
+Radiative forcing by aerosols is the most important anthropogenic cooling component of the anthropogenic emissions, and aerosol interactions remain the largest source of uncertainty in radiative forcing estimates \citep{forsterEarthEnergyBudget2021, bellouinBoundingGlobalAerosol2020}. As with the preceding Chapters, aerosol effective radiative forcing (ERF) is decomposed into cloud radiative effects (\dcre{}), aerosol direct effect (\irf), and the albedo plus clean-and-clear-sky component (\ERFcsclean). The sensitivities of ERF due to aerosol-radiation and aerosol-cloud interactions are quantified in this section.
 
 
 \begin{figure}[ht!]
     \centering
     \includegraphics{Chapter5/Figs/regional_net_toa_series_histsst_sstpiaer.png}
-    \caption{a) Global and regional time series of changes in effective radiative forcing (ERF) due to aerosol precursor emissions (\histsst{} minus \sstpiaer{}). b-c) Global distribution of changes in ERF due to aerosol precursor emissions between 1960--1990 and 2000--2015.}
+    \caption[Global and regional ERF changes due to aerosol precursor emissions, 1960--2015.]{a) Global and regional time series of changes in effective radiative forcing (ERF) due to aerosol precursor emissions (\histsst{} minus \sstpiaer{}). b-c) Global distribution of changes in ERF due to aerosol precursor emissions between 1960--1990 and 2000--2015.}
     \label{fig:ch5:erf_series}
 \end{figure}
 
-Aerosols' effects on radiative imbalance at the top of the atmosphere are shown in Figure \ref{fig:ch5:erf_series} as a 10-year rolling annual mean ERF. Globally, aerosol precursors induce a negative ERF, meaning that more radiation leaves the atmosphere than enters it. Negative ERF induces this global deficit in many regions of the Earth. The global distribution of changes in ERF (Figure \ref{fig:ch5:erf_series}b-c) illustrates that the impact of aerosol precursor emissions extends far beyond the emission sources. That is, ERF computed by averaging within the boundary underestimates the actual impact of emissions from that boundary. Nevertheless, ERF changes are most substantial near the source, so trend and correlation analyses are informative.
+Aerosols' effects on radiative imbalance at the top of the atmosphere are shown in Figure \ref{fig:ch5:erf_series} as a 10-year rolling annual mean ERF. Globally, aerosol precursors induce a negative ERF, meaning that more radiation leaves the atmosphere than enters it. Negative ERF induces this global deficit in many regions of the Earth. The global distribution of changes in ERF (Figure \ref{fig:ch5:erf_series}b-c) illustrates that the impact of aerosol precursor emissions extends far beyond the emission sources.  Nevertheless, ERF changes are most substantial near the source, so trend and correlation analyses are informative.
 
 Over the defined Europe region, ERF is the most negative between 1960 and 1990 at \qty{-4.39}{W~m^{-2}} with the aerosol impact reaching beyond the drawn boundary into the northeastern region of the Eurasia continent, as shown in Figure \ref{fig:ch5:erf_series}. As aerosol precursor emissions cede in the area, the ERF becomes less negative, at \qty{-2.0}{W~m^{-2}} in 2000--2015.
 
@@ -564,159 +681,225 @@ The average ERF over the East Asia region increases over the historical period, 
 \begin{figure}[ht!]
     \centering
     \includegraphics{Chapter5/Figs/regional_erf_series_histsst_sstpiaer_diff.png}
-    \caption{Regional 10-year rolling mean time series of effective radiative forcing and its components due to aerosol precursor emissions (\histsst{} minus \sstpiaer{}) over a) Europe, b) East North America, c) East Asia, and d) South Asia.}
+    \caption[Regional 10-year rolling mean ERF and components due to aerosol precursor emissions over EU, ENA, EA, and SA.]{Regional 10-year rolling mean time series of effective radiative forcing and its components due to aerosol precursor emissions (\histsst{} minus \sstpiaer{}) over a) Europe, b) East North America, c) East Asia, and d) South Asia.}
     \label{fig:ch5:erf_series_by_region}
 \end{figure}
 
-Aerosol ERF in each region is decomposed into cloud radiative effect (\dcre{}), aerosol direct effects (\irf{}) and a combination of surface albedo plus clear-sky-aerosol-free (\ERFcsclean{}) in Figure \ref{fig:ch5:erf_series_by_region}. In Europe, the aerosol-radiation interaction exhibits a distinct peak in 1975, when emissions are maximised. Aerosol-cloud interaction contributes 60\% of the total ERF between 1960 and 1990. When aerosol precursor emissions decrease over the region between 2000 and 2015, the total ERF reduced from \qty{-4.8}{W~m^{-2}} to \qty{-2.2}{W~m^{-2}}. East North America shows a similar trajectory to Europe, i.e., ERF reaching a maximum between 1960 and 1990; however, the aerosol IRF contributes more to the total ERF than in Europe. ERF due to aerosol precursor emissions in East Asia is almost exclusively from aerosol indirect effect, with less than \qty{-0.8}{W~m^{-2}} of the total ERF of \qty{-4.2}{W~m^{-2}} from aerosol direct effect in the near present. South Asia shows the opposite extreme, where the aerosol indirect effect is a minor component of ERF, and the aerosol direct effect is prominent. Due to high BC aerosol emission, the \ERFcsclean{} is distinctively warming compared to other regions.
+The aerosol ERF in each region is decomposed into cloud radiative effect (\dcre{}), aerosol direct effects (\irf{}) and a combination of surface albedo plus clear-sky-aerosol-free (\ERFcsclean{}) in Figure \ref{fig:ch5:erf_series_by_region}. In Europe, the aerosol-radiation interaction exhibits a distinct peak in 1975, when emissions are maximised. Aerosol-cloud interaction contributes 60\% of the total ERF between 1960 and 1990. When aerosol precursor emissions decrease over the region between 2000 and 2015, the total ERF reduced from \qty{-4.8}{W~m^{-2}} to \qty{-2.2}{W~m^{-2}}. 
 
-
-\subsection{Process sensitivities in chemistry-aerosol-cloud-radiation interaction}
-
-This chapter has explored the historical trends in sulfate aerosol production and their effects on the radiative balance. It has been shown that each step leading to aerosol radiative forcing can be linked to prior steps, with substantial variation across regions. This section applies the theoretical framework to quantify the sensitivity of each process from emission that leads to radiative effects to inform the role of each process and the importance of emission location on the eventual ERF results.
-
-The sensitivity of a response to a driver is obtained from the slope of a linear relationship between the driver and the response, fitted using a root-mean-square error (RMSE) regression model. Each data point is the difference between the annual mean of the difference between \histsst{} and \sstpiaer{} in both the driver and the response over a defined region. Table 
-\ref{ch5:tab:sensitivity}, summarises each of the sensitivity terms as defined in framework \ref{ch5:eq:flow-of-response}.
-
-
-\clearpage
-\begin{landscape}
-\begin{table}[htbp]
-\centering
-\small
-\setlength{\tabcolsep}{5pt}
-\caption{Summary of the sensitivities of a response to a driver due to changes in historical aerosol precursor emissions. $\Delta \overline{R}_{hazy}$ and $\Delta \overline{R}_{cloudy}$ in \ref{ch5:eq:final_chain} are represented by IRF and \dcre{}, respectively. $Q_{\text{S(VI)}}/a$ is the total sulfate production tendency divided by the domain area. }
-\label{ch5:tab:sensitivity}
-\begin{tabular}{lllrrrrrrrrrr}
-\hline
-\multirow{2}{*}{$\gamma$} & \multirow{2}{*}{Driver} & \multirow{2}{*}{Response} & \multicolumn{2}{c}{Global} & \multicolumn{2}{c}{Europe} & \multicolumn{2}{c}{East N. America} & \multicolumn{2}{c}{East Asia} & \multicolumn{2}{c}{South Asia} \\
-\cmidrule(lr){4-5} \cmidrule(lr){6-7} \cmidrule(lr){8-9} \cmidrule(lr){10-11} \cmidrule(lr){12-13}
-& & & Slope & $R^2$ & Slope & $R^2$ & Slope & $R^2$ & Slope & $R^2$ & Slope & $R^2$ \\
-\hline
-1 & $P_{\ce{SO2}}$ & $Q_{\ce{SO2}}$ & \num{5.15e-03} & \num{1.00} & \num{3.22e-03} & \num{0.99} & \num{3.19e-03} & \num{1.00} & \num{3.66e-03} & \num{1.00} & \num{4.62e-03} & \num{1.00} \\
-2 & $Q_{\ce{SO2}}$ & $P_{\text{S(VI)}}$ & \num{7.87e+01} & \num{0.99} & \num{7.38e+01} & \num{0.99} & \num{9.80e+01} & \num{0.99} & \num{9.24e+01} & \num{0.99} & \num{9.83e+01} & \num{1.00} \\
-2,\ce{OH} & $Q_{\ce{SO2}}$ & $P_{\ce{SO2 + OH}}$ & \num{3.77e+01} & \num{0.94} & \num{2.53e+01} & 0.99 & \num{4.40e+01} & 0.97 & \num{4.07e+01} & 0.99 & \num{7.72e+01} & 0.99 \\
-2,\ce{O3} & $Q_{\ce{SO2}}$ & $P_{\ce{SO2 + O3}}$ & \num{1.70e+01} & \num{0.94} & \num{3.83e+01} & 0.97 & \num{2.86e+01} & 0.99 & \num{2.33e+01} & 0.98 & \num{1.99e+00} & 0.97 \\
-2,\ce{H2O2} & $Q_{\ce{SO2}}$ & $P_{\ce{SO2 + H2O2}}$ & \num{2.40e+01} & \num{0.98} & \num{1.02e+01} & 0.93 & \num{2.55e+01} & 0.97 & \num{2.83e+01} & 0.95 & \num{1.92e+01} & 0.99 \\
-3 & $P_{\text{S(VI)}}$ & $Q_{\text{S(VI)}}$ & \num{1.59e-02} & \num{0.99} & \num{5.82e-03} & \num{0.95} & \num{5.67e-03} & \num{0.96} & \num{6.47e-03} & \num{0.99} & \num{1.06e-02} & \num{0.90} \\
-4a & $Q_{\text{S(VI)}}/a$ & $\tau_a$ & \num{4.69e+07} & \num{0.97} & \num{6.23e+07} & \num{0.98} & \num{5.64e+07} & \num{0.98} & \num{6.72e+07} & \num{0.99} & \num{5.09e+07} & \num{0.96} \\
-5a & $\tau_a$ & IRF & \num{-8.70} & \num{0.91} & \num{-8.90} & \num{0.92} & \num{-1.46e1} & \num{0.94} & \num{-3.24} & \num{0.56} & \num{-7.14} & \num{0.91} \\
-% 5a & $\tau_a$ & ERF & \num{-3.60e+01} & \num{0.78} & \num{-2.48e+1} & \num{0.46} & \num{-3.78e+01} & \num{0.70} & \num{-1.42e+01} & \num{0.38} & \num{-6.89e+00} & \num{0.20} \\
-4b & $Q_{\text{S(VI)}}/a$ & N50 & \num{1.16e+11} & \num{0.99} & \num{8.68e+10} & \num{0.95} & \num{1.04e+11} & \num{0.97} & \num{1.13e+11} & \num{0.99} & \num{9.76e+10} & \num{0.95} \\
-5b & N50 & $N_d$ & \num{3.47e-01} & \num{0.96} & \num{3.65e-01} & \num{0.96} & \num{4.07e-01} & \num{0.92} & \num{3.57e-01} & \num{0.91} & \num{4.39e-01} & \num{0.98} \\
-6b & $N_d$ & \dcre{} & \num{-3.53e-2} & \num{0.88} & \num{-3.27e-2} & \num{0.26} & \num{-3.18e-2} & \num{0.45} & \num{-2.22e-2} & \num{0.36} & \num{-6.47e-3} & \num{0.18} \\
-% 6b & $N_d$ & $\tau_c$ & \num{2.44e-04} & \num{0.88} & \num{2.22e-04} & \num{0.42} & \num{2.12e-04} & \num{0.67} & \num{1.44e-04} & \num{0.65} & \num{7.60e-05} & \num{0.15} \\
-% 7b & $\tau_c$ & ERF & \num{-3.09e+00} & \num{0.86} & \num{-1.40e+00} & \num{0.17} & \num{-2.26e+00} & \num{0.61} & \num{-1.77e+00} & \num{0.56} & \num{-5.87e-01} & \num{0.05} \\
-\hline
-\end{tabular}
-\end{table}
-\end{landscape}
-
-
-
-\begin{figure}[ht!]
-    \centering
-    \includegraphics[]{Chapter5/Figs/sensitivity_demiso2_dso2_histsst_sstpiaer.png}
-    \caption{Response of \ce{SO2} burden ($\Delta Q_{\ce{SO2}}$) to historical anthropogenic \ce{SO2} emissions ($\Delta P_{\ce{SO2}}$). Each data point is the difference between the annual means of the perturbed (\histsst{}) and control (\sstpiaer{}) simulations, with the driver plotted against the response for the four regional domains and the global domain.}
-    \label{fig:ch5:emiso2_vs_so2}
-\end{figure}
-
-The first step in the cascade of responses to \ce{SO2} emissions is a change in \ce{SO2} burden. Figure \ref{fig:ch5:emiso2_vs_so2} shows that global and regional \ce{SO2} burden responds linearly to emission driver with the coefficient of determination ($R^2$) of 0.99--1.00 in all regions. All regions exhibit lower sensitivity than the global relationship, and amongst all regions, South Asia has the highest sensitivity of \ce{SO2} burden to emissions. The loss of \ce{SO2} determines burden and its response to emissions, with greater loss corresponding to lower sensitivity of burden to emissions. That is, total \ce{SO2} removal is efficient in Europe and East North America, but less so in South Asia and globally.
-
-\begin{figure}[ht!]
-    \centering
-    \includegraphics{Chapter5/Figs/sensitivity_doxi_demiss_histsst_sstpiaer.png}
-    \caption{Response of secondary sulfate production ($\Delta P_{\text{S(VI)}}^i$) to \ce{SO2} burden ($\Delta Q_{\ce{SO2}}$) changes. Each data point is the difference between the annual means of the perturbed (\histsst{}) and control (\sstpiaer{}) simulations, with the driver plotted against the response for the four regional domains and the global domain.}
-    \label{fig:ch5:so2_vs_oxidation}
-\end{figure}
-
-\ce{SO2} oxidation is one of the processes which remove \ce{SO2} from the atmosphere and is the next immediate step in the process of aerosol formation. Figure \ref{fig:ch5:so2_vs_oxidation} shows the sensitivity of each of the oxidation pathways to an increase in \ce{SO2} burden, driven by the historical aerosol precursor emissions. Here, the region plays a significant role in determining the sensitivity. Europe exhibits the strongest sensitivity of \ce{SO2 + O3} to the increase in burden, while \ce{SO2 + H2O2}, another aqueous-phase oxidation route, is only 25\% as sensitive. Apart from Europe, \ce{SO2 + OH} oxidation is the most sensitive of the three oxidation pathways to an increase in \ce{SO2} burden. Gas-phase oxidation over South Asia is the most sensitive to changes in burden, showing the sensitivity of \qty{77.2}{yr^{-1}}, which is double that of the global sensitivity. 
-
-
-\begin{figure}[ht!]
-    \centering
-    \includegraphics{Chapter5/Figs/sensitivity_dso2_dtot_oxi_histsst_sstpiaer.png}
-    \caption{a) Regional response of total secondary sulfate aerosol production ($\Delta P_{\text{S(VI)}}$) to historical \ce{SO2} burden ($\Delta Q_{\ce{SO2}}$) changes. b) Global response to changes in \ce{SO2} burden ($\Delta Q_{\ce{SO2}}$) on secondary sulfate aerosol production from each oxidation pathway and total oxidation. Each data point is the difference between the annual means of the perturbed (\histsst{}) and control (\sstpiaer{}) simulations, with the driver plotted against the response for the four regional domains and the global domain.}
-    \label{fig:ch5:so2_vs_totoxi}
-\end{figure}
-
-The total secondary production is the sum of production from all three pathways, and its sensitivity to changes in burden indicates the efficiency of sulfate aerosol production within a defined domain. Figure \ref{fig:ch5:so2_vs_totoxi}a) shows the regional and global sensitivity, $\gamma_2$, which is a linear response with $R^2$ greater than 0.99, demonstrating a strong correlation in all regions. Global $\gamma_2$ is \qty{78.7}{yr^{-1}} and all regions except Europe have higher sensitivity than the global value. This variation in sensitivity shows that higher emissions do not imply equal growth in oxidation. Local environmental conditions control deposition and oxidation, thereby altering sensitivity.
-
-
-\begin{figure}[ht!]
-    \centering
-    \includegraphics{Chapter5/Figs/sensitivity_dtot_so2_oxi_dmmrso4_histsst_sstpiaer_zoom.png}
-    \caption{Response of sulfate aerosol burden ($\Delta Q_{\text{S(VI)}}$) to secondary sulfate aerosol production ($\Delta P_{\text{S(VI)}}$) changes. Each data point is the difference between the annual means of the perturbed (\histsst{}) and control (\sstpiaer{}) simulations, with the driver plotted against the response for the four regional domains and the global domain.}
-    \label{fig:ch5:so2_oxi_vs_so4}
-\end{figure}
-
-Sulfate aerosol production contributes to the total sulfate burden, whereas removal processes reduce the sulfate burden. Figure \ref{fig:ch5:so2_oxi_vs_so4} shows the response of sulfate aerosol burden to the change in secondary sulfate aerosol production, $\gamma_3$. Globally, sulfate aerosol burden responds well to total oxidation, with greater sensitivity than in any region. Europe, East North America, and East Asia share a similarly low sensitivity due to the regions' efficient wet removal. The response is linear, with $R^2\ge 0.90$ across all domains despite sulfate aerosol burden transported beyond the domains, as shown in Figure \ref{fig:ch5:so4_series}.
-
-\begin{figure}[ht!]
-    \centering
-    \includegraphics{Chapter5/Figs/sensitivity_dso4_per_area_dod550aer_histsst_sstpiaer.png}
-    \caption{Response of aerosol optical depth ($\Delta \tau_a$) to sulfate aerosol burden per area ($\Delta Q_{\text{S(VI)}}/area$) changes. Each data point is the difference between the annual means of the perturbed (\histsst{}) and control (\sstpiaer{}) simulations, with the driver plotted against the response for the four regional domains and the global domain.}
-    \label{fig:ch5:so4_pa_vs_aod}
-\end{figure}
-
-Aerosols' direct impact on the radiation budget arises from aerosol-radiation interactions, quantified by the aerosol optical depth (AOD) and the ERF, $\tau_a$. The domain-average AOD is an intensive variable and must be compared with another intensive variable to obtain a meaningful sensitivity. As ERF, the next quantity in the analysis, is also an intensive variable, the sulfate aerosol burden, an extensive variable, is divided by the domain area to convert it to an intensive variable. Figure \ref{fig:ch5:so4_pa_vs_aod} shows the linear response of AOD to the change in the sulfate burden per domain area, $\gamma_{4a}$,  with $R^2 \ge 0.97$ across all regions. AOD over East Asia is most sensitive to changes in sulfate burden because of greater incoming radiation at lower latitudes. 
+East North America shows a similar trajectory to Europe, i.e., ERF reaching a maximum between 1960 and 1990; however, the aerosol IRF contributes more to the total ERF than in Europe. ERF due to aerosol precursor emissions in East Asia is almost exclusively from aerosol indirect effect, with less than \qty{-0.8}{W~m^{-2}} of the total ERF of \qty{-4.2}{W~m^{-2}} from aerosol direct effect in the near present. South Asia shows the opposite extreme, where the aerosol indirect effect is a minor component of ERF, and the aerosol direct effect is prominent. Due to high BC aerosol emission, the \ERFcsclean{} is distinctively warming compared to other regions.
 
 
 \begin{figure}[ht!]
     \centering
     \includegraphics{Chapter5/Figs/sensitivity_dod550aer_dnet_toa_hazy_histsst_sstpiaer.png}
-    \caption{Response of the hazy-sky part of ERF to changes in AOD. Each data point is the difference between the annual means of the perturbed (\histsst{}) and control (\sstpiaer{}) simulations, with the driver plotted against the response for the four regional domains and the global domain.}
+    \caption[$\gamma_{5a}$: Aerosol IRF sensitivity to AOD changes across regional and global domains.]{The sensitivity of the hazy-sky part of ERF (aerosol IRF) to changes in AOD, $\gamma_{5a}$. Each data point is the difference between the annual means of the perturbed (\histsst{}) and control (\sstpiaer{}) simulations, with the driver plotted against the response for the four regional domains and the global domain.}
     \label{fig:ch5:aod_vs_erf_hazy}
 \end{figure}
 
 
-The last link from emission to radiative balance, the response of ERF to changes in AOD, $\gamma_{5a}$, is shown in Figure \ref{fig:ch5:aod_vs_erf_hazy}. AOD is a good predictor of a more negative ERF due to aerosol-radiation interaction, IRF, with $R^2 \ge 0.91$ on the global scale. As pointed out earlier, the ERF due to aerosols are not bounded within the domains, and a targeted simulation is needed to capture this correlation accurately. East North America has the most sensitive response and the largest $R^2$ of 0.94, while East Asia is the least sensitive, and only 56\% of IRF variability could be explained by AOD. The lack of explainability in East Asia is likely due to the effects of aerosols observed outside of the region.
+The last link from emission to radiative balance, the response of ERF to changes in AOD, $\gamma_{5a}$, is shown in Figure \ref{fig:ch5:aod_vs_erf_hazy}. AOD is a good predictor of a more negative ERF due to aerosol-radiation interaction, IRF, with $R^2 \ge 0.91$ on the global scale. East North America has the most sensitive response and the largest $R^2$ of 0.94, while East Asia is the least sensitive, with only 56\% of IRF variability explained by AOD. The lack of explainability in East Asia is likely due to the effects of aerosols observed outside of the region.
 
-
-\begin{figure}[ht!]
-    \centering
-    \includegraphics{Chapter5/Figs/sensitivity_dso4_per_area_dn50_histsst_sstpiaer.png}
-    \caption{Response of N50 concentration to changes in sulfate aerosol burden per domain area. Each data point is the difference between the annual means of the perturbed (\histsst{}) and control (\sstpiaer{}) simulations, with the driver plotted against the response for the four regional domains and the global domain.}
-    \label{fig:ch5:so4_vs_n50}
-\end{figure}
-
-
-Aerosols indirectly modify radiation through aerosol-cloud interactions, which involve numerous cloud-related steps. The first process involves aerosols with diameters greater than 50 nm (N50), which are considered important for cloud droplet activation.  As with the previous analysis involving intensive-extensive quantities, here, the area burden is divided by domain area to express it as an intensive variable. Figure \ref{fig:ch5:so4_vs_n50} shows $\gamma_{4b}$, the response of N50 concentration to an increase in sulfate aerosol burden per domain area. East Asia is the region with the highest sensitivity of N50 to changes in sulfate burden, with East North America the close second. Both East North America and East Asia exhibit strong gas-phase production sensitivity, $\gamma_{2i}$, proving the point that there is some correlation between sensitivity in $P_{\ce{SO2 + OH}}$ and N50 formation (Table \ref{ch5:tab:sensitivity}). However, South Asia does not exhibit the expected correlation between gas-phase production and high N50 concentration, and no clear explanation is available.
-
-
-\begin{figure}[ht!]
-    \centering
-    \includegraphics{Chapter5/Figs/sensitivity_dn50_dcdnc_histsst_sstpiaer.png}
-    \caption{Response of mean cloud droplet number concentration (CDNC; $N_d$) to changes in N50 concentration. Each data point is the difference between the annual means of the perturbed (\histsst{}) and control (\sstpiaer{}) simulations, with the driver plotted against the response for the four regional domains and the global domain.}
-    \label{fig:ch5:n50_vs_cdnc}
-\end{figure}
-
-
-More numerous CCN are directly linked to a greater concentration of cloud droplets, as shown by modelling and observations \citep{jordanHowWellAre2024, virtanenHighSensitivityCloud2025}. The global and regional relationships between N50 and cloud droplet number concentrations (CDNC) are linear, with $R\ge0.95$. The sensitivities, $\gamma_{5b}$, from the global and regional analyses lie within the same range, indicating that location does not substantially influence this process.
 
 \begin{figure}[ht!]
     \centering
     \includegraphics{Chapter5/Figs/sensitivity_dcdnc_dnet_toa_cloudy_histsst_sstpiaer.png}
-    \caption{Response of the cloudy-sky ERF, \dcre{}, to changes in cloud droplet number concentration. Each data point is the difference between the annual means of the perturbed (\histsst{}) and control (\sstpiaer{}) simulations, with the driver plotted against the response for the four regional domains and the global domain.}
+    \caption[$\gamma_{6b}$: Cloudy-sky ERF (\dcre{}) sensitivity to CDNC changes across regional and global domains.]{The sensitivity of the cloudy-sky ERF, \dcre{}, to changes in cloud droplet number concentration, $\gamma_{6b}$. Each data point is the difference between the annual means of the perturbed (\histsst{}) and control (\sstpiaer{}) simulations, with the driver plotted against the response for the four regional domains and the global domain.}
     \label{fig:ch5:cdnc_vs_cre}
 \end{figure}
 
-More CDNC given the same liquid water path leads to higher cloud albedo. This sensitivity, $\gamma_{6b}$ is examined in Figure \ref{fig:ch5:cdnc_vs_cre}. The increase in CDNC predicts a more negative cloud radiative forcing, with an $R^2$ of 0.88 over the global domain, indicating a linear relationship between the two variables. However, in the regional domain, this relationship breaks down with only 18\% to 45\% of the change in CRE captured by CDNC. The extent to which aerosol precursor emissions exert on CRE reaches far beyond the emission regions, as shown in Figure \ref{fig:ch5:cre_series}. This relationship breakdown shows the limit of using region boundaries to limit the impact of the forcing agent. Nevertheless, apart from South Asia, global and regional values of $\gamma_{6b}$ fall within the same range, indicating that location is not significant for the cloud-radiative effect.
+More CDNC given the same liquid water path leads to higher cloud albedo. This sensitivity, $\gamma_{6b}$ is examined in Figure \ref{fig:ch5:cdnc_vs_cre}. The increase in CDNC predicts a more negative cloud radiative forcing, with an $R^2$ of 0.88 over the global domain, indicating a linear relationship between the two variables. However, in the regional domain, this relationship breaks down with only 18\% to 45\% of the change in CRE captured by CDNC. The extent to which aerosol precursor emissions affect CRE extends far beyond the emission regions, as shown in Figure \ref{fig:ch5:cre_series}. This breakdown of the relationship shows the limits of using regional boundaries to limit the impact of the forcing agent. Nevertheless, apart from South Asia, global and regional values of $\gamma_{6b}$ fall within the same range, indicating that location is not significant for the cloud-radiative effect.
 
+
+\subsection{Sensitivities of processes in chemistry-aerosol-cloud-radiation interaction}
+
+This chapter has explored the historical trends in sulfate aerosol production and their effects on the radiative balance. It has been shown that each step in the chain of processes from precursor emissions leading to aerosol radiative forcing can be linked to prior steps, with substantial regional variation. This section summarises the sensitivity of each process, from emissions to radiative effects, to inform the role of each process and the importance of emission location in the resulting ERF, and discusses the overarching findings. Table 
+\ref{ch5:tab:sensitivity}, enumerates each of the sensitivity terms as defined in framework \ref{ch5:eq:flow-of-response}.
+
+
+% ===================== TABLE (a) =====================
+\clearpage
+
+\begin{table}[p]
+\small
+\setlength{\tabcolsep}{4pt}
+\captionsetup{justification=raggedright,singlelinecheck=false}
+\caption[Summary of the sensitivities of a response to a driver due to changes in historical aerosol precursor emissions]{Summary of the sensitivities of a response to a driver due to changes in historical aerosol precursor emissions. SE represent the standard error of slope and $R^2$ is the goodness of fit. $\Delta \overline{R}_{hazy}$ and $\Delta \overline{R}_{cloudy}$ are represented by IRF and \dcre{}, respectively. (a) Sensitivities for $\gamma_1$ and $\gamma_2$.}
+\label{ch5:tab:sensitivity}
+\begin{tabular}{@{}ll*{2}{S}@{}}
+\toprule
+\multicolumn{2}{l}{}
+& {$\gamma_1$} & {$\gamma_2$} \\
+\midrule
+\multicolumn{2}{l}{Response}
+& {$\Delta Q_{\ce{SO2}}$} & {$\Delta P_{\text{S(VI)}}$} \\
+\multicolumn{2}{l}{Driver}
+& {$\Delta P_{\ce{SO2}}$} & {$\Delta Q_{\ce{SO2}}$} \\
+\midrule
+\multirow{3}{*}{Global} & Slope & 5.15e-03 & 7.87e+01 \\
+& SE & 1.90e-05 & 7.02e-01 \\
+& {$R^2$} & 0.998 & 0.987 \\
+\addlinespace
+\multirow{3}{*}{Europe} & Slope & 3.22e-03 & 7.38e+01 \\
+& SE & 1.86e-05 & 6.47e-01 \\
+& {$R^2$} & 0.995 & 0.988 \\
+\addlinespace
+\multirow{3}{*}{East N. America} & Slope & 3.19e-03 & 9.80e+01 \\
+& SE & 1.14e-05 & 6.93e-01 \\
+& {$R^2$} & 0.998 & 0.992 \\
+\addlinespace
+\multirow{3}{*}{East Asia} & Slope & 3.66e-03 & 9.24e+01 \\
+& SE & 1.71e-05 & 6.74e-01 \\
+& {$R^2$} & 0.996 & 0.991 \\
+\addlinespace
+\multirow{3}{*}{South Asia} & Slope & 4.62e-03 & 9.83e+01 \\
+& SE & 2.15e-05 & 4.08e-01 \\
+& {$R^2$} & 0.997 & 0.997 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ===================== TABLE (b) =====================
+\begin{table}[p]
+\ContinuedFloat
+\small
+\setlength{\tabcolsep}{4pt}
+\captionsetup{justification=raggedright,singlelinecheck=false}
+\caption[]{(b) Sensitivities for $\gamma_{2,\ce{OH}}$, $\gamma_{2,\ce{O3}}$, and $\gamma_{2,\ce{H2O2}}$.}
+\label{ch5:tab:sensitivity_b}
+\begin{tabular}{@{}ll*{3}{S}@{}}
+\toprule
+\multicolumn{2}{l}{}
+& {$\gamma_{2,\ce{OH}}$} & {$\gamma_{2,\ce{O3}}$} & {$\gamma_{2,\ce{H2O2}}$} \\
+\midrule
+
+\multicolumn{2}{l}{Driver}
+& {$\Delta Q_{\ce{SO2}}$} & {$\Delta Q_{\ce{SO2}}$} & {$\Delta Q_{\ce{SO2}}$} \\
+\multicolumn{2}{l}{Response}
+& {$\Delta P_{\ce{SO2 + OH}}$} & {$\Delta P_{\ce{SO2 + O3}}$} & {$\Delta P_{\ce{SO2 + H2O2}}$} \\
+
+\midrule
+\multirow{3}{*}{Global} & Slope & 3.77e+01 & 1.70e+01 & 2.40e+01 \\
+& SE & 7.68e-01 & 3.39e-01 & 2.70e-01 \\
+& {$R^2$} & 0.937 & 0.939 & 0.980 \\
+\addlinespace
+\multirow{3}{*}{Europe} & Slope & 2.53e+01 & 3.83e+01 & 1.02e+01 \\
+& SE & 1.87e-01 & 4.49e-01 & 2.22e-01 \\
+& {$R^2$} & 0.991 & 0.978 & 0.929 \\
+\addlinespace
+\multirow{3}{*}{East N. America} & Slope & 4.40e+01 & 2.86e+01 & 2.55e+01 \\
+& SE & 5.84e-01 & 2.30e-01 & 3.60e-01 \\
+& {$R^2$} & 0.972 & 0.990 & 0.968 \\
+\addlinespace
+\multirow{3}{*}{East Asia} & Slope & 4.07e+01 & 2.33e+01 & 2.83e+01 \\
+& SE & 2.73e-01 & 2.61e-01 & 4.90e-01 \\
+& {$R^2$} & 0.993 & 0.980 & 0.954 \\
+\addlinespace
+\multirow{3}{*}{South Asia} & Slope & 7.72e+01 & 1.99e+00 & 1.92e+01 \\
+& SE & 4.64e-01 & 2.69e-02 & 1.35e-01 \\
+& {$R^2$} & 0.994 & 0.971 & 0.992 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ===================== TABLE (c) =====================
+\begin{table}[p]
+\ContinuedFloat
+\small
+\setlength{\tabcolsep}{4pt}
+\captionsetup{justification=raggedright,singlelinecheck=false}
+\caption[]{(c) Sensitivities for $\gamma_3$ to $\gamma_{5a}$.}
+\begin{tabular}{@{}ll*{3}{S}@{}}
+\toprule
+\multicolumn{2}{l}{} 
+& {$\gamma_3$} & {$\gamma_{4a}$} & {$\gamma_{5a}$} \\
+\midrule
+\multicolumn{2}{l}{Driver} 
+& {$P_{\text{S(VI)}}$} & {$Q_{\text{S(VI)}}/a$} & {$\tau_a$} \\
+\multicolumn{2}{l}{Response} 
+& {$Q_{\text{S(VI)}}$} & {$\tau_a$} & {IRF} \\
+\midrule
+\multirow{3}{*}{Global} & Slope & 1.60e-02 & 4.69e+07 & -8.71 \\
+& SE & 9.62e-05 & 6.27e+05 & 2.09e-01 \\
+& {$R^2$} & 0.99 & 0.97 & 0.91 \\
+\addlinespace
+\multirow{3}{*}{Europe} & Slope & 5.68e-03 & 6.23e+07 & -8.90 \\
+& SE & 1.05e-04 & 7.44e+05 & 1.99e-01 \\
+& {$R^2$} & 0.95 & 0.98 & 0.92 \\
+\addlinespace
+\multirow{3}{*}{East N. America} & Slope & 5.67e-03 & 5.64e+07 & -1.46e1 \\
+& SE & 8.94e-05 & 5.83e+05 & 2.72e-01 \\
+& {$R^2$} & 0.96 & 0.98 & 0.95 \\
+\addlinespace
+\multirow{3}{*}{East Asia} & Slope & 6.47e-03 & 6.72e+07 & -3.25 \\
+& SE & 3.45e-05 & 5.76e+05 & 2.27e-01 \\
+& {$R^2$} & 0.99 & 0.99 & 0.56 \\
+\addlinespace
+\multirow{3}{*}{South Asia} & Slope & 1.06e-02 & 5.09e+07 & -7.14 \\
+& SE & 8.16e-05 & 8.08e+05 & 1.32e-01 \\
+& {$R^2$} & 0.99 & 0.96 & 0.95 \\
+\bottomrule
+\end{tabular}
+\end{table}
+% ===================== TABLE (d) =====================
+\begin{table}[p]
+\ContinuedFloat
+\small
+\setlength{\tabcolsep}{4pt}
+\captionsetup{justification=raggedright,singlelinecheck=false}
+\caption[]{(d) Sensitivities for $\gamma_{4b}$ to $\gamma_{6b}$.}
+\begin{tabular}{@{}ll*{3}{S}@{}}
+\toprule
+\multicolumn{2}{l}{} 
+& {$\gamma_{4b}$} & {$\gamma_{5b}$} & {$\gamma_{6b}$} \\
+\midrule
+\multicolumn{2}{l}{Driver} 
+& {$Q_{\text{S(VI)}}/a$} & {N50} & {$N_d$} \\
+\multicolumn{2}{l}{Response} 
+& {N50} & {$N_d$} & {\dcre{}} \\
+\midrule
+\multirow{3}{*}{Global} & Slope & 1.16e+11 & 3.47e-01 & -3.53e-2 \\
+& SE & 1.07e+09 & 3.20e-03 & 1.04e-03 \\
+& {$R^2$} & 0.99 & 0.99 & 0.88 \\
+\addlinespace
+\multirow{3}{*}{Europe} & Slope & 8.68e+10 & 3.65e-01 & -3.27e-2 \\
+& SE & 1.63e+09 & 5.46e-03 & 4.34e-03 \\
+& {$R^2$} & 0.95 & 0.96 & 0.26 \\
+\addlinespace
+\multirow{3}{*}{East N. America} & Slope & 1.04e+11 & 4.07e-01 & -3.18e-2 \\
+& SE & 1.54e+09 & 9.11e-03 & 2.75e-03 \\
+& {$R^2$} & 0.97 & 0.92 & 0.45 \\
+\addlinespace
+\multirow{3}{*}{East Asia} & Slope & 1.13e+11 & 3.57e-01 & -2.23e-2 \\
+& SE & 1.02e+09 & 8.45e-03 & 2.31e-03 \\
+& {$R^2$} & 0.99 & 0.92 & 0.36 \\
+\addlinespace
+\multirow{3}{*}{South Asia} & Slope & 9.76e+10 & 4.39e-01 & -6.47e-3 \\
+& SE & 1.74e+09 & 4.36e-03 & 1.09e-03 \\
+& {$R^2$} & 0.95 & 0.98 & 0.18 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\clearpage
+
+The principal finding from this analysis is that location plays a major role in determining sulfate aerosol formation, as apparent in diversed $\gamma_{2}$ and its components, $\gamma_{2,OH}$ (Table \ref{ch5:tab:sensitivity}a), $\gamma_{2,\ce{O3}}$, and $\gamma_{2,\ce{H2O2}}$ (Table \ref{ch5:tab:sensitivity}b). $\gamma_2$, which represents the sensitivity of total sulfate aerosol production to the available \ce{SO2} burden, shows that sulfate production is least efficient in Europe, and this is mainly driven by the lack of sensitivity to oxidation with OH. Similarly, \ce{SO2 + OH} is the most prominent in South Asia, which also features the greatest total sensitivity in sulfate production, $\gamma_2$ of \qty{9.83e1}{(Tg(S)~yr^{-1})~(Tg(S))^{-1}}
+
+This sensitivity analysis performs well globally, with a strong goodness-of-fit ($R^2 > 0.91$) across all processes, demonstrating potential applicability beyond UKESM1, especially for multi-model comparisons. The cross-model intercomparison would diagnose differences in chemistry and aerosol processes and yield tighter bounds on model-derived uncertainty in aerosol-climate interactions. However, using a boundary to estimate regional sensitivities has limitations, as evidenced by the lower $R^2$ values for non-local processes, such as aerosol-radiation interaction ($\gamma_{5a}$ ) and cloud radiative effects ($\gamma_{6b}$). 
 
 Existing literature on process sensitivity in models is limited to cloud processes. \citet{virtanenHighSensitivityCloud2025} quantified the sensitivity, referred to as susceptibility, S, of cloud droplet number concentration to CCN concentration by comparing four Earth system models, including UKESM1, with in-situ and satellite observations. Compared to measurements, UKESM1 showed lower CDNC sensitivity to CCN in the semi-urban area but greater sensitivity in the Arctic region. For the semi-urban region, UKESM1 is the second-most sensitive of the four models, placing it among the more sensitive ESMs included in the study by \citet{virtanenHighSensitivityCloud2025}.
 
 
 \section{Conclusions}
 
-Based on the analysis and conceptual framework of process sensitivities presented by equation \ref{ch5:eq:flow-of-response}, this Chapter has examined the role of \ce{SO2} emission location on sulfate aerosol formation, cloud properties and the resulting direct and indirect radiative effects of aerosols. Emission regions play a significant role in determining aerosol formation, which in turn has cascading impacts on radiation. Four regions were focused on in this Chapter: Europe, East North America, East Asia, and South Asia. 
+Based on the analysis and conceptual framework of process sensitivities presented in equation \ref{ch5:eq:flow-of-response}, this Chapter has examined the role of \ce{SO2} emission location in sulfate aerosol formation, cloud properties, and the resulting direct and indirect radiative effects of aerosols. Emission regions play a significant role in determining aerosol formation, which in turn has cascading impacts on radiation. Four regions were focused on in this Chapter: Europe, East North America, East Asia, and South Asia. 
 
-\ce{SO2} emission trends evolved over the historical period, starting with a rapid increase over Europe, which persisted until 1970, when they declined just as rapidly. In this case, the combination of high latitude and high cloudiness in this region makes \ce{SO2 + O3} the primary oxidation pathway, contributing half of the total oxidation, setting it apart from other regions. In East North America, the proportion of \ce{SO2 + OH} oxidation is larger, with all pathways contributing equally to sulfate production. East Asia exhibits a similar partitioning to that of East North America, while South Asia exhibits a uniquely high OH oxidation rate, with negligible \ce{SO2 + O3} oxidation. 
+\ce{SO2} emission trends evolved over the historical period, starting with a rapid increase across Europe that persisted until 1970, after which they declined just as rapidly. In this case, the combination of high latitude and high cloudiness in this region makes \ce{SO2 + O3} the primary oxidation pathway, accounting for half of the total oxidation and setting it apart from other regions. In East North America, the proportion of \ce{SO2 + OH} oxidation is larger, with all pathways contributing equally to sulfate production. East Asia exhibits a partitioning similar to that of East North America, whereas South Asia shows a uniquely high OH oxidation rate, with negligible \ce{SO2 + O3} oxidation. 
 
-These findings could be summarised in terms of process sensitivities. The sensitivity of the reaction tendencies quantitatively confirms the partitioning of pathways, with \ce{SO2 + O3} as the most sensitive pathway to changes in the \ce{SO2} burden in Europe. The concept of process sensitivity could be used to compare across regions. The total sulfate aerosol production over Europe is the least sensitive to increases in \ce{SO2} burden, while East North America and South Asia are the most sensitive.
+These findings could be summarised in terms of process sensitivities. The sensitivity of reaction tendencies quantitatively confirms pathway partitioning, with \ce{SO2 + O3} as the most sensitive pathway to changes in the \ce{SO2} burden in Europe. The concept of process sensitivity could be used to compare across regions. The total sulfate aerosol production over Europe is the least sensitive to increases in \ce{SO2} burden, while East North America and South Asia are the most sensitive.
 
 
-Crucially, this chapter highlights the inaccuracy of extrapolating from \ce{SO2} emissions to ERF using a simple linear relationship based on the global average, especially when emission locations shift aggressively throughout the industrial period and into the future. What is shown here is that the global and regional sensitivities of each process are highly heterogeneous, and a globally averaged sensitivity does not extrapolate across regions. 
+Crucially, this chapter highlights the oversimplification of extrapolating from \ce{SO2} emissions to ERF using a simple linear relationship based on the global average, especially when emission locations shift aggressively throughout the industrial period and into the future. What is shown here is that the global and regional sensitivities of each process are highly heterogeneous, and a globally averaged sensitivity does not extrapolate across regions. 
 
 
 It is essential to note some limitations and future improvements of this Chapter. Work in this Chapter has provided a quantitative framework for bounding this process, using a simplified framework to that in \citet{bellouinBoundingGlobalAerosol2020}.  Firstly, the rapid adjustments to aerosol cloud interaction were noted as the most difficult to bound on a global scale by \citet{bellouinBoundingGlobalAerosol2020}, but were omitted in this Chapter due to the time limit of this Thesis. In addition to aerosol-cloud-radiation process sensitivities, the dominant uncertainty in bounding aerosol radiative effect lies in the magnitude of industrial-era changes in AOD and CDNC \citep{bellouinBoundingGlobalAerosol2020}. 

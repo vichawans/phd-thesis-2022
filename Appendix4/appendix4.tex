@@ -1,0 +1,29 @@
+%!TEX root = ../thesis.tex
+
+\chapter{Definition of scientific terms and methods}
+\label{app:sec:defs_terms}
+
+The main definitions used in this work concern the atmospheric chemical budget. The budget of a trace gas consists of three quantities: its global source, global sink, and atmospheric burden. For the sulfur budget, all masses are represented in the Tg of sulfur (S), not in the Tg of \ce{SO2}.
+
+\subsubsection{Source/Emission}
+
+The source of a trace gas (Tg yr$^{-1}$) is the sum of all sources, including primary emissions from surface sources and \textit{in situ} chemical production (secondary emissions). For sulfur dioxide, the source terms include primary emissions from both natural and anthropogenic sources, as well as secondary emissions from the oxidation of \ce{H2S}, DMS, and dimethyl disulfide. CMIP6 uses various sources of \ce{SO2} emission as listed in section \ref{sec:1.ukesm1}. In UKESM1, source terms are output in mol s$^{-1}$ per grid box for each emission type and are referred to as fluxes. SO4 source terms comprise primary emission, which is 2.5\% of anthropogenic \ce{SO2} emission, and secondary emission from \ce{SO2} oxidation.
+
+\subsubsection{Sink/Loss}
+
+Similar to source terms, sinks of a trace gas (Tg yr$^{-1}$) are the sum of all sinks or losses, which could be wet and dry deposition, and \textit{in situ} chemical loss. UKESM1 outputs source terms in mol s$^{-1}$ per grid box for each type of emission. \ce{SO2} sink terms include wet and dry deposition and chemical loss via oxidation with OH, \ce{O3} and \ce{H2O2}. Sulfate aerosols are lost via wet and dry deposition.
+
+\subsubsection{Atmospheric Burden}
+
+The atmospheric burden (Tg) is the total mass of the gas integrated over the atmosphere. The burden could be calculated for related reservoirs, for example, troposphere only or both troposphere and stratosphere. In this work, only tropospheric burden is considered for all species, including \ce{SO2}, sulfate aerosols, OH, \ce{O3} and \ce{H2O2}. Unless specified, the burden is calculated for mass below the tropopause only.
+
+\subsubsection{Lifetime/residence time}
+
+The lifetime of a trace gas is the average time a molecule of that species spends in a reservoir before removal. Atmospheric lifetimes vary from seconds for reactive radicals to years for stable molecules. Lifetimes or residence time of a substance is different from the \textit{e-folding lifetime of a reaction} (also known as the \textit{mean lifetime of A against a reaction}). 
+
+If the reservoir is the whole atmosphere and is in a steady state, that is, the burden is considered constant, and the atmospheric lifetime of a compound is estimated from 
+
+\begin{equation}
+\label{eq:lifetime}
+ \text{Lifetime} = \frac{\text{Burden}}{\text{Loss}}    
+\end{equation}
