@@ -79,6 +79,7 @@
 %\pagestyle{PageStyleII}
 \usepackage{setspace} 
 \onehalfspacing
+
 % ********************************** Preamble **********************************
 % Preamble: Contains packages and user-defined commands and settings
 
@@ -106,6 +107,20 @@
 % suppressing some warnings
 \usepackage{silence}
 \WarningFilter{hyperref}{Token not allowed in a PDF string}
+
+% Tracking changes for thesis
+% https://trackchanges.sourceforge.net/
+\usepackage[finalnew]{trackchanges} % Accept all changes
+% \usepackage[finalold]{trackchanges} % Reject all changes
+% \usepackage[inline]{trackchanges} % Display edits as inline notes
+
+%   \note[editor]{The note}
+% \annote[editor]{Text to annotate}{The note}
+%    \add[editor]{Text to add}
+% \remove[editor]{Text to remove}
+% \change[editor]{Text to remove}{Text to add} 
+\addeditor{VS}
+
 
 % for nice tables
 % \sisetup{
@@ -149,12 +164,12 @@
 % for notes not to be visible, change 
 % \usepackage{todonotes} -> \usepackage[disable]{todonotes}
 
-\usepackage[colorinlistoftodos,prependcaption,disable]{todonotes}
-\newcommandx{\unsure}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
-\newcommandx{\change}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
-\newcommandx{\info}[2][1=]{\todo[disable, linecolor=OliveGreen,backgroundcolor=OliveGreen!25,bordercolor=OliveGreen,#1]{#2}}
-\newcommandx{\improvement}[2][1=]{\todo[linecolor=Plum,backgroundcolor=Plum!25,bordercolor=Plum,#1]{#2}}
-\newcommandx{\thiswillnotshow}[2][1=]{\todo[disable,#1]{#2}}
+% \usepackage[colorinlistoftodos,prependcaption,disable]{todonotes}
+% \newcommandx{\unsure}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
+% \newcommandx{\change}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
+% \newcommandx{\info}[2][1=]{\todo[disable, linecolor=OliveGreen,backgroundcolor=OliveGreen!25,bordercolor=OliveGreen,#1]{#2}}
+% \newcommandx{\improvement}[2][1=]{\todo[linecolor=Plum,backgroundcolor=Plum!25,bordercolor=Plum,#1]{#2}}
+% \newcommandx{\thiswillnotshow}[2][1=]{\todo[disable,#1]{#2}}
 
 % \reversemarginpar
 % \paperwidth=\dimexpr \paperwidth + 6cm\relax % For some reasons it has to be > 2* \evensidemargin
@@ -202,8 +217,8 @@
 
 % \include{Dedication/dedication} % I have no use for this.
 \include{Declaration/declaration}
-\include{Acknowledgement/acknowledgement}
 \include{Abstract/abstract}
+\include{Acknowledgement/acknowledgement}
 
 % *********************** Adding TOC and List of Figures ***********************
 
@@ -220,11 +235,11 @@
 \mainmatter
 
 \include{Chapter1/chapter1}
-\include{Chapter2/chapter2}
-\include{Chapter3/chapter3} % SLCF+aerosol formation
-\include{Chapter4/chapter4} % Seasonal changes + pothole cooling
-\include{Chapter5/chapter5} % Regional aerosol formation efficiency
-\include{Chapter6/chapter6} % Conclusion and future work
+% \include{Chapter2/chapter2}
+% \include{Chapter3/chapter3} % SLCF+aerosol formation
+% \include{Chapter4/chapter4} % Seasonal changes + pothole cooling
+% \include{Chapter5/chapter5} % Regional aerosol formation efficiency
+% \include{Chapter6/chapter6} % Conclusion and future work
 
 % ********************************** Back Matter *******************************
 % Backmatter should be commented out, if you are using appendices after References
